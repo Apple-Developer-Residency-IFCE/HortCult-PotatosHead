@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HeaderMenu: View {
-    var image: Image = Image(uiImage:UIImage())
     var body: some View {
         VStack(spacing: 0){
             HStack {
