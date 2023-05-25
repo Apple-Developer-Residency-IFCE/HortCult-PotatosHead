@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		647728042A2004A100332760 /* CategoryPlantOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728032A2004A100332760 /* CategoryPlantOptions.swift */; };
+		647728072A20096D00332760 /* WateringFrequencyOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728062A20096D00332760 /* WateringFrequencyOptions.swift */; };
+		647728092A200B8400332760 /* StatusOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728082A200B8400332760 /* StatusOptions.swift */; };
+		6477280C2A200D9F00332760 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477280B2A200D9F00332760 /* AlertModel.swift */; };
+		6477280F2A200FC600332760 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477280E2A200FC600332760 /* Actions.swift */; };
+		647728112A20110000332760 /* ResponseOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728102A20110000332760 /* ResponseOptions.swift */; };
+		647728132A20120A00332760 /* VegetableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728122A20120A00332760 /* VegetableModel.swift */; };
+		647728152A20141E00332760 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728142A20141E00332760 /* Plant.swift */; };
+		647728172A2029CD00332760 /* Maneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728162A2029CD00332760 /* Maneger.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* ContentView.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -18,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		647728032A2004A100332760 /* CategoryPlantOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlantOptions.swift; sourceTree = "<group>"; };
+		647728062A20096D00332760 /* WateringFrequencyOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringFrequencyOptions.swift; sourceTree = "<group>"; };
+		647728082A200B8400332760 /* StatusOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOptions.swift; sourceTree = "<group>"; };
+		6477280B2A200D9F00332760 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		6477280E2A200FC600332760 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		647728102A20110000332760 /* ResponseOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOptions.swift; sourceTree = "<group>"; };
+		647728122A20120A00332760 /* VegetableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetableModel.swift; sourceTree = "<group>"; };
+		647728142A20141E00332760 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		647728162A2029CD00332760 /* Maneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maneger.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +59,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		647728012A20045800332760 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				6477280D2A200FAE00332760 /* protocols */,
+				6477280A2A200D5600332760 /* alert */,
+				647728022A20048B00332760 /* enuns */,
+				647728122A20120A00332760 /* VegetableModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		647728022A20048B00332760 /* enuns */ = {
+			isa = PBXGroup;
+			children = (
+				647728032A2004A100332760 /* CategoryPlantOptions.swift */,
+				647728062A20096D00332760 /* WateringFrequencyOptions.swift */,
+				647728082A200B8400332760 /* StatusOptions.swift */,
+				647728102A20110000332760 /* ResponseOptions.swift */,
+			);
+			path = enuns;
+			sourceTree = "<group>";
+		};
+		6477280A2A200D5600332760 /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				6477280B2A200D9F00332760 /* AlertModel.swift */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
+		6477280D2A200FAE00332760 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6477280E2A200FC600332760 /* Actions.swift */,
+				647728142A20141E00332760 /* Plant.swift */,
+				647728162A2029CD00332760 /* Maneger.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +118,7 @@
 		64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXGroup;
 			children = (
+				647728012A20045800332760 /* models */,
 				64E15AF72A1D80750043A96E /* Info.plist */,
 				64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */,
 				64B207932A1D7DFE00F440EF /* ContentView.swift */,
@@ -159,11 +218,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647728072A20096D00332760 /* WateringFrequencyOptions.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
+				647728092A200B8400332760 /* StatusOptions.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
+				647728042A2004A100332760 /* CategoryPlantOptions.swift in Sources */,
+				6477280F2A200FC600332760 /* Actions.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				647728132A20120A00332760 /* VegetableModel.swift in Sources */,
+				647728112A20110000332760 /* ResponseOptions.swift in Sources */,
+				647728172A2029CD00332760 /* Maneger.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* HomeView.swift in Sources */,
+				647728152A20141E00332760 /* Plant.swift in Sources */,
+				6477280C2A200D9F00332760 /* AlertModel.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
