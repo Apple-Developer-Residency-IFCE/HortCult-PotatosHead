@@ -28,7 +28,7 @@ struct HortaComponent: View {
             }
         }
         .frame(width: 140, height: 150)
-        .background(Color(red: 0.976, green: 0.976, blue: 0.976))
+        .background(Color("BackgroundComponent"))
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
