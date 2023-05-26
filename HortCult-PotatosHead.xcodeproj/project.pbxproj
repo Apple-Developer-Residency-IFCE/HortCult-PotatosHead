@@ -55,9 +55,16 @@
 				13A3F0ED2A1ED08900119336 /* HortaComponent.swift */,
 				136606922A1EE6710001757A /* ListHorta.swift */,
 				133E2E212A200EB9007BF16F /* HeaderMenu.swift */,
-				133E2E232A200F88007BF16F /* DescriptionHorta.swift */,
 			);
 			path = MinhaHorta;
+			sourceTree = "<group>";
+		};
+		1385EADD2A21635C006E3487 /* MockViews */ = {
+			isa = PBXGroup;
+			children = (
+				133E2E232A200F88007BF16F /* DescriptionHorta.swift */,
+			);
+			path = MockViews;
 			sourceTree = "<group>";
 		};
 		64B207852A1D7DFE00F440EF = {
@@ -102,6 +109,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1385EADD2A21635C006E3487 /* MockViews */,
 				136606912A1EE6570001757A /* MinhaHorta */,
 				64E15AF92A1D82E00043A96E /* HomeView.swift */,
 				64E15AFC2A1D830E0043A96E /* FirstLogin.swift */,
