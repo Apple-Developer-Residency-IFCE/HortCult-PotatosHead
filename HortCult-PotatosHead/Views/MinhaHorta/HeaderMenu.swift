@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeaderMenu: View {
     var body: some View {
-        VStack(spacing: 0){
+        VStack(){
             HStack {
                 Text("Minha Horta")
                     .font(.system(size: 16))
