@@ -25,8 +25,6 @@ struct HeaderMenu: View {
                 .background(Color("MainColor"))
                 .clipShape(Circle())
             }
-            .padding(.horizontal, 20)
-            .padding(.top, 10)
             .padding(.bottom,10)
             ListHorta()
         }

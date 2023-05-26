@@ -35,7 +35,6 @@ struct ListHorta: View {
                     }
                 }
                 .foregroundColor(Color("title"))
-                .padding(12)
             }
         }
         .frame(height: 170)
