@@ -1,35 +1,37 @@
 import SwiftUI
 
 struct Navigation: View {
-    // 1
     @Environment(\.presentationMode) var presentationMode
 
+    var header: some View {
+        ZStack{
+            
+            Image("Topbar")
+            HStack{
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                } ) {
+                    Image("leftArrow")
+                }
+                .padding(.leading, 12)
+                Spacer()
+            }
+        }
+    }
     
     var body: some View {
-        HStack{
-        Text("View Teste")
-            // .navigationBarBackButtonHidden(true)
-            .navigationTitle("")
-            .toolbar {
-//                ToolbarItem(placement: .primaryAction) {
-//                    Button {
-//                        presentationMode.wrappedValue.dismiss()
-//                    } label: {
-//                    Image("leftArrow")
-//
-//                    }
-//                }
-                
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image("Topbar")
-                }
-                
-            }
-            }
+        VStack {
+            Image("pana")
+                .resizable()
+                .frame(width: 200, height: 200)
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("")
+        .navigationBarItems(leading: header)
     }
 }
 
-  
+
 struct Navigation_Previews: PreviewProvider {
     static var previews: some View {
         Navigation()
