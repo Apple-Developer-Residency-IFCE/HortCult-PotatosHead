@@ -23,7 +23,10 @@ struct OnboardingScreenFour: View {
                              bgColorMainButton: true,
                              iconMainButton: true,
                              titleMainButton: "Ir para a Tela Inicial",
-                             actionMainButton: {isNextScreenActive = true},
+                             actionMainButton: {
+                                isNextScreenActive = true
+                                HortCult_PotatosHeadApp.isFirstLogin = false
+                            },
                              hidenSecondaryButton: true)
             
             

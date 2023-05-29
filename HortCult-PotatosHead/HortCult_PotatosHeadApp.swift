@@ -10,10 +10,17 @@ import SwiftUI
 @main
 struct HortCult_PotatosHeadApp: App {
     let persistenceController = PersistenceController.shared
-
+    @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            OnBoardingScreen()
+            
+            if HortCult_PotatosHeadApp.isFirstLogin == true {
+                OnBoardingScreen()
+            } else {
+                OnboardingScreenFour()
+            }
+            
         }
     }
 }
