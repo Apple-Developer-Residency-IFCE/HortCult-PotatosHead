@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* ContentView.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -18,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		133E2E212A200EB9007BF16F /* HeaderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenu.swift; sourceTree = "<group>"; };
+		133E2E232A200F88007BF16F /* DescriptionHorta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionHorta.swift; sourceTree = "<group>"; };
+		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
+		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
+		1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProfilePhoto.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1385EADF2A216870006E3487 /* HortaProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1385EAE02A21687B006E3487 /* Components */,
+			);
+			path = HortaProfile;
+			sourceTree = "<group>";
+		};
+		1385EAE02A21687B006E3487 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,9 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1385EADD2A21635C006E3487 /* MockViews */,
+				136606912A1EE6570001757A /* HeaderMinhaHorta */,
+				1385EADF2A216870006E3487 /* HortaProfile */,
 				64E15AF92A1D82E00043A96E /* HomeView.swift */,
 				64E15AFC2A1D830E0043A96E /* FirstLogin.swift */,
 			);
@@ -159,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
@@ -300,6 +326,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +355,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
