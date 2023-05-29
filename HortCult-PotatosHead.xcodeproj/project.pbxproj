@@ -13,6 +13,7 @@
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
 		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		642014092A1EB86E001DCE6B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642014082A1EB86E001DCE6B /* Navigation.swift */; };
+		646CDFED2A255E4F008E74F1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CDFEC2A255E4F008E74F1 /* Card.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* ContentView.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
 		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		642014082A1EB86E001DCE6B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		646CDFEC2A255E4F008E74F1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				64E15AF92A1D82E00043A96E /* HomeView.swift */,
 				64E15AFC2A1D830E0043A96E /* FirstLogin.swift */,
 				642014082A1EB86E001DCE6B /* Navigation.swift */,
+				646CDFEC2A255E4F008E74F1 /* Card.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
+				646CDFED2A255E4F008E74F1 /* Card.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
