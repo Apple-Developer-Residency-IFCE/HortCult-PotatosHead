@@ -67,8 +67,8 @@ struct OnboardingScreen: View {
                         .padding(.bottom, 25)
                 
                     Button("Pular para a tela inicial") {
-                        if let secBtn = actionSecondaryButton {
-                            secBtn()
+                        if let secondButtonAction = actionSecondaryButton {
+                            secondButtonAction()
                         } else {
                             return
                         }
@@ -101,8 +101,8 @@ struct OnboardingScreen: View {
                     .padding(.bottom, 25)
                 
                 Button("Pular para a tela inicial") {
-                    if let secBtn = actionSecondaryButton {
-                        secBtn()
+                    if let secondButtonAction = actionSecondaryButton {
+                        secondButtonAction()
                     } else {
                         return
                     }
