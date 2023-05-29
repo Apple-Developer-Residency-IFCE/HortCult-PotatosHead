@@ -31,13 +31,7 @@ struct OnboardingScreenThree: View {
             //Navegar para a tela inicial no botao 2
             
         }.navigationBarHidden(true)
-        
-        
-        
     }
-    
-    
-    
 }
 
 struct OnboardingScreenThree_Previews: PreviewProvider {
