@@ -13,11 +13,6 @@ struct OnBoardingScreen: View {
     
     var body: some View {
         if !self.isFirstLogin  {
-            //            Button("Concluir Primeiro Login") {
-            //                UserDefaults.standard.set(true, forKey: "isFirstLogin")
-            //                self.isFirstLogin = true
-            //
-            //            }
             
             NavigationView {
                 OnboardingScreen(header:"hortFruitLight",
@@ -32,7 +27,6 @@ struct OnBoardingScreen: View {
                 .background(NavigationLink(destination: OnboardingScreenTwo(), isActive: $isNextScreenActive) { EmptyView()})
                 
             }.navigationBarHidden(true)
-            
             
         } else {
             Button("Concluir Primeiro") {
