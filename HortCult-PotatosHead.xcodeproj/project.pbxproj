@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E2E212A200EB9007BF16F /* HeaderMenu.swift */; };
+		133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E2E232A200F88007BF16F /* DescriptionHorta.swift */; };
+		136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136606922A1EE6710001757A /* ListHortaComponent.swift */; };
+		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
 		1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* ContentView.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		133E2E212A200EB9007BF16F /* HeaderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenu.swift; sourceTree = "<group>"; };
+		133E2E232A200F88007BF16F /* DescriptionHorta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionHorta.swift; sourceTree = "<group>"; };
+		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
+		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
 		133E2E212A200EB9007BF16F /* HeaderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenu.swift; sourceTree = "<group>"; };
 		133E2E232A200F88007BF16F /* DescriptionHorta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionHorta.swift; sourceTree = "<group>"; };
 		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
@@ -47,6 +55,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		136606912A1EE6570001757A /* HeaderMinhaHorta */ = {
+			isa = PBXGroup;
+			children = (
+				1385EADE2A21670D006E3487 /* Components */,
+				133E2E212A200EB9007BF16F /* HeaderMenu.swift */,
+			);
+			path = HeaderMinhaHorta;
+			sourceTree = "<group>";
+		};
+		1385EADD2A21635C006E3487 /* MockViews */ = {
+			isa = PBXGroup;
+			children = (
+				133E2E232A200F88007BF16F /* DescriptionHorta.swift */,
+			);
+			path = MockViews;
+			sourceTree = "<group>";
+		};
+		1385EADE2A21670D006E3487 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				136606922A1EE6710001757A /* ListHortaComponent.swift */,
+				13A3F0ED2A1ED08900119336 /* HortaComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1385EADF2A216870006E3487 /* HortaProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +139,8 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1385EADD2A21635C006E3487 /* MockViews */,
+				136606912A1EE6570001757A /* HeaderMinhaHorta */,
 				1385EADD2A21635C006E3487 /* MockViews */,
 				136606912A1EE6570001757A /* HeaderMinhaHorta */,
 				1385EADF2A216870006E3487 /* HortaProfile */,
@@ -187,9 +223,13 @@
 				1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
+				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
+				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* HomeView.swift in Sources */,
+				133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
