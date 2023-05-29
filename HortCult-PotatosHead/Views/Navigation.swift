@@ -2,10 +2,9 @@ import SwiftUI
 
 struct Navigation: View {
     @Environment(\.presentationMode) var presentationMode
-
+    
     var header: some View {
         ZStack{
-            
             Image("Topbar")
             HStack{
                 Button(action: {
