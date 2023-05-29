@@ -13,7 +13,7 @@ struct HortCult_PotatosHeadApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnBoardingScreen()
         }
     }
 }
