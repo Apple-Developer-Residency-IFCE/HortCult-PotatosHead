@@ -8,9 +8,10 @@
 import Foundation
 
 protocol Maneger {
-    func addVegetable(vegetables: [some Plant]) -> ResponseOptions
-    func editVegetable (id: Int, vegetableUpdate: some Plant) -> ResponseOptions
+    associatedtype Item
+    func addElement(element: Item) -> ResponseOptions
+    func editElement (id: Int, element: Item) -> ResponseOptions
     func getAlerts() ->[Alert]
-    func deletePlants(id: Int) -> ResponseOptions
-    func getPlants() -> [any Plant]
+    func deleteElements(id: Int) -> ResponseOptions
+    func getElements() -> [Item]
 }

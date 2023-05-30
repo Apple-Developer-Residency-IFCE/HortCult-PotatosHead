@@ -7,17 +7,27 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
-struct VegetableModel: Actions, Plant {
+@objc(VegetableModel)
+class VegetableModel: NSObject, Actions, Plant, NSFetchRequestResult {
     var images: [Image]
     
     let id: Int
     
     var name: String
     
-    var description: String
+    var description2: String
     
     var category: CategoryPlantOptions
+    
+    init(images: [Image], id: Int, name: String, description2: String, category: CategoryPlantOptions) {
+        self.images = images
+        self.id = id
+        self.name = name
+        self.description2 = description2
+        self.category = category
+    }
     
     func nextWatering() -> String {
         return "Implementar"
@@ -32,4 +42,14 @@ struct VegetableModel: Actions, Plant {
     }
     
     
+}
+
+class Cebolitos: NSObject, NSFetchRequestResult {
+    var name: String
+    var idade: String
+    
+    init(name: String, idade: String) {
+        self.name = name
+        self.idade = idade
+    }
 }

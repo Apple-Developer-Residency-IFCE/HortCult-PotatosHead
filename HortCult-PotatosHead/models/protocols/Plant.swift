@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol Plant {
     var name: String { get set }
-    var description: String { get set }
+    var description2: String { get set }
     var category: CategoryPlantOptions { get set }
     var images: [Image] { get set }
 }

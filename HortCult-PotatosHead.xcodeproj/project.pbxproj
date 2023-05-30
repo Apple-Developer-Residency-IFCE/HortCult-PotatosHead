@@ -16,6 +16,8 @@
 		647728132A20120A00332760 /* VegetableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728122A20120A00332760 /* VegetableModel.swift */; };
 		647728152A20141E00332760 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728142A20141E00332760 /* Plant.swift */; };
 		647728172A2029CD00332760 /* Maneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728162A2029CD00332760 /* Maneger.swift */; };
+		647728192A215E2500332760 /* VegetableManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647728182A215E2500332760 /* VegetableManeger.swift */; };
+		6477281C2A25644F00332760 /* Vegetable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6477281A2A25644F00332760 /* Vegetable.xcdatamodeld */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* ContentView.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		647728122A20120A00332760 /* VegetableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetableModel.swift; sourceTree = "<group>"; };
 		647728142A20141E00332760 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		647728162A2029CD00332760 /* Maneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maneger.swift; sourceTree = "<group>"; };
+		647728182A215E2500332760 /* VegetableManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetableManeger.swift; sourceTree = "<group>"; };
+		6477281B2A25644F00332760 /* Vegetable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vegetable.xcdatamodel; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 				6477280A2A200D5600332760 /* alert */,
 				647728022A20048B00332760 /* enuns */,
 				647728122A20120A00332760 /* VegetableModel.swift */,
+				647728182A215E2500332760 /* VegetableManeger.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
+				6477281A2A25644F00332760 /* Vegetable.xcdatamodeld */,
 				64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */,
 				64B2078F2A1D7DFE00F440EF /* Products */,
 			);
@@ -220,6 +226,7 @@
 			files = (
 				647728072A20096D00332760 /* WateringFrequencyOptions.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
+				6477281C2A25644F00332760 /* Vegetable.xcdatamodeld in Sources */,
 				647728092A200B8400332760 /* StatusOptions.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
 				647728042A2004A100332760 /* CategoryPlantOptions.swift in Sources */,
@@ -233,6 +240,7 @@
 				647728152A20141E00332760 /* Plant.swift in Sources */,
 				6477280C2A200D9F00332760 /* AlertModel.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
+				647728192A215E2500332760 /* VegetableManeger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		6477281A2A25644F00332760 /* Vegetable.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6477281B2A25644F00332760 /* Vegetable.xcdatamodel */,
+			);
+			currentVersion = 6477281B2A25644F00332760 /* Vegetable.xcdatamodel */;
+			path = Vegetable.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		64B2079C2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

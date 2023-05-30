@@ -4,7 +4,12 @@ import CoreData
 
 struct ContentView: View {
     @State private var isFirstLogin = false
+    var managerVegetables: VegetableManeger = VegetableManeger()
+    var itens: FetchedResults<Cebolitos>
     
+    itens.forEach{ cebol in
+        
+    }
     var body: some View {
         if !self.isFirstLogin  {
             Button("Concluir Primeiro Login") {
