@@ -10,11 +10,27 @@ struct Card: View {
                 Image("Water-Orange")
             }
             .padding(.leading, 20)
-            VStack{
+            VStack(alignment: .leading){
+                Spacer()
                 Text("Batatão está com sede!")
                     .font(.custom("Satoshi-Bold", size: 18))
-                    .foregroundColor(Color("TextColor"))
+                Text("Dê água para a sua plantinha.")
+                    .font(.custom("Satoshi-Regular", size: 16))
+                
+                Button(action: {
+                    print("OII")
+                }) {
+                    Text("Feito")
+                        .font(.custom("Satoshi-Regular", size: 12))
+                        .padding(6)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color("MainColor"),lineWidth: 1)
+                        )
+                }
+                .padding(.bottom, 22)
             }
+            .foregroundColor(Color("TextColor"))
             .padding(.leading, 16)
             Spacer()
    
