@@ -82,7 +82,7 @@ struct CardLembrete: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CardLembrete_Previews: PreviewProvider {
     static var previews: some View {
         CardLembrete()
     }
