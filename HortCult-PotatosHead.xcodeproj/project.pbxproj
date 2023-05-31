@@ -11,10 +11,25 @@
 		133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E2E232A200F88007BF16F /* DescriptionHorta.swift */; };
 		136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136606922A1EE6710001757A /* ListHortaComponent.swift */; };
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
+		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F22A218076000D11EB /* OnboardingScreenThree.swift */; };
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
-		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
+		641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */; };
+		641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */; };
+		641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */; };
+		641D71C52A26A8B30040CBCC /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */; };
+		641D71C72A26A9700040CBCC /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C62A26A9700040CBCC /* Satoshi-Black.otf */; };
+		641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */; };
+		641D71CB2A26A98B0040CBCC /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71CA2A26A98B0040CBCC /* Satoshi-Bold.otf */; };
+		641D71CD2A26A9940040CBCC /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71CC2A26A9940040CBCC /* Satoshi-BoldItalic.otf */; };
+		641D71CF2A26A9A30040CBCC /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71CE2A26A9A30040CBCC /* Satoshi-Italic.otf */; };
+		641D71D12A26A9AC0040CBCC /* Satoshi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D02A26A9AC0040CBCC /* Satoshi-Light.otf */; };
+		641D71D32A26A9BC0040CBCC /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D22A26A9BC0040CBCC /* Satoshi-LightItalic.otf */; };
+		641D71D52A26A9C90040CBCC /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D42A26A9C90040CBCC /* Satoshi-MediumItalic.otf */; };
+		641D71D72A26A9D50040CBCC /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D62A26A9D50040CBCC /* Satoshi-Regular.otf */; };
+		641D71D92A26B8680040CBCC /* CardLembrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D71D82A26B8680040CBCC /* CardLembrete.swift */; };
 		642014092A1EB86E001DCE6B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642014082A1EB86E001DCE6B /* Navigation.swift */; };
+		646CDFED2A255E4F008E74F1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CDFEC2A255E4F008E74F1 /* Card.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -32,10 +47,25 @@
 		133E2E232A200F88007BF16F /* DescriptionHorta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionHorta.swift; sourceTree = "<group>"; };
 		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
+		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		641207F22A218076000D11EB /* OnboardingScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenThree.swift; sourceTree = "<group>"; };
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
-		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
+		641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProximaRega.swift; sourceTree = "<group>"; };
+		641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoMarcarRegado.swift; sourceTree = "<group>"; };
+		641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoFeito.swift; sourceTree = "<group>"; };
+		641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
+		641D71C62A26A9700040CBCC /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Black.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Black.dataset/Satoshi-Black.otf"; sourceTree = SOURCE_ROOT; };
+		641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BlackItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-BlackItalic.dataset/Satoshi-BlackItalic.otf"; sourceTree = SOURCE_ROOT; };
+		641D71CA2A26A98B0040CBCC /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Bold.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Bold.dataset/Satoshi-Bold.otf"; sourceTree = SOURCE_ROOT; };
+		641D71CC2A26A9940040CBCC /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BoldItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-BoldItalic.dataset/Satoshi-BoldItalic.otf"; sourceTree = SOURCE_ROOT; };
+		641D71CE2A26A9A30040CBCC /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Italic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Italic.dataset/Satoshi-Italic.otf"; sourceTree = SOURCE_ROOT; };
+		641D71D02A26A9AC0040CBCC /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Light.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Light.dataset/Satoshi-Light.otf"; sourceTree = SOURCE_ROOT; };
+		641D71D22A26A9BC0040CBCC /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-LightItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-LightItalic.dataset/Satoshi-LightItalic.otf"; sourceTree = SOURCE_ROOT; };
+		641D71D42A26A9C90040CBCC /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-MediumItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-MediumItalic.dataset/Satoshi-MediumItalic.otf"; sourceTree = SOURCE_ROOT; };
+		641D71D62A26A9D50040CBCC /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Regular.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Regular.dataset/Satoshi-Regular.otf"; sourceTree = SOURCE_ROOT; };
+		641D71D82A26B8680040CBCC /* CardLembrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLembrete.swift; sourceTree = "<group>"; };
 		642014082A1EB86E001DCE6B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		646CDFEC2A255E4F008E74F1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
@@ -88,6 +118,51 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		641C953C2A27F78200B20BA3 /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				641C953E2A27F7F300B20BA3 /* Buttons */,
+				641C953D2A27F7E200B20BA3 /* Cards */,
+			);
+			path = Reminders;
+			sourceTree = "<group>";
+		};
+		641C953D2A27F7E200B20BA3 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */,
+				641D71D82A26B8680040CBCC /* CardLembrete.swift */,
+				646CDFEC2A255E4F008E74F1 /* Card.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		641C953E2A27F7F300B20BA3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */,
+				641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		641D71C22A26A7BA0040CBCC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				641D71C62A26A9700040CBCC /* Satoshi-Black.otf */,
+				641D71CE2A26A9A30040CBCC /* Satoshi-Italic.otf */,
+				641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */,
+				641D71D02A26A9AC0040CBCC /* Satoshi-Light.otf */,
+				641D71D62A26A9D50040CBCC /* Satoshi-Regular.otf */,
+				641D71CC2A26A9940040CBCC /* Satoshi-BoldItalic.otf */,
+				641D71D22A26A9BC0040CBCC /* Satoshi-LightItalic.otf */,
+				641D71CA2A26A98B0040CBCC /* Satoshi-Bold.otf */,
+				641D71D42A26A9C90040CBCC /* Satoshi-MediumItalic.otf */,
+				641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +182,7 @@
 		64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXGroup;
 			children = (
+				641D71C22A26A7BA0040CBCC /* Fonts */,
 				64E15AF72A1D80750043A96E /* Info.plist */,
 				64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */,
 				64E15AF82A1D82AF0043A96E /* Views */,
@@ -152,6 +228,7 @@
 				641207F22A218076000D11EB /* OnboardingScreenThree.swift */,
 				641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */,
 				1385EADD2A21635C006E3487 /* MockViews */,
+				641C953C2A27F78200B20BA3 /* Reminders */,
 				136606912A1EE6570001757A /* HeaderMinhaHorta */,
 				64E15AFC2A1D830E0043A96E /* FirstLogin.swift */,
 				642014082A1EB86E001DCE6B /* Navigation.swift */,
@@ -217,8 +294,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641D71CB2A26A98B0040CBCC /* Satoshi-Bold.otf in Resources */,
+				641D71CD2A26A9940040CBCC /* Satoshi-BoldItalic.otf in Resources */,
+				641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */,
 				64B207992A1D7DFF00F440EF /* Preview Assets.xcassets in Resources */,
+				641D71D52A26A9C90040CBCC /* Satoshi-MediumItalic.otf in Resources */,
+				641D71D32A26A9BC0040CBCC /* Satoshi-LightItalic.otf in Resources */,
+				641D71C72A26A9700040CBCC /* Satoshi-Black.otf in Resources */,
+				641D71D12A26A9AC0040CBCC /* Satoshi-Light.otf in Resources */,
+				641D71D72A26A9D50040CBCC /* Satoshi-Regular.otf in Resources */,
 				64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */,
+				641D71C52A26A8B30040CBCC /* Satoshi-Medium.otf in Resources */,
+				641D71CF2A26A9A30040CBCC /* Satoshi-Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,20 +323,25 @@
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
+				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
-				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
+				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
+				641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
+				646CDFED2A255E4F008E74F1 /* Card.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
+				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
+				641D71D92A26B8680040CBCC /* CardLembrete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
