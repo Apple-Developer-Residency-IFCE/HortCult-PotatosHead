@@ -19,8 +19,7 @@ struct HortCult_PotatosHeadApp: App {
                 OnBoardingScreen()
             } else {
                 OnboardingScreenFour()
-            }
-            
+            }            
         }
     }
 }
