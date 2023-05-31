@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Topbar.svg",
+      "filename" : "Arrow-Left-Green.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Topbardark.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
