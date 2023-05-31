@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BotaoTeste: View {
+struct BotaoMarcarRegado: View {
     @State private var isPressed = false
     
     var body: some View {
@@ -14,7 +14,7 @@ struct BotaoTeste: View {
                     isPressed.toggle()
                 }
             }) {
-                Text("Feito")
+                Text("Marcar como regado")
                     .font(.custom("Satoshi-Regular", size: 12))
                     .padding(6)
                     .foregroundColor(isPressed ? Color.clear : Color("TextColor"))
@@ -28,23 +28,24 @@ struct BotaoTeste: View {
                                 Image("Check")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
+                                    .frame(width: 15, height: 15)
                             }
                         }
                     )
             }
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(isPressed ? Color.green : Color.clear)
+                    .fill(isPressed ? Color("MainColor") : Color.clear)
                     .scaleEffect(isPressed ? 1.0 : 0.1)
             )
         }
     }
 }
 
-struct BotaoTeste_Previews: PreviewProvider {
+struct BotaoMarcarRegado_Previews: PreviewProvider {
     static var previews: some View {
-        BotaoTeste()
+        BotaoMarcarRegado()
     }
 }
+
 

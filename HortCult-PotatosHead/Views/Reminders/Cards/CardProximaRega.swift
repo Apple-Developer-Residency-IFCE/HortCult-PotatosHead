@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Card: View {
+struct CardProximaRega: View {
     let title: String
     let content: String
     let icon: String
@@ -23,21 +23,11 @@ struct Card: View {
             VStack(alignment: .leading){
                 Spacer()
                 Text(title)
-                    .font(.custom(titleFont, size: 18))
+                    .font(.custom(titleFont, size: 16))
+                Spacer().frame(height: 2)
                 Text(content)
-                    .font(.custom(contentFont, size: 16))
-                
-                Button(action: {
-                    print("OII")
-                }) {
-                    Text("Feito")
-                        .font(.custom("Satoshi-Regular", size: 12))
-                        .padding(6)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color("buttonCardColor"),lineWidth: 1)
-                        )
-                }
+                    .font(.custom(contentFont, size: 18))
+                BotaoMarcarRegado()
                 .padding(.bottom, 22)
             }
             .foregroundColor(Color(textColor))
@@ -53,8 +43,9 @@ struct Card: View {
     }
 }
 
-struct Card_Previews: PreviewProvider {
+struct CardProximaRega_Previews: PreviewProvider {
     static var previews: some View {
-        Card(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
+        CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
     }
 }
+
