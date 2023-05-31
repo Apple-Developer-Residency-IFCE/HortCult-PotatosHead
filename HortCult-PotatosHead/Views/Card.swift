@@ -1,21 +1,31 @@
 import SwiftUI
 
 struct Card: View {
+    let title: String
+    let content: String
+    let icon: String
+    let cardColor: String
+    let backgroudCardColor: String
+    let textColor: String
+    let titleFont: String
+    let contentFont: String
+    
+    
     var body: some View {
-        HStack /*(alignment: .leading, spacing: 16)*/ {
+        HStack {
             ZStack{
                 Circle()
                     .frame(width: 52, height: 52)
-                    .foregroundColor(Color("lembreteIcon"))
-                Image("Water-Orange")
+                    .foregroundColor(Color(cardColor))
+                Image(icon)
             }
             .padding(.leading, 20)
             VStack(alignment: .leading){
                 Spacer()
-                Text("Batatão está com sede!")
-                    .font(.custom("Satoshi-Bold", size: 18))
-                Text("Dê água para a sua plantinha.")
-                    .font(.custom("Satoshi-Regular", size: 16))
+                Text(title)
+                    .font(.custom(titleFont, size: 18))
+                Text(content)
+                    .font(.custom(contentFont, size: 16))
                 
                 Button(action: {
                     print("OII")
@@ -25,19 +35,19 @@ struct Card: View {
                         .padding(6)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color("MainColor"),lineWidth: 1)
+                                .stroke(Color("buttonCardColor"),lineWidth: 1)
                         )
                 }
                 .padding(.bottom, 22)
             }
-            .foregroundColor(Color("TextColor"))
+            .foregroundColor(Color(textColor))
             .padding(.leading, 16)
             Spacer()
    
         }
         .frame(width: 350,height: 118)
         .background(
-            Color("AlertCardColor")
+            Color(backgroudCardColor)
         )
         .cornerRadius(12)
     }
@@ -45,6 +55,6 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card()
+        Card(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
     }
 }
