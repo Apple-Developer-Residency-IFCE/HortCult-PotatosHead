@@ -21,9 +21,7 @@ struct CardView: View {
                 Text(card.content)
                     .font(.custom(card.contentFont, size: 16))
                 
-                Button(action: {
-                    print("OII")
-                }) {
+                Button(action: {}) {
                     BotaoFeito()
                 }
                 .padding(.bottom, 22)

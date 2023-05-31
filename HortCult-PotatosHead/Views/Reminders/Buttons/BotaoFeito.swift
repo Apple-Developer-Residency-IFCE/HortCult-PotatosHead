@@ -9,7 +9,6 @@ struct BotaoFeito: View {
                 .frame(width: 26, height: 16)
             
             Button(action: {
-                print("OII")
                 withAnimation {
                     isPressed.toggle()
                 }
