@@ -36,6 +36,8 @@
 		64B207992A1D7DFF00F440EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */; };
 		64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2079A2A1D7DFF00F440EF /* Persistence.swift */; };
 		64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64B2079C2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld */; };
+		64C476592A26A828006D499A /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C476582A26A828006D499A /* SwiftUIView.swift */; };
+		64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C4765A2A26B1DB006D499A /* CustomTabBar.swift */; };
 		64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D659B82A1ECADD004F96F9 /* OnboardingSkull.swift */; };
 		64D659BC2A1ED778004F96F9 /* ButtonOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D659BB2A1ED778004F96F9 /* ButtonOnboarding.swift */; };
 		64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */; };
@@ -73,6 +75,8 @@
 		64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64B2079A2A1D7DFF00F440EF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		64B2079D2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HortCult_PotatosHead.xcdatamodel; sourceTree = "<group>"; };
+		64C476582A26A828006D499A /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		64C4765A2A26B1DB006D499A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		64D659B82A1ECADD004F96F9 /* OnboardingSkull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSkull.swift; sourceTree = "<group>"; };
 		64D659BB2A1ED778004F96F9 /* ButtonOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOnboarding.swift; sourceTree = "<group>"; };
 		64E15AF72A1D80750043A96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -202,6 +206,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		64C476572A26A80A006D499A /* HomeViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				64C476582A26A828006D499A /* SwiftUIView.swift */,
+				64C4765A2A26B1DB006D499A /* CustomTabBar.swift */,
+			);
+			path = HomeViewScreen;
+			sourceTree = "<group>";
+		};
 		64D659B72A1ECABB004F96F9 /* onBoardingScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				64C476572A26A80A006D499A /* HomeViewScreen */,
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
 				64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */,
 				64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */,
@@ -318,8 +332,10 @@
 			files = (
 				64D659BC2A1ED778004F96F9 /* ButtonOnboarding.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
+				64C476592A26A828006D499A /* SwiftUIView.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
+				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
