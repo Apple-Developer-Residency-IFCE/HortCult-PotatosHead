@@ -24,7 +24,7 @@ struct NotificationManager: View {
                         .strokeBorder(Color("hourButton"), lineWidth: 1)
                     
                     HStack {
-                        Text("00:00")
+                        Text(dateFormatter.string(from: notificationTime))
                             .font(.custom("Satoshi-Regular", size: 12))
                             .padding(.horizontal)
                             .foregroundColor(isPressed ? Color.clear : Color("TextColor"))
@@ -50,7 +50,7 @@ struct NotificationManager: View {
             }
             
 //            Text("Horário selecionado:")
-//            Text(dateFormatter.string(from: notificationTime))
+// Text(dateFormatter.string(from: notificationTime))
         }
         .onAppear {
             requestNotificationAuthorization()
