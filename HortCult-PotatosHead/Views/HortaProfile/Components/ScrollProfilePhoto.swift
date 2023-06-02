@@ -21,7 +21,6 @@ struct ScrollProfilePhoto: View {
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 .frame(height: 390)
         }
-        
     }
 }
 
