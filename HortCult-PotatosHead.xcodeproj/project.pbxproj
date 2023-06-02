@@ -11,10 +11,14 @@
 		133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E2E232A200F88007BF16F /* DescriptionHorta.swift */; };
 		136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136606922A1EE6710001757A /* ListHortaComponent.swift */; };
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
+		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F22A218076000D11EB /* OnboardingScreenThree.swift */; };
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
-		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		642014092A1EB86E001DCE6B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642014082A1EB86E001DCE6B /* Navigation.swift */; };
+		6445F3682A26B6820037D5DD /* AdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445F3672A26B6820037D5DD /* AdjustmentView.swift */; };
+		6445F36B2A26B9350037D5DD /* AdjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445F36A2A26B9350037D5DD /* AdjustmentItem.swift */; };
+		6445F36F2A296CE50037D5DD /* ThemeSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445F36E2A296CE50037D5DD /* ThemeSelect.swift */; };
+		6445F3712A2972280037D5DD /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445F3702A2972280037D5DD /* RadioButton.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -32,10 +36,14 @@
 		133E2E232A200F88007BF16F /* DescriptionHorta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionHorta.swift; sourceTree = "<group>"; };
 		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
+		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		641207F22A218076000D11EB /* OnboardingScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenThree.swift; sourceTree = "<group>"; };
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
-		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		642014082A1EB86E001DCE6B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		6445F3672A26B6820037D5DD /* AdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentView.swift; sourceTree = "<group>"; };
+		6445F36A2A26B9350037D5DD /* AdjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentItem.swift; sourceTree = "<group>"; };
+		6445F36E2A296CE50037D5DD /* ThemeSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelect.swift; sourceTree = "<group>"; };
+		6445F3702A2972280037D5DD /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
@@ -86,6 +94,25 @@
 				13A3F0ED2A1ED08900119336 /* HortaComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		6445F3662A26B6600037D5DD /* adjustmentScreens */ = {
+			isa = PBXGroup;
+			children = (
+				6445F3692A26B8EC0037D5DD /* componentsViews */,
+				6445F3672A26B6820037D5DD /* AdjustmentView.swift */,
+				6445F36E2A296CE50037D5DD /* ThemeSelect.swift */,
+			);
+			path = adjustmentScreens;
+			sourceTree = "<group>";
+		};
+		6445F3692A26B8EC0037D5DD /* componentsViews */ = {
+			isa = PBXGroup;
+			children = (
+				6445F36A2A26B9350037D5DD /* AdjustmentItem.swift */,
+				6445F3702A2972280037D5DD /* RadioButton.swift */,
+			);
+			path = componentsViews;
 			sourceTree = "<group>";
 		};
 		64B207852A1D7DFE00F440EF = {
@@ -146,6 +173,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6445F3662A26B6600037D5DD /* adjustmentScreens */,
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
 				64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */,
 				64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */,
@@ -233,15 +261,19 @@
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
+				6445F36B2A26B9350037D5DD /* AdjustmentItem.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
+				6445F3712A2972280037D5DD /* RadioButton.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
-				64B207942A1D7DFE00F440EF /* ContentView.swift in Sources */,
+				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
+				6445F36F2A296CE50037D5DD /* ThemeSelect.swift in Sources */,
+				6445F3682A26B6820037D5DD /* AdjustmentView.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
@@ -385,7 +417,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,7 +446,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
