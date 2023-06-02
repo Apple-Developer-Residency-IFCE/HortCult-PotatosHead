@@ -16,18 +16,30 @@ struct HortaInformation: View {
     var tipo = "Hortaliças"
     
     var body: some View {
-        VStack{
-            HStack {
-                Text(titulo)
-                    .font(.custom("Satoshi-Regular", size: 28))
-                    .foregroundColor(Color("MainColor"))
-                    .bold()
-                Spacer()
-                HortaType(type: tipo)
+        VStack(alignment: .leading){
+            ScrollProfilePhoto()
+            VStack(alignment: .leading){
+                HStack {
+                    Text(titulo)
+                        .font(.custom("Satoshi-Regular", size: 28))
+                        .foregroundColor(Color("MainColor"))
+                        .bold()
+                    Spacer()
+                    HortaType(type: tipo)
+                }
+                .padding(.bottom,24)
+                Text(descricao)
+                    .font(.custom("Satoshi-Regular", size: 16))
+                    .padding(.bottom,24)
+                CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
+                    .padding(.bottom,24)
+                FrequenciaRega(frequencia: 1)
             }
-            Text(descricao)
-                .font(.custom("Satoshi-Regular", size: 16))
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
         }
+        .edgesIgnoringSafeArea(.all)
+        .offset(y:-10)
     }
 }
 
