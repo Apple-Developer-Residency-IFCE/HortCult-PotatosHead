@@ -12,24 +12,50 @@ struct Horta {
     var imagePath : String
 }
 
+struct Header: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        ZStack{
+            HStack{
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                } ) {
+                    Image("leftArrow")
+                    Text("AAAAAAAA")
+                }
+                .padding(.leading, 12)
+                Spacer()
+            }
+        }
+    }
+}
+
 struct ListHorta: View {
+
+    
     var body: some View {
         NavigationView{
             ScrollView(.horizontal){
                 HStack(spacing: 12){
                     NavigationLink {
-                        DescriptionHorta()
+                        ZStack{
+                            Header()
+                            ScrollProfilePhoto()
+                                .edgesIgnoringSafeArea(.all)
+                        }
+                        HortaInformation()
                     } label: {
                         HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
                     }
                     NavigationLink {
-                        DescriptionHorta()
+                        HortaInformation()
                     } label: {
                         HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
                     }
 
                     NavigationLink {
-                        DescriptionHorta()
+                        HortaInformation()
                     } label: {
                         HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
                     }
@@ -37,7 +63,6 @@ struct ListHorta: View {
                 .foregroundColor(Color("title"))
             }
         }
-        .frame(height: 170)
     }
 }
 
