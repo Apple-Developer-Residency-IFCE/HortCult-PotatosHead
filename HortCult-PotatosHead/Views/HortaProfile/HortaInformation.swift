@@ -14,10 +14,9 @@ struct HortaInformation: View {
     var frequencia_de_rega = "diaria"
     var proxima_rega = "2019-10-10"
     var tipo = "Hortaliças"
-    
+
     var body: some View {
         VStack(alignment: .leading){
-            ScrollProfilePhoto()
             VStack(alignment: .leading){
                 HStack {
                     Text(titulo)
@@ -38,8 +37,7 @@ struct HortaInformation: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
         }
-        .edgesIgnoringSafeArea(.all)
-        .offset(y:-10)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
