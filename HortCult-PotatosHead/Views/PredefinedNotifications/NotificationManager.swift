@@ -112,11 +112,11 @@ struct TimePickerView: View {
                     presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Concluir")
-                        .fontWeight(.bold)
+                        .font(.custom("Satoshi-Bold", size: 20))
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color("MainColor"))
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("backgroundColor"))
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
@@ -127,6 +127,8 @@ struct TimePickerView: View {
                     presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Cancelar")
+                        .foregroundColor(Color("MainColor"))
+                        .font(.custom("Satoshi-Regular", size: 18))
                 }
             )
         }
