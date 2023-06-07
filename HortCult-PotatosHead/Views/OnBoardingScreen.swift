@@ -24,6 +24,8 @@ struct OnBoardingScreen: View {
                                  actionMainButton: {isNextScreenActive = true},
                                  hidenSecondaryButton: true)
                 
+                
+                
                 .background(NavigationLink(destination: OnboardingScreenTwo(), isActive: $isNextScreenActive) { EmptyView()})
                 
             }.navigationBarHidden(true)

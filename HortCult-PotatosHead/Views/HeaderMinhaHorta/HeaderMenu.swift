@@ -12,7 +12,7 @@ struct HeaderMenu: View {
         VStack(){
             HStack {
                 Text("Minha Horta")
-                    .font(.system(size: 16))
+                    .font(.custom("Satoshi-Bold", size: 26))
                     .bold()
                     .foregroundColor(Color("MainColor"))
                 Spacer()
@@ -20,11 +20,13 @@ struct HeaderMenu: View {
                 {
                     Image(systemName: "plus")
                         .foregroundColor(Color("backgroundColor"))
+                        
                 }
                 .frame(width: 32,height: 32, alignment: .center)
                 .background(Color("MainColor"))
                 .clipShape(Circle())
             }
+            .padding(.horizontal)
             .padding(.bottom,10)
             ListHorta()
         }
