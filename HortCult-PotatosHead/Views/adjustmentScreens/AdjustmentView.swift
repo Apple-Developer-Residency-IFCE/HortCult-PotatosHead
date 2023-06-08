@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct AdjustmentView: View {
+    @ObservedObject var defaults: Defaults
+    @State var theme: String = HortCult_PotatosHeadApp.theme
     @State var switcherOn: Bool = true
     @State var timeToAlert: String = ""
     @State var time: Date = Date()
     @State var openConfia: Bool = true
     @State private var showNextScreen: Bool = false
     
-    func teste(){
-        HortCult_PotatosHeadApp.enableNotification = switcherOn
-    }
+    
     
     var body: some View {
         NavigationView {
             VStack{
-                
                 Image("Topbar")
-                
-                
                 Group{
-                    HStack{
+                    HStack {
                         Text("Ajustes")
                             .font(.custom("Satoshi-Bold", size: 28))
                             .foregroundColor(Color("MainColor"))
@@ -35,14 +32,19 @@ struct AdjustmentView: View {
 
                     }
                     NavigationLink {
-                        ThemeSelect()
+                        ThemeSelect(defaults: defaults, selectedOption: defaults.theme)
                     } label: {
-                        AdjustmentItem(label: "Tema", isOn: $switcherOn, actionElement: .button)
+                        AdjustmentItem(label: "Tema") {
+                            NavigationIconView(label: defaults.theme)
+                        }
                     }
                     
                     Divider()
-                    
-                    AdjustmentItem(label: "Notificações Push",isOn: $switcherOn, actionElement: .switcher) 
+                    AdjustmentItem(label: "Notificações Push") {
+                        Toggle("", isOn: $switcherOn).onTapGesture {
+                            Defaults.enableNotificationStorage = switcherOn
+                        }
+                    }
                     Divider()
                     
                     if (switcherOn){
@@ -59,14 +61,14 @@ struct AdjustmentView: View {
                                         .padding(.bottom, 6)
                                     Spacer()
                                 }
-                                
+
                                 NotificationManager()
                             }.padding(.top, 24)
-                            
-                            
+
+
                         }
                     }
-                
+                    
                     Spacer()
                 }
                 .padding(.horizontal, 20)
@@ -80,6 +82,6 @@ struct AdjustmentView: View {
 
 struct AdjustmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AdjustmentView()
+        AdjustmentView(defaults: Defaults())
     }
 }

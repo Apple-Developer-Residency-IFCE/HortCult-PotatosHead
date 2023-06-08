@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ThemeSelect: View {
-    @State private var selectedOption: String = ""
+    @ObservedObject var defaults: Defaults
+    @State var selectedOption: String
     @Environment(\.presentationMode) var presentationMode
-
+// Logica de dark mode
+//    @Environment(\.colorScheme) var colorScheme
+//
+//    var color: ColorScheme {
+//        if selectedOption == "Sistema" {
+//            return colorScheme
+//        } else if selectedOption == "Claro" {
+//            return .light
+//        } else {
+//            return .dark
+//        }
+//    }
     var header: some View {
         ZStack{
             HStack{
@@ -39,21 +51,26 @@ struct ThemeSelect: View {
                     
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        HortCult_PotatosHeadApp.theme = "light"
+                        defaults.theme = "Claro"
+                        Defaults.themeStorage = "Claro"
                     }, title: "Claro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        HortCult_PotatosHeadApp.theme = "dark"
+                        defaults.theme = "Escuro"
+                        Defaults.themeStorage = "Escuro"
                     }, title: "Escuro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        HortCult_PotatosHeadApp.theme = "default"
+                        defaults.theme = "Padrão do Sistema"
+                        Defaults.themeStorage = "Padrão do Sistema"
                     }, title: "Padrão do Sistema").padding(.bottom, 16)
 
                     Spacer()
                 }.padding(.leading, 24)
                 
             }
+            // também dark mode
+            //.preferredColorScheme(color)
             .navigationBarBackButtonHidden(true)
             .navigationTitle("")
             .navigationBarItems(leading: header)
@@ -63,6 +80,6 @@ struct ThemeSelect: View {
 
 struct ThemeSelect_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeSelect()
+        ThemeSelect(defaults: Defaults(), selectedOption: Defaults().theme)
     }
 }
