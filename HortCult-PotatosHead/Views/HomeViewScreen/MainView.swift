@@ -28,14 +28,11 @@ struct MainView: View {
                                      centerImage: "pana 2",
                                      primaryText: "Hora de Cuidar",
                                      secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
-                                     bgColorMainButton: true,
-                                     iconMainButton: true,
-                                     titleMainButton: "Ir para a Tela Inicial",
-                                     actionMainButton: {print("oi")},
+                                     actionMainButton: {print("oi")}, mainButtonType: .one,
                                      hidenSecondaryButton: true)
                     
                 }
-            }
+            }.navigationBarHidden(true)
             
             CustomTabBar(action: { isSelectedTab = 0
                 isNextScreenActive = false

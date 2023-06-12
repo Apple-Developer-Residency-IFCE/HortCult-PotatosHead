@@ -12,8 +12,9 @@ struct OnboardingScreenTwo: View {
                              centerImage: "amico 2",
                              primaryText: "Acompanhe a sua horta",
                              secondaryText: "Tenha uma visão geral do desenvolvimento das duas plantações",
-                             bgColorMainButton: false, iconMainButton: true, titleMainButton: "Continuar",
+                             
                              actionMainButton: {isNextScreenActive = true},
+                             mainButtonType: .two,
                              hidenSecondaryButton: false,
                              actionSecondaryButton: {jumpToInitalScreen = true})
             

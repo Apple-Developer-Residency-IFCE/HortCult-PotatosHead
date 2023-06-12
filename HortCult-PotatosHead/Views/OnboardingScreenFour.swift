@@ -20,17 +20,15 @@ struct OnboardingScreenFour: View {
                              centerImage: "pana 2",
                              primaryText: "Hora de Cuidar",
                              secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
-                             bgColorMainButton: true,
-                             iconMainButton: true,
-                             titleMainButton: "Ir para a Tela Inicial",
                              actionMainButton: {
                                 isNextScreenActive = true
                                 HortCult_PotatosHeadApp.isFirstLogin = false
                             },
+                             mainButtonType: .three,
                              hidenSecondaryButton: true)
             
             
-            //Navegar para tela inicial no botao 1
+            .background(NavigationLink(destination: MainView(), isActive: $isNextScreenActive, label: {EmptyView()}))
             
         }.navigationBarHidden(true)
     }

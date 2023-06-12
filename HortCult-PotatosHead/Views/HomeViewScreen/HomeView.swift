@@ -19,7 +19,9 @@ struct HomeView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 } ) {
                     Image("leftArrow")
+                        .opacity(0.0)
                 }
+                .disabled(true)
                 .padding(.leading, 12)
                 Spacer()
             }

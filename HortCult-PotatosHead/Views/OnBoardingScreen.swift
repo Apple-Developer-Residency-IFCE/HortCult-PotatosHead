@@ -18,10 +18,8 @@ struct OnBoardingScreen: View {
                 OnboardingScreen(header:"hortFruitLight",
                                  primaryText: "Boas vindas!",
                                  secondaryText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil",
-                                 bgColorMainButton: true,
-                                 iconMainButton: false,
-                                 titleMainButton: "Iniciar",
                                  actionMainButton: {isNextScreenActive = true},
+                                 mainButtonType: .one,
                                  hidenSecondaryButton: true)
                 
                 
