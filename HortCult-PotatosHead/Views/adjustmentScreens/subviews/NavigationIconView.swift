@@ -1,9 +1,4 @@
-//
-//  NavigationIconView.swift
-//  HortCult-PotatosHead
-//
-//  Created by carlos amorim on 07/06/23.
-//
+
 
 import SwiftUI
 

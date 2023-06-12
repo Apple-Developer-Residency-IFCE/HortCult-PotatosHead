@@ -1,15 +1,8 @@
-//
-//  AdjustmentView.swift
-//  HortCult-PotatosHead
-//
-//  Created by userext on 30/05/23.
-//
-
 import SwiftUI
 
 struct AdjustmentView: View {
     @ObservedObject var defaults: Defaults
-    @State var theme: String = HortCult_PotatosHeadApp.theme
+    @State var theme: String = Defaults.themeStorage
     @State var switcherOn: Bool = true
     @State var timeToAlert: String = ""
     @State var time: Date = Date()

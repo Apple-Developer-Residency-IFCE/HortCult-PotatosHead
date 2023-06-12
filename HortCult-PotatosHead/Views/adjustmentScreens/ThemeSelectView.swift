@@ -1,9 +1,4 @@
-//
-//  ThemeSelect.swift
-//  HortCult-PotatosHead
-//
-//  Created by userext on 01/06/23.
-//
+
 
 import SwiftUI
 
@@ -11,18 +6,7 @@ struct ThemeSelect: View {
     @ObservedObject var defaults: Defaults
     @State var selectedOption: String
     @Environment(\.presentationMode) var presentationMode
-// Logica de dark mode
-//    @Environment(\.colorScheme) var colorScheme
-//
-//    var color: ColorScheme {
-//        if selectedOption == "Sistema" {
-//            return colorScheme
-//        } else if selectedOption == "Claro" {
-//            return .light
-//        } else {
-//            return .dark
-//        }
-//    }
+    
     var header: some View {
         ZStack{
             HStack{
@@ -70,7 +54,7 @@ struct ThemeSelect: View {
                 
             }
             // também dark mode
-            //.preferredColorScheme(color)
+   
             .navigationBarBackButtonHidden(true)
             .navigationTitle("")
             .navigationBarItems(leading: header)

@@ -1,9 +1,3 @@
-//
-//  RadioButton.swift
-//  HortCult-PotatosHead
-//
-//  Created by userext on 01/06/23.
-//
 
 import SwiftUI
 
