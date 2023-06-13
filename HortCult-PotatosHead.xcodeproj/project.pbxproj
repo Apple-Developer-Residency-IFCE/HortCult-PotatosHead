@@ -12,6 +12,8 @@
 		136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136606922A1EE6710001757A /* ListHortaComponent.swift */; };
 		1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */; };
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
+		3D295A442A37D6D500E139B9 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D295A432A37D6D500E139B9 /* CustomAlert.swift */; };
+		3D295A482A37EBB100E139B9 /* viewview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D295A472A37EBB100E139B9 /* viewview.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentView.swift */; };
@@ -58,6 +60,8 @@
 		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
 		1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProfilePhoto.swift; sourceTree = "<group>"; };
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
+		3D295A432A37D6D500E139B9 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		3D295A472A37EBB100E139B9 /* viewview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewview.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 				1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		3D295A422A37D6AD00E139B9 /* CustomAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				3D295A432A37D6D500E139B9 /* CustomAlert.swift */,
+				3D295A472A37EBB100E139B9 /* viewview.swift */,
+			);
+			path = CustomAlerts;
 			sourceTree = "<group>";
 		};
 		54673DCC2A2E999300348020 /* adjustmentScreens */ = {
@@ -296,6 +309,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D295A422A37D6AD00E139B9 /* CustomAlerts */,
 				54673DCC2A2E999300348020 /* adjustmentScreens */,
 				64BC668A2A294CF000A75C63 /* PredefinedNotifications */,
 				64C476572A26A80A006D499A /* HomeViewScreen */,
@@ -400,6 +414,8 @@
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				64C476592A26A828006D499A /* SwiftUIView.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
+				3D295A442A37D6D500E139B9 /* CustomAlert.swift in Sources */,
+				3D295A482A37EBB100E139B9 /* viewview.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
