@@ -14,30 +14,63 @@ struct HortaInformation: View {
     var frequencia_de_rega = "diaria"
     var proxima_rega = "2019-10-10"
     var tipo = "Hortaliças"
+    @Environment(\.presentationMode) var presentationMode
 
-    var body: some View {
-        VStack(alignment: .leading){
-            VStack(alignment: .leading){
+    var header: some View {
+        ZStack {
+            VStack{
                 HStack {
-                    Text(titulo)
-                        .font(.custom("Satoshi-Regular", size: 28))
-                        .foregroundColor(Color("MainColor"))
-                        .bold()
-                    Spacer()
-                    HortaType(type: tipo)
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image("leftArrow")
+                        Text("Home").foregroundColor(Color("MainColor")).font(.custom("Satoshi-Regular", size: 16))
+                    }
+                    .padding(.leading,12).padding(.trailing,-8)
                 }
-                .padding(.bottom,24)
-                Text(descricao)
-                    .font(.custom("Satoshi-Regular", size: 16))
-                    .padding(.bottom,24)
-                CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
-                    .padding(.bottom,24)
-                FrequenciaRega(frequencia: 1)
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 16)
         }
+    }
+    
+    var body: some View {
+        NavigationView(){
+            ZStack{
+                VStack{
+                    ScrollProfilePhoto()
+                        .frame(height: 390)
+                        .aspectRatio(contentMode: .fill)
+//                        .background(Color(.cyan))
+                    Spacer()
+                }
+                VStack(alignment: .leading){
+                    VStack(alignment: .leading){
+                        Spacer()
+                        HStack {
+                            Text(titulo)
+                                .font(.custom("Satoshi-Regular", size: 28))
+                                .foregroundColor(Color("MainColor"))
+                                .bold()
+                            Spacer()
+                            HortaType(type: tipo)
+                        }
+                        .padding(.bottom,24)
+                        Text(descricao)
+                            .font(.custom("Satoshi-Regular", size: 16))
+                            .padding(.bottom,24)
+                        CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
+                            .padding(.bottom,24)
+                        FrequenciaRega(frequencia: 1)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 16)
+                }
+            }
+            .edgesIgnoringSafeArea(.top)
+        }
+        .edgesIgnoringSafeArea(.top)
+        .navigationTitle("")
         .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: header)
     }
 }
 

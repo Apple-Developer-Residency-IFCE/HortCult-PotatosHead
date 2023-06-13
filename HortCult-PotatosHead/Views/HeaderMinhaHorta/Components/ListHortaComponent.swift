@@ -22,7 +22,6 @@ struct Header: View {
                     self.presentationMode.wrappedValue.dismiss()
                 } ) {
                     Image("leftArrow")
-                    Text("AAAAAAAA")
                 }
                 .padding(.leading, 12)
                 Spacer()
@@ -44,6 +43,7 @@ struct ListHorta: View {
                             ScrollProfilePhoto()
                                 .edgesIgnoringSafeArea(.all)
                         }
+                        .ignoresSafeArea()
                         HortaInformation()
                     } label: {
                         HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
