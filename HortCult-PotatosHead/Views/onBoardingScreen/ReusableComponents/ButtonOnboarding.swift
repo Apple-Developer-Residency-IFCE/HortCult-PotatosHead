@@ -7,73 +7,75 @@
 
 import SwiftUI
 
+enum buttonCases: CaseIterable {
+    
+    case one
+    case two
+    case three
+    
+}
+
 struct ReusableButton: View {
-    var buttonTitle: String
+    var buttonTipe: buttonCases
     var action: (() -> Void)
-    var backGroundColor: Bool
-    var icon: Bool
     
     var body: some View {
+        
         Button(action: {
             action()
         }) {
-            
-            if backGroundColor {
+            switch buttonTipe {
                 
-                if icon {
-                    HStack{
-                        Text(buttonTitle)
-                        Image(systemName: "arrow.right")
-                        
-                    }
-                    .foregroundColor(Color("backgroundColor"))
-                    .frame(width: 277, height: 42)
-                    .background(Color("MainColor"))
-                    .cornerRadius(40)
-                    
-                } else {
-                    Text(buttonTitle)
-                        .foregroundColor(Color("backgroundColor"))
+            case .one:
+                ZStack {
+                    RoundedRectangle(cornerRadius: 40)
                         .frame(width: 277, height: 42)
-                        .background(Color("MainColor"))
-                        .cornerRadius(40)
-                }
-                
-                
-            } else {
-                
-                if icon {
-                    HStack{
-                        Text(buttonTitle)
-                        Image(systemName: "arrow.right")
-                    }
-                    
-                    .foregroundColor(Color("MainColor"))
-                    .frame(width: 277, height: 42)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color("MainColor"), lineWidth: 1)
-                    }
-                } else {
-                    Text(buttonTitle)
                         .foregroundColor(Color("MainColor"))
-                        .frame(width: 277, height: 42)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color("MainColor"), lineWidth: 1)
-                        }
+                    Text("Iniciar")
+                        .font(.custom("Satoshi-Bold", size: 16))
+                        .foregroundColor(Color("backgroundColor"))
                 }
                 
+            case .two:
+                ZStack {
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color("MainColor"), lineWidth: 1)
+                        .frame(width: 277, height: 42)
+                    
+                    HStack{
+                        Text("Continuar")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(Color("MainColor"))
+                        Image("Arrow-Right")
+                            .renderingMode(.template)
+                            .foregroundColor(Color("MainColor"))
+                    }
+                }
                 
-                
+            case .three:
+                ZStack {
+                    RoundedRectangle(cornerRadius: 40)
+                        .frame(width: 277, height: 42)
+                        .foregroundColor(Color("MainColor"))
+                    
+                    HStack {
+                        Text("Ir para a Tela Inicial")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(Color("backgroundColor"))
+                        
+                        Image("Arrow-Right")
+                            .renderingMode(.template)
+                            .foregroundColor(Color("backgroundColor"))
+                    }
+                }
             }
         }
     }
-}
-
-struct ButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReusableButton(buttonTitle: "Iniciar", action: {print("ola")}, backGroundColor: true, icon: true)
+    
+    struct ButtonView_Previews: PreviewProvider {
+        static var previews: some View {
+            ReusableButton(buttonTipe: .one, action: {print("ola")})
+        }
     }
+    
 }
-
