@@ -18,7 +18,7 @@ struct HortCult_PotatosHeadApp: App {
             if HortCult_PotatosHeadApp.isFirstLogin == true {
                 OnBoardingScreen()
             } else {
-                OnboardingScreenFour()
+                MainView()
             }            
         }
     }

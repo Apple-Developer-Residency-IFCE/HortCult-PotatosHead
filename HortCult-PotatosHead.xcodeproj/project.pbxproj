@@ -43,15 +43,14 @@
 		64B207992A1D7DFF00F440EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */; };
 		64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2079A2A1D7DFF00F440EF /* Persistence.swift */; };
 		64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64B2079C2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld */; };
-		64C476592A26A828006D499A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C476582A26A828006D499A /* MainView.swift */; };
 		64BC668C2A294D3900A75C63 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BC668B2A294D3900A75C63 /* NotificationManager.swift */; };
-		64C476592A26A828006D499A /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C476582A26A828006D499A /* SwiftUIView.swift */; };
 		64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C4765A2A26B1DB006D499A /* CustomTabBar.swift */; };
 		64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D659B82A1ECADD004F96F9 /* OnboardingSkull.swift */; };
 		64D659BC2A1ED778004F96F9 /* ButtonOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D659BB2A1ED778004F96F9 /* ButtonOnboarding.swift */; };
 		64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */; };
 		64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AFC2A1D830E0043A96E /* FirstLogin.swift */; };
 		9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0663602A2EB2A2001DC0B8 /* HomeView.swift */; };
+		9B577F5B2A3914710095376A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B577F5A2A3914710095376A /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,9 +91,7 @@
 		64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64B2079A2A1D7DFF00F440EF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		64B2079D2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HortCult_PotatosHead.xcdatamodel; sourceTree = "<group>"; };
-		64C476582A26A828006D499A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		64BC668B2A294D3900A75C63 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		64C476582A26A828006D499A /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		64C4765A2A26B1DB006D499A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		64D659B82A1ECADD004F96F9 /* OnboardingSkull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSkull.swift; sourceTree = "<group>"; };
 		64D659BB2A1ED778004F96F9 /* ButtonOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOnboarding.swift; sourceTree = "<group>"; };
@@ -102,6 +99,7 @@
 		64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenTwo.swift; sourceTree = "<group>"; };
 		64E15AFC2A1D830E0043A96E /* FirstLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLogin.swift; sourceTree = "<group>"; };
 		9B0663602A2EB2A2001DC0B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9B577F5A2A3914710095376A /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,9 +272,9 @@
 		64C476572A26A80A006D499A /* HomeViewScreen */ = {
 			isa = PBXGroup;
 			children = (
-				64C476582A26A828006D499A /* MainView.swift */,
 				64C4765A2A26B1DB006D499A /* CustomTabBar.swift */,
 				9B0663602A2EB2A2001DC0B8 /* HomeView.swift */,
+				9B577F5A2A3914710095376A /* MainScreen.swift */,
 			);
 			path = HomeViewScreen;
 			sourceTree = "<group>";
@@ -284,8 +282,11 @@
 		64D659B72A1ECABB004F96F9 /* onBoardingScreen */ = {
 			isa = PBXGroup;
 			children = (
+				64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */,
+				64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */,
+				641207F22A218076000D11EB /* OnboardingScreenThree.swift */,
+				641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */,
 				64D659BA2A1ED75C004F96F9 /* ReusableComponents */,
-				64D659B82A1ECADD004F96F9 /* OnboardingSkull.swift */,
 			);
 			path = onBoardingScreen;
 			sourceTree = "<group>";
@@ -293,6 +294,7 @@
 		64D659BA2A1ED75C004F96F9 /* ReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
+				64D659B82A1ECADD004F96F9 /* OnboardingSkull.swift */,
 				64D659BB2A1ED778004F96F9 /* ButtonOnboarding.swift */,
 			);
 			path = ReusableComponents;
@@ -305,10 +307,6 @@
 				64BC668A2A294CF000A75C63 /* PredefinedNotifications */,
 				64C476572A26A80A006D499A /* HomeViewScreen */,
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
-				64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */,
-				64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */,
-				641207F22A218076000D11EB /* OnboardingScreenThree.swift */,
-				641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */,
 				641C953C2A27F78200B20BA3 /* Reminders */,
 				1385EADD2A21635C006E3487 /* MockViews */,
 				136606912A1EE6570001757A /* HeaderMinhaHorta */,
@@ -403,7 +401,7 @@
 				64D659BC2A1ED778004F96F9 /* ButtonOnboarding.swift in Sources */,
 				54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
-				64C476592A26A828006D499A /* MainView.swift in Sources */,
+				9B577F5B2A3914710095376A /* MainScreen.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
