@@ -67,6 +67,7 @@ struct HortaInformation: View {
                     ReusableButton(buttonTipe: .five, action: {print("ola")})
                     ReusableButton(buttonTipe: .four, action: {print("ola")})
                 }
+                Spacer(minLength: 40)
             }
             .overlay {
                 LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: UnitPoint(x: 0.5, y: 0.35))
