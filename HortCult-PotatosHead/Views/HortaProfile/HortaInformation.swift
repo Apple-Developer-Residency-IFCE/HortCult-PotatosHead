@@ -23,8 +23,8 @@ struct HortaInformation: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Image("leftArrow")
-                        Text("Home").foregroundColor(Color("MainColor")).font(.custom("Satoshi-Regular", size: 16))
+                        Image("Arrow-Left-White")
+                        Text("Voltar").foregroundColor(Color(.white)).font(.custom("Satoshi-Regular", size: 16))
                     }
                     .padding(.leading,12).padding(.trailing,-8)
                 }
@@ -35,13 +35,6 @@ struct HortaInformation: View {
     var body: some View {
         NavigationView(){
             ZStack{
-                VStack{
-                    ScrollProfilePhoto()
-                        .frame(height: 390)
-                        .aspectRatio(contentMode: .fill)
-//                        .background(Color(.cyan))
-                    Spacer()
-                }
                 VStack(alignment: .leading){
                     VStack(alignment: .leading){
                         Spacer()
