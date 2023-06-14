@@ -34,7 +34,11 @@ struct HortaInformation: View {
     
     var body: some View {
         NavigationView(){
-            ZStack{
+            ScrollView(.vertical){
+                ScrollProfilePhoto()
+                    .frame(minWidth: 390, minHeight: 390)
+                    .ignoresSafeArea()
+                    .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .leading){
                     VStack(alignment: .leading){
                         Spacer()
@@ -64,6 +68,12 @@ struct HortaInformation: View {
                     ReusableButton(buttonTipe: .four, action: {print("ola")})
                 }
             }
+            .overlay {
+                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: UnitPoint(x: 0.5, y: 0.35))
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: .infinity,height: .infinity)
+                    .allowsHitTesting(false)
+            }
             .edgesIgnoringSafeArea(.top)
         }
         .frame(height: .infinity)
@@ -71,6 +81,7 @@ struct HortaInformation: View {
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: header)
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
 
