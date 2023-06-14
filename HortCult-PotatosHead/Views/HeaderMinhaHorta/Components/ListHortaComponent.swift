@@ -13,32 +13,24 @@ struct Horta {
 }
 
 struct ListHorta: View {
+
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        NavigationView{
             ScrollView(.horizontal){
                 HStack(spacing: 12){
-                    NavigationLink {
-                        DescriptionHorta()
-                    } label: {
-                        HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
+                    ForEach(0..<5){_ in
+                        NavigationLink {
+                            HortaInformation()
+                        } label: {
+                            HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
+                        }
                     }
-                    NavigationLink {
-                        DescriptionHorta()
-                    } label: {
-                        HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
-                    }
-
-                    NavigationLink {
-                        DescriptionHorta()
-                    } label: {
-                        HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
-                    }
+                    .foregroundColor(Color("title"))
                 }
                 .foregroundColor(Color("title"))
             }.scrollIndicators(.hidden)
         }
-        .frame(height: 170)
-    }
 }
 
 struct ListHorta_Previews: PreviewProvider {
