@@ -12,57 +12,38 @@ struct Horta {
     var imagePath : String
 }
 
-struct Header: View {
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        ZStack{
-            HStack{
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                } ) {
-                    Image("leftArrow")
-                }
-                .padding(.leading, 12)
-                Spacer()
-            }
-        }
-    }
-}
-
 struct ListHorta: View {
 
+    @Environment(\.presentationMode) var presentationMode
+//
+//    @ViewBuilder var content: () -> Content
     
     var body: some View {
-        NavigationView{
             ScrollView(.horizontal){
                 HStack(spacing: 12){
-                    NavigationLink {
-                        ZStack{
-                            Header()
-                            ScrollProfilePhoto()
-                                .edgesIgnoringSafeArea(.all)
+                    ForEach(0..<5){_ in
+                        NavigationLink {
+                            ScrollView(.vertical){
+                                VStack{
+                                    ScrollProfilePhoto()
+                                        .frame(minWidth: 390, minHeight: 390)
+                                        .overlay {
+                                            LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
+                                                .edgesIgnoringSafeArea(.all)
+                                                .frame(width: .infinity,height: .infinity)
+                                        }
+                                    HortaInformation()
+                                }
+                            }
+                            .edgesIgnoringSafeArea(.all)
+                        } label: {
+//                            self.content()
+                            HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
                         }
-                        .ignoresSafeArea()
-                        HortaInformation()
-                    } label: {
-                        HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
                     }
-                    NavigationLink {
-                        HortaInformation()
-                    } label: {
-                        HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
-                    }
-
-                    NavigationLink {
-                        HortaInformation()
-                    } label: {
-                        HortaComponent(imagePath: "Tomate", nameHorta: "Tomate")
-                    }
+                    .foregroundColor(Color("title"))
                 }
-                .foregroundColor(Color("title"))
             }
-        }
     }
 }
 
