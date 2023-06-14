@@ -6,7 +6,7 @@ struct TextScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack (spacing: 0){
+            VStack {
                 HStack {
                     Text("Adicionar Vegetal")
                         .font(.custom("Satoshi-Bold", size: 28))
@@ -17,9 +17,10 @@ struct TextScreen: View {
                 .padding(.horizontal)
                 .padding(.vertical)
                 
-                NameTextfield()
-                DescriptionTextfield()
-            
+                VStack (spacing: 20){
+                    NameTextfield()
+                    DescriptionTextfield()
+                }
             }
         }
     }

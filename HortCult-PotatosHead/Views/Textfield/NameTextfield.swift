@@ -45,7 +45,6 @@ struct NameTextfield: View {
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
-                .padding(.top, 20)
             
             PlaceholderNameTextView(text: $text, placeholder: "Insira um nome")
                 .padding(.horizontal, 20)

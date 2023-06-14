@@ -16,9 +16,9 @@ struct HortCult_PotatosHeadApp: App {
         WindowGroup {
             
             if HortCult_PotatosHeadApp.isFirstLogin == true {
-                TextScreen()
+                OnBoardingScreen()
             } else {
-                TextScreen()
+                OnboardingScreenFour()
             }            
         }
     }

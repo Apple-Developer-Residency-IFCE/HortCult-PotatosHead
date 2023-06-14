@@ -47,7 +47,6 @@ struct DescriptionTextfield: View {
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
-                .padding(.top, 20)
             
             PlaceholderTextView(text: $text, placeholder: "Insira uma descrição")
                 .padding(.horizontal, 20)
