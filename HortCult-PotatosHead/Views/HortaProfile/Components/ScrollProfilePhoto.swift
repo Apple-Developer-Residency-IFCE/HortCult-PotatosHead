@@ -16,11 +16,6 @@ struct ScrollProfilePhoto: View {
                 ForEach(0..<3){ i in
                     Image("\(images[i])")
                         .resizable()
-                        .ignoresSafeArea()
-                        
-                       
-                        
-
                     
                 }
             }.tabViewStyle(PageTabViewStyle())
