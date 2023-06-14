@@ -5,10 +5,11 @@ struct TextScreen: View {
     @State var description = ""
     
     var body: some View {
+        var isEdit: Bool = true
         NavigationView {
             VStack {
                 HStack {
-                    Text("Adicionar Vegetal")
+                    Text(isEdit ? "Editar Informações" : "Adicionar Planta")
                         .font(.custom("Satoshi-Bold", size: 28))
                         .foregroundColor(Color("MainColor"))
                     Spacer()
