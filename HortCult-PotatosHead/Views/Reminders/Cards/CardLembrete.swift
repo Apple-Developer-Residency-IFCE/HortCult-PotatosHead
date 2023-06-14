@@ -41,17 +41,21 @@ struct CardListView: View {
     let cards: [CardViewModel]
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                Text("Lembretes")
-                    .font(.custom("Satoshi-Bold", size: 28))
-                    .foregroundColor(Color("MainColor"))
-                    .padding(.leading, 22)
-                
-                ForEach(cards) { card in
-                    CardView(card: card)
+        
+        
+        VStack(alignment: .leading){
+            Text("Lembretes")
+                .font(.custom("Satoshi-Bold", size: 28))
+                .foregroundColor(Color("MainColor"))
+                .padding(.leading, 22)
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    ForEach(cards) { card in
+                        CardView(card: card)
+                    }
+                    .padding().frame(height: 120)
                 }
-                .padding().frame(height: 120)
             }
         }
     }

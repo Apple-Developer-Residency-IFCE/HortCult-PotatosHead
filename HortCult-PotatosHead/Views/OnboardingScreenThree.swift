@@ -19,10 +19,7 @@ struct OnboardingScreenThree: View {
             OnboardingScreen(header: "hortFruitLight",
                              centerImage: "pana", primaryText: "Amplie sua horta com diferentes vegetais",
                              secondaryText: "Adicione fotos e informações como luminosidade, umidade e muito mais.",
-                             bgColorMainButton: false,
-                             iconMainButton: true,
-                             titleMainButton: "Continuar",
-                             actionMainButton: {isNextScreenActive = true},
+                             actionMainButton: {isNextScreenActive = true}, mainButtonType: .two,
                              hidenSecondaryButton: false,
                              actionSecondaryButton: {print("ola")})
             

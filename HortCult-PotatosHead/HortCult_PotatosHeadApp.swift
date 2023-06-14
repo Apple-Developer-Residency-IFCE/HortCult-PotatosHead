@@ -11,7 +11,7 @@ import SwiftUI
 struct HortCult_PotatosHeadApp: App {
     let persistenceController = PersistenceController.shared
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
-    
+    var defaults = Defaults()
     var body: some Scene {
         WindowGroup {
             

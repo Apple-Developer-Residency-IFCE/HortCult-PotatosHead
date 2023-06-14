@@ -18,10 +18,8 @@ struct OnboardingScreen: View {
     
     //Primeiro botao
     
-    var bgColorMainButton: Bool
-    var iconMainButton: Bool
-    var titleMainButton: String
     var actionMainButton: (() -> Void)
+    var mainButtonType: buttonCases
     
     //Segundo botao
     
@@ -63,7 +61,7 @@ struct OnboardingScreen: View {
                     .layoutPriority(1.0)
                 
                 
-                ReusableButton(buttonTitle: titleMainButton, action: {actionMainButton()}, backGroundColor: bgColorMainButton, icon: iconMainButton)
+                ReusableButton(buttonTipe: mainButtonType , action: {actionMainButton()})
                         .padding(.bottom, 25)
                 
                     Button("Pular para a tela inicial") {
@@ -97,7 +95,7 @@ struct OnboardingScreen: View {
                     .font(.custom("Satoshi-Regular", size: 16))
                     .foregroundColor(Color("secondaryColor"))
                 
-                ReusableButton(buttonTitle: titleMainButton, action: {actionMainButton()}, backGroundColor: bgColorMainButton, icon: iconMainButton)
+                ReusableButton(buttonTipe: mainButtonType , action: {actionMainButton()})
                     .padding(.bottom, 25)
                 
                 Button("Pular para a tela inicial") {
@@ -124,6 +122,6 @@ struct OnboardingScreen: View {
 
 struct OnboardingSkull_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreen(header: "hortFruitLight",centerImage: "amico 2", primaryText: "Boas Vindas!", secondaryText: "Com o HortCult, voce pode acompanhar a sua horta domestica de forma simples e facil.", bgColorMainButton: true, iconMainButton: false, titleMainButton: "Iniciar",actionMainButton: {print("ola")}, hidenSecondaryButton: true, actionSecondaryButton: {print("Segundo botao")})
+        OnboardingScreen(header: "hortFruitLight",centerImage: "amico 2", primaryText: "Boas Vindas!", secondaryText: "Com o HortCult, voce pode acompanhar a sua horta domestica de forma simples e facil.",actionMainButton: {print("ola")}, mainButtonType: .one, hidenSecondaryButton: true, actionSecondaryButton: {print("Segundo botao")})
     }
 }
