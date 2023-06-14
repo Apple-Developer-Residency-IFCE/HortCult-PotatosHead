@@ -146,13 +146,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		1385EADF2A216870006E3487 /* HortaProfile */ = {
+		1385EADF2A216870006E3487 /* HortaInformation */ = {
 			isa = PBXGroup;
 			children = (
 				1385EAE02A21687B006E3487 /* Components */,
 				130AB5492A29456E003B3006 /* HortaInformation.swift */,
 			);
-			path = HortaProfile;
+			path = HortaInformation;
 			sourceTree = "<group>";
 		};
 		1385EAE02A21687B006E3487 /* Components */ = {
@@ -319,7 +319,7 @@
 				641C953C2A27F78200B20BA3 /* Reminders */,
 				1385EADD2A21635C006E3487 /* MockViews */,
 				136606912A1EE6570001757A /* HeaderMinhaHorta */,
-				1385EADF2A216870006E3487 /* HortaProfile */,
+				1385EADF2A216870006E3487 /* HortaInformation */,
 				64E15AFC2A1D830E0043A96E /* FirstLogin.swift */,
 				642014082A1EB86E001DCE6B /* Navigation.swift */,
 			);
