@@ -53,13 +53,20 @@ struct HortaInformation: View {
                         CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
                             .padding(.bottom,24)
                         FrequenciaRega(frequencia: 1)
+                        .padding(.horizontal)
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 16)
                 }
+                VStack(alignment: .center)
+                {
+                    ReusableButton(buttonTipe: .five, action: {print("ola")})
+                    ReusableButton(buttonTipe: .four, action: {print("ola")})
+                }
             }
             .edgesIgnoringSafeArea(.top)
         }
+        .frame(height: .infinity)
         .edgesIgnoringSafeArea(.top)
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
