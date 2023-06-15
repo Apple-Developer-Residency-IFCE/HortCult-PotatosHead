@@ -7,9 +7,34 @@
 
 import SwiftUI
 
-struct ImageSpace: View {
+struct DottedRectangle: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Rectangle()
+            .stroke(style: StrokeStyle(lineWidth: 1, dash: [8]))
+            .frame(width: 120, height: 120)
+            .cornerRadius(8)
+            .overlay(
+                Rectangle()
+                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                    .foregroundColor(.clear)
+            )
+    }
+}
+
+struct ImageSpace:View {
+    
+    var image:UIImage?
+    
+    var body: some View {
+        if let img = image {
+            Image(uiImage: img)
+                .resizable()
+                .frame(width: 120,height: 120)
+                .cornerRadius(12)
+        }
+        else {
+            DottedRectangle()
+        }
     }
 }
 
