@@ -1,9 +1,10 @@
 import SwiftUI
+import UserNotifications
 
 struct AdjustmentView: View {
     @ObservedObject var defaults: Defaults
-    @State var theme: String = Defaults.themeStorage
-    @State var switcherOn: Bool = true
+    @State var theme: Theme = Defaults.themeStorage
+    @State var switcherOn: Bool = Defaults.enableNotificationStorage
     @State var timeToAlert: String = ""
     @State var time: Date = Date()
     @State var openConfia: Bool = true
@@ -25,19 +26,21 @@ struct AdjustmentView: View {
 
                     }
                     NavigationLink {
-                        ThemeSelect(defaults: defaults, selectedOption: defaults.theme)
+                        ThemeSelect(defaults: defaults, selectedOption: Defaults.themeStorage)
                     } label: {
                         AdjustmentItem(label: "Tema") {
-                            NavigationIconView(label: defaults.theme)
+                            Text(Defaults.themeStorage)
                         }
                     }
                     
                     Divider()
                     AdjustmentItem(label: "Notificações Push") {
-                        Toggle("", isOn: $switcherOn).onTapGesture {
-                            Defaults.enableNotificationStorage = switcherOn
-                        }
+                        Toggle("", isOn: $switcherOn).onChange(of: switcherOn, perform: { newValue in
+                            Defaults.enableNotificationStorage = newValue
+                            NotificationManager().requestNotificationAuthorization()
+                        })
                     }
+                    
                     Divider()
                     
                     if (switcherOn){

@@ -12,6 +12,7 @@ struct MainView: View {
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
+    @ObservedObject var defaults: Defaults
     
     var body: some View {
         
@@ -24,12 +25,8 @@ struct MainView: View {
                         .padding(.top)
                     
                 } else {
-                    OnboardingScreen(header: "hortFruitLight",
-                                     centerImage: "pana 2",
-                                     primaryText: "Hora de Cuidar",
-                                     secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
-                                     actionMainButton: {print("oi")}, mainButtonType: .one,
-                                     hidenSecondaryButton: true)
+                    AdjustmentView(defaults: Defaults())
+                        Spacer()
                     
                 }
             }.navigationBarHidden(true)
@@ -48,7 +45,7 @@ struct MainView: View {
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
-            MainView()
+            MainView(defaults: Defaults())
         }
     }
 }

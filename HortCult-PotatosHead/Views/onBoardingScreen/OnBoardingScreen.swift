@@ -5,6 +5,7 @@ import CoreData
 struct OnBoardingScreen: View {
     @State private var isFirstLogin = false
     @State private var isNextScreenActive = false
+    @ObservedObject var defaults: Defaults
     
     func firstLogin() {
         UserDefaults.standard.set(true, forKey: "isFirstLogin")
@@ -24,7 +25,7 @@ struct OnBoardingScreen: View {
                 
                 
                 
-                .background(NavigationLink(destination: OnboardingScreenTwo(), isActive: $isNextScreenActive) { EmptyView()})
+                .background(NavigationLink(destination: OnboardingScreenTwo(defaults: defaults), isActive: $isNextScreenActive) { EmptyView()})
                 
             }.navigationBarHidden(true)
             
@@ -33,13 +34,13 @@ struct OnBoardingScreen: View {
                 print("Cebolinhas")
                 print(self.isFirstLogin)
             }
-            OnboardingScreenTwo()
+            OnboardingScreenTwo(defaults: defaults)
         }
     }
 }
 
 struct OnBoardingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingScreen()
+        OnBoardingScreen(defaults: Defaults())
     }
 }

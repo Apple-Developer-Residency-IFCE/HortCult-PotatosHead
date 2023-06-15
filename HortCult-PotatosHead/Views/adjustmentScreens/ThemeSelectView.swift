@@ -2,6 +2,15 @@
 
 import SwiftUI
 
+enum Theme: String {
+    
+    case light
+    case dark
+    case system
+    
+}
+
+
 struct ThemeSelect: View {
     @ObservedObject var defaults: Defaults
     @State var selectedOption: String
@@ -35,18 +44,18 @@ struct ThemeSelect: View {
                     
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = "Claro"
-                        Defaults.themeStorage = "Claro"
+                        defaults.theme = .light
+                        Defaults.themeStorage = .light
                     }, title: "Claro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = "Escuro"
-                        Defaults.themeStorage = "Escuro"
+                        defaults.theme = .dark
+                        Defaults.themeStorage = .dark
                     }, title: "Escuro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = "Padrão do Sistema"
-                        Defaults.themeStorage = "Padrão do Sistema"
+                        defaults.theme = .system
+                        Defaults.themeStorage = .system
                     }, title: "Padrão do Sistema").padding(.bottom, 16)
 
                     Spacer()
@@ -64,6 +73,6 @@ struct ThemeSelect: View {
 
 struct ThemeSelect_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeSelect(defaults: Defaults(), selectedOption: Defaults().theme)
+        ThemeSelect(defaults: Defaults(), selectedOption: Defaults().theme.rawValue)
     }
 }

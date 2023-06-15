@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingScreenFour: View {
     
     @State var isNextScreenActive = false
+    @ObservedObject var defaults: Defaults
     
     var body: some View {
         
@@ -28,7 +29,7 @@ struct OnboardingScreenFour: View {
                              hidenSecondaryButton: true)
             
             
-            .background(NavigationLink(destination: MainView(), isActive: $isNextScreenActive, label: {EmptyView()}))
+            .background(NavigationLink(destination: MainView(defaults: defaults), isActive: $isNextScreenActive, label: {EmptyView()}))
             
         }.navigationBarHidden(true)
     }
@@ -36,6 +37,6 @@ struct OnboardingScreenFour: View {
 
 struct OnboardingScreenFour_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenFour()
+        OnboardingScreenFour(defaults: Defaults())
     }
 }

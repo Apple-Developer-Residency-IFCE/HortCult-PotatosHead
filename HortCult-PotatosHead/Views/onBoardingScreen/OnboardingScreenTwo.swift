@@ -4,6 +4,7 @@ struct OnboardingScreenTwo: View {
     
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
+    @ObservedObject var defaults: Defaults
     
     var body: some View {
         
@@ -18,7 +19,7 @@ struct OnboardingScreenTwo: View {
                              hidenSecondaryButton: false,
                              actionSecondaryButton: {jumpToInitalScreen = true})
             
-            .background(NavigationLink(destination: OnboardingScreenThree(), isActive: $isNextScreenActive) { EmptyView()})
+            .background(NavigationLink(destination: OnboardingScreenThree(defaults: defaults), isActive: $isNextScreenActive) { EmptyView()})
             
             //Navegar para a tela inicial no botao 2
             
@@ -28,6 +29,6 @@ struct OnboardingScreenTwo: View {
 
 struct OnboardingScreenTwo_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenTwo()
+        OnboardingScreenTwo(defaults: Defaults())
     }
 }
