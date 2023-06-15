@@ -19,6 +19,7 @@
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
 		3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */; };
 		3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */; };
+		3D57EDA72A3A909900720931 /* GenericPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D57EDA62A3A909900720931 /* GenericPicker.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentView.swift */; };
@@ -72,6 +73,7 @@
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextfield.swift; sourceTree = "<group>"; };
 		3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextfield.swift; sourceTree = "<group>"; };
+		3D57EDA62A3A909900720931 /* GenericPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPicker.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,14 @@
 				3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */,
 			);
 			path = Textfield;
+			sourceTree = "<group>";
+		};
+		3D57EDA52A3A8FC800720931 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				3D57EDA62A3A909900720931 /* GenericPicker.swift */,
+			);
+			path = Pickers;
 			sourceTree = "<group>";
 		};
 		54673DCC2A2E999300348020 /* adjustmentScreens */ = {
@@ -324,6 +334,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D57EDA52A3A8FC800720931 /* Pickers */,
 				3D49C34E2A3926910026D305 /* Textfield */,
 				54673DCC2A2E999300348020 /* adjustmentScreens */,
 				64BC668A2A294CF000A75C63 /* PredefinedNotifications */,
@@ -436,6 +447,7 @@
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
+				3D57EDA72A3A909900720931 /* GenericPicker.swift in Sources */,
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
