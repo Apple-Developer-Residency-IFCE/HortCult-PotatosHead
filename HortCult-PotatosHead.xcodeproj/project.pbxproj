@@ -13,12 +13,18 @@
 		1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */; };
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
 		3D49C34D2A3921C40026D305 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34C2A3921C40026D305 /* MainView.swift */; };
+		545844F22A392A2B00020AAC /* PlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545844F12A392A2B00020AAC /* PlantViewModel.swift */; };
+		5458451A2A3A88A500020AAC /* RemindersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545845192A3A88A500020AAC /* RemindersViewModel.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentView.swift */; };
 		54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD42A2EA52700348020 /* ThemeSelectView.swift */; };
 		54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD62A312F0600348020 /* NavigationIconView.swift */; };
 		54673DDB2A3157D300348020 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DDA2A3157D300348020 /* Defaults.swift */; };
+		548888F32A3A93BE002009AF /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548888EF2A3A93BE002009AF /* Plant+CoreDataClass.swift */; };
+		548888F42A3A93BE002009AF /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548888F02A3A93BE002009AF /* Plant+CoreDataProperties.swift */; };
+		548888F52A3A93BE002009AF /* Notification+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548888F12A3A93BE002009AF /* Notification+CoreDataClass.swift */; };
+		548888F62A3A93BE002009AF /* Notification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548888F22A3A93BE002009AF /* Notification+CoreDataProperties.swift */; };
 		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F22A218076000D11EB /* OnboardingScreenThree.swift */; };
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
@@ -60,12 +66,18 @@
 		1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProfilePhoto.swift; sourceTree = "<group>"; };
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
 		3D49C34C2A3921C40026D305 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		545844F12A392A2B00020AAC /* PlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantViewModel.swift; sourceTree = "<group>"; };
+		545845192A3A88A500020AAC /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentView.swift; sourceTree = "<group>"; };
 		54673DD42A2EA52700348020 /* ThemeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectView.swift; sourceTree = "<group>"; };
 		54673DD62A312F0600348020 /* NavigationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIconView.swift; sourceTree = "<group>"; };
 		54673DDA2A3157D300348020 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		548888EF2A3A93BE002009AF /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		548888F02A3A93BE002009AF /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		548888F12A3A93BE002009AF /* Notification+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataClass.swift"; sourceTree = "<group>"; };
+		548888F22A3A93BE002009AF /* Notification+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		641207F22A218076000D11EB /* OnboardingScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenThree.swift; sourceTree = "<group>"; };
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
@@ -156,6 +168,26 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		545844EF2A3929B300020AAC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				548888EF2A3A93BE002009AF /* Plant+CoreDataClass.swift */,
+				548888F02A3A93BE002009AF /* Plant+CoreDataProperties.swift */,
+				548888F12A3A93BE002009AF /* Notification+CoreDataClass.swift */,
+				548888F22A3A93BE002009AF /* Notification+CoreDataProperties.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		545844F02A3929F600020AAC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				545844F12A392A2B00020AAC /* PlantViewModel.swift */,
+				545845192A3A88A500020AAC /* RemindersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		54673DCC2A2E999300348020 /* adjustmentScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +272,8 @@
 		64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXGroup;
 			children = (
+				545844F02A3929F600020AAC /* ViewModel */,
+				545844EF2A3929B300020AAC /* model */,
 				641D71C22A26A7BA0040CBCC /* Fonts */,
 				64E15AF72A1D80750043A96E /* Info.plist */,
 				64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */,
@@ -405,6 +439,7 @@
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				548888F62A3A93BE002009AF /* Notification+CoreDataProperties.swift in Sources */,
 				54673DDB2A3157D300348020 /* Defaults.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
@@ -414,13 +449,16 @@
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */,
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
+				545844F22A392A2B00020AAC /* PlantViewModel.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
+				548888F32A3A93BE002009AF /* Plant+CoreDataClass.swift in Sources */,
 				64BC668C2A294D3900A75C63 /* NotificationManager.swift in Sources */,
 				646CDFED2A255E4F008E74F1 /* Card.swift in Sources */,
+				548888F52A3A93BE002009AF /* Notification+CoreDataClass.swift in Sources */,
 				3D49C34D2A3921C40026D305 /* MainView.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
 				54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */,
@@ -429,7 +467,9 @@
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
+				548888F42A3A93BE002009AF /* Plant+CoreDataProperties.swift in Sources */,
 				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
+				5458451A2A3A88A500020AAC /* RemindersViewModel.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
