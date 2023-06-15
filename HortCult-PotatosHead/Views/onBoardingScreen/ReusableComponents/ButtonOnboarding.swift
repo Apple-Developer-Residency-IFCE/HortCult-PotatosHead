@@ -12,6 +12,8 @@ enum buttonCases: CaseIterable {
     case one
     case two
     case three
+    case four
+    case five
     
 }
 
@@ -68,13 +70,46 @@ struct ReusableButton: View {
                             .foregroundColor(Color("backgroundColor"))
                     }
                 }
+            case .four:
+                ZStack {
+                    RoundedRectangle(cornerRadius: 40)
+                        .frame(width: 277, height: 42)
+                        .foregroundColor(Color("red"))
+                    
+                    HStack {
+                        Image("Trash")
+                            .renderingMode(.template)
+                            .foregroundColor(Color("backgroundColor"))
+                        Text("Excluir da Minha Horta")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(Color("backgroundColor"))
+                    }
+                }
+
+            case .five:
+                ZStack {
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color("MainColor"), lineWidth: 2)
+                        .frame(width: 277, height: 42)
+                    
+                    HStack {
+                        Image("Edit")
+                            .renderingMode(.template)
+                            .foregroundColor(Color("MainColor"))
+                        Text("Editar informações")
+                            .font(.custom("Satoshi-Bold", size: 16))
+                            .foregroundColor(Color("MainColor"))
+                        
+                    }
+                }
+
             }
         }
     }
     
     struct ButtonView_Previews: PreviewProvider {
         static var previews: some View {
-            ReusableButton(buttonTipe: .one, action: {print("ola")})
+            ReusableButton(buttonTipe: .five, action: {print("ola")})
         }
     }
     
