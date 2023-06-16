@@ -1,10 +1,16 @@
 import SwiftUI
 
+enum Category: String, CaseIterable {
+    case hortalicas = "Hortaliças"
+    case legumes = "Legumes"
+    case pimentas = "Pimentas"
+    case medicinais = "Medicinais"
+    case temperos = "Temperos"
+}
+
 struct CategoryDropDown: View {
     @State private var isExpanded = false
-    @State private var selectedOption = ""
-    
-    let options = ["Diária", "A cada 2 dias", "A cada 4 dias", "1 vez por semana"]
+    @State private var selectedOption: Category?
     
     var body: some View {
         VStack {
@@ -14,13 +20,13 @@ struct CategoryDropDown: View {
                 }
             }) {
                 HStack {
-                    if selectedOption.isEmpty {
+                    if selectedOption == nil {
                         Text("Selecionar...")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(Color("navBarColor"))
                             .padding(.horizontal, 8)
                     } else {
-                        Text(selectedOption)
+                        Text(selectedOption!.rawValue)
                             .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(Color("navBarColor"))
                             .padding(.horizontal, 8)
@@ -38,9 +44,9 @@ struct CategoryDropDown: View {
             }
             
             if isExpanded {
-                ForEach(options, id: \.self) { option in
+                ForEach(Category.allCases, id: \.self) { category in
                     HStack {
-                        Text(option)
+                        Text(category.rawValue)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 4)
                             .font(.custom("Satoshi-Regular", size: 16))
@@ -49,8 +55,7 @@ struct CategoryDropDown: View {
                     }
                     .onTapGesture {
                         withAnimation {
-                            self.selectedOption = option
-                            
+                            self.selectedOption = category
                             self.isExpanded.toggle()
                         }
                     }
@@ -69,7 +74,7 @@ struct CategoryDropDown: View {
 struct CategoryDropDownView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Frequência de Rega")
+            Text("Categoria")
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
@@ -85,5 +90,4 @@ struct CategoryDropDown_Previews: PreviewProvider {
         CategoryDropDownView()
     }
 }
-
 

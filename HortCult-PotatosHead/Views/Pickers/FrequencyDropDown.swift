@@ -1,10 +1,15 @@
 import SwiftUI
 
+enum Frequency: String, CaseIterable {
+    case daily = "Diária"
+    case everyTwoDays = "A cada 2 dias"
+    case everyFourDays = "A cada 4 dias"
+    case weekly = "1 vez por semana"
+}
+
 struct FrequencyDropDown: View {
     @State private var isExpanded = false
-    @State private var selectedOption = ""
-    
-    let options = ["Hortaliças", "Legumes", "Pimentas", "Medicinais", "Temperos"]
+    @State private var selectedOption: Frequency?
     
     var body: some View {
         VStack {
@@ -14,13 +19,13 @@ struct FrequencyDropDown: View {
                 }
             }) {
                 HStack {
-                    if selectedOption.isEmpty {
+                    if selectedOption == nil {
                         Text("Selecionar...")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(Color("navBarColor"))
                             .padding(.horizontal, 8)
                     } else {
-                        Text(selectedOption)
+                        Text(selectedOption!.rawValue)
                             .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(Color("navBarColor"))
                             .padding(.horizontal, 8)
@@ -38,9 +43,9 @@ struct FrequencyDropDown: View {
             }
             
             if isExpanded {
-                ForEach(options, id: \.self) { option in
+                ForEach(Frequency.allCases, id: \.self) { frequency in
                     HStack {
-                        Text(option)
+                        Text(frequency.rawValue)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 4)
                             .font(.custom("Satoshi-Regular", size: 16))
@@ -49,7 +54,7 @@ struct FrequencyDropDown: View {
                     }
                     .onTapGesture {
                         withAnimation {
-                            self.selectedOption = option
+                            self.selectedOption = frequency
                             self.isExpanded.toggle()
                         }
                     }
@@ -68,7 +73,7 @@ struct FrequencyDropDown: View {
 struct FrequencyDropDownView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Categoria")
+            Text("Frequência de Rega")
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
@@ -84,5 +89,4 @@ struct FrequencyDropDown_Previews: PreviewProvider {
         FrequencyDropDownView()
     }
 }
-
 
