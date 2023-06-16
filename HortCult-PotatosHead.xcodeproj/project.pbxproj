@@ -19,6 +19,8 @@
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
 		3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */; };
 		3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */; };
+		3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */; };
+		3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentView.swift */; };
@@ -74,6 +76,8 @@
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextfield.swift; sourceTree = "<group>"; };
 		3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextfield.swift; sourceTree = "<group>"; };
+		3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
+		3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDropDown.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 				3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */,
 			);
 			path = Textfield;
+			sourceTree = "<group>";
+		};
+		3D57EDA52A3A8FC800720931 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */,
+				3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */,
+			);
+			path = Pickers;
 			sourceTree = "<group>";
 		};
 		54673DCC2A2E999300348020 /* adjustmentScreens */ = {
@@ -328,6 +341,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D57EDA52A3A8FC800720931 /* Pickers */,
 				EF82B6D12A3A91320012B048 /* HortaForm */,
 				3D49C34E2A3926910026D305 /* Textfield */,
 				54673DCC2A2E999300348020 /* adjustmentScreens */,
@@ -462,7 +476,9 @@
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
+				3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */,
 				54673DDB2A3157D300348020 /* Defaults.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,

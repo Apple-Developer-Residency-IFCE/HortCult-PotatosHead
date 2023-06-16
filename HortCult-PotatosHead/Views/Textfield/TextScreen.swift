@@ -5,7 +5,7 @@ struct TextScreen: View {
     @State var description = ""
     
     var body: some View {
-        var isEdit: Bool = true
+        var isEdit: Bool = false
         NavigationView {
             VStack {
                 HStack {
