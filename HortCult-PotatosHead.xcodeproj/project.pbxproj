@@ -51,6 +51,7 @@
 		64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */; };
 		64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AFC2A1D830E0043A96E /* FirstLogin.swift */; };
 		9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0663602A2EB2A2001DC0B8 /* HomeView.swift */; };
+		9B5426A72A3BDB86006E7FC2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenTwo.swift; sourceTree = "<group>"; };
 		64E15AFC2A1D830E0043A96E /* FirstLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLogin.swift; sourceTree = "<group>"; };
 		9B0663602A2EB2A2001DC0B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				64C4765A2A26B1DB006D499A /* CustomTabBar.swift */,
 				3D49C34C2A3921C40026D305 /* MainView.swift */,
 				9B0663602A2EB2A2001DC0B8 /* HomeView.swift */,
+				9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */,
 			);
 			path = HomeViewScreen;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
+				9B5426A72A3BDB86006E7FC2 /* CustomNavBar.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,

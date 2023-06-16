@@ -46,11 +46,6 @@ struct NotificationManager: View {
             }
             .sheet(isPresented: $isTimePickerVisible) {
                 TimePickerView(notificationTime: $notificationTime)
-                    .onDisappear {
-                        
-                        scheduleNotification()
-                        
-                    }
             }
             
             //            Text("Horário selecionado:")

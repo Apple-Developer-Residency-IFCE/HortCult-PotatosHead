@@ -29,7 +29,7 @@ struct OnboardingScreenFour: View {
                              hidenSecondaryButton: true)
             
             
-            .background(NavigationLink(destination: MainView(defaults: defaults), isActive: $isNextScreenActive, label: {EmptyView()}))
+            .background(NavigationLink(destination: MainView(), isActive: $isNextScreenActive, label: {EmptyView()}))
             
         }.navigationBarHidden(true)
     }

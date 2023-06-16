@@ -2,20 +2,14 @@
 
 import SwiftUI
 
-enum Theme: String {
-    
-    case light
-    case dark
-    case system
-    
-}
 
 
 struct ThemeSelect: View {
-    @ObservedObject var defaults: Defaults
+    @EnvironmentObject var defaults: Defaults
     @State var selectedOption: String
     @Environment(\.presentationMode) var presentationMode
     
+
     var header: some View {
         ZStack{
             HStack{
@@ -44,26 +38,24 @@ struct ThemeSelect: View {
                     
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = .light
-                        Defaults.themeStorage = .light
+                        defaults.theme = "Claro"
+                        Defaults.themeStorage = "Claro"
                     }, title: "Claro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = .dark
-                        Defaults.themeStorage = .dark
+                        defaults.theme = "Escuro"
+                        Defaults.themeStorage = "Escuro"
                     }, title: "Escuro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = .system
-                        Defaults.themeStorage = .system
+                        defaults.theme = "Padrão do Sistema"
+                        Defaults.themeStorage = "Padrão do Sistema"
                     }, title: "Padrão do Sistema").padding(.bottom, 16)
 
                     Spacer()
                 }.padding(.leading, 24)
                 
             }
-            // também dark mode
-   
             .navigationBarBackButtonHidden(true)
             .navigationTitle("")
             .navigationBarItems(leading: header)
@@ -73,6 +65,7 @@ struct ThemeSelect: View {
 
 struct ThemeSelect_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeSelect(defaults: Defaults(), selectedOption: Defaults().theme.rawValue)
+        ThemeSelect(selectedOption: Defaults().theme)
+            .environmentObject(Defaults())
     }
 }

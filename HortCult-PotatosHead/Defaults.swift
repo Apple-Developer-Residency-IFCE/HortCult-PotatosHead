@@ -3,8 +3,9 @@
 import SwiftUI
 
 class Defaults: ObservableObject {
-    @AppStorage ("theme") static var themeStorage: Theme = .dark
-    @Published var theme: Theme = Defaults.themeStorage
+    
+    @AppStorage ("theme") static var themeStorage: String = "Padrão do Sistema"
+    @Published var theme: String = Defaults.themeStorage
     
     @AppStorage ("enable-notification") static var enableNotificationStorage: Bool = true
     @Published var enableNotification = Defaults.enableNotificationStorage

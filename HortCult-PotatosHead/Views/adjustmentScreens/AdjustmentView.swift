@@ -2,8 +2,8 @@ import SwiftUI
 import UserNotifications
 
 struct AdjustmentView: View {
-    @ObservedObject var defaults: Defaults
-    @State var theme: Theme = Defaults.themeStorage
+    @EnvironmentObject var defaults: Defaults
+    @State var theme: String = Defaults.themeStorage
     @State var switcherOn: Bool = Defaults.enableNotificationStorage
     @State var timeToAlert: String = ""
     @State var time: Date = Date()
@@ -15,7 +15,7 @@ struct AdjustmentView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Image("Topbar")
+                
                 Group{
                     HStack {
                         Text("Ajustes")
@@ -26,10 +26,12 @@ struct AdjustmentView: View {
 
                     }
                     NavigationLink {
-                        ThemeSelect(defaults: defaults, selectedOption: Defaults.themeStorage)
+                        ThemeSelect(selectedOption: Defaults.themeStorage)
+                            .environmentObject(defaults)
+                        
                     } label: {
                         AdjustmentItem(label: "Tema") {
-                            Text(Defaults.themeStorage)
+                            NavigationIconView(label: Defaults.themeStorage)
                         }
                     }
                     
@@ -78,6 +80,7 @@ struct AdjustmentView: View {
 
 struct AdjustmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AdjustmentView(defaults: Defaults())
+        AdjustmentView()
+            .environmentObject(Defaults())
     }
 }
