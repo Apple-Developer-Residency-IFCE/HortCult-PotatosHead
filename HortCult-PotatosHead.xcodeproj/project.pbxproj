@@ -58,6 +58,7 @@
 		64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AFC2A1D830E0043A96E /* FirstLogin.swift */; };
 		9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0663602A2EB2A2001DC0B8 /* HomeView.swift */; };
 		EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3922372A3BC761004A5FC2 /* ImageSpace.swift */; };
+		EF39223B2A3BE3FD004A5FC2 /* AlertComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39223A2A3BE3FD004A5FC2 /* AlertComponent.swift */; };
 		EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		64E15AFC2A1D830E0043A96E /* FirstLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLogin.swift; sourceTree = "<group>"; };
 		9B0663602A2EB2A2001DC0B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EF3922372A3BC761004A5FC2 /* ImageSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpace.swift; sourceTree = "<group>"; };
+		EF39223A2A3BE3FD004A5FC2 /* AlertComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertComponent.swift; sourceTree = "<group>"; };
 		EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +330,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EF3922392A3BE3EA004A5FC2 /* Alerts */,
 				EF82B6D12A3A91320012B048 /* HortaForm */,
 				3D49C34E2A3926910026D305 /* Textfield */,
 				54673DCC2A2E999300348020 /* adjustmentScreens */,
@@ -354,6 +357,14 @@
 				EF3922372A3BC761004A5FC2 /* ImageSpace.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EF3922392A3BE3EA004A5FC2 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				EF39223A2A3BE3FD004A5FC2 /* AlertComponent.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		EF82B6D12A3A91320012B048 /* HortaForm */ = {
@@ -459,6 +470,7 @@
 				EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
+				EF39223B2A3BE3FD004A5FC2 /* AlertComponent.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
