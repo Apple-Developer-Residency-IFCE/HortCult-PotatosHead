@@ -6,6 +6,7 @@
         <attribute name="next_time_to_alert" optional="YES" attributeType="String"/>
         <attribute name="time_to_alert" optional="YES" attributeType="String"/>
         <attribute name="type_to_alert" optional="YES" attributeType="String"/>
+        <relationship name="notification_plant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plant" inverseName="plant_notification" inverseEntity="Plant"/>
     </entity>
     <entity name="Plant" representedClassName="Plant" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
@@ -14,5 +15,6 @@
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="watering_frequency" optional="YES" attributeType="String"/>
+        <relationship name="plant_notification" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification" inverseName="notification_plant" inverseEntity="Notification"/>
     </entity>
 </model>

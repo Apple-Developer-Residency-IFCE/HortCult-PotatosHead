@@ -60,6 +60,24 @@ class PlantViewModel: ObservableObject {
         } catch let error as NSError {
             print("could not save \(error) \(error.userInfo)")
         }
-        
+    }
+    
+    func addNotificationToPlant(plant: Plant, notification: Notification ) {
+        plant.addToPlant_notification(notification)
+        do {
+            try viewContext.save()
+            fetch()
+        } catch let error as NSError {
+            print("could not save \(error) \(error.userInfo)")
+        }
+    }
+    func removeNotificationToPlant(plant: Plant, notification: Notification ) {
+        plant.removeFromPlant_notification(notification)
+        do {
+            try viewContext.save()
+            fetch()
+        } catch let error as NSError {
+            print("could not save \(error) \(error.userInfo)")
+        }
     }
 }
