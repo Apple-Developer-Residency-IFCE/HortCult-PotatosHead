@@ -14,14 +14,15 @@ struct ScrollProfilePhoto: View {
         VStack {
             TabView {
                 ForEach(0..<3){ i in
-                    Image("\(images[i])").resizable().ignoresSafeArea()
+                    Image("\(images[i])")
+                        .resizable()
                     
                 }
             }.tabViewStyle(PageTabViewStyle())
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-                .frame(height: 390)
+                
         }
-        
+        .ignoresSafeArea()
     }
 }
 
