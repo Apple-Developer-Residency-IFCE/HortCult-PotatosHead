@@ -50,7 +50,6 @@ struct ImagePickerComponent: View {
                 }
             }
         }
-        .padding(.leading, 20)
     }
 }
 
