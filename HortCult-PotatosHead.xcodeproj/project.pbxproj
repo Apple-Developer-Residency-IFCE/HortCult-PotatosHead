@@ -59,6 +59,8 @@
 		64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */; };
 		64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E15AFC2A1D830E0043A96E /* FirstLogin.swift */; };
 		9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0663602A2EB2A2001DC0B8 /* HomeView.swift */; };
+		EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3922372A3BC761004A5FC2 /* ImageSpace.swift */; };
+		EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,8 @@
 		64E15AF92A1D82E00043A96E /* OnboardingScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenTwo.swift; sourceTree = "<group>"; };
 		64E15AFC2A1D830E0043A96E /* FirstLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLogin.swift; sourceTree = "<group>"; };
 		9B0663602A2EB2A2001DC0B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EF3922372A3BC761004A5FC2 /* ImageSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpace.swift; sourceTree = "<group>"; };
+		EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				3D57EDA52A3A8FC800720931 /* Pickers */,
+				EF82B6D12A3A91320012B048 /* HortaForm */,
 				3D49C34E2A3926910026D305 /* Textfield */,
 				54673DCC2A2E999300348020 /* adjustmentScreens */,
 				64BC668A2A294CF000A75C63 /* PredefinedNotifications */,
@@ -355,6 +360,31 @@
 				642014082A1EB86E001DCE6B /* Navigation.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EF3922362A3BC73D004A5FC2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EF3922372A3BC761004A5FC2 /* ImageSpace.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EF82B6D12A3A91320012B048 /* HortaForm */ = {
+			isa = PBXGroup;
+			children = (
+				EF82B6D22A3A913F0012B048 /* ImagePicker */,
+			);
+			path = HortaForm;
+			sourceTree = "<group>";
+		};
+		EF82B6D22A3A913F0012B048 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				EF3922362A3BC73D004A5FC2 /* Components */,
+				EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +470,7 @@
 				1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */,
 				64D659BC2A1ED778004F96F9 /* ButtonOnboarding.swift in Sources */,
 				54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */,
+				EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
@@ -456,6 +487,7 @@
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */,
+				EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */,
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
