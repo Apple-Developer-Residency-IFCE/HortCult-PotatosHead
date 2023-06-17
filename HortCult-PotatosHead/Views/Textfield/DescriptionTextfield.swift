@@ -27,7 +27,6 @@ struct PlaceholderTextView: View {
                 }
             }
             .frame(height: 200)
-            .background(Color.white)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
@@ -39,7 +38,7 @@ struct PlaceholderTextView: View {
 }
 
 struct DescriptionTextfield: View {
-    @State private var text: String = ""
+    @Binding var text: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -56,7 +55,7 @@ struct DescriptionTextfield: View {
 
 struct DescriptionTextfield_Previews: PreviewProvider {
     static var previews: some View {
-        DescriptionTextfield()
+        DescriptionTextfield(text: .constant(""))
     }
 }
 

@@ -19,6 +19,9 @@
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
 		3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */; };
 		3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */; };
+		3D54AA6F2A3D1A6100526BB5 /* AddInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54AA6E2A3D1A6100526BB5 /* AddInfoScreen.swift */; };
+		3D54AA712A3D219700526BB5 /* AddInfoNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54AA702A3D219700526BB5 /* AddInfoNavigation.swift */; };
+		3D54AA732A3D2AC000526BB5 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54AA722A3D2AC000526BB5 /* AddButton.swift */; };
 		3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */; };
 		3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
@@ -76,6 +79,9 @@
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextfield.swift; sourceTree = "<group>"; };
 		3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextfield.swift; sourceTree = "<group>"; };
+		3D54AA6E2A3D1A6100526BB5 /* AddInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoScreen.swift; sourceTree = "<group>"; };
+		3D54AA702A3D219700526BB5 /* AddInfoNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoNavigation.swift; sourceTree = "<group>"; };
+		3D54AA722A3D2AC000526BB5 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
 		3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDropDown.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
@@ -187,6 +193,16 @@
 				3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */,
 			);
 			path = Textfield;
+			sourceTree = "<group>";
+		};
+		3D54AA6D2A3D1A3F00526BB5 /* AddInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3D54AA6E2A3D1A6100526BB5 /* AddInfoScreen.swift */,
+				3D54AA722A3D2AC000526BB5 /* AddButton.swift */,
+				3D54AA702A3D219700526BB5 /* AddInfoNavigation.swift */,
+			);
+			path = AddInfoScreen;
 			sourceTree = "<group>";
 		};
 		3D57EDA52A3A8FC800720931 /* Pickers */ = {
@@ -341,6 +357,7 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D54AA6D2A3D1A3F00526BB5 /* AddInfoScreen */,
 				3D57EDA52A3A8FC800720931 /* Pickers */,
 				EF82B6D12A3A91320012B048 /* HortaForm */,
 				3D49C34E2A3926910026D305 /* Textfield */,
@@ -470,6 +487,8 @@
 				1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */,
 				64D659BC2A1ED778004F96F9 /* ButtonOnboarding.swift in Sources */,
 				54673DD32A2E9D9F00348020 /* AdjustmentView.swift in Sources */,
+				3D54AA732A3D2AC000526BB5 /* AddButton.swift in Sources */,
+				3D54AA6F2A3D1A6100526BB5 /* AddInfoScreen.swift in Sources */,
 				EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
@@ -480,6 +499,7 @@
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */,
 				54673DDB2A3157D300348020 /* Defaults.swift in Sources */,
+				3D54AA712A3D219700526BB5 /* AddInfoNavigation.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,

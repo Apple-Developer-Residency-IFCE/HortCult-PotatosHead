@@ -10,7 +10,7 @@ enum Category: String, CaseIterable {
 
 struct CategoryDropDown: View {
     @State private var isExpanded = false
-    @State private var selectedOption: Category?
+    @Binding var selectedOption: Category?
     
     var body: some View {
         VStack {
@@ -72,6 +72,7 @@ struct CategoryDropDown: View {
 }
 
 struct CategoryDropDownView: View {
+    @Binding var selectedOption: Category?
     var body: some View {
         VStack(alignment: .leading) {
             Text("Categoria")
@@ -79,7 +80,7 @@ struct CategoryDropDownView: View {
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
             
-            CategoryDropDown()
+            CategoryDropDown(selectedOption: $selectedOption)
                 .padding(.horizontal, 20)
         }
     }
@@ -87,7 +88,7 @@ struct CategoryDropDownView: View {
 
 struct CategoryDropDown_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDropDownView()
+        CategoryDropDownView(selectedOption: .constant(.none))
     }
 }
 

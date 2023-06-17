@@ -9,7 +9,7 @@ enum Frequency: String, CaseIterable {
 
 struct FrequencyDropDown: View {
     @State private var isExpanded = false
-    @State private var selectedOption: Frequency?
+    @Binding var selectedOption: Frequency?
     
     var body: some View {
         VStack {
@@ -71,6 +71,7 @@ struct FrequencyDropDown: View {
 }
 
 struct FrequencyDropDownView: View {
+    @Binding var selectedOption: Frequency?
     var body: some View {
         VStack(alignment: .leading) {
             Text("Frequência de Rega")
@@ -78,7 +79,7 @@ struct FrequencyDropDownView: View {
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
             
-            FrequencyDropDown()
+            FrequencyDropDown(selectedOption: $selectedOption)
                 .padding(.horizontal, 20)
         }
     }
@@ -86,7 +87,7 @@ struct FrequencyDropDownView: View {
 
 struct FrequencyDropDown_Previews: PreviewProvider {
     static var previews: some View {
-        FrequencyDropDownView()
+        FrequencyDropDownView(selectedOption: .constant(.none))
     }
 }
 

@@ -17,10 +17,12 @@ struct HeaderMenu: View {
                         .bold()
                         .foregroundColor(Color("MainColor"))
                     Spacer()
-                    Button(action: {})
-                    {
-                        Image(systemName: "plus")
-                            .foregroundColor(Color("backgroundColor"))
+                    NavigationLink{ AddInfoScreen()
+                    }label: {
+                        HStack{
+                            Image(systemName: "plus")
+                                .foregroundColor(Color("backgroundColor"))
+                        }
                     }
                     .frame(width: 32,height: 32, alignment: .center)
                     .background(Color("MainColor"))
