@@ -26,7 +26,7 @@ struct MainView: View {
                         .ignoresSafeArea()
                 } else {
                     AdjustmentView()
-                        .environmentObject(defaults)
+//                        .environmentObject(defaults)
                         Spacer()
                     
                 }

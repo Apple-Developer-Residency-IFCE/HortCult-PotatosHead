@@ -39,7 +39,7 @@ struct HomeView: View {
             
             VStack {
                 
-                CustomNavBar(action: {self.presentationMode.wrappedValue.dismiss()})
+                CustomNavBar(action: {self.presentationMode.wrappedValue.dismiss()}, hiddenDismissButton: true)
                     Spacer()
                 
                 HeaderMenu()

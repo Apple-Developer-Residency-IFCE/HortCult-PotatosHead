@@ -11,6 +11,8 @@ struct OnboardingScreenFour: View {
     
     @State var isNextScreenActive = false
     @ObservedObject var defaults: Defaults
+    var hortCultMain: HortCult_PotatosHeadApp?
+
     
     var body: some View {
         
@@ -18,7 +20,7 @@ struct OnboardingScreenFour: View {
         NavigationView {
             
             OnboardingScreen(header: "hortFruitLight",
-                             centerImage: "pana 2",
+                             centerImage: "onboardingfourlight",
                              primaryText: "Hora de Cuidar",
                              secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
                              actionMainButton: {

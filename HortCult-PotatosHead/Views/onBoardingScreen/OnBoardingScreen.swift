@@ -6,6 +6,8 @@ struct OnBoardingScreen: View {
     @State private var isFirstLogin = false
     @State private var isNextScreenActive = false
     @ObservedObject var defaults: Defaults
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
     
     func firstLogin() {
         UserDefaults.standard.set(true, forKey: "isFirstLogin")
@@ -25,7 +27,7 @@ struct OnBoardingScreen: View {
                 
                 
                 
-                .background(NavigationLink(destination: OnboardingScreenTwo(defaults: defaults), isActive: $isNextScreenActive) { EmptyView()})
+                .background(NavigationLink(destination: OnboardingScreenTwo(), isActive: $isNextScreenActive) { EmptyView()})
                 
             }.navigationBarHidden(true)
             
@@ -34,7 +36,7 @@ struct OnBoardingScreen: View {
                 print("Cebolinhas")
                 print(self.isFirstLogin)
             }
-            OnboardingScreenTwo(defaults: defaults)
+            OnboardingScreenTwo()
         }
     }
 }

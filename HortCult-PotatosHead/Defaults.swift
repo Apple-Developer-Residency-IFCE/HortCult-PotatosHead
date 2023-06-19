@@ -4,6 +4,8 @@ import SwiftUI
 
 class Defaults: ObservableObject {
     
+//    static let defaultsShared = Defaults()
+    
     @AppStorage ("theme") static var themeStorage: String = "Padrão do Sistema"
     @Published var theme: String = Defaults.themeStorage
     

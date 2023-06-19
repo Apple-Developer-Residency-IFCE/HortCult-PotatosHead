@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CustomNavBar: View {
     
+    var hortCultMain: HortCult_PotatosHeadApp?
     var action: (() -> Void)
+    var hiddenDismissButton: Bool
     
     var body: some View {
        
@@ -39,16 +41,18 @@ struct CustomNavBar: View {
                     } label: {
                         Image("leftArrow")
                             .renderingMode(.template)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color("navbardismissbuttoncolor"))
                             .padding(.leading, 20)
                           
                     }.padding(.top, 40)
-                    
+                        .hidden()
                     Spacer()
                     
                 }
-                    
-                    Image("hortFruitDark")
+                
+                
+                
+                Image(hortCultMain?.color == .light ? "hortFruitLight" : "hortFruitDark")
                     .padding(.top, 40)
                     Spacer()
                
@@ -62,6 +66,6 @@ struct CustomNavBar: View {
 
 struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBar(action: {print("olá")})
+        CustomNavBar(action: {print("olá")}, hiddenDismissButton: false)
     }
 }

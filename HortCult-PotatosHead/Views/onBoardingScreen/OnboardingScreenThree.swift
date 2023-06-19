@@ -12,17 +12,20 @@ struct OnboardingScreenThree: View {
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
     @ObservedObject var defaults: Defaults
+    var hortCultMain: HortCult_PotatosHeadApp?
+
     
     var body: some View {
         
         NavigationView {
             
             OnboardingScreen(header: "hortFruitLight",
-                             centerImage: "pana", primaryText: "Amplie sua horta com diferentes vegetais",
+                             centerImage: "onboardingthreelight",
+                             primaryText: "Amplie sua horta com diferentes vegetais",
                              secondaryText: "Adicione fotos e informações como luminosidade, umidade e muito mais.",
                              actionMainButton: {isNextScreenActive = true}, mainButtonType: .two,
                              hidenSecondaryButton: false,
-                             actionSecondaryButton: {print("ola")})
+                             actionSecondaryButton: {print("\(hortCultMain?.color)")})
             
             .background(NavigationLink(destination: OnboardingScreenFour(defaults: defaults), isActive: $isNextScreenActive) {EmptyView()})
             

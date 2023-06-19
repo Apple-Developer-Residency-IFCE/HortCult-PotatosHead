@@ -1,5 +1,9 @@
 
 
+
+
+
+
 import SwiftUI
 
 
@@ -8,7 +12,6 @@ struct ThemeSelect: View {
     @EnvironmentObject var defaults: Defaults
     @State var selectedOption: String
     @Environment(\.presentationMode) var presentationMode
-    
 
     var header: some View {
         ZStack{

@@ -12,7 +12,7 @@ struct HortCult_PotatosHeadApp: App {
     let persistenceController = PersistenceController.shared
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-
+//    var defaultShared = Defaults.defaultsShared
     
     @StateObject var defaults = Defaults()
     
@@ -31,7 +31,8 @@ struct HortCult_PotatosHeadApp: App {
             
             if HortCult_PotatosHeadApp.isFirstLogin == true {
                 OnBoardingScreen(defaults: defaults)
-                    .preferredColorScheme(color)
+                    .preferredColorScheme(.light)
+                    .environmentObject(defaults)
             } else {
                 MainView()
                     .preferredColorScheme(color)

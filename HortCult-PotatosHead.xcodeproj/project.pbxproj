@@ -566,6 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HortCult-PotatosHead/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LUYW3UH94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HortCult-PotatosHead/Info.plist";
@@ -595,6 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HortCult-PotatosHead/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LUYW3UH94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HortCult-PotatosHead/Info.plist";
