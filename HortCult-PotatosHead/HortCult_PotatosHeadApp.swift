@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct HortCult_PotatosHeadApp: App {
-    let persistenceController = PersistenceController.shared
+    
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
 //    var defaultShared = Defaults.defaultsShared
@@ -28,7 +28,6 @@ struct HortCult_PotatosHeadApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
             if HortCult_PotatosHeadApp.isFirstLogin == true {
                 OnBoardingScreen(defaults: defaults)
                     .preferredColorScheme(.light)

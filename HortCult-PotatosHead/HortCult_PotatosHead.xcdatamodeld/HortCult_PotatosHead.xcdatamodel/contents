@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22A8380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Notification" representedClassName="Notification" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="is_resolve" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="next_time_to_alert" optional="YES" attributeType="String"/>
+        <attribute name="time_to_alert" optional="YES" attributeType="String"/>
+        <attribute name="type_to_alert" optional="YES" attributeType="String"/>
+        <relationship name="notification_plant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plant" inverseName="plant_notification" inverseEntity="Plant"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="Plant" representedClassName="Plant" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="images" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="information" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="watering_frequency" optional="YES" attributeType="String"/>
+        <relationship name="plant_notification" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification" inverseName="notification_plant" inverseEntity="Notification"/>
+    </entity>
 </model>
