@@ -318,10 +318,10 @@
 			children = (
 				5488893D2A41119A002009AF /* model */,
 				548889382A411184002009AF /* ViewModel */,
+				64E15AF82A1D82AF0043A96E /* Views */,
 				641D71C22A26A7BA0040CBCC /* Fonts */,
 				64E15AF72A1D80750043A96E /* Info.plist */,
 				64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */,
-				64E15AF82A1D82AF0043A96E /* Views */,
 				64B207952A1D7DFF00F440EF /* Assets.xcassets */,
 				64B2079A2A1D7DFF00F440EF /* Persistence.swift */,
 				64B2079C2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld */,
