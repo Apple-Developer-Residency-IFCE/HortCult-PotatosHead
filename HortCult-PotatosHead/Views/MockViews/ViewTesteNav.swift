@@ -6,7 +6,7 @@ struct ViewTesteNav: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: TextScreen()) {
+            NavigationLink(destination: HomeView()) {
                 Text("Teste a Navigation")
             }
         }

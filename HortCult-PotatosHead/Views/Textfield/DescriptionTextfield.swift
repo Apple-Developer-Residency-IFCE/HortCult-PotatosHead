@@ -5,8 +5,7 @@ struct PlaceholderTextView: View {
     var placeholder: String
     
     var body: some View {
-        VStack (alignment: .leading){
-            ZStack(alignment: .topLeading) {
+        VStack{
                 if text.isEmpty {
                     TextEditor(text: $text)
                         .padding(.leading)
@@ -27,19 +26,18 @@ struct PlaceholderTextView: View {
                 }
             }
             .frame(height: 200)
-            .background(Color.white)
             .cornerRadius(10)
-            .overlay(
+             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.gray, lineWidth: 1)
             )
            
         }
     }
-}
+
 
 struct DescriptionTextfield: View {
-    @State private var text: String = ""
+    @Binding var text: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -56,7 +54,7 @@ struct DescriptionTextfield: View {
 
 struct DescriptionTextfield_Previews: PreviewProvider {
     static var previews: some View {
-        DescriptionTextfield()
+        DescriptionTextfield(text: .constant(""))
     }
 }
 

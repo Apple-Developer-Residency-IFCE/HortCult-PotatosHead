@@ -1,26 +1,25 @@
 import SwiftUI
 
 struct TextScreen: View {
-    @State var text = ""
-    @State var description = ""
+    @Binding var text: String
+    @Binding var description: String
+    
     
     var body: some View {
         var isEdit: Bool = false
         NavigationView {
             VStack {
                 HStack {
-                    Text(isEdit ? "Editar Informações" : "Adicionar Planta")
+                    Text(isEdit ? "Editar Informações" : "Adicionar Vegetal")
                         .font(.custom("Satoshi-Bold", size: 28))
                         .foregroundColor(Color("MainColor"))
                     Spacer()
                 }
-               
-                .padding(.horizontal)
-                .padding(.vertical)
+                .padding()
                 
                 VStack (spacing: 20){
-                    NameTextfield()
-                    DescriptionTextfield()
+                    NameTextfield(text: $text)
+                    DescriptionTextfield(text: $description)
                 }
             }
         }
@@ -29,7 +28,7 @@ struct TextScreen: View {
 
 struct TextScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TextScreen()
+        TextScreen(text: .constant(""), description: .constant(""))
     }
 }
 

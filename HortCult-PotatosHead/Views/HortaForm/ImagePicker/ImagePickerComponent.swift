@@ -53,8 +53,23 @@ struct ImagePickerComponent: View {
     }
 }
 
+
+struct ImagePickerComponentView: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Fotos")
+                .font(.custom("Satoshi-Regular", size: 16))
+                .foregroundColor(Color("buttonCardColor"))
+                .padding(.horizontal, 20)
+            
+            ImagePickerComponent()
+                .padding(.horizontal, 20)
+        }
+    }
+}
+
 struct ImagePickerComponent_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerComponent()
+        ImagePickerComponentView()
     }
 }
