@@ -2,7 +2,6 @@
 import SwiftUI
 
 struct AddInfoScreen: View {
-    @State var isDisabled: Bool = false
     @Environment(\.presentationMode) var presentationMode
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
@@ -10,13 +9,7 @@ struct AddInfoScreen: View {
     @State var descriptionText: String = ""
     @State var category: Category?
     @State var frequency: Frequency?
-    
-    func verifyEmptyFields() -> Bool{
-        if ((frequency != nil) && (category != nil) && nameText != "" && descriptionText != ""){
-            return true
-        }
-        return false
-    }
+    @State var isDisabled: Bool = false
     
     var header: some View {
         ZStack{
@@ -32,32 +25,38 @@ struct AddInfoScreen: View {
             }
         }
     }
-    
     var body: some View {
         NavigationView {
-            ZStack{
-                ScrollView{
-                    TextScreen(text: $nameText, description: $descriptionText)
-                        .padding(.bottom, 20)
-                    CategoryDropDownView(selectedOption: $category)
-                        .padding(.bottom, 20)
-                    FrequencyDropDownView(selectedOption: $frequency)
-                        .padding(.bottom, 20)
-                    ImagePickerComponentView()
+            VStack{
+                ZStack{
+                    ScrollView{
+                        TextScreen(text: $nameText, description: $descriptionText)
+                            .padding(.bottom, 20)
+                        CategoryDropDownView(selectedOption: $category)
+                            .padding(.bottom, 20)
+                        FrequencyDropDownView(selectedOption: $frequency)
+                            .padding(.bottom, 20)
+                        ImagePickerComponentView()
+                    }
+                    VStack{
+                        Spacer()
+                        if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
+                            AddButton(isDisabled: true)
+                        }
+                        else {
+                            AddButton(isDisabled: false)
+                        }
+                    }
+                    .padding(.bottom, 60)
                 }
                 CustomTabBar(action: { isSelectedTab = 0
                     isNextScreenActive = false
                 },
-                     actionTwo: {isSelectedTab = 1},
-                     colorOne: isSelectedTab == 0 ? Color("tabBarSelectedItem") : Color("navBarColor"),
-                     colorTwo: isSelectedTab == 1 ? Color("tabBarSelectedItem") : Color("navBarColor"))
-                
-                VStack{
-                    Spacer()
-                    AddButton(isDisabled: $isDisabled)
-                        .padding(.bottom, 70)
-                }
+                             actionTwo: {isSelectedTab = 1},
+                             colorOne: isSelectedTab == 0 ? Color("tabBarSelectedItem") : Color("navBarColor"),
+                             colorTwo: isSelectedTab == 1 ? Color("tabBarSelectedItem") : Color("navBarColor"))
             }
+            .padding(.bottom, 20)
         }
         .navigationBarBackButtonHidden(true)
         .navigationTitle("")
@@ -70,6 +69,4 @@ struct AddInfoScreen_Previews: PreviewProvider {
         AddInfoScreen()
     }
 }
-
-
 

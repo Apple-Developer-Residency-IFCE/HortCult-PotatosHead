@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddButton: View {
-    @Binding var isDisabled: Bool
+    var isDisabled: Bool
+    
     
     var body: some View {
         ZStack {
@@ -17,7 +18,7 @@ struct AddButton: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)
                         .frame(width: 350, height: 42)
-                        .foregroundColor(Color("buttonAdd"))
+                        .foregroundColor(isDisabled ? Color("buttonAdd") : Color("MainColor"))
                     
                     HStack {
                         Text("Adicionar Novo Vegetal")
@@ -26,13 +27,14 @@ struct AddButton: View {
                     }
                 }
             }
-        
+            .disabled(isDisabled)
         }
     }
 }
 
 struct AddButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton(isDisabled: .constant(true))
+        AddButton(isDisabled: false)
     }
 }
+
