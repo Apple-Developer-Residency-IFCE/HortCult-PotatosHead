@@ -15,9 +15,7 @@ struct TextScreen: View {
                         .foregroundColor(Color("MainColor"))
                     Spacer()
                 }
-               
-                .padding(.horizontal)
-                .padding(.vertical)
+                .padding()
                 
                 VStack (spacing: 20){
                     NameTextfield(text: $text)

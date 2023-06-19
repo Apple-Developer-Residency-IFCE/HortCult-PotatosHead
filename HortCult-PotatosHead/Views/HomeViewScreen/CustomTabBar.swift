@@ -55,6 +55,8 @@ struct CustomTabBar: View {
                     .padding(.top, 25)
                 }
             }.edgesIgnoringSafeArea(.bottom)
+            .background(Color.clear)
+            .frame(height: 1)
         }
     }
 

@@ -5,8 +5,7 @@ struct PlaceholderTextView: View {
     var placeholder: String
     
     var body: some View {
-        VStack (alignment: .leading){
-            ZStack(alignment: .topLeading) {
+        VStack{
                 if text.isEmpty {
                     TextEditor(text: $text)
                         .padding(.leading)
@@ -28,14 +27,14 @@ struct PlaceholderTextView: View {
             }
             .frame(height: 200)
             .cornerRadius(10)
-            .overlay(
+             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.gray, lineWidth: 1)
             )
            
         }
     }
-}
+
 
 struct DescriptionTextfield: View {
     @Binding var text: String
