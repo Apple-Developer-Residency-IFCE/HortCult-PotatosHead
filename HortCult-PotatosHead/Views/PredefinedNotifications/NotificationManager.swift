@@ -12,6 +12,8 @@ struct NotificationManager: View {
     @State private var notificationTime = Date()
     @State private var isTimePickerVisible = false
     private let notificationDelegate = NotificationDelegate()
+    @State private var notificationIdentifier: String?
+    let identifier = "Notification"
     
     var body: some View {
         
@@ -40,28 +42,37 @@ struct NotificationManager: View {
                     }
                 }
                 .frame(width: 350, height: 35)
-          
+                
             }
             .sheet(isPresented: $isTimePickerVisible) {
                 TimePickerView(notificationTime: $notificationTime)
-                    .onDisappear {
-                        scheduleNotification()
-                    }
             }
             
-//            Text("Horário selecionado:")
-// Text(dateFormatter.string(from: notificationTime))
+            //            Text("Horário selecionado:")
+            // Text(dateFormatter.string(from: notificationTime))
         }
         .onAppear {
             requestNotificationAuthorization()
             UNUserNotificationCenter.current().delegate = notificationDelegate
+            
         }
     }
     
-    private func requestNotificationAuthorization() {
+     func requestNotificationAuthorization() {
+        
+        if Defaults.enableNotificationStorage == false {
+            print("Notificações desabilitadas")
+            
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+            notificationIdentifier = nil
+            
+            return
+        }
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 scheduleNotification()
+                
             } else {
                 print("Permissão de notificação negada")
             }
@@ -69,6 +80,8 @@ struct NotificationManager: View {
     }
     
     private func scheduleNotification() {
+        
+        
         let content = UNMutableNotificationContent()
         content.title = "HortCult"
         content.body = "Está na hora de regar a sua plantinha!"
@@ -77,16 +90,21 @@ struct NotificationManager: View {
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: notificationTime)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Erro ao agendar notificação: \(error.localizedDescription)")
             } else {
                 print("Notificação agendada para \(dateFormatter.string(from: notificationTime))")
+                self.notificationIdentifier = identifier
             }
         }
     }
 }
+
 
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -123,13 +141,13 @@ struct TimePickerView: View {
             }
             .navigationBarTitle(Text("Horário de Notificação"), displayMode: .inline)
             .navigationBarItems(trailing:
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancelar")
-                        .foregroundColor(Color("MainColor"))
-                        .font(.custom("Satoshi-Regular", size: 18))
-                }
+                                    Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Cancelar")
+                    .foregroundColor(Color("MainColor"))
+                    .font(.custom("Satoshi-Regular", size: 18))
+            }
             )
         }
     }
