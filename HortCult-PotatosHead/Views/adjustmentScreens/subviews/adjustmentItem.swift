@@ -27,6 +27,8 @@ struct AdjustmentItem<Content: View>: View {
 struct AdjustmentItem_Previews: PreviewProvider {
     static var previews: some View {
         AdjustmentItem(label: "Lucas") {
-            Text("Teste")        }
+            Text("Teste")
+            
+        }
     }
 }

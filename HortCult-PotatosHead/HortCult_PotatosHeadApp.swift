@@ -11,16 +11,31 @@ import SwiftUI
 struct HortCult_PotatosHeadApp: App {
     
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
-    @ObservedObject var plantViewModel: PlantViewModel = PlantViewModel()
-    @ObservedObject var notificationViewModel: NotificationViewModel =
-    NotificationViewModel()
-    var defaults = Defaults()
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+//    var defaultShared = Defaults.defaultsShared
+    
+    @StateObject var defaults = Defaults()
+    
+    var color: ColorScheme? {
+        if defaults.theme == "Padrão do Sistema" {
+           return nil
+       } else if defaults.theme == "Claro" {
+           return .light
+       } else {
+           return .dark
+       }
+   }
+    
     var body: some Scene {
         WindowGroup {
             if HortCult_PotatosHeadApp.isFirstLogin == true {
-                OnBoardingScreen()
+                OnBoardingScreen(defaults: defaults)
+                    .preferredColorScheme(.light)
+                    .environmentObject(defaults)
             } else {
-                OnboardingScreenFour()
+                MainView()
+                    .preferredColorScheme(color)
+                    .environmentObject(defaults)
             }
         }
     }

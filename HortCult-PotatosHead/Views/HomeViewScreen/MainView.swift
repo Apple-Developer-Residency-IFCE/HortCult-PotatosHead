@@ -12,6 +12,7 @@ struct MainView: View {
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
+    @EnvironmentObject var defaults: Defaults
     
     var body: some View {
         
@@ -22,17 +23,17 @@ struct MainView: View {
                     
                     HomeView()
                         .padding(.top)
-                    
+                        .ignoresSafeArea()
                 } else {
-                    OnboardingScreen(header: "hortFruitLight",
-                                     centerImage: "pana 2",
-                                     primaryText: "Hora de Cuidar",
-                                     secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
-                                     actionMainButton: {print("oi")}, mainButtonType: .one,
-                                     hidenSecondaryButton: true)
+                    AdjustmentView()
+//                        .environmentObject(defaults)
+                        Spacer()
                     
                 }
-            }.navigationBarHidden(true)
+            }
+            
+            .navigationBarHidden(true)
+                
             
             CustomTabBar(action: { isSelectedTab = 0
                 isNextScreenActive = false
@@ -40,7 +41,7 @@ struct MainView: View {
                          actionTwo: {isSelectedTab = 1},
                          colorOne: isSelectedTab == 0 ? Color("tabBarSelectedItem") : Color("navBarColor"),
                          colorTwo: isSelectedTab == 1 ? Color("tabBarSelectedItem") : Color("navBarColor"))
-        }
+        }.ignoresSafeArea()
     }
     
     
@@ -49,6 +50,7 @@ struct MainView: View {
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
             MainView()
+                .environmentObject(Defaults())
         }
     }
 }

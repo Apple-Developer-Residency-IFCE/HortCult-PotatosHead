@@ -1,12 +1,18 @@
 
 
+
+
+
+
 import SwiftUI
 
+
+
 struct ThemeSelect: View {
-    @ObservedObject var defaults: Defaults
+    @EnvironmentObject var defaults: Defaults
     @State var selectedOption: String
     @Environment(\.presentationMode) var presentationMode
-    
+
     var header: some View {
         ZStack{
             HStack{
@@ -53,8 +59,6 @@ struct ThemeSelect: View {
                 }.padding(.leading, 24)
                 
             }
-            // também dark mode
-   
             .navigationBarBackButtonHidden(true)
             .navigationTitle("")
             .navigationBarItems(leading: header)
@@ -64,6 +68,7 @@ struct ThemeSelect: View {
 
 struct ThemeSelect_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeSelect(defaults: Defaults(), selectedOption: Defaults().theme)
+        ThemeSelect(selectedOption: Defaults().theme)
+            .environmentObject(Defaults())
     }
 }

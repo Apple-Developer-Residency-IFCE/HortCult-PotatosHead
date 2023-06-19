@@ -1,9 +1,10 @@
 import SwiftUI
+import UserNotifications
 
 struct AdjustmentView: View {
-    @ObservedObject var defaults: Defaults
+    @EnvironmentObject var defaults: Defaults
     @State var theme: String = Defaults.themeStorage
-    @State var switcherOn: Bool = true
+    @State var switcherOn: Bool = Defaults.enableNotificationStorage
     @State var timeToAlert: String = ""
     @State var time: Date = Date()
     @State var openConfia: Bool = true
@@ -14,7 +15,7 @@ struct AdjustmentView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Image("Topbar")
+                
                 Group{
                     HStack {
                         Text("Ajustes")
@@ -25,19 +26,23 @@ struct AdjustmentView: View {
 
                     }
                     NavigationLink {
-                        ThemeSelect(defaults: defaults, selectedOption: defaults.theme)
+                        ThemeSelect(selectedOption: Defaults.themeStorage)
+                            .environmentObject(defaults)
+                        
                     } label: {
                         AdjustmentItem(label: "Tema") {
-                            NavigationIconView(label: defaults.theme)
+                            NavigationIconView(label: Defaults.themeStorage)
                         }
                     }
                     
                     Divider()
                     AdjustmentItem(label: "Notificações Push") {
-                        Toggle("", isOn: $switcherOn).onTapGesture {
-                            Defaults.enableNotificationStorage = switcherOn
-                        }
+                        Toggle("", isOn: $switcherOn).onChange(of: switcherOn, perform: { newValue in
+                            Defaults.enableNotificationStorage = newValue
+                            NotificationManager().requestNotificationAuthorization()
+                        })
                     }
+                    
                     Divider()
                     
                     if (switcherOn){
@@ -75,6 +80,7 @@ struct AdjustmentView: View {
 
 struct AdjustmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AdjustmentView(defaults: Defaults())
+        AdjustmentView()
+            .environmentObject(Defaults())
     }
 }
