@@ -20,6 +20,10 @@ class PlantViewModel: ObservableObject {
         plants = fetchedPlants
     }
     
+    init() {
+        fetch()
+    }
+    
     func createPlant(name: String, category: String, information: String, watering_frequency: String) {
             
         let newPlant = Plant(context: viewContext)

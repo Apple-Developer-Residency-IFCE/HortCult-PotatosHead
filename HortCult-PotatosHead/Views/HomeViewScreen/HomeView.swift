@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var defaults: Defaults
-    
+    @ObservedObject var plantViewModel: PlantViewModel
 //    var header: some View {
 //        ZStack{
 //
@@ -42,9 +42,9 @@ struct HomeView: View {
                 CustomNavBar(action: {self.presentationMode.wrappedValue.dismiss()}, hiddenDismissButton: true)
                     Spacer()
                 
-                HeaderMenu()
+                HeaderMenu(plantViewModel: plantViewModel)
                    
-                    .padding(.bottom, 20)
+                   .padding(.bottom, 20)
                 
                 CardListView(cards: [
                     CardViewModel(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular"),
@@ -65,7 +65,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(plantViewModel: PlantViewModel())
             .environmentObject(Defaults())
     }
 }

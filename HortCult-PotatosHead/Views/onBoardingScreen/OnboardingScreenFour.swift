@@ -12,7 +12,7 @@ struct OnboardingScreenFour: View {
     @State var isNextScreenActive = false
     @ObservedObject var defaults: Defaults
     var hortCultMain: HortCult_PotatosHeadApp?
-
+    @ObservedObject var plantViewModel: PlantViewModel
     
     var body: some View {
         
@@ -31,7 +31,7 @@ struct OnboardingScreenFour: View {
                              hidenSecondaryButton: true)
             
             
-            .background(NavigationLink(destination: MainView(), isActive: $isNextScreenActive, label: {EmptyView()}))
+            .background(NavigationLink(destination: MainView(plantViewModel: plantViewModel), isActive: $isNextScreenActive, label: {EmptyView()}))
             
         }.navigationBarHidden(true)
     }
@@ -39,6 +39,6 @@ struct OnboardingScreenFour: View {
 
 struct OnboardingScreenFour_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenFour(defaults: Defaults())
+        OnboardingScreenFour(defaults: Defaults(), plantViewModel: PlantViewModel())
     }
 }

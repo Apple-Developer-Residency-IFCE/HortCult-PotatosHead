@@ -10,6 +10,7 @@ struct AddInfoScreen: View {
     @State var category: Category?
     @State var frequency: Frequency?
     @State var isDisabled: Bool = false
+    @ObservedObject var plantViewModel: PlantViewModel
     
     var header: some View {
         ZStack{
@@ -41,32 +42,33 @@ struct AddInfoScreen: View {
                     VStack{
                         Spacer()
                         if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
-                            AddButton(isDisabled: true)
+                            AddButton(isDisabled: true){}
                         }
                         else {
-                            AddButton(isDisabled: false)
+                            AddButton(isDisabled: false){
+                                guard let frequencia = frequency?.rawValue else {return}
+                                guard let categoria = category?.rawValue else {return}
+                                plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                            }
                         }
+                        
+                        Button("CLick"){
+                            print(plantViewModel.plants)
+                        }
+                        
+                        Text("\(plantViewModel.plants.count)")
                     }
                     .padding(.bottom, 60)
                 }
-                CustomTabBar(action: { isSelectedTab = 0
-                    isNextScreenActive = false
-                },
-                             actionTwo: {isSelectedTab = 1},
-                             colorOne: isSelectedTab == 0 ? Color("tabBarSelectedItem") : Color("navBarColor"),
-                             colorTwo: isSelectedTab == 1 ? Color("tabBarSelectedItem") : Color("navBarColor"))
             }
-            .padding(.bottom, 20)
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle("")
-        .navigationBarItems(leading: header)
+     
     }
 }
 
 struct AddInfoScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddInfoScreen()
+        AddInfoScreen(plantViewModel: PlantViewModel())
     }
 }
 

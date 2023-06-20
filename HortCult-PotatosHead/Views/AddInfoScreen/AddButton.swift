@@ -9,12 +9,11 @@ import SwiftUI
 
 struct AddButton: View {
     var isDisabled: Bool
-    
+    var action: () -> Void
     
     var body: some View {
         ZStack {
-            Button(action: {
-            }) {
+            Button(action: action) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)
                         .frame(width: 350, height: 42)
@@ -34,7 +33,7 @@ struct AddButton: View {
 
 struct AddButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton(isDisabled: false)
+        AddButton(isDisabled: false){}
     }
 }
 

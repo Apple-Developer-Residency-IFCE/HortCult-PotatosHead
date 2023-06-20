@@ -12,7 +12,8 @@ struct HortCult_PotatosHeadApp: App {
     
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-//    var defaultShared = Defaults.defaultsShared
+    @ObservedObject var plantViewModel: PlantViewModel = PlantViewModel()
+    //    var defaultShared = Defaults.defaultsShared
     
     @StateObject var defaults = Defaults()
     
@@ -29,11 +30,11 @@ struct HortCult_PotatosHeadApp: App {
     var body: some Scene {
         WindowGroup {
             if HortCult_PotatosHeadApp.isFirstLogin == true {
-                OnBoardingScreen(defaults: defaults)
+                OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
                     .preferredColorScheme(.light)
                     .environmentObject(defaults)
             } else {
-                MainView()
+                MainView(plantViewModel: plantViewModel)
                     .preferredColorScheme(color)
                     .environmentObject(defaults)
             }

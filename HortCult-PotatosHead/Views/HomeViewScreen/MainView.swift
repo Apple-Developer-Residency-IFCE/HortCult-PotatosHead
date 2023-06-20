@@ -13,7 +13,7 @@ struct MainView: View {
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
     @EnvironmentObject var defaults: Defaults
-    
+    @ObservedObject var plantViewModel: PlantViewModel
     var body: some View {
         
         ZStack {
@@ -21,7 +21,7 @@ struct MainView: View {
             NavigationView {
                 if isSelectedTab == 0 {
                     
-                    HomeView()
+                    HomeView(plantViewModel: plantViewModel)
                         .padding(.top)
                         .ignoresSafeArea()
                 } else {
@@ -49,7 +49,7 @@ struct MainView: View {
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
-            MainView()
+            MainView(plantViewModel: PlantViewModel())
                 .environmentObject(Defaults())
         }
     }

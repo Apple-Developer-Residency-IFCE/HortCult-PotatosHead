@@ -13,12 +13,19 @@ struct Horta {
 }
 
 struct ListHorta: View {
-
+    @ObservedObject var plantViewModel: PlantViewModel
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
             ScrollView(.horizontal){
                 HStack(spacing: 12){
+//                    plantViewModel.plants.forEach { Plant in
+//                        NavigationLink {
+//                            HortaInformation()
+//                        } label: {
+//                            HortaComponent(imagePath: "Tomate", nameHorta: Plant.name!)
+//                        }
+//                    }
                     ForEach(0..<5){_ in
                         NavigationLink {
                             HortaInformation()
@@ -35,6 +42,6 @@ struct ListHorta: View {
 
 struct ListHorta_Previews: PreviewProvider {
     static var previews: some View {
-        ListHorta()
+        ListHorta(plantViewModel: PlantViewModel())
     }
 }

@@ -13,7 +13,7 @@ struct OnboardingScreenThree: View {
     @State private var jumpToInitalScreen = false
     @ObservedObject var defaults: Defaults
     var hortCultMain: HortCult_PotatosHeadApp?
-
+    @ObservedObject var plantViewModel: PlantViewModel
     
     var body: some View {
         
@@ -27,7 +27,7 @@ struct OnboardingScreenThree: View {
                              hidenSecondaryButton: false,
                              actionSecondaryButton: {print("\(hortCultMain?.color)")})
             
-            .background(NavigationLink(destination: OnboardingScreenFour(defaults: defaults), isActive: $isNextScreenActive) {EmptyView()})
+            .background(NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()})
             
             //Navegar para a tela inicial no botao 2
             
@@ -37,6 +37,6 @@ struct OnboardingScreenThree: View {
 
 struct OnboardingScreenThree_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenThree(defaults: Defaults())
+        OnboardingScreenThree(defaults: Defaults(), plantViewModel: PlantViewModel())
     }
 }
