@@ -44,21 +44,25 @@ struct HortaInformation: View {
                     VStack(alignment: .leading){
                         Spacer()
                         HStack {
-                            Text(plant.name!)
+                            Text(plant.name ?? "NAO TEM NOME")
                                 .font(.custom("Satoshi-Regular", size: 28))
                                 .foregroundColor(Color("MainColor"))
                                 .bold()
                             Spacer()
-                            HortaType(type: plant.category!)
+                            HortaType(type: plant.category ?? "NAO TEM CATEGORIA")
                         }
                         .padding(.bottom,24)
-                        Text(plant.information!)
+                        Text(plant.information ?? "NAO TEM INFO")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .padding(.bottom,24)
                         CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
                             .padding(.bottom,24)
-                        FrequenciaRega(plantViewModel: plantViewModel, frequencia: plant.watering_frequency!)
-                        .padding(.horizontal)
+                        if let freq = plant.watering_frequency {
+                            FrequenciaRega(plantViewModel: plantViewModel, frequencia: freq)
+                                .padding(.horizontal)
+                        } else {
+                            
+                        }
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 16)
@@ -66,7 +70,10 @@ struct HortaInformation: View {
                 VStack(alignment: .center){
                     
                     ButtonHorta(buttonTipe: .one, action: {print("ola")}, plantViewModel: plantViewModel, plant: plant)
-                    ReusableButton(buttonTipe: .four, action: {print("ola")})
+                    ButtonHorta(buttonTipe: .two, action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                        plantViewModel.deletePlant(plant: plant)
+                    }, plantViewModel: plantViewModel, plant: plant)
                 }
                 Spacer(minLength: 40)
             }
