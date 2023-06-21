@@ -10,6 +10,7 @@ import SwiftUI
 struct AddButton: View {
     var isDisabled: Bool
     var action: () -> Void
+    var isEdit: Bool = false
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct AddButton: View {
                         .foregroundColor(isDisabled ? Color("buttonAdd") : Color("MainColor"))
                     
                     HStack {
-                        Text("Adicionar Novo Vegetal")
+                        Text(!isEdit ? "Adicionar Novo Vegetal" : "Atualizar Vegetal")
                             .font(.custom("Satoshi-Bold", size: 16))
                             .foregroundColor(Color("backgroundColor"))
                     }

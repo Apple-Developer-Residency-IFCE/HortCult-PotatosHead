@@ -19,7 +19,7 @@ struct HeaderMenu: View {
                         .bold()
                         .foregroundColor(Color("MainColor"))
                     Spacer()
-                    NavigationLink{ AddInfoScreen(plantViewModel: plantViewModel)
+                    NavigationLink{ AddInfoScreen(plantViewModel: plantViewModel, isEdit: false)
                     }label: {
                         HStack{
                             Image(systemName: "plus")

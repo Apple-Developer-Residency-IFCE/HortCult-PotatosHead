@@ -19,8 +19,7 @@ enum buttonCases: CaseIterable {
 
 struct ReusableButton: View {
     var buttonTipe: buttonCases
-    var action: (() -> Void)
-    
+    var action: (() -> Void)    
     var body: some View {
         
         Button(action: {
@@ -102,7 +101,6 @@ struct ReusableButton: View {
                         
                     }
                 }
-
             }
         }
     }

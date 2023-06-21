@@ -17,7 +17,7 @@ struct MainView: View {
     var body: some View {
         
         ZStack {
-        
+    
             NavigationView {
                 if isSelectedTab == 0 {
                     
