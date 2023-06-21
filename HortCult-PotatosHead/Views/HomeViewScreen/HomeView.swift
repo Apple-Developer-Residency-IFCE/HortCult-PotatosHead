@@ -12,37 +12,18 @@ struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
-//    var header: some View {
-//        ZStack{
-//
-//
-//            HStack{
-//                Button(action: {
-//                    self.presentationMode.wrappedValue.dismiss()
-//                } ) {
-//                    Image("leftArrow")
-//                        .opacity(0.0)
-//                }
-//                .disabled(true)
-//                .padding(.leading, 12)
-//
-//                Rectangle()
-//                    .frame(width: 400,height: 150)
-//                    .padding(.bottom, 10)
-//
-//                Spacer()
-//            }
-//        }
-//    }
+    @State var goToAddPlantScreen: Bool = false
     
     var body: some View {
-            
+        NavigationView {
             VStack {
                 
                 CustomNavBar(action: {self.presentationMode.wrappedValue.dismiss()}, hiddenDismissButton: true)
                     Spacer()
                 
-                HeaderMenu(plantViewModel: plantViewModel)
+                HeaderMenu(plantViewModel: plantViewModel){
+                    goToAddPlantScreen = true
+                }
                    
                    .padding(.bottom, 20)
                 
@@ -51,7 +32,9 @@ struct HomeView: View {
                     CardViewModel(title: "Tomatinho está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
                 ])
             }
-           
+            
+            .background(NavigationLink(destination: AddInfoScreen(plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
+        }
             .navigationBarBackButtonHidden(true)
             .navigationTitle("")
 //            .navigationBarItems(leading: header)
