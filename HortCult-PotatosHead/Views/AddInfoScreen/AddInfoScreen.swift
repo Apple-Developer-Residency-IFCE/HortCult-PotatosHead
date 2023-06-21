@@ -82,7 +82,9 @@ struct AddInfoScreen: View {
                     .padding(.bottom, 60)
                 }
             }
-        }
+        }.navigationTitle("")
+            .navigationBarBackButtonHidden()
+            
      
     }
 }

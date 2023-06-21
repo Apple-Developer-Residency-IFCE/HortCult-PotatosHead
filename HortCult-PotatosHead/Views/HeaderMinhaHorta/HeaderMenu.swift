@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HeaderMenu: View {
     @ObservedObject var plantViewModel: PlantViewModel
-    
+    @State var action:(()->Void)
     var body: some View {
-        NavigationView{
+        
             VStack{
                 HStack {
                     Text("Minha Horta")
@@ -19,7 +19,8 @@ struct HeaderMenu: View {
                         .bold()
                         .foregroundColor(Color("MainColor"))
                     Spacer()
-                    NavigationLink{ AddInfoScreen(plantViewModel: plantViewModel, isEdit: false)
+                    Button{
+                      action()
                     }label: {
                         HStack{
                             Image(systemName: "plus")
@@ -33,12 +34,11 @@ struct HeaderMenu: View {
                 .padding(.bottom,10)
                 ListHorta(plantViewModel: plantViewModel)
             }
-        }
     }
 }
 
 struct HeaderMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderMenu(plantViewModel: PlantViewModel())
+        HeaderMenu(plantViewModel: PlantViewModel()){}
     }
 }
