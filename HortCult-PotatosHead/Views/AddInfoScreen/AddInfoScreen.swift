@@ -57,7 +57,7 @@ struct AddInfoScreen: View {
                                 AddButton(isDisabled: false) {
                                     guard let frequencia = frequency?.rawValue else {return}
                                     guard let categoria = category?.rawValue else {return}
-                                    plantViewModel.updatePlant(plant: plant!, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                    plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
                                 }
                             }
                         } else {
