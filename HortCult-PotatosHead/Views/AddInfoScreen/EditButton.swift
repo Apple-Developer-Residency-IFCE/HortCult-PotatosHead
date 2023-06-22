@@ -1,16 +1,15 @@
 //
-//  AddButton.swift
+//  EditButton.swift
 //  HortCult-PotatosHead
 //
-//  Created by Caio Vinicius on 16/06/23.
+//  Created by Joao Guilherme Araujo Canuto on 21/06/23.
 //
 
 import SwiftUI
 
-struct AddButton: View {
+struct EditButton: View {
     var isDisabled: Bool
     var action: () -> Void
-    var isEdit: Bool = false
     
     var body: some View {
         ZStack {
@@ -21,7 +20,7 @@ struct AddButton: View {
                         .foregroundColor(isDisabled ? Color("buttonAdd") : Color("MainColor"))
                     
                     HStack {
-                        Text("Adicionar Novo Vegetal")
+                        Text("Atualizar Vegetal")
                             .font(.custom("Satoshi-Bold", size: 16))
                             .foregroundColor(Color("backgroundColor"))
                     }
@@ -32,9 +31,8 @@ struct AddButton: View {
     }
 }
 
-struct AddButton_Previews: PreviewProvider {
+struct EditButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton(isDisabled: false){}
+        EditButton(isDisabled: false){}
     }
 }
-

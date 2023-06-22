@@ -50,29 +50,34 @@ struct AddInfoScreen: View {
                     }
                     VStack{
                         Spacer()
-                        if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
-                            AddButton(isDisabled: true, isEdit: isEdit){}
-                        }
-                        else {
-                            AddButton(isDisabled: false, isEdit: true ){
-                                if(!isEdit){
+                        if (!isEdit){
+                            if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
+                                AddButton(isDisabled: true){}
+                            } else {
+                                AddButton(isDisabled: false) {
                                     guard let frequencia = frequency?.rawValue else {return}
                                     guard let categoria = category?.rawValue else {return}
                                     plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
-                                } else {
-                                    guard let frequencia = frequency?.rawValue else {return}
-                                    guard let categoria = category?.rawValue else {return}
-                                    plantViewModel.updatePlant(plant: plant!, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
                                 }
-                                
+                            }
+                        } else {
+                        if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
+                            EditButton(isDisabled: true){}
+                        }
+                            else {
+                                EditButton(isDisabled: false){
+                                    if(!isEdit){
+                                        guard let frequencia = frequency?.rawValue else {return}
+                                        guard let categoria = category?.rawValue else {return}
+                                        plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                    } else {
+                                        guard let frequencia = frequency?.rawValue else {return}
+                                        guard let categoria = category?.rawValue else {return}
+                                        plantViewModel.updatePlant(plant: plant!, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                    }
+                                }
                             }
                         }
-                        
-//                        Button("CLick"){
-//                            print(plantViewModel.plants)
-//                        }
-                        
-                       // Text("\(plantViewModel.plants.count)")
                     }
                     .padding(.bottom, 60)
                 }

@@ -71,6 +71,7 @@
 		9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0663602A2EB2A2001DC0B8 /* HomeView.swift */; };
 		9B5426A72A3BDB86006E7FC2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */; };
 		EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3922372A3BC761004A5FC2 /* ImageSpace.swift */; };
+		EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3922402A43A292004A5FC2 /* EditButton.swift */; };
 		EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,7 @@
 		9B0663602A2EB2A2001DC0B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		EF3922372A3BC761004A5FC2 /* ImageSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpace.swift; sourceTree = "<group>"; };
+		EF3922402A43A292004A5FC2 /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
 		EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 				3D54AA6E2A3D1A6100526BB5 /* AddInfoScreen.swift */,
 				3D54AA722A3D2AC000526BB5 /* AddButton.swift */,
 				3D5455A82A425DC800EBFE7A /* EditInfoView.swift */,
+				EF3922402A43A292004A5FC2 /* EditButton.swift */,
 			);
 			path = AddInfoScreen;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				5488893B2A411184002009AF /* PlantViewModel.swift in Sources */,
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
+				EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				9B0663612A2EB2A2001DC0B8 /* HomeView.swift in Sources */,
