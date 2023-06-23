@@ -10,8 +10,8 @@ struct TextScreen: View {
         
             VStack {
                 VStack (spacing: 20){
-                    NameTextfield(text: $text)
-                    DescriptionTextfield(text: $description)
+                    NameTextfield(text: $text, placeholder: "Insira um nome")
+                    DescriptionTextfield(text: $description, placeholder: "Insira uma descrição")
                 }
             }
         

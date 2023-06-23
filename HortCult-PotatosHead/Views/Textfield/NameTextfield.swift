@@ -1,16 +1,21 @@
 import SwiftUI
 
-struct PlaceholderNameTextView: View {
+struct NameTextfield: View {
     @Binding var text: String
     var placeholder: String
     
     var body: some View {
-        VStack (alignment: .leading){
+        VStack(alignment: .leading) {
+            Text("Nome")
+                .font(.custom("Satoshi-Regular", size: 12))
+                .foregroundColor(Color("buttonCardColor"))
+                .padding(.horizontal, 8)
             ZStack(alignment: .topLeading) {
                 if text.isEmpty {
                     TextEditor(text: $text)
                         .padding(.leading)
                         .foregroundColor(.gray)
+                        .frame(height: 40)
                         .opacity(0.5)
                         .overlay(
                             Text(placeholder)
@@ -32,27 +37,12 @@ struct PlaceholderNameTextView: View {
                     .stroke(Color.gray, lineWidth: 1)
             )
         }
-    }
-}
-
-struct NameTextfield: View {
-    @Binding var text: String
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Nome")
-                .font(.custom("Satoshi-Regular", size: 12))
-                .foregroundColor(Color("buttonCardColor"))
-                .padding(.horizontal, 20)
-            
-            PlaceholderNameTextView(text: $text, placeholder: "Insira um nome")
-                .padding(.horizontal, 20)
-        }
+        .padding(.horizontal, 20)
     }
 }
 
 struct NameTextfield_Previews: PreviewProvider {
     static var previews: some View {
-        NameTextfield(text: .constant(""))
+        NameTextfield(text: .constant(""), placeholder: "Insira um nome")
     }
 }
