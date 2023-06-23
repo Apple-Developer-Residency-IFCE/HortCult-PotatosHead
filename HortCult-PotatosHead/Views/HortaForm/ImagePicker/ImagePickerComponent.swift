@@ -9,8 +9,8 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePickerComponent: View {
-    @State private var selectedItems: [PhotosPickerItem] = []
-    @State private var selectedPhotosData: [Data] = []
+    @State var selectedItems: [PhotosPickerItem] = []
+    @Binding var selectedPhotosData: [Data]
     
     var body: some View {
         ScrollView(.horizontal){
@@ -55,6 +55,8 @@ struct ImagePickerComponent: View {
 
 
 struct ImagePickerComponentView: View {
+    @Binding var selectedPhotosData:[Data]
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Fotos")
@@ -62,14 +64,9 @@ struct ImagePickerComponentView: View {
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 20)
             
-            ImagePickerComponent()
+            ImagePickerComponent(selectedPhotosData: $selectedPhotosData)
                 .padding(.horizontal, 20)
         }
     }
 }
 
-struct ImagePickerComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        ImagePickerComponentView()
-    }
-}

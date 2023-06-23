@@ -10,6 +10,7 @@ struct AddInfoScreen: View {
     @State var category: Category?
     @State var frequency: Frequency?
     @State var isDisabled: Bool = false
+    @State var selectedPhotosData: [Data] = []
     var plant: Plant?
     @ObservedObject var plantViewModel: PlantViewModel
     var uuid: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)?
@@ -46,7 +47,7 @@ struct AddInfoScreen: View {
                             .padding(.bottom, 20)
                         FrequencyDropDownView(selectedOption: $frequency)
                             .padding(.bottom, 20)
-                        ImagePickerComponentView()
+                        ImagePickerComponentView(selectedPhotosData: $selectedPhotosData)
                     }
                     VStack{
                         Spacer()
