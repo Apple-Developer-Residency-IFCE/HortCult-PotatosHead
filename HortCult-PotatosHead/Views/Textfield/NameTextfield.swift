@@ -10,25 +10,18 @@ struct NameTextfield: View {
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
                 .padding(.horizontal, 8)
-            ZStack(alignment: .topLeading) {
+            
+            ZStack(alignment: .leading) {
                 if text.isEmpty {
-                    TextEditor(text: $text)
+                    Text(placeholder)
+                        .foregroundColor(Color("hourButton"))
+                        .font(.custom("Satoshi-Regular", size: 16))
                         .padding(.leading)
-                        .foregroundColor(.gray)
-                        .frame(height: 40)
                         .opacity(0.5)
-                        .overlay(
-                            Text(placeholder)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.custom("Satoshi-Regular", size: 16))
-                                .foregroundColor(Color("hourButton"))
-                                .padding(.horizontal, 20)
-                        )
-                } else {
-                    TextEditor(text: $text)
-                        .padding(.leading)
-                        .foregroundColor(.primary)
                 }
+                
+                TextField("", text: $text)
+                    .padding(.leading)
             }
             .frame(height: 40)
             .cornerRadius(10)
@@ -46,3 +39,4 @@ struct NameTextfield_Previews: PreviewProvider {
         NameTextfield(text: .constant(""), placeholder: "Insira um nome")
     }
 }
+
