@@ -14,7 +14,6 @@ struct NameTextfield: View {
             ZStack(alignment: .leading) {
                 if text.isEmpty {
                     Text(placeholder)
-                        .foregroundColor(Color("hourButton"))
                         .font(.custom("Satoshi-Regular", size: 16))
                         .padding(.leading)
                         .opacity(0.5)
