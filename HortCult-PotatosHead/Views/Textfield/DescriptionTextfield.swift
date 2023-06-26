@@ -43,7 +43,6 @@ struct TextEditorWrapper: View {
     var placeholderText: some View {
         Text(placeholder)
             .font(.custom("Satoshi-Regular", size: 16))
-            .foregroundColor(Color("hourButton"))
             .padding(.vertical, 12)
             .padding(.horizontal, 20)
     }
