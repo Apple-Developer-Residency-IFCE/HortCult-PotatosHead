@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22A8380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Hortcult_Images" representedClassName="Hortcult_Images" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="plant_image" optional="YES" attributeType="Binary"/>
+        <relationship name="hotcult_images_plants" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plant" inverseName="plant_hortcult_images" inverseEntity="Plant"/>
+    </entity>
     <entity name="Notification" representedClassName="Notification" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="is_resolve" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -15,6 +20,7 @@
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="watering_frequency" optional="YES" attributeType="String"/>
+        <relationship name="plant_hortcult_images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hortcult_Images" inverseName="hotcult_images_plants" inverseEntity="Hortcult_Images"/>
         <relationship name="plant_notification" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification" inverseName="notification_plant" inverseEntity="Notification"/>
     </entity>
 </model>

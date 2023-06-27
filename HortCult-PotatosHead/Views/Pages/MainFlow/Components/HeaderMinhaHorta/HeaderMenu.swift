@@ -15,8 +15,7 @@ struct HeaderMenu: View {
             VStack{
                 HStack {
                     Text("Minha Horta")
-                        .font(.system(size: 16))
-                        .bold()
+                        .font(.custom("Satoshi-Bold", size: 28))
                         .foregroundColor(Color("MainColor"))
                     Spacer()
                     Button{
@@ -34,6 +33,7 @@ struct HeaderMenu: View {
                 .padding(.bottom,10)
                 ListHorta(plantViewModel: plantViewModel)
             }
+            .padding()
     }
 }
 

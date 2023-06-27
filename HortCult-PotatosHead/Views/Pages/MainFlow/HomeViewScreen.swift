@@ -33,6 +33,7 @@ struct HomeView: View {
                 ])
             }
             
+            
             .background(NavigationLink(destination: AddInfoScreen(plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
         }
             .navigationBarBackButtonHidden(true)

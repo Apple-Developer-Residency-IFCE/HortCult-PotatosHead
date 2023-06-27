@@ -20,7 +20,7 @@ struct ListHorta: View {
                 HStack(spacing: 12){
                     ForEach(plantViewModel.plants){ plant in
                         NavigationLink {
-                            HortaInformation( plantViewModel: plantViewModel, plant: plant )
+                            HortaInformationScreen( plantViewModel: plantViewModel, plant: plant )
                         } label: {
                             HortaComponent(imagePath: "Tomate", nameHorta: plant.name!)
                         }

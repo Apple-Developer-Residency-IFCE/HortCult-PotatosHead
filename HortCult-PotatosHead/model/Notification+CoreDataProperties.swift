@@ -2,7 +2,7 @@
 //  Notification+CoreDataProperties.swift
 //  HortCult-PotatosHead
 //
-//  Created by carlos amorim on 16/06/23.
+//  Created by carlos amorim on 26/06/23.
 //
 //
 
@@ -19,8 +19,8 @@ extension Notification {
     @NSManaged public var id: UUID?
     @NSManaged public var is_resolve: Bool
     @NSManaged public var next_time_to_alert: String?
-    @NSManaged public var type_to_alert: String?
     @NSManaged public var time_to_alert: String?
+    @NSManaged public var type_to_alert: String?
     @NSManaged public var notification_plant: Plant?
 
 }
