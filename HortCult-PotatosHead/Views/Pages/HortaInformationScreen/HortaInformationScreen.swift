@@ -8,15 +8,11 @@
 import SwiftUI
 
 
-struct HortaInformation: View {
+struct HortaInformationScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var plantViewModel: PlantViewModel
     var plant: Plant
-//    var descricao = "O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças cardiovasculares, como infarto e aterosclerose."
-    //var frequencia_de_rega = "diaria"
-    //var proxima_rega = "2019-10-10"
-    //var tipo = "Hortaliças"
-
+    
     var header: some View {
         ZStack {
             VStack{

@@ -15,26 +15,20 @@ struct MainView: View {
     @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
     var body: some View {
-        
+        //IMPLEMENTAR A NAVIGATION LINK (Back Button)
         ZStack {
-    
-            NavigationView {
-                if isSelectedTab == 0 {
-                    
-                    HomeView(plantViewModel: plantViewModel)
-                        .padding(.top)
-                        .ignoresSafeArea()
-                } else {
-                    AdjustmentView()
-//                        .environmentObject(defaults)
-                        Spacer()
-                    
-                }
-            }
-            
-            .navigationBarHidden(true)
+            if isSelectedTab == 0 {
                 
-            
+                HomeView(plantViewModel: plantViewModel)
+                    .padding(.top)
+                    .ignoresSafeArea()
+            } else {
+                AdjustmentView()
+                //                        .environmentObject(defaults)
+                Spacer()
+                
+            }
+            //   .navigationBarHidden(true)
             CustomTabBar(action: { isSelectedTab = 0
                 isNextScreenActive = false
             },
@@ -43,9 +37,6 @@ struct MainView: View {
                          colorTwo: isSelectedTab == 1 ? Color("tabBarSelectedItem") : Color("navBarColor"))
         }.ignoresSafeArea()
     }
-    
-    
-    
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {

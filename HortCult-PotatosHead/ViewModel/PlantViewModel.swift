@@ -84,4 +84,23 @@ class PlantViewModel: ObservableObject {
             print("could not save \(error) \(error.userInfo)")
         }
     }
+    
+    func addImageToPlant(plant: Plant, plantImage: Hortcult_Images){
+        plant.addToPlant_hortcult_images(plantImage)
+        do {
+            try viewContext.save()
+            fetch()
+        } catch let error as NSError {
+            print("could not save \(error) \(error.userInfo)")
+        }
+    }
+    func removeImageToPlant(plant:Plant, plantImage: Hortcult_Images){
+        plant.removeFromPlant_hortcult_images(plantImage)
+        do {
+            try viewContext.save()
+            fetch()
+        } catch let error as NSError {
+            print("could not save \(error) \(error.userInfo)")
+        }
+    }
 }
