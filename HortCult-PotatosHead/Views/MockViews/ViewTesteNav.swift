@@ -2,9 +2,11 @@ import SwiftUI
 
 struct ViewTesteNav: View {
     @Environment(\.presentationMode) var presentationMode
+    
+    
     var body: some View {
         NavigationView {
-            NavigationLink(destination: Navigation()) {
+            NavigationLink(destination: HomeView(plantViewModel: PlantViewModel())) {
                 Text("Teste a Navigation")
             }
         }
