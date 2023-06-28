@@ -63,7 +63,9 @@ struct OnboardingScreen: View {
                 
                 ReusableButton(buttonTipe: mainButtonType , action: {actionMainButton()})
                         .padding(.bottom, 25)
+                    
                 
+                    
                     Button("Pular para a tela inicial") {
                         if let secondButtonAction = actionSecondaryButton {
                             secondButtonAction()
@@ -100,7 +102,6 @@ struct OnboardingScreen: View {
                 
                 Button("Pular para a tela inicial") {
                     if let secondButtonAction = actionSecondaryButton {
-                        secondButtonAction()
                     } else {
                         return
                     }
