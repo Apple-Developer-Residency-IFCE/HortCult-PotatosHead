@@ -89,3 +89,4 @@ struct HortaInformationScreen: View {
         .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
+
