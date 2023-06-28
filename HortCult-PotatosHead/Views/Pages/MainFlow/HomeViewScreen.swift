@@ -24,8 +24,9 @@ struct HomeView: View {
                 HeaderMenu(plantViewModel: plantViewModel){
                     goToAddPlantScreen = true
                 }
+                Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
                    
-                   .padding(.bottom, 20)
+                   //.padding(.bottom, 20)
                 
                 CardListView(cards: [
                     CardViewModel(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular"),
@@ -53,3 +54,7 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(Defaults())
     }
 }
+
+
+
+
