@@ -2,7 +2,8 @@
 import SwiftUI
 
 struct AddInfoScreen: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State var nameText: String = ""
@@ -11,13 +12,15 @@ struct AddInfoScreen: View {
     @State var frequency: Frequency?
     @State var isDisabled: Bool = false
     @State var selectedPhotosData: [Data] = []
+    @EnvironmentObject var defaults: Defaults
     var plant: Plant?
     @ObservedObject var plantViewModel: PlantViewModel
     var uuid: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)?
     @State var isEdit: Bool = false
+    
     var header: some View {
         ZStack{
-            Image("Topbar")
+            Image(defaults.theme ==  "Escuro" ? "Topbardark" : "Topbar")
             HStack{
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
@@ -30,10 +33,12 @@ struct AddInfoScreen: View {
         }
     }
     var body: some View {
-        NavigationView {
-            VStack{
                 ZStack{
                     ScrollView{
+                        
+                        CustomNavBar(hiddenDismissButton: false)
+                            
+                        
                         HStack {
                         Text(isEdit ? "Editar Informações" : "Adicionar Vegetal")
                             .font(.custom("Satoshi-Bold", size: 28))
@@ -48,7 +53,9 @@ struct AddInfoScreen: View {
                         FrequencyDropDownView(selectedOption: $frequency)
                             .padding(.bottom, 20)
                         ImagePickerComponentView(selectedPhotosData: $selectedPhotosData)
+                            .padding(.bottom, 110)
                     }
+                    
                     VStack{
                         Spacer()
                         if (!isEdit){
@@ -82,9 +89,9 @@ struct AddInfoScreen: View {
                     }
                     .padding(.bottom, 60)
                 }
-            }
-        }.navigationTitle("")
-            .navigationBarBackButtonHidden()
+        .edgesIgnoringSafeArea(.all)
+        .navigationBarBackButtonHidden(true)
+        
             
      
     }
@@ -93,6 +100,7 @@ struct AddInfoScreen: View {
 struct AddInfoScreen_Previews: PreviewProvider {
     static var previews: some View {
         AddInfoScreen(plantViewModel: PlantViewModel(), isEdit: false)
+            .environmentObject(Defaults())
     }
 }
 

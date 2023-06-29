@@ -9,63 +9,57 @@ import SwiftUI
 
 struct CustomNavBar: View {
     
-    var hortCultMain: HortCult_PotatosHeadApp?
-    var action: (() -> Void)
-    var hiddenDismissButton: Bool
-    
+    var hiddenDismissButton: Bool = true
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var defaults: Defaults
     var body: some View {
        
         VStack{
             
             ZStack {
             
-                VStack {
+                VStack(spacing: 0) {
                     Rectangle()
-                        .frame(height: 110)
+                        .frame(height: 100)
                         .foregroundColor(Color("backgroundnavbarcolor"))
                     
                     Rectangle()
-                        .frame(height: 0.6)
-                        .foregroundColor(Color.black)
+                        .frame(height: 0.5)
+                        .foregroundColor(Color("RectangleBar"))
                         
                 }
                 
-                
-                    
-                
-                HStack{
-                    
-                    Button {
-                        action()
-                        
-                    } label: {
-                        Image("leftArrow")
-                            .renderingMode(.template)
-                            .foregroundColor(Color("navbardismissbuttoncolor"))
-                            .padding(.leading, 20)
-                          
-                    }.padding(.top, 40)
-                        .hidden()
-                    Spacer()
-                    
-                }
-                
-                
-                
-                Image(hortCultMain?.color == .light ? "hortFruitLight" : "hortFruitDark")
+                Image("NavBar")
                     .padding(.top, 40)
-                    Spacer()
+                   Spacer()
                
-                
-            }.ignoresSafeArea()
+                if(!hiddenDismissButton){
+                    HStack{
+                        
+                        Button(action:{
+                                            self.presentationMode.wrappedValue.dismiss()
+                                        } )  {
+                            Image("leftArrow")
+                                .renderingMode(.template)
+                                .foregroundColor(Color("navbardismissbuttoncolor"))
+                                .padding(.leading, 20)
+                              
+                        }.padding(.top, 40)
+                        
+                        Spacer()
+                        
+                    }
+
+                }
+            }.ignoresSafeArea(.all)
             
            
-        }.ignoresSafeArea()
+        }.ignoresSafeArea(.all)
     }
 }
 
 struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBar(action: {print("olá")}, hiddenDismissButton: false)
+        CustomNavBar(hiddenDismissButton: false).environmentObject(Defaults())
     }
 }
