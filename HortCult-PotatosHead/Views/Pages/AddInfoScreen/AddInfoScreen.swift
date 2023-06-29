@@ -3,6 +3,7 @@ import SwiftUI
 
 struct AddInfoScreen: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var imageViewModel: ImageViewModel
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State var nameText: String = ""
@@ -13,7 +14,6 @@ struct AddInfoScreen: View {
     @State var selectedPhotosData: [Data] = []
     var plant: Plant?
     @ObservedObject var plantViewModel: PlantViewModel
-    var uuid: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)?
     @State var isEdit: Bool = false
     var header: some View {
         ZStack{
@@ -58,7 +58,13 @@ struct AddInfoScreen: View {
                                 AddButton(isDisabled: false) {
                                     guard let frequencia = frequency?.rawValue else {return}
                                     guard let categoria = category?.rawValue else {return}
-                                    plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                    guard let neewPlant  = plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia) else{return}
+                                    selectedPhotosData.forEach { Data in
+                                        guard let newImage = imageViewModel.createImage(plantImage: Data) else {return}
+                                        plantViewModel.addImageToPlant(plant: neewPlant, plantImage: newImage)
+                                    }
+                                    
+                                    
                                 }
                             }
                         } else {
@@ -70,11 +76,24 @@ struct AddInfoScreen: View {
                                     if(!isEdit){
                                         guard let frequencia = frequency?.rawValue else {return}
                                         guard let categoria = category?.rawValue else {return}
-                                        plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                        guard let newPlant = plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia) else {return}
                                     } else {
+                                        
                                         guard let frequencia = frequency?.rawValue else {return}
                                         guard let categoria = category?.rawValue else {return}
-                                        plantViewModel.updatePlant(plant: plant!, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                        guard let plant = plant else {return}
+                                        
+                                        plantViewModel.updatePlant(plant: plant, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                        
+                                        plant.plant_hortcult_images?.allObjects.forEach({ image in
+                                            plantViewModel.removeImageToPlant(plant: plant, plantImage: (image as! Hortcult_Images))
+                                        })
+                                        
+                                        selectedPhotosData.forEach { Data in
+                                            guard let newImage = imageViewModel.createImage(plantImage: Data) else {return}
+                                            plantViewModel.addImageToPlant(plant: plant, plantImage: newImage)
+                                        }
+                                        
                                     }
                                 }
                             }
