@@ -10,12 +10,16 @@ struct EditInfoView: View {
     var plant:Plant
     
     var body: some View {
+        VStack{
             AddInfoScreen(nameText: plant.name!,
                           descriptionText: plant.information!,
                           category: Category.init(rawValue: plant.category!),
                           frequency: Frequency.init(rawValue: plant.watering_frequency!) ,
                           isDisabled: false,
                           plant: plant, plantViewModel: plantViewModel, isEdit: true)
+        }
+            // .edgesIgnoringSafeArea(.all)
+            .navigationBarBackButtonHidden(true)
     }
 }
 
