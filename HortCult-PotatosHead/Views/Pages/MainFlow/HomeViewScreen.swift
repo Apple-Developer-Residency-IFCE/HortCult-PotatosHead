@@ -18,7 +18,7 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 
-                CustomNavBar(hiddenDismissButton: true)
+                CustomNavBar(action: {self.presentationMode.wrappedValue.dismiss()}, hiddenDismissButton: true)
                     Spacer()
                 
                 HeaderMenu(plantViewModel: plantViewModel){
@@ -37,6 +37,7 @@ struct HomeView: View {
             .background(NavigationLink(destination: AddInfoScreen(plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
         }
             .navigationBarBackButtonHidden(true)
+            .navigationTitle("")
 //            .navigationBarItems(leading: header)
             
         }

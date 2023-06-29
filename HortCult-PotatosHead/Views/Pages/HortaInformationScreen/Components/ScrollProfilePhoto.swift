@@ -8,25 +8,21 @@
 import SwiftUI
 
 struct ScrollProfilePhoto: View {
-    
+    let images = ["Image", "Image 1", "Image 2"]
     
     var body: some View {
-                    ScrollView(.horizontal) { // <1>
-                        
-                        HStack(spacing: 0) { // <2>
-                            
-                            ForEach(0..<3) { index in
-                                ZStack{
-                                   
-                                    Image("Tomate")
-                                        .frame(maxWidth: .infinity)
-                                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
-                                        .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
-                                }
-                            }
-                        }
-                    }
-                    .edgesIgnoringSafeArea(.all)
+        VStack {
+            TabView {
+                ForEach(0..<3){ i in
+                    Image("\(images[i])")
+                        .resizable()
+                    
+                }
+            }.tabViewStyle(PageTabViewStyle())
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                
+        }
+        .ignoresSafeArea()
     }
 }
 

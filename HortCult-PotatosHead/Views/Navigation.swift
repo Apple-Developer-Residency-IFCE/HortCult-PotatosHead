@@ -24,7 +24,7 @@ struct Navigation: View {
     var body: some View {
         VStack {
             
-            CustomNavBar(hiddenDismissButton: false)
+            CustomNavBar(action: {self.presentationMode.wrappedValue.dismiss()}, hiddenDismissButton: false)
             
             Image("pana")
                 .resizable()

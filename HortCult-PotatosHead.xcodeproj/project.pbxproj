@@ -243,6 +243,7 @@
 			children = (
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
 				1385EADF2A216870006E3487 /* HortaInformationScreen */,
+				5423671C2A4B883400261828 /* Components */,
 				64C476572A26A80A006D499A /* MainFlow */,
 				542367182A4B874600261828 /* EditInfoScreen */,
 				3D54AA6D2A3D1A3F00526BB5 /* AddInfoScreen */,
@@ -462,7 +463,6 @@
 		64E15AF82A1D82AF0043A96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5423671C2A4B883400261828 /* Components */,
 				542367172A4B871800261828 /* Pages */,
 				1385EADD2A21635C006E3487 /* MockViews */,
 				64E15AFC2A1D830E0043A96E /* FirstLogin.swift */,
