@@ -16,7 +16,6 @@ struct NotificationManager: View {
     let identifier = "Notification"
     
     var body: some View {
-        
         VStack {
             Button(action: {
                 isTimePickerVisible = true
@@ -42,24 +41,32 @@ struct NotificationManager: View {
                     }
                 }
                 .frame(width: 350, height: 35)
-                
             }
             .sheet(isPresented: $isTimePickerVisible) {
                 TimePickerView(notificationTime: $notificationTime)
+                    .onDisappear {
+                        updateNotificationTime()
+                    }
             }
-            
-            //            Text("Horário selecionado:")
-            // Text(dateFormatter.string(from: notificationTime))
         }
         .onAppear {
+            loadNotificationTime()
             requestNotificationAuthorization()
             UNUserNotificationCenter.current().delegate = notificationDelegate
-            
         }
     }
     
-     func requestNotificationAuthorization() {
-        
+    func loadNotificationTime() {
+        if let savedTime = UserDefaults.standard.object(forKey: "NotificationTime") as? Date {
+            notificationTime = savedTime
+        }
+    }
+    
+    func updateNotificationTime() {
+        UserDefaults.standard.set(notificationTime, forKey: "NotificationTime")
+    }
+    
+    func requestNotificationAuthorization() {
         if Defaults.enableNotificationStorage == false {
             print("Notificações desabilitadas")
             
@@ -72,7 +79,6 @@ struct NotificationManager: View {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 scheduleNotification()
-                
             } else {
                 print("Permissão de notificação negada")
             }
@@ -80,8 +86,6 @@ struct NotificationManager: View {
     }
     
     private func scheduleNotification() {
-        
-        
         let content = UNMutableNotificationContent()
         content.title = "HortCult"
         content.body = "Está na hora de regar a sua plantinha!"
@@ -90,9 +94,7 @@ struct NotificationManager: View {
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: notificationTime)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
-        
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -104,7 +106,6 @@ struct NotificationManager: View {
         }
     }
 }
-
 
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -158,5 +159,3 @@ struct NotificationManager_Previews: PreviewProvider {
         NotificationManager()
     }
 }
-
-
