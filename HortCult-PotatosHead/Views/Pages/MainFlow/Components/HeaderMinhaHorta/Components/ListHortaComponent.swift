@@ -22,7 +22,10 @@ struct ListHorta: View {
                         NavigationLink {
                             HortaInformationScreen( plantViewModel: plantViewModel, plant: plant )
                         } label: {
-                            HortaComponent(imagePath: "Tomate", nameHorta: plant.name!)
+                            if let image = plantViewModel.getPlantImages(plant: plant).first {
+                                HortaComponent( nameHorta: plant.name!, plant: plant, image: image)
+                            }
+                            
                         }
                     }
                     .foregroundColor(Color("title"))
