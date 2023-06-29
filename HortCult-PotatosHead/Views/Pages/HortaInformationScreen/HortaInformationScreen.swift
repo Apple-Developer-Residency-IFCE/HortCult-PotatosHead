@@ -2,14 +2,13 @@
 //  HortaInformation.swift
 //  HortCult-PotatosHead
 //
-//  Created by Joao Guilherme Araujo Canuto on 29/05/23.
 //
 
 import SwiftUI
 
 
 struct HortaInformationScreen: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var plantViewModel: PlantViewModel
     var plant: Plant
     
@@ -30,12 +29,11 @@ struct HortaInformationScreen: View {
     }
     
     var body: some View {
-        NavigationView(){
             ScrollView(.vertical){
                 ScrollProfilePhoto()
                     .frame(minWidth: 390, minHeight: 390)
-                    .ignoresSafeArea()
-                    .edgesIgnoringSafeArea(.all)
+//                    .ignoresSafeArea()
+//                    .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .leading){
                     VStack(alignment: .leading){
                         Spacer()
@@ -65,25 +63,43 @@ struct HortaInformationScreen: View {
                 }
                 VStack(alignment: .center){
                     
-                    ButtonHorta(buttonTipe: .one, action: {print("ola")}, plantViewModel: plantViewModel, plant: plant)
-                    ButtonHorta(buttonTipe: .two, action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                        plantViewModel.deletePlant(plant: plant)
-                    }, plantViewModel: plantViewModel, plant: plant)
+                    NavigationLink {
+                        EditInfoView(plantViewModel: plantViewModel, plant: plant)
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color("MainColor"), lineWidth: 2)
+                                .frame(width: 277, height: 42)
+                            
+                            HStack {
+                                Image("Edit")
+                                    .renderingMode(.template)
+                                    .foregroundColor(Color("MainColor"))
+                                Text("Editar informações")
+                                    .font(.custom("Satoshi-Bold", size: 16))
+                                    .foregroundColor(Color("MainColor"))
+                                
+                            }
+                        }
+                    }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 277, height: 42)
+                            .foregroundColor(Color("red"))
+                        
+                        HStack {
+                            Image("Trash")
+                                .renderingMode(.template)
+                                .foregroundColor(Color("backgroundColor"))
+                            Text("Excluir da Minha Horta")
+                                .font(.custom("Satoshi-Bold", size: 16))
+                                .foregroundColor(Color("backgroundColor"))
+                        }
+                    }
                 }
                 Spacer(minLength: 100)
             }
-            .overlay {
-                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: UnitPoint(x: 0.5, y: 0.35))
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: .infinity,height: .infinity)
-                    .allowsHitTesting(false)
-            }
-            .edgesIgnoringSafeArea(.top)
-        }
-        .frame(height: .infinity)
-        .edgesIgnoringSafeArea(.top)
-        .navigationTitle("")
+        .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: header)
         .toolbarBackground(.hidden, for: .navigationBar)
