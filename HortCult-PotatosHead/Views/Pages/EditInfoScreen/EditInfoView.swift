@@ -8,14 +8,19 @@ struct EditInfoView: View {
 //    @State var isDisabled: Bool = false
     @ObservedObject var plantViewModel = PlantViewModel() // Use @StateObject instead of @ObservedObject in a non-View struct
     var plant:Plant
-    
+    var listImageData: [Data] = []
+    init(plantViewModel: PlantViewModel = PlantViewModel(), plant: Plant) {
+        self.plantViewModel = plantViewModel
+        self.plant = plant
+        listImageData = plantViewModel.getPlantImagesData(plant: plant)
+    }
     var body: some View {
             AddInfoScreen(nameText: plant.name!,
                           descriptionText: plant.information!,
                           category: Category.init(rawValue: plant.category!),
                           frequency: Frequency.init(rawValue: plant.watering_frequency!) ,
                           isDisabled: false,
-                          plant: plant, plantViewModel: plantViewModel, isEdit: true)
+                          selectedPhotosData: listImageData, plant: plant, plantViewModel: plantViewModel, isEdit: true )
     }
 }
 
