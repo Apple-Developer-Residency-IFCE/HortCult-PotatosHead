@@ -26,7 +26,7 @@ struct OnboardingScreenTwo: View {
  
             )
             .background(
-                NavigationLink(destination: HomeView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
+                NavigationLink(destination: MainView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
             )
             
             //Navegar para a tela inicial no botao 2
