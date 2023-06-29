@@ -20,8 +20,8 @@ struct MainView: View {
             if isSelectedTab == 0 {
                 
                 HomeView(plantViewModel: plantViewModel)
-                    .padding(.top)
-                    .ignoresSafeArea()
+                    //.padding(.top)
+                    //.ignoresSafeArea()
             } else {
                 AdjustmentView()
                 //                        .environmentObject(defaults)

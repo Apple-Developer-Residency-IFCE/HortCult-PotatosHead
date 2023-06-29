@@ -11,7 +11,7 @@ struct OnboardingScreenThree: View {
     
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
-    @ObservedObject var defaults: Defaults
+    @EnvironmentObject var defaults: Defaults
     var hortCultMain: HortCult_PotatosHeadApp?
     @ObservedObject var plantViewModel: PlantViewModel
     
@@ -23,11 +23,16 @@ struct OnboardingScreenThree: View {
                              centerImage: "onboardingthreelight",
                              primaryText: "Amplie sua horta com diferentes vegetais",
                              secondaryText: "Adicione fotos e informações como luminosidade, umidade e muito mais.",
+                             
                              actionMainButton: {isNextScreenActive = true}, mainButtonType: .two,
                              hidenSecondaryButton: false,
-                             actionSecondaryButton: {print("\(hortCultMain?.color)")})
+                             actionSecondaryButton: {jumpToInitalScreen = true})
             
-            .background(NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()})
+            .background(
+                NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()})
+            .background(
+                NavigationLink(destination: MainView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
+            )
             
             //Navegar para a tela inicial no botao 2
             
@@ -37,6 +42,7 @@ struct OnboardingScreenThree: View {
 
 struct OnboardingScreenThree_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenThree(defaults: Defaults(), plantViewModel: PlantViewModel())
+        OnboardingScreenThree(plantViewModel: PlantViewModel())
+            .environmentObject(Defaults())
     }
 }

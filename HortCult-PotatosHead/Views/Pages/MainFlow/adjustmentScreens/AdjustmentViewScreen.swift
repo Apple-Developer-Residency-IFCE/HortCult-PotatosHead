@@ -73,7 +73,7 @@ struct AdjustmentView: View {
                 .padding(.top, 20)
                 
             }
-        }
+        }.navigationBarBackButtonHidden(true)
         
     }
 }

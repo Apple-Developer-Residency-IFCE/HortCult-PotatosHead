@@ -30,7 +30,6 @@ struct HeaderMenu: View {
                     .background(Color("MainColor"))
                     .clipShape(Circle())
                 }
-                .padding(.bottom,10)
                 ListHorta(plantViewModel: plantViewModel)
             }
             .padding()
