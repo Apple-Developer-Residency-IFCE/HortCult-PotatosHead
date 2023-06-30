@@ -25,7 +25,7 @@ class NotificationViewModel: ObservableObject {
         notifications = fetchedNotifications
     }
     
-    func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) {
+    func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) -> Notification? {
             
         let newNotification = Notification(context: viewContext)
         newNotification.id = UUID()
@@ -37,8 +37,10 @@ class NotificationViewModel: ObservableObject {
         do {
             try viewContext.save()
             fetch()
+            return newNotification
         } catch let error as NSError {
             print("could not save \(error) \(error.userInfo)")
+            return nil
         }
     }
     
