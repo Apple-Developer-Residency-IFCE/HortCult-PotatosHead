@@ -64,6 +64,7 @@ struct NotificationManager: View {
     
     func updateNotificationTime() {
         UserDefaults.standard.set(notificationTime, forKey: "NotificationTime")
+        print("Horário de notificação atualizado:", dateFormatter.string(from: notificationTime))
     }
     
     func requestNotificationAuthorization() {
