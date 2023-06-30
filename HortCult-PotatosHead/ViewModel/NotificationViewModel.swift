@@ -12,6 +12,11 @@ class NotificationViewModel: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     @Published var notifications: [Notification] = []
     
+    
+    init() {
+        fetch()
+    }
+    
     func fetch() {
         let fetchRequest: NSFetchRequest<Notification> = Notification.fetchRequest()
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
@@ -67,5 +72,31 @@ class NotificationViewModel: ObservableObject {
         return notifications.filter { element in
             return element.is_resolve == false
         }
+    }
+    
+    func calculateNextWatering(wateringFrequency: Frequency) -> String {
+        let currentDate = Date()
+       let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+       var dateString = ""
+        
+        switch wateringFrequency {
+            case.everyTwoDays:
+                let twoDaysFromNow = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
+                dateString = dateFormatter.string(from: twoDaysFromNow ?? Date())
+            
+            case .daily:
+                let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+                dateString = dateFormatter.string(from: daily ?? Date())
+            
+            case .everyFourDays:
+                let fourDaysFromNow = Calendar.current.date(byAdding: .day, value: 4, to: currentDate)
+                dateString = dateFormatter.string(from: fourDaysFromNow ?? Date())
+            
+            case .weekly:
+                let weekly = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
+                dateString = dateFormatter.string(from: weekly ?? Date())
+        }
+        return dateString
     }
 }
