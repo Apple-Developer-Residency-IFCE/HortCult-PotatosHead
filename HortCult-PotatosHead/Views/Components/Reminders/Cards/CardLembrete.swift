@@ -49,14 +49,13 @@ struct CardListView: View {
                 .foregroundColor(Color("MainColor"))
                 .padding(.leading, 22)
             
-            ScrollView {
+            
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(cards) { card in
                         CardView(card: card)
                     }
                     .padding().frame(height: 120)
                 }
-            }
         }
     }
 }
