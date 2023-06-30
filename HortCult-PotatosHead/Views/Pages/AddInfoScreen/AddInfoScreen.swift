@@ -4,7 +4,7 @@ import SwiftUI
 struct AddInfoScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var imageViewModel: ImageViewModel
-    
+    @EnvironmentObject var notificationViewModel: NotificationViewModel
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State var nameText: String = ""
@@ -70,7 +70,7 @@ struct AddInfoScreen: View {
                                         guard let newImage = imageViewModel.createImage(plantImage: Data) else {return}
                                         plantViewModel.addImageToPlant(plant: neewPlant, plantImage: newImage)
                                     }
-                                    
+                                    notificationViewModel.createNotification(next_time_to_alert: "", time_to_alert: "", type_to_alert: NotificationType.watering.rawValue)
                                     
                                 }
                             }
