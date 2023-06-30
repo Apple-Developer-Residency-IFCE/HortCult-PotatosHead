@@ -81,20 +81,20 @@ class NotificationViewModel: ObservableObject {
        var dateString = ""
         
         switch wateringFrequency {
-            case.everyTwoDays:
-                let twoDaysFromNow = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
-                dateString = dateFormatter.string(from: twoDaysFromNow ?? Date())
-            
             case .daily:
                 let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
                 dateString = dateFormatter.string(from: daily ?? Date())
+            
+        case.everyTwoDays:
+            let twoDaysFromNow = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
+            dateString = dateFormatter.string(from: twoDaysFromNow ?? Date())
             
             case .everyFourDays:
                 let fourDaysFromNow = Calendar.current.date(byAdding: .day, value: 4, to: currentDate)
                 dateString = dateFormatter.string(from: fourDaysFromNow ?? Date())
             
             case .weekly:
-                let weekly = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
+                let weekly = Calendar.current.date(byAdding: .day, value: 7, to: currentDate)
                 dateString = dateFormatter.string(from: weekly ?? Date())
         }
         return dateString
