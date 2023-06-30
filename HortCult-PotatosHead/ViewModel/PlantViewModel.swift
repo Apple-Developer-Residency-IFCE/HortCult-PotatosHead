@@ -136,7 +136,7 @@ class PlantViewModel: ObservableObject {
     
     func getNextWatering(plant: Plant) -> String {
         let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
-            return notification as! Notification
+            return (notification as! Notification)
         }))!
         
       let unresolvedAlert = plantAlert.filter({ Notification in
