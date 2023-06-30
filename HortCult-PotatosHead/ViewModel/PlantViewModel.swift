@@ -27,7 +27,7 @@ class PlantViewModel: ObservableObject {
     }
     
     func createPlant(name: String, category: String, information: String, watering_frequency: String) -> Plant? {
-            
+        
         let newPlant = Plant(context: viewContext)
         newPlant.id = UUID()
         newPlant.category = category
@@ -132,6 +132,26 @@ class PlantViewModel: ObservableObject {
         }))!
         
         return arrayImages
+    }
+    
+    func getNextWatering(plant: Plant) -> String {
+        let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
+            return notification as! Notification
+        }))!
+        
+      let unresolvedAlert = plantAlert.filter({ Notification in
+            return Notification.is_resolve == false
+        })
+        
+        var nextWatering = ""
+        unresolvedAlert.forEach { Notification in
+            if Notification.type_to_alert == NotificationType.watering.rawValue {
+                guard let notificationWatering = Notification.next_time_to_alert else {return}
+                nextWatering = notificationWatering
+            }
+        }
+        
+        return nextWatering
     }
 }
 
