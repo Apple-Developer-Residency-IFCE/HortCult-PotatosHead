@@ -29,14 +29,16 @@ struct HortCult_PotatosHeadApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if HortCult_PotatosHeadApp.isFirstLogin == true {
-                OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
-                    .preferredColorScheme(.light)
-                    .environmentObject(defaults)
-            } else {
-                MainView(plantViewModel: plantViewModel)
-                    .preferredColorScheme(color)
-                    .environmentObject(defaults)
+            NavigationView{
+                if HortCult_PotatosHeadApp.isFirstLogin == true {
+                    OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
+                        .preferredColorScheme(.light)
+                        .environmentObject(defaults)
+                } else {
+                    MainView(plantViewModel: plantViewModel)
+                        .preferredColorScheme(color)
+                        .environmentObject(defaults)
+                }
             }
         }
     }

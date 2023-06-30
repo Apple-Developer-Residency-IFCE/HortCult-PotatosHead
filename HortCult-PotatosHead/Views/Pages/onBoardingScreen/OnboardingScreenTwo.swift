@@ -19,7 +19,10 @@ struct OnboardingScreenTwo: View {
                              actionMainButton: {isNextScreenActive = true},
                              mainButtonType: .two,
                              hidenSecondaryButton: false,
-                             actionSecondaryButton: {jumpToInitalScreen = true})
+                             actionSecondaryButton: {
+                                jumpToInitalScreen = true
+                                HortCult_PotatosHeadApp.isFirstLogin = false
+            })
             
             .background(
                 NavigationLink(destination: OnboardingScreenThree(defaults: _defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) { EmptyView()}

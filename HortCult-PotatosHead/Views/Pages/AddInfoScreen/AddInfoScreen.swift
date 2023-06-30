@@ -33,11 +33,11 @@ struct AddInfoScreen: View {
         }
     }
     var body: some View {
+        VStack{
+            CustomNavBar(hiddenDismissButton: false)
                 ZStack{
+                    
                     ScrollView{
-                        
-                        CustomNavBar(hiddenDismissButton: false)
-                            
                         
                         HStack {
                         Text(isEdit ? "Editar Informações" : "Adicionar Vegetal")
@@ -66,25 +66,30 @@ struct AddInfoScreen: View {
                                     guard let frequencia = frequency?.rawValue else {return}
                                     guard let categoria = category?.rawValue else {return}
                                     plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                    self.presentationMode.wrappedValue.dismiss()
                                 }
+                                
                             }
                         } else {
-                        if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
-                            EditButton(isDisabled: true){}
-                        }
+                            if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
+                                EditButton(isDisabled: true){}
+                            }
                             else {
                                 EditButton(isDisabled: false){
                                     if(!isEdit){
                                         guard let frequencia = frequency?.rawValue else {return}
                                         guard let categoria = category?.rawValue else {return}
                                         plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                        self.presentationMode.wrappedValue.dismiss()
                                     } else {
                                         guard let frequencia = frequency?.rawValue else {return}
                                         guard let categoria = category?.rawValue else {return}
                                         plantViewModel.updatePlant(plant: plant!, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
+                                        self.presentationMode.wrappedValue.dismiss()
                                     }
                                 }
                             }
+                        }
                         }
                     }
                     .padding(.bottom, 60)
