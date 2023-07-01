@@ -153,6 +153,26 @@ class PlantViewModel: ObservableObject {
         
         return nextWatering
     }
+    
+    
+    func getActiveAlert(plant: Plant, notificationType: NotificationType) -> Notification? {
+        let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
+            return (notification as! Notification)
+        }))!
+        
+      let unresolvedAlert = plantAlert.filter({ Notification in
+            return Notification.is_resolve == false
+        })
+        
+        var notification: Notification = Notification()
+        
+        unresolvedAlert.forEach { Notification in
+            if Notification.type_to_alert == notificationType.rawValue {
+               notification = Notification
+            }
+        }
+        return notification
+    }
 }
 
 
