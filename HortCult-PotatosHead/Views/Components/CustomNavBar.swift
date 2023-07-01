@@ -51,10 +51,10 @@ struct CustomNavBar: View {
                     }
 
                 }
-            }.ignoresSafeArea(.all)
+            }
             
            
-        }.ignoresSafeArea(.all)
+        }
     }
 }
 
