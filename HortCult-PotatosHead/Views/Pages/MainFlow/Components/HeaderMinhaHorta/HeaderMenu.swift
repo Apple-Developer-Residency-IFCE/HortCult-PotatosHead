@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderMenu: View {
     @ObservedObject var plantViewModel: PlantViewModel
+    @EnvironmentObject var imageViewModel: ImageViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         

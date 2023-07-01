@@ -7,6 +7,8 @@
 
 import Foundation
 import CoreData
+import UIKit
+import SwiftUI
 
 class PlantViewModel: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
@@ -24,7 +26,7 @@ class PlantViewModel: ObservableObject {
         fetch()
     }
     
-    func createPlant(name: String, category: String, information: String, watering_frequency: String) {
+    func createPlant(name: String, category: String, information: String, watering_frequency: String) -> Plant? {
             
         let newPlant = Plant(context: viewContext)
         newPlant.id = UUID()
@@ -36,8 +38,10 @@ class PlantViewModel: ObservableObject {
         do {
             try viewContext.save()
             fetch()
+            return newPlant
         } catch let error as NSError {
             print("could not save \(error) \(error.userInfo)")
+            return nil
         }
     }
     
@@ -103,4 +107,33 @@ class PlantViewModel: ObservableObject {
             print("could not save \(error) \(error.userInfo)")
         }
     }
+    
+    func getPlantImages(plant:Plant) -> [Image] {
+        let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
+            let imageData = image as! Hortcult_Images
+            return imageData.plant_image
+        }))!
+        
+        let uiImageArray = arrayImages.compactMap { image in
+            return UIImage(data: image)
+        }
+        
+        let plantImages = uiImageArray.map { UIImage in
+            return Image(uiImage: UIImage)
+        }
+        
+        return plantImages
+    }
+    
+    func getPlantImagesData(plant:Plant) -> [Data] {
+        let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
+            let imageData = image as! Hortcult_Images
+            return imageData.plant_image
+        }))!
+        
+        return arrayImages
+    }
 }
+
+
+

@@ -12,6 +12,7 @@ struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
+    @EnvironmentObject var imageViewModel: ImageViewModel
     @State var goToAddPlantScreen: Bool = false
     
     var body: some View {
@@ -22,7 +23,7 @@ struct HomeView: View {
                 
                 ScrollView {
                     HeaderMenu(plantViewModel: plantViewModel)
-                    
+                       
                     Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
                     
                     //.padding(.bottom, 20)
