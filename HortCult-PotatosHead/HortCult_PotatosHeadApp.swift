@@ -12,8 +12,9 @@ struct HortCult_PotatosHeadApp: App {
     
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @StateObject var plantViewModel: PlantViewModel = PlantViewModel()
-    @StateObject var imageViewModel: ImageViewModel = ImageViewModel()
+    @ObservedObject var plantViewModel: PlantViewModel = PlantViewModel()
+    @ObservedObject var imageViewModel: ImageViewModel = ImageViewModel()
+    @ObservedObject var notificationViewModel: NotificationViewModel = NotificationViewModel()
     //    var defaultShared = Defaults.defaultsShared
     
     @StateObject var defaults = Defaults()
@@ -44,6 +45,7 @@ struct HortCult_PotatosHeadApp: App {
             }
             .environmentObject(imageViewModel)
             .environmentObject(plantViewModel)
+            .environmentObject(notificationViewModel)
         }
     }
 }

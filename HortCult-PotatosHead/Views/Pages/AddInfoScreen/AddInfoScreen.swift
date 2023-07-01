@@ -4,7 +4,7 @@ import SwiftUI
 struct AddInfoScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var imageViewModel: ImageViewModel
-    
+    @EnvironmentObject var notificationViewModel: NotificationViewModel
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State var nameText: String = ""
@@ -70,6 +70,9 @@ struct AddInfoScreen: View {
                                         guard let newImage = imageViewModel.createImage(plantImage: Data) else {return}
                                         plantViewModel.addImageToPlant(plant: neewPlant, plantImage: newImage)
                                     }
+                                    
+                                    guard let newNotification = notificationViewModel.createNotification(next_time_to_alert: notificationViewModel.calculateNextWatering(wateringFrequency: frequency!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
+                                    plantViewModel.addNotificationToPlant(plant: neewPlant, notification: newNotification)
                                     self.presentationMode.wrappedValue.dismiss()
                                     
                                 }
@@ -84,7 +87,7 @@ struct AddInfoScreen: View {
                                     if(!isEdit){
                                         guard let frequencia = frequency?.rawValue else {return}
                                         guard let categoria = category?.rawValue else {return}
-                                        guard let newPlant = plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia) else {return}
+                                        guard plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia) != nil else {return}
                                         self.presentationMode.wrappedValue.dismiss()
                                     } else {
                                         

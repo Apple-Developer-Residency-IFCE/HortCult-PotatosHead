@@ -12,6 +12,11 @@ class NotificationViewModel: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     @Published var notifications: [Notification] = []
     
+    
+    init() {
+        fetch()
+    }
+    
     func fetch() {
         let fetchRequest: NSFetchRequest<Notification> = Notification.fetchRequest()
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
@@ -20,7 +25,7 @@ class NotificationViewModel: ObservableObject {
         notifications = fetchedNotifications
     }
     
-    func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) {
+    func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) -> Notification? {
             
         let newNotification = Notification(context: viewContext)
         newNotification.id = UUID()
@@ -32,8 +37,10 @@ class NotificationViewModel: ObservableObject {
         do {
             try viewContext.save()
             fetch()
+            return newNotification
         } catch let error as NSError {
             print("could not save \(error) \(error.userInfo)")
+            return nil
         }
     }
     
@@ -67,5 +74,31 @@ class NotificationViewModel: ObservableObject {
         return notifications.filter { element in
             return element.is_resolve == false
         }
+    }
+    
+    func calculateNextWatering(wateringFrequency: Frequency) -> String {
+        let currentDate = Date()
+       let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+       var dateString = ""
+        
+        switch wateringFrequency {
+            case .daily:
+                let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+                dateString = dateFormatter.string(from: daily ?? Date())
+            
+        case.everyTwoDays:
+            let twoDaysFromNow = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
+            dateString = dateFormatter.string(from: twoDaysFromNow ?? Date())
+            
+            case .everyFourDays:
+                let fourDaysFromNow = Calendar.current.date(byAdding: .day, value: 4, to: currentDate)
+                dateString = dateFormatter.string(from: fourDaysFromNow ?? Date())
+            
+            case .weekly:
+                let weekly = Calendar.current.date(byAdding: .day, value: 7, to: currentDate)
+                dateString = dateFormatter.string(from: weekly ?? Date())
+        }
+        return dateString
     }
 }

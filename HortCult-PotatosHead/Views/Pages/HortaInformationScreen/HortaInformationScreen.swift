@@ -49,7 +49,7 @@ struct HortaInformationScreen: View {
                         Text(plant.information ?? "NAO TEM INFO")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .padding(.bottom,24)
-                        CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
+                        CardProximaRega(title: "Próxima rega:", content: plantViewModel.getNextWatering(plant: plant), icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
                             .padding(.bottom,24)
                         if let freq = plant.watering_frequency {
                             FrequenciaRega(plantViewModel: plantViewModel, frequencia: freq)
@@ -109,6 +109,10 @@ struct HortaInformationScreen: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: header)
         .toolbarBackground(.hidden, for: .navigationBar)
+//        .task {
+//            print("Notificações das plantas são: ")
+//            print(plant.plant_notification?.count)
+//        }
     }
 }
 
