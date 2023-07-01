@@ -12,37 +12,34 @@ struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
+    @EnvironmentObject var imageViewModel: ImageViewModel
     @State var goToAddPlantScreen: Bool = false
     
     var body: some View {
-        NavigationView {
             VStack {
                 
                 CustomNavBar(hiddenDismissButton: true)
-                    Spacer()
+                Spacer()
                 
-                HeaderMenu(plantViewModel: plantViewModel){
-                    goToAddPlantScreen = true
+                ScrollView {
+                    HeaderMenu(plantViewModel: plantViewModel)
+                       
+                    Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
+                    
+                    //.padding(.bottom, 20)
+                    
+                    CardListView(cards: [
+                        CardViewModel(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular"),
+                        CardViewModel(title: "Tomatinho está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
+                    ])
                 }
-                Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
-                   
-                   //.padding(.bottom, 20)
+                .edgesIgnoringSafeArea(.all)
                 
-                CardListView(cards: [
-                    CardViewModel(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular"),
-                    CardViewModel(title: "Tomatinho está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
-                ])
             }
-            
-            
-            .background(NavigationLink(destination: AddInfoScreen(plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
-        }
+            .edgesIgnoringSafeArea(.all)
             .navigationBarBackButtonHidden(true)
-//            .navigationBarItems(leading: header)
-            
         }
-        
-        
+           
     }
 
 

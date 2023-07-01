@@ -12,8 +12,8 @@ struct HortCult_PotatosHeadApp: App {
     
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @ObservedObject var plantViewModel: PlantViewModel = PlantViewModel()
-    @ObservedObject var imageViewModel: ImageViewModel = ImageViewModel()
+    @StateObject var plantViewModel: PlantViewModel = PlantViewModel()
+    @StateObject var imageViewModel: ImageViewModel = ImageViewModel()
     //    var defaultShared = Defaults.defaultsShared
     
     @StateObject var defaults = Defaults()
@@ -30,19 +30,20 @@ struct HortCult_PotatosHeadApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if HortCult_PotatosHeadApp.isFirstLogin == true {
-                OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
-                    .preferredColorScheme(.light)
-                    .environmentObject(defaults)
-                    .environmentObject(imageViewModel)
-                    .environmentObject(plantViewModel)
-            } else {
-                MainView(plantViewModel: plantViewModel)
-                    .preferredColorScheme(color)
-                    .environmentObject(defaults)
-                    .environmentObject(imageViewModel)
-                    .environmentObject(plantViewModel)
+            NavigationView{
+                if HortCult_PotatosHeadApp.isFirstLogin == true {
+                    OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
+                        .preferredColorScheme(.light)
+                        .environmentObject(defaults)
+                        
+                } else {
+                    MainView(plantViewModel: plantViewModel)
+                        .preferredColorScheme(color)
+                        .environmentObject(defaults)
+                }
             }
+            .environmentObject(imageViewModel)
+            .environmentObject(plantViewModel)
         }
     }
 }
