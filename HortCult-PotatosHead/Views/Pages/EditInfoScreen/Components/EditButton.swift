@@ -28,6 +28,7 @@ struct EditButton: View {
             }
             .disabled(isDisabled)
         }
+        .padding(.bottom, 50)
     }
 }
 

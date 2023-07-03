@@ -27,7 +27,7 @@ class PlantViewModel: ObservableObject {
     }
     
     func createPlant(name: String, category: String, information: String, watering_frequency: String) -> Plant? {
-            
+        
         let newPlant = Plant(context: viewContext)
         newPlant.id = UUID()
         newPlant.category = category
@@ -46,6 +46,7 @@ class PlantViewModel: ObservableObject {
     }
     
     func deletePlant(plant: Plant) {
+        plant.plant_notification = nil
         viewContext.delete(plant)
         do {
             try viewContext.save()
@@ -126,12 +127,52 @@ class PlantViewModel: ObservableObject {
     }
     
     func getPlantImagesData(plant:Plant) -> [Data] {
-        let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
+        guard let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
             let imageData = image as! Hortcult_Images
             return imageData.plant_image
-        }))!
+        })) else {return []}
         
         return arrayImages
+    }
+    
+    func getNextWatering(plant: Plant) -> String {
+        guard let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
+            return (notification as! Notification)
+        })) else {return ""}
+        
+      let unresolvedAlert = plantAlert.filter({ Notification in
+            return Notification.is_resolve == false
+        })
+        
+        var nextWatering = ""
+        unresolvedAlert.forEach { Notification in
+            if Notification.type_to_alert == NotificationType.watering.rawValue {
+                guard let notificationWatering = Notification.next_time_to_alert else {return}
+                nextWatering = notificationWatering
+            }
+        }
+        
+        return nextWatering
+    }
+    
+    
+    func getActiveAlert(plant: Plant, notificationType: NotificationType) -> Notification? {
+        let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
+            return (notification as! Notification)
+        }))!
+        
+      let unresolvedAlert = plantAlert.filter({ Notification in
+            return Notification.is_resolve == false
+        })
+        
+        var notification: Notification = Notification()
+        
+        unresolvedAlert.forEach { Notification in
+            if Notification.type_to_alert == notificationType.rawValue {
+               notification = Notification
+            }
+        }
+        return notification
     }
 }
 

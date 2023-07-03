@@ -9,35 +9,39 @@ import SwiftUI
 
 struct HeaderMenu: View {
     @ObservedObject var plantViewModel: PlantViewModel
-    @State var action:(()->Void)
+    @EnvironmentObject var imageViewModel: ImageViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         
-            VStack{
-                HStack {
-                    Text("Minha Horta")
-                        .font(.custom("Satoshi-Bold", size: 28))
-                        .foregroundColor(Color("MainColor"))
-                    Spacer()
-                    Button{
-                      action()
-                    }label: {
-                        HStack{
-                            Image(systemName: "plus")
-                                .foregroundColor(Color("backgroundColor"))
-                        }
+        VStack{
+            HStack {
+                Text("Minha Horta")
+                    .font(.custom("Satoshi-Bold", size: 28))
+                    .foregroundColor(Color("MainColor"))
+                Spacer()
+                
+                NavigationLink(destination: AddInfoScreen(plantViewModel: plantViewModel),
+                               label: {
+                    HStack{
+                        Image(systemName: "plus")
+                            .foregroundColor(Color("backgroundColor"))
                     }
                     .frame(width: 32,height: 32, alignment: .center)
-                    .background(Color("MainColor"))
-                    .clipShape(Circle())
-                }
-                ListHorta(plantViewModel: plantViewModel)
+                        .background(Color("MainColor"))
+                        .clipShape(Circle())
+                    
+                })
+                
+                
             }
-            .padding()
+            ListHorta(plantViewModel: plantViewModel)
+        }
+        .padding()
     }
 }
 
 struct HeaderMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderMenu(plantViewModel: PlantViewModel()){}
+        HeaderMenu(plantViewModel: PlantViewModel())
     }
 }
