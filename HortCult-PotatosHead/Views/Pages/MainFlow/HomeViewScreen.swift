@@ -37,7 +37,7 @@ struct HomeView: View {
                 for _ in 1...10 {
                     let mokitem = NotificationAdapter()
                     let cardModel: CardViewModel = CardViewModel(
-                        title: mokitem.notification_plant?.name ?? "",
+                        title: mokitem.notification_plant?.name ?? "juninho",
                         content: mokitem.time_to_alert ?? "",
                         icon: "Water-Orange",
                         cardColor: "lembreteIcon",
@@ -98,7 +98,7 @@ struct PlantAdapter {
     var category: String? = ""
     var id: UUID? = UUID()
     var information: String? = ""
-    var name: String? = "No name"
+    var name: String? = "Jninho"
     var watering_frequency: String? = ""
     var plant_notification: [NotificationAdapter]? = []
     var plant_hortcult_images: [Hortcult_Images]? = []
