@@ -33,11 +33,11 @@ struct AddInfoScreen: View {
         }
     }
     var body: some View {
+        VStack{
+            CustomNavBar(hiddenDismissButton: false)
                 ZStack{
+                    
                     ScrollView{
-                        
-                        CustomNavBar(hiddenDismissButton: false)
-                            
                         
                         HStack {
                         Text(isEdit ? "Editar Informações" : "Adicionar Vegetal")
@@ -73,18 +73,22 @@ struct AddInfoScreen: View {
                                     
                                     guard let newNotification = notificationViewModel.createNotification(next_time_to_alert: notificationViewModel.calculateNextWatering(wateringFrequency: frequency!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
                                     plantViewModel.addNotificationToPlant(plant: neewPlant, notification: newNotification)
+                                    self.presentationMode.wrappedValue.dismiss()
+                                    
                                 }
+                                
                             }
                         } else {
-                        if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
-                            EditButton(isDisabled: true){}
-                        }
+                            if (!((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty)){
+                                EditButton(isDisabled: true){}
+                            }
                             else {
                                 EditButton(isDisabled: false){
                                     if(!isEdit){
                                         guard let frequencia = frequency?.rawValue else {return}
                                         guard let categoria = category?.rawValue else {return}
                                         guard plantViewModel.createPlant(name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia) != nil else {return}
+                                        self.presentationMode.wrappedValue.dismiss()
                                     } else {
                                         
                                         guard let frequencia = frequency?.rawValue else {return}
@@ -101,10 +105,11 @@ struct AddInfoScreen: View {
                                             guard let newImage = imageViewModel.createImage(plantImage: Data) else {return}
                                             plantViewModel.addImageToPlant(plant: plant, plantImage: newImage)
                                         }
-                                        
+                                        self.presentationMode.wrappedValue.dismiss()
                                     }
                                 }
                             }
+                        }
                         }
                     }
                     .padding(.bottom, 60)

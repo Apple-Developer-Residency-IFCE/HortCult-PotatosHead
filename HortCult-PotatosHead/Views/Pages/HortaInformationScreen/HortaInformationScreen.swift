@@ -69,9 +69,9 @@ struct HortaInformationScreen: View {
                 }
                 VStack(alignment: .center){
                     
-                    NavigationLink {
+                    NavigationLink(destination:
                         EditInfoView(plantViewModel: plantViewModel, plant: plant)
-                    } label: {
+                    ,label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 40)
                                 .stroke(Color("MainColor"), lineWidth: 2)
@@ -87,20 +87,26 @@ struct HortaInformationScreen: View {
                                 
                             }
                         }
+                    })
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                        plantViewModel.deletePlant(plant: plant)
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .frame(width: 277, height: 42)
+                                .foregroundColor(Color("red"))
+
+                            HStack {
+                                Image("Trash")
+                                    .renderingMode(.template)
+                                    .foregroundColor(Color("backgroundColor"))
+                                Text("Excluir da Minha Horta")
+                                    .font(.custom("Satoshi-Bold", size: 16))
+                                    .foregroundColor(Color("backgroundColor"))
+                            }
                     }
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 40)
-                            .frame(width: 277, height: 42)
-                            .foregroundColor(Color("red"))
-                        
-                        HStack {
-                            Image("Trash")
-                                .renderingMode(.template)
-                                .foregroundColor(Color("backgroundColor"))
-                            Text("Excluir da Minha Horta")
-                                .font(.custom("Satoshi-Bold", size: 16))
-                                .foregroundColor(Color("backgroundColor"))
-                        }
+                    
                     }
                 }
                 Spacer(minLength: 100)
