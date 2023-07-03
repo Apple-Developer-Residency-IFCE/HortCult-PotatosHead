@@ -56,7 +56,6 @@ struct CardListView: View {
                     }
                     .padding().frame(height: 120)
                 }
-            
         }
     }
 }
