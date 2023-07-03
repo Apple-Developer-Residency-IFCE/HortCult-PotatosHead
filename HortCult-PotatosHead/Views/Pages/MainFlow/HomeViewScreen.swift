@@ -28,47 +28,25 @@ struct HomeView: View {
                 Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
                    
                    .padding(.bottom, 20)
-                CardListView(cards: cardModels)/*mokeRemainderList.map({ Notification in
-                   return CardViewModel(
-                        title: Notification.notification_plant?.name ?? "",
-                        content: Notification.time_to_alert ?? "",
-                        icon: "Water-Orange",
-                        cardColor: "lembreteIcon",
-                        backgroudCardColor: "AlertCardColor",
-                        textColor: "TextColor",
-                        titleFont: "Satoshi-Bold",
-                        contentFont: "Satoshi-Regular")
-                }))
-                                     */
-                //        CardViewModel(title: "Tomatinho está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
+                CardListView(cards: cardModels)
+
 
             }
             .task {
                 
                 for _ in 1...10 {
-                    //             let plant = Plant()
-                    //                    plant.id = UUID()
-                    //                    plant.category = "Legumes"
-                    //                    plant.name = "bacozitos"
-                    //                    plant.watering_frequency = "hoje amanha e sempre"
-                    //
                     let mokitem = NotificationAdapter()
-                    let cardModel: CardViewModel = CardViewModel(title: mokitem.notification_plant?.name ?? "",
-                                                                 content: mokitem.time_to_alert ?? "",
-                                                                 icon: "Water-Orange",
-                                                                 cardColor: "lembreteIcon",
-                                                                 backgroudCardColor: "AlertCardColor",
-                                                                 textColor: "TextColor",
-                                                                 titleFont: "Satoshi-Bold",
-                                                                 contentFont: "Satoshi-Regular")
+                    let cardModel: CardViewModel = CardViewModel(
+                        title: mokitem.notification_plant?.name ?? "",
+                        content: mokitem.time_to_alert ?? "",
+                        icon: "Water-Orange",
+                        cardColor: "lembreteIcon",
+                        backgroudCardColor: "AlertCardColor",
+                        textColor: "TextColor",
+                        titleFont: "Satoshi-Bold",
+                        contentFont: "Satoshi-Regular"
+                    )
                     cardModels.append(cardModel)
-                    //                    mokitem.is_resolve = false
-                    //                    mokitem.next_time_to_alert = "20-12-30"
-                    //                    mokitem.notification_plant = plant
-                    //                    mokitem.time_to_alert = "00:00"
-                    //                    mokitem.type_to_alert = "Rega"
-                    //
-                    //                    mokeRemainderList.append(mokitem)
                 }
             }
             }
