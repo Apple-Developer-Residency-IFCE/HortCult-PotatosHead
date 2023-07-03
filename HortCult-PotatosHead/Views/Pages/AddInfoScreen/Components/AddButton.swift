@@ -29,6 +29,7 @@ struct AddButton: View {
             }
             .disabled(isDisabled)
         }
+        .padding(.bottom, 50)
     }
 }
 

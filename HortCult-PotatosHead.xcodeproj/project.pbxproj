@@ -17,6 +17,7 @@
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
 		3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */; };
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
+		3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */; };
 		3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */; };
 		3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */; };
 		3D5455A92A425DC800EBFE7A /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5455A82A425DC800EBFE7A /* EditInfoView.swift */; };
@@ -89,6 +90,7 @@
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
 		3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPageComponet.swift; sourceTree = "<group>"; };
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
+		3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypes.swift; sourceTree = "<group>"; };
 		3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextfield.swift; sourceTree = "<group>"; };
 		3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextfield.swift; sourceTree = "<group>"; };
 		3D5455A82A425DC800EBFE7A /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */,
 				5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */,
 				5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */,
+				3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				3D5455AB2A427ADC00EBFE7A /* ButtonHorta.swift in Sources */,
 				3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
+				3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */,
 				54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */,
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */,

@@ -9,6 +9,7 @@ struct CardProximaRega: View {
     let textColor: String
     let titleFont: String
     let contentFont: String
+    var action: () -> Void
     
     
     var body: some View {
@@ -27,7 +28,7 @@ struct CardProximaRega: View {
                 Spacer().frame(height: 2)
                 Text(content)
                     .font(.custom(contentFont, size: 18))
-                BotaoMarcarRegado()
+                BotaoMarcarRegado(action: action)
                 .padding(.bottom, 22)
             }
             .foregroundColor(Color(textColor))
@@ -45,7 +46,7 @@ struct CardProximaRega: View {
 
 struct CardProximaRega_Previews: PreviewProvider {
     static var previews: some View {
-        CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold")
+        CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold"){}
     }
 }
 

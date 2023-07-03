@@ -17,7 +17,7 @@ struct OnboardingScreenThree: View {
     
     var body: some View {
         
-        NavigationView {
+        
             
             OnboardingScreen(header: "hortFruitLight",
                              centerImage: "onboardingthreelight",
@@ -26,7 +26,10 @@ struct OnboardingScreenThree: View {
                              
                              actionMainButton: {isNextScreenActive = true}, mainButtonType: .two,
                              hidenSecondaryButton: false,
-                             actionSecondaryButton: {jumpToInitalScreen = true})
+                             actionSecondaryButton: {
+                                jumpToInitalScreen = true
+                                HortCult_PotatosHeadApp.isFirstLogin = false
+            })
             
             .background(
                 NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()})
@@ -36,13 +39,15 @@ struct OnboardingScreenThree: View {
             
             //Navegar para a tela inicial no botao 2
             
-        }.navigationBarHidden(true)
+        //.navigationBarHidden(true)
     }
 }
 
 struct OnboardingScreenThree_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenThree(plantViewModel: PlantViewModel())
-            .environmentObject(Defaults())
+        NavigationView{
+            OnboardingScreenThree(plantViewModel: PlantViewModel())
+                .environmentObject(Defaults())
+        }
     }
 }
