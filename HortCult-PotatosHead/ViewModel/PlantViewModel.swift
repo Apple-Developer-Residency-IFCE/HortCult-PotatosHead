@@ -46,6 +46,7 @@ class PlantViewModel: ObservableObject {
     }
     
     func deletePlant(plant: Plant) {
+        plant.plant_notification = nil
         viewContext.delete(plant)
         do {
             try viewContext.save()
@@ -126,18 +127,18 @@ class PlantViewModel: ObservableObject {
     }
     
     func getPlantImagesData(plant:Plant) -> [Data] {
-        let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
+        guard let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
             let imageData = image as! Hortcult_Images
             return imageData.plant_image
-        }))!
+        })) else {return []}
         
         return arrayImages
     }
     
     func getNextWatering(plant: Plant) -> String {
-        let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
+        guard let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
             return (notification as! Notification)
-        }))!
+        })) else {return ""}
         
       let unresolvedAlert = plantAlert.filter({ Notification in
             return Notification.is_resolve == false
@@ -152,6 +153,26 @@ class PlantViewModel: ObservableObject {
         }
         
         return nextWatering
+    }
+    
+    
+    func getActiveAlert(plant: Plant, notificationType: NotificationType) -> Notification? {
+        let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
+            return (notification as! Notification)
+        }))!
+        
+      let unresolvedAlert = plantAlert.filter({ Notification in
+            return Notification.is_resolve == false
+        })
+        
+        var notification: Notification = Notification()
+        
+        unresolvedAlert.forEach { Notification in
+            if Notification.type_to_alert == notificationType.rawValue {
+               notification = Notification
+            }
+        }
+        return notification
     }
 }
 
