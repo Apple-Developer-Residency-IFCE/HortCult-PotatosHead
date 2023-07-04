@@ -26,7 +26,7 @@ struct HortCult_PotatosHeadApp: App {
                         
                 } else {
                     MainView(plantViewModel: plantViewModel)
-                        .preferredColorScheme(Defaults.shared.color)
+                        .preferredColorScheme(defaults.color)
                 }
             }
             .environmentObject(imageViewModel)
