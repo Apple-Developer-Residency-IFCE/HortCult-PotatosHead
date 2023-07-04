@@ -26,7 +26,7 @@ class NotificationViewModel: ObservableObject {
     }
     
     func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) -> Notification? {
-            
+        
         let newNotification = Notification(context: viewContext)
         newNotification.id = UUID()
         newNotification.is_resolve = false
@@ -78,27 +78,27 @@ class NotificationViewModel: ObservableObject {
     
     func calculateNextWatering(wateringFrequency: Frequency) -> String {
         let currentDate = Date()
-       let dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-       var dateString = ""
+        var dateString = ""
         
         switch wateringFrequency {
-            case .daily:
-                let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
-                dateString = dateFormatter.string(from: daily ?? Date())
+        case .daily:
+            let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+            dateString = dateFormatter.string(from: daily ?? Date())
             
         case.everyTwoDays:
             let twoDaysFromNow = Calendar.current.date(byAdding: .day, value: 2, to: currentDate)
             dateString = dateFormatter.string(from: twoDaysFromNow ?? Date())
             
-            case .everyFourDays:
-                let fourDaysFromNow = Calendar.current.date(byAdding: .day, value: 4, to: currentDate)
-                dateString = dateFormatter.string(from: fourDaysFromNow ?? Date())
+        case .everyFourDays:
+            let fourDaysFromNow = Calendar.current.date(byAdding: .day, value: 4, to: currentDate)
+            dateString = dateFormatter.string(from: fourDaysFromNow ?? Date())
             
-            case .weekly:
-                let weekly = Calendar.current.date(byAdding: .day, value: 7, to: currentDate)
-                dateString = dateFormatter.string(from: weekly ?? Date())
+        case .weekly:
+            let weekly = Calendar.current.date(byAdding: .day, value: 7, to: currentDate)
+            dateString = dateFormatter.string(from: weekly ?? Date())
         }
         return dateString
-    }   
+    }
 }
