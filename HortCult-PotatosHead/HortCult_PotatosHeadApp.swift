@@ -46,6 +46,7 @@ struct HortCult_PotatosHeadApp: App {
             .environmentObject(imageViewModel)
             .environmentObject(plantViewModel)
             .environmentObject(notificationViewModel)
+            .environmentObject(defaults)
         }
     }
 }
