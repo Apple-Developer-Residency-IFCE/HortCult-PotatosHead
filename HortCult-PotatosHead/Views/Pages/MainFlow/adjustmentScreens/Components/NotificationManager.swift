@@ -56,7 +56,7 @@ struct NotificationManager: View {
             loadNotificationTime()
             requestNotificationAuthorization()
             UNUserNotificationCenter.current().delegate = notificationDelegate
-            //
+
             NotificationCenter.default.addObserver(forName: NSNotification.Name("updateNotification"), object: nil, queue: nil) { _ in
                 updateNotification()
             }
@@ -73,7 +73,7 @@ struct NotificationManager: View {
     func updateNotificationTime() {
         UserDefaults.standard.set(notificationTime, forKey: "NotificationTime")
         print("Horário de notificação atualizado:", dateFormatter.string(from: notificationTime))
-        //
+        
         shouldUpdateNotification = true
     }
     
