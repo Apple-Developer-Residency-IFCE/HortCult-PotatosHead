@@ -9,7 +9,7 @@ struct DescriptionTextfield: View {
             Text("Descrição")
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
-                .padding(.horizontal, 8)
+                .padding(.horizontal, 1)
             
             TextEditorWrapper(text: $text, placeholder: placeholder)
                 .frame(height: 200)
