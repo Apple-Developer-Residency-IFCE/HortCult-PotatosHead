@@ -100,6 +100,5 @@ class NotificationViewModel: ObservableObject {
                 dateString = dateFormatter.string(from: weekly ?? Date())
         }
         return dateString
-    }
-   
+    }   
 }
