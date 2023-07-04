@@ -9,6 +9,7 @@ struct EditInfoView: View {
     @ObservedObject var plantViewModel = PlantViewModel() // Use @StateObject instead of @ObservedObject in a non-View struct
     var plant:Plant
     var listImageData: [Data] = []
+    @State var state: [CardViewModel] = []
     init(plantViewModel: PlantViewModel = PlantViewModel(), plant: Plant) {
         self.plantViewModel = plantViewModel
         self.plant = plant
@@ -21,14 +22,7 @@ struct EditInfoView: View {
                           category: Category.init(rawValue: plant.category!),
                           frequency: Frequency.init(rawValue: plant.watering_frequency!) ,
                           isDisabled: false,
-                          selectedPhotosData: listImageData, plant: plant, plantViewModel: plantViewModel, isEdit: true )
+                          selectedPhotosData: listImageData, noticationList: $state, plant: plant, plantViewModel: plantViewModel, isEdit: true )
         }
     }
-    
-    //struct AddInfoScreenMock_Previews: PreviewProvider {
-    //    static var previews: some View {
-    //        EditInfoView(category: .legumes, frequency: .daily)
-    //    }
-    //}
-    
 }
