@@ -10,7 +10,6 @@ import SwiftUI
 struct OnboardingScreenFour: View {
     
     @State var isNextScreenActive = false
-    @ObservedObject var defaults: Defaults
     var hortCultMain: HortCult_PotatosHeadApp?
     @ObservedObject var plantViewModel: PlantViewModel
     
@@ -39,6 +38,6 @@ struct OnboardingScreenFour: View {
 
 struct OnboardingScreenFour_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreenFour(defaults: Defaults(), plantViewModel: PlantViewModel())
+        OnboardingScreenFour(plantViewModel: PlantViewModel())
     }
 }

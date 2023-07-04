@@ -13,14 +13,13 @@ struct AddInfoScreen: View {
     @State var frequency: Frequency?
     @State var isDisabled: Bool = false
     @State var selectedPhotosData: [Data] = []
-    @EnvironmentObject var defaults: Defaults
     var plant: Plant?
     @ObservedObject var plantViewModel: PlantViewModel
     @State var isEdit: Bool = false
     
     var header: some View {
         ZStack{
-            Image(defaults.theme ==  "Escuro" ? "Topbardark" : "Topbar")
+            Image(Defaults.shared.theme ==  "Escuro" ? "Topbardark" : "Topbar")
             HStack{
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
@@ -125,7 +124,6 @@ struct AddInfoScreen: View {
 struct AddInfoScreen_Previews: PreviewProvider {
     static var previews: some View {
         AddInfoScreen(plantViewModel: PlantViewModel(), isEdit: false)
-            .environmentObject(Defaults())
     }
 }
 

@@ -15,32 +15,18 @@ struct HortCult_PotatosHeadApp: App {
     @ObservedObject var plantViewModel: PlantViewModel = PlantViewModel()
     @ObservedObject var imageViewModel: ImageViewModel = ImageViewModel()
     @ObservedObject var notificationViewModel: NotificationViewModel = NotificationViewModel()
-    //    var defaultShared = Defaults.defaultsShared
-    
-    @StateObject var defaults = Defaults()
-    
-    var color: ColorScheme? {
-        if defaults.theme == "Padrão do Sistema" {
-           return nil
-       } else if defaults.theme == "Claro" {
-           return .light
-       } else {
-           return .dark
-       }
-   }
+    @StateObject var defaults: Defaults = Defaults.shared
     
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 if HortCult_PotatosHeadApp.isFirstLogin == true {
-                    OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
+                    OnBoardingScreen(plantViewModel: plantViewModel)
                         .preferredColorScheme(.light)
-                        .environmentObject(defaults)
                         
                 } else {
                     MainView(plantViewModel: plantViewModel)
-                        .preferredColorScheme(color)
-                        .environmentObject(defaults)
+                        .preferredColorScheme(Defaults.shared.color)
                 }
             }
             .environmentObject(imageViewModel)

@@ -11,7 +11,6 @@ struct CustomNavBar: View {
     
     var hiddenDismissButton: Bool = true
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var defaults: Defaults
     var body: some View {
        
         VStack{
@@ -60,6 +59,6 @@ struct CustomNavBar: View {
 
 struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBar(hiddenDismissButton: false).environmentObject(Defaults())
+        CustomNavBar(hiddenDismissButton: false)
     }
 }

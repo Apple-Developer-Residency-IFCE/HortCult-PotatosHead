@@ -60,7 +60,7 @@ struct NotificationManager: View {
     
      func requestNotificationAuthorization() {
         
-        if Defaults.enableNotificationStorage == false {
+         if Defaults.shared.enableNotificationStorage == false {
             print("Notificações desabilitadas")
             
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])

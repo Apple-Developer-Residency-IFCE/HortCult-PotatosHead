@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct ThemeSelect: View {
-    @EnvironmentObject var defaults: Defaults
     @State var selectedOption: String
     @Environment(\.presentationMode) var presentationMode
 
@@ -41,18 +40,18 @@ struct ThemeSelect: View {
                     
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = "Claro"
-                        Defaults.themeStorage = "Claro"
+                        Defaults.shared.theme = "Claro"
+                        Defaults.shared.themeStorage = "Claro"
                     }, title: "Claro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = "Escuro"
-                        Defaults.themeStorage = "Escuro"
+                        Defaults.shared.theme = "Escuro"
+                        Defaults.shared.themeStorage = "Escuro"
                     }, title: "Escuro").padding(.bottom, 16)
                     
                     RadioButton(selectedOption: $selectedOption, action: {
-                        defaults.theme = "Padrão do Sistema"
-                        Defaults.themeStorage = "Padrão do Sistema"
+                        Defaults.shared.theme = "Padrão do Sistema"
+                        Defaults.shared.themeStorage = "Padrão do Sistema"
                     }, title: "Padrão do Sistema").padding(.bottom, 16)
 
                     Spacer()
@@ -69,6 +68,5 @@ struct ThemeSelect: View {
 struct ThemeSelect_Previews: PreviewProvider {
     static var previews: some View {
         ThemeSelect(selectedOption: Defaults().theme)
-            .environmentObject(Defaults())
     }
 }
