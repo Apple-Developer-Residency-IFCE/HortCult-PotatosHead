@@ -13,6 +13,8 @@ struct AddInfoScreen: View {
     @State var frequency: Frequency?
     @State var isDisabled: Bool = false
     @State var selectedPhotosData: [Data] = []
+    @Binding var noticationList: [CardViewModel]
+    
     @EnvironmentObject var defaults: Defaults
     var plant: Plant?
     @ObservedObject var plantViewModel: PlantViewModel
@@ -74,7 +76,16 @@ struct AddInfoScreen: View {
                                     guard let newNotification = notificationViewModel.createNotification(next_time_to_alert: notificationViewModel.calculateNextWatering(wateringFrequency: frequency!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
                                     plantViewModel.addNotificationToPlant(plant: neewPlant, notification: newNotification)
                                     self.presentationMode.wrappedValue.dismiss()
-                                    
+                                    let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: newNotification)
+                                    noticationList.append(CardViewModel(
+                                        title: notificationDisplayed.title,
+                                        content: notificationDisplayed.description,
+                                        icon: notificationDisplayed.icon,
+                                        cardColor: notificationDisplayed.cardColor,
+                                        backgroudCardColor: notificationDisplayed.backgroudCardColor,
+                                        textColor: notificationDisplayed.textColor,
+                                        titleFont: notificationDisplayed.titleFont,
+                                        contentFont: notificationDisplayed.contentFont))
                                 }
                                 
                             }
@@ -122,10 +133,10 @@ struct AddInfoScreen: View {
     }
 }
 
-struct AddInfoScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AddInfoScreen(plantViewModel: PlantViewModel(), isEdit: false)
-            .environmentObject(Defaults())
-    }
-}
+//struct AddInfoScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddInfoScreen(noticationList: [], plantViewModel: PlantViewModel(), isEdit: false)
+//            .environmentObject(Defaults())
+//    }
+//}
 
