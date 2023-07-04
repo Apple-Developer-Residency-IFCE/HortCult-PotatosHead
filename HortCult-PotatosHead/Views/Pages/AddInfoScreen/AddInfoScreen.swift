@@ -78,6 +78,7 @@ struct AddInfoScreen: View {
                                     self.presentationMode.wrappedValue.dismiss()
                                     let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: newNotification)
                                     noticationList.append(CardViewModel(
+                                        id: notificationDisplayed.id,
                                         title: notificationDisplayed.title,
                                         content: notificationDisplayed.description,
                                         icon: notificationDisplayed.icon,
