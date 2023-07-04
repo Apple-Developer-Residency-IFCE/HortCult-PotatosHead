@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CardView: View {
     let card: CardViewModel
+    var action: () -> Void
     
     var body: some View {
         HStack {
@@ -22,7 +23,7 @@ struct CardView: View {
                     .font(.custom(card.contentFont, size: 16))
                 
                 Button(action: {}) {
-                    BotaoFeito()
+                    BotaoFeito(action: action)
                 }
                 .padding(.bottom, 22)
             }
@@ -38,21 +39,22 @@ struct CardView: View {
 }
 
 struct CardListView: View {
-    let cards: [CardViewModel]
-    
+    @Binding var cards: [CardViewModel]
+    @EnvironmentObject var notificationViewModel: NotificationViewModel
+    @EnvironmentObject var plantViewModel: PlantViewModel
     var body: some View {
-        
-        
         VStack(alignment: .leading){
             Text("Lembretes")
                 .font(.custom("Satoshi-Bold", size: 28))
                 .foregroundColor(Color("MainColor"))
                 .padding(.leading, 22)
             
-            
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(cards) { card in
-                        CardView(card: card)
+                        CardView(card: card){
+                            cards = HomeViewModel.checkCardNotification(notificationID: card.id, notificationViewModel: notificationViewModel, cards: cards, plantViewModel: plantViewModel)
+                            
+                        }
                     }
                     .padding().frame(height: 120)
                 }
@@ -61,7 +63,7 @@ struct CardListView: View {
 }
 
 struct CardViewModel: Identifiable {
-    let id = UUID()
+    let id: UUID
     let title: String
     let content: String
     let icon: String
@@ -73,13 +75,10 @@ struct CardViewModel: Identifiable {
 }
 
 struct CardLembrete: View {
-    let cards: [CardViewModel] = [
-        CardViewModel(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular"),
-        CardViewModel(title: "Tomatinho está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
-    ]
+   @State var cards: [CardViewModel] = []
     
     var body: some View {
-        CardListView(cards: cards)
+        CardListView(cards: $cards)
     }
 }
 
