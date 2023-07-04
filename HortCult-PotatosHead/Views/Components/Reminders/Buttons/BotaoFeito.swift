@@ -2,13 +2,14 @@ import SwiftUI
 
 struct BotaoFeito: View {
     @State private var isPressed = false
-    
+    var action: () -> Void
     var body: some View {
         ZStack {
             Color.clear
                 .frame(width: 26, height: 16)
             
             Button(action: {
+                action()
                 withAnimation {
                     isPressed.toggle()
                 }
@@ -43,7 +44,7 @@ struct BotaoFeito: View {
 
 struct BotaoTeste_Previews: PreviewProvider {
     static var previews: some View {
-        BotaoFeito()
+        BotaoFeito(){}
     }
 }
 
