@@ -30,7 +30,7 @@ struct HomeView: View {
                 Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
                 
                     .padding(.bottom, 20)
-                CardListView(cards: cardModels)
+                CardListView(cards: $cardModels)
                     
                 
                 
@@ -44,8 +44,10 @@ struct HomeView: View {
                     let currentDate = Date()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd/MM/yyyy"
+                    var dateString = "" 
                     let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
-                    let dateString = dateFormatter.string(from: daily ?? Date())
+                    dateString = dateFormatter.string(from: daily ?? Date())
+                  //  let dateString = dateFormatter.string(from: currentDate)
                     
                     return (!Notification.is_resolve && Notification.next_time_to_alert == dateString)
                 }
@@ -54,6 +56,7 @@ struct HomeView: View {
                     
                     let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: Notification)
                     let cardModel: CardViewModel = CardViewModel(
+                        id: notificationDisplayed.id,
                         title: notificationDisplayed.title,
                         content: notificationDisplayed.description,
                         icon: notificationDisplayed.icon,
