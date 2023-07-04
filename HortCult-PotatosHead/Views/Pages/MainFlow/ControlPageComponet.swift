@@ -12,7 +12,6 @@ struct MainView: View {
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
-    @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
     @EnvironmentObject var imageViewModel: ImageViewModel
     var body: some View {
@@ -43,7 +42,6 @@ struct MainView: View {
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
             MainView(plantViewModel: PlantViewModel())
-                .environmentObject(Defaults())
         }
     }
 }

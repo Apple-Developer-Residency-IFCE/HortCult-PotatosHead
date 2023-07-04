@@ -10,7 +10,6 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
     @EnvironmentObject var imageViewModel: ImageViewModel
     @State var goToAddPlantScreen: Bool = false
@@ -73,7 +72,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(plantViewModel: PlantViewModel())
-            .environmentObject(Defaults())
     }
 }
 

@@ -2,9 +2,8 @@ import SwiftUI
 import UserNotifications
 
 struct AdjustmentView: View {
-    @EnvironmentObject var defaults: Defaults
-    @State var theme: String = Defaults.themeStorage
-    @State var switcherOn: Bool = Defaults.enableNotificationStorage
+    @State var theme: String = Defaults.shared.themeStorage
+    @State var switcherOn: Bool = Defaults.shared.enableNotificationStorage
     @State var timeToAlert: String = ""
     @State var time: Date = Date()
     @State var openConfia: Bool = true
@@ -26,19 +25,18 @@ struct AdjustmentView: View {
 
                     }
                     NavigationLink {
-                        ThemeSelect(selectedOption: Defaults.themeStorage)
-                            .environmentObject(defaults)
+                        ThemeSelect(selectedOption: Defaults.shared.themeStorage)
                         
                     } label: {
                         AdjustmentItem(label: "Tema") {
-                            NavigationIconView(label: Defaults.themeStorage)
+                            NavigationIconView(label: Defaults.shared.themeStorage)
                         }
                     }
                     
                     Divider()
                     AdjustmentItem(label: "Notificações Push") {
                         Toggle("", isOn: $switcherOn).onChange(of: switcherOn, perform: { newValue in
-                            Defaults.enableNotificationStorage = newValue
+                            Defaults.shared.enableNotificationStorage = newValue
                             NotificationManager().requestNotificationAuthorization()
                         })
                     }
@@ -81,6 +79,5 @@ struct AdjustmentView: View {
 struct AdjustmentView_Previews: PreviewProvider {
     static var previews: some View {
         AdjustmentView()
-            .environmentObject(Defaults())
     }
 }

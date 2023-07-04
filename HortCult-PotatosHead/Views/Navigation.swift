@@ -2,7 +2,6 @@ import SwiftUI
 
 struct Navigation: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var defaults: Defaults
 
     
 //    var header: some View {
@@ -40,7 +39,6 @@ struct Navigation: View {
 struct Navigation_Previews: PreviewProvider {
     static var previews: some View {
         Navigation()
-            .environmentObject(Defaults())
     }
 }
 

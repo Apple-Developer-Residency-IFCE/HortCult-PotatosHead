@@ -5,7 +5,6 @@ import CoreData
 struct OnBoardingScreen: View {
     @State private var isFirstLogin = false
     @State private var isNextScreenActive = false
-    @ObservedObject var defaults: Defaults
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var plantViewModel: PlantViewModel
     
@@ -43,6 +42,6 @@ struct OnBoardingScreen: View {
 
 struct OnBoardingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingScreen(defaults: Defaults(), plantViewModel: PlantViewModel())
+        OnBoardingScreen(plantViewModel: PlantViewModel())
     }
 }
