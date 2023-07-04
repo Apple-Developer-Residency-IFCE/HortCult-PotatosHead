@@ -13,60 +13,65 @@ struct HomeView: View {
     @EnvironmentObject var defaults: Defaults
     @ObservedObject var plantViewModel: PlantViewModel
     @EnvironmentObject var imageViewModel: ImageViewModel
+    @EnvironmentObject var notificationViewModel: NotificationViewModel
     @State var goToAddPlantScreen: Bool = false
     @State var mokeRemainderList: [Notification] = []
     @State var cardModels: [CardViewModel] = []
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical){
+        ScrollView(.vertical){
             VStack {
                 CustomNavBar(hiddenDismissButton: true)
                 Spacer()
                 
                 ScrollView {
-                    HeaderMenu(plantViewModel: plantViewModel)
-                       
+                    HeaderMenu(plantViewModel: plantViewModel, noticationList: $cardModels )
                     Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
-                    
-                    //.padding(.bottom, 20)
-                    
-                    CardListView(cards: [
-                        CardViewModel(title: "Batatão está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular"),
-                        CardViewModel(title: "Tomatinho está com sede!", content: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
-                    ])
                 }
                 Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
-                   
-                   .padding(.bottom, 20)
-                CardListView(cards: cardModels)
-
-
-            }
-            .task {
                 
-                for _ in 1...10 {
-                    let mokitem = NotificationAdapter()
+                    .padding(.bottom, 20)
+                CardListView(cards: cardModels)
+                    
+                
+                
+                
+            }
+            .onAppear() {
+                cardModels = []
+                let remindersList = notificationViewModel.notifications.compactMap({ Notification in
+                    Notification
+                }).filter { Notification in
+                    let currentDate = Date()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yyyy"
+                    let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+                    let dateString = dateFormatter.string(from: daily ?? Date())
+                    
+                    return (!Notification.is_resolve && Notification.next_time_to_alert == dateString)
+                }
+                
+                remindersList.forEach { Notification in
+                    
+                    let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: Notification)
                     let cardModel: CardViewModel = CardViewModel(
-                        title: mokitem.notification_plant?.name ?? "juninho",
-                        content: mokitem.time_to_alert ?? "",
-                        icon: "Water-Orange",
-                        cardColor: "lembreteIcon",
-                        backgroudCardColor: "AlertCardColor",
-                        textColor: "TextColor",
-                        titleFont: "Satoshi-Bold",
-                        contentFont: "Satoshi-Regular"
+                        title: notificationDisplayed.title,
+                        content: notificationDisplayed.description,
+                        icon: notificationDisplayed.icon,
+                        cardColor: notificationDisplayed.cardColor,
+                        backgroudCardColor: notificationDisplayed.backgroudCardColor,
+                        textColor: notificationDisplayed.textColor,
+                        titleFont: notificationDisplayed.titleFont,
+                        contentFont: notificationDisplayed.contentFont
                     )
                     cardModels.append(cardModel)
                 }
             }
-            }
-            
-            .background(NavigationLink(destination: AddInfoScreen(plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
         }
-            .navigationBarBackButtonHidden(true)
-        }
-           
+        .background(NavigationLink(destination: AddInfoScreen(noticationList: $cardModels, plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
+        .navigationBarBackButtonHidden(true)
     }
+    
+}
 
 
 
@@ -87,7 +92,7 @@ struct NotificationAdapter {
     var time_to_alert: String? = ""
     var type_to_alert: String? = ""
     var notification_plant: PlantAdapter? = PlantAdapter()
- 
+    
     init() {}
     
     init(notification: Notification) {
