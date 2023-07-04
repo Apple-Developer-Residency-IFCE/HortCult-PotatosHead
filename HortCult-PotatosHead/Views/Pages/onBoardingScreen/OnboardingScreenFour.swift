@@ -17,7 +17,7 @@ struct OnboardingScreenFour: View {
     var body: some View {
         
         
-        NavigationView {
+        
             
             OnboardingScreen(header: "hortFruitLight",
                              centerImage: "onboardingfourlight",
@@ -33,7 +33,7 @@ struct OnboardingScreenFour: View {
             
             .background(NavigationLink(destination: MainView(plantViewModel: plantViewModel), isActive: $isNextScreenActive, label: {EmptyView()}))
             
-        }.navigationBarHidden(true)
+        .navigationBarHidden(true)
     }
 }
 

@@ -10,7 +10,7 @@ struct OnboardingScreenTwo: View {
     
     var body: some View {
         
-        NavigationView {
+       
             OnboardingScreen(header: "hortFruitLight",
                              centerImage: "onboardingtwolight",
                              primaryText: "Acompanhe a sua horta",
@@ -34,7 +34,7 @@ struct OnboardingScreenTwo: View {
             
             //Navegar para a tela inicial no botao 2
             
-        }.navigationBarHidden(true)
+        .navigationBarHidden(true)
     }
 }
 

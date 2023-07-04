@@ -17,7 +17,7 @@ struct OnBoardingScreen: View {
     var body: some View {
         if !self.isFirstLogin  {
             
-            NavigationView {
+            
                 OnboardingScreen(header:"hortFruitLight",
                                  primaryText: "Boas vindas!",
                                  secondaryText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil",
@@ -29,7 +29,7 @@ struct OnBoardingScreen: View {
                 
                 .background(NavigationLink(destination: OnboardingScreenTwo(plantViewModel: plantViewModel), isActive: $isNextScreenActive) { EmptyView()})
                 
-            }.navigationBarHidden(true)
+            .navigationBarHidden(true)
             
         } else {
             Button("Concluir Primeiro") {
