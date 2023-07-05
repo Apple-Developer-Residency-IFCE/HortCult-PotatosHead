@@ -89,8 +89,9 @@ struct HortaInformationScreen: View {
                         }
                     })
                     Button {
-                        plantViewModel.deletePlant(plant: plant)
+                        
                         self.presentationMode.wrappedValue.dismiss()
+                        plantViewModel.deletePlant(plant: plant)
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 40)
