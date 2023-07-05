@@ -44,7 +44,7 @@ struct HomeView: View {
                     dateString = dateFormatter.string(from: daily ?? Date())
                     //  let dateString = dateFormatter.string(from: currentDate)
                     
-                    return (!Notification.is_resolve && Notification.next_time_to_alert == dateString)
+                    return (!Notification.is_resolve && Notification.next_time_to_alert == dateString && Notification.notification_plant != nil)
                 }
                 
                 remindersList.forEach { Notification in
