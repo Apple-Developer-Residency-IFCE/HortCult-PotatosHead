@@ -1,18 +1,6 @@
 import SwiftUI
 import Foundation
 
-struct NotificationDisplayed {
-    let id: UUID
-    let title: String
-    let description: String
-    let icon: String
-    let cardColor: String
-    let backgroudCardColor: String
-    let textColor: String
-    let titleFont: String
-    let contentFont: String
-}
-
 struct HomeViewModel {
     static func notificationsTextsToDisplay (notification: Notification) -> NotificationDisplayed{
         var notificationDisplayed: NotificationDisplayed
@@ -20,8 +8,7 @@ struct HomeViewModel {
         switch NotificationType(rawValue: notificationType){
         case .watering:
             notificationDisplayed = NotificationDisplayed(id: notification.id ?? UUID() ,title: "\(notification.notification_plant?.name ?? "") está com sede!", description: "Dê água para a sua plantinha.", icon: "Water-Orange", cardColor: "lembreteIcon", backgroudCardColor: "AlertCardColor", textColor: "TextColor", titleFont: "Satoshi-Bold", contentFont: "Satoshi-Regular")
-            
-            
+        
         case .none:
             notificationDisplayed = NotificationDisplayed(id: UUID() ,title: "", description: "", icon: "", cardColor: "", backgroudCardColor: "", textColor: "", titleFont: "", contentFont: "")
         }
@@ -45,9 +32,6 @@ struct HomeViewModel {
             return CardViewModel.id != notificationID
         }
     }
-    
-    
-    
 }
 
 
