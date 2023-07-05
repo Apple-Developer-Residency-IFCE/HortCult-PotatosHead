@@ -17,18 +17,13 @@ struct OnBoardingScreen: View {
     var body: some View {
         if !self.isFirstLogin  {
             
-            
-                OnboardingScreen(header:"hortFruitLight",
-                                 primaryText: "Boas vindas!",
-                                 secondaryText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil",
-                                 actionMainButton: {isNextScreenActive = true},
-                                 mainButtonType: .one,
-                                 hidenSecondaryButton: true)
-                
-                
-                
-                .background(NavigationLink(destination: OnboardingScreenTwo(plantViewModel: plantViewModel), isActive: $isNextScreenActive) { EmptyView()})
-                
+            OnboardingScreen(header:"hortFruitLight",
+                             primaryText: "Boas vindas!",
+                             secondaryText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil",
+                             actionMainButton: {isNextScreenActive = true},
+                             mainButtonType: .one,
+                             hidenSecondaryButton: true)
+            .background(NavigationLink(destination: OnboardingScreenTwo(plantViewModel: plantViewModel), isActive: $isNextScreenActive) { EmptyView()})
             .navigationBarHidden(true)
             
         } else {

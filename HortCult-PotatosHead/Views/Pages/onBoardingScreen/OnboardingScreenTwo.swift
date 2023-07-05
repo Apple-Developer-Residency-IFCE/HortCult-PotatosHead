@@ -10,30 +10,24 @@ struct OnboardingScreenTwo: View {
     
     var body: some View {
         
-       
-            OnboardingScreen(header: "hortFruitLight",
-                             centerImage: "onboardingtwolight",
-                             primaryText: "Acompanhe a sua horta",
-                             secondaryText: "Tenha uma visão geral do desenvolvimento das duas plantações",
-                            
-                             actionMainButton: {isNextScreenActive = true},
-                             mainButtonType: .two,
-                             hidenSecondaryButton: false,
-                             actionSecondaryButton: {
-                                jumpToInitalScreen = true
-                                HortCult_PotatosHeadApp.isFirstLogin = false
-            })
-            
-            .background(
-                NavigationLink(destination: OnboardingScreenThree(defaults: _defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) { EmptyView()}
- 
-            )
-            .background(
-                NavigationLink(destination: MainView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
-            )
-            
-            //Navegar para a tela inicial no botao 2
-            
+        OnboardingScreen(header: "hortFruitLight",
+                         centerImage: "onboardingtwolight",
+                         primaryText: "Acompanhe a sua horta",
+                         secondaryText: "Tenha uma visão geral do desenvolvimento das duas plantações",
+                         
+                         actionMainButton: {isNextScreenActive = true},
+                         mainButtonType: .two,
+                         hidenSecondaryButton: false,
+                         actionSecondaryButton: {
+            jumpToInitalScreen = true
+            HortCult_PotatosHeadApp.isFirstLogin = false
+        })
+        .background(
+            NavigationLink(destination: OnboardingScreenThree(defaults: _defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) { EmptyView()}
+        )
+        .background(
+            NavigationLink(destination: MainView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
+        )
         .navigationBarHidden(true)
     }
 }

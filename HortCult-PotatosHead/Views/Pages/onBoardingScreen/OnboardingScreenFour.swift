@@ -16,23 +16,17 @@ struct OnboardingScreenFour: View {
     
     var body: some View {
         
-        
-        
-            
-            OnboardingScreen(header: "hortFruitLight",
-                             centerImage: "onboardingfourlight",
-                             primaryText: "Hora de Cuidar",
-                             secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
-                             actionMainButton: {
-                                isNextScreenActive = true
-                                HortCult_PotatosHeadApp.isFirstLogin = false
-                            },
-                             mainButtonType: .three,
-                             hidenSecondaryButton: true)
-            
-            
-            .background(NavigationLink(destination: MainView(plantViewModel: plantViewModel), isActive: $isNextScreenActive, label: {EmptyView()}))
-            
+        OnboardingScreen(header: "hortFruitLight",
+                         centerImage: "onboardingfourlight",
+                         primaryText: "Hora de Cuidar",
+                         secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
+                         actionMainButton: {
+            isNextScreenActive = true
+            HortCult_PotatosHeadApp.isFirstLogin = false
+        },
+                         mainButtonType: .three,
+                         hidenSecondaryButton: true)
+        .background(NavigationLink(destination: MainView(plantViewModel: plantViewModel), isActive: $isNextScreenActive, label: {EmptyView()}))
         .navigationBarHidden(true)
     }
 }
