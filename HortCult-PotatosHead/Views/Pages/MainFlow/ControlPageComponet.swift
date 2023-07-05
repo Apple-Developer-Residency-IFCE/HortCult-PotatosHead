@@ -16,21 +16,14 @@ struct MainView: View {
     @ObservedObject var plantViewModel: PlantViewModel
     @EnvironmentObject var imageViewModel: ImageViewModel
     var body: some View {
-        //IMPLEMENTAR A NAVIGATION LINK (Back Button)
         ZStack {
             if isSelectedTab == 0 {
-                
                 HomeView(plantViewModel: plantViewModel)
-                    
-                    //.padding(.top)
-                    //.ignoresSafeArea()
             } else {
                 AdjustmentView()
-                //                        .environmentObject(defaults)
                 Spacer()
                 
             }
-            //   .navigationBarHidden(true)
             CustomTabBar(action: { isSelectedTab = 0
                 isNextScreenActive = false
             },
