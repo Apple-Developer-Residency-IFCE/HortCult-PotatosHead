@@ -25,7 +25,7 @@ struct MainView: View {
                     //.padding(.top)
                     //.ignoresSafeArea()
             } else {
-                AdjustmentView()
+                WelcomeView()
                 //                        .environmentObject(defaults)
                 Spacer()
                 

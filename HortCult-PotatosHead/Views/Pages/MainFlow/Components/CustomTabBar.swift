@@ -63,7 +63,7 @@ struct CustomTabBar: View {
 
 
 
-struct ContentView_Previews: PreviewProvider {
+struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
         CustomTabBar(action: {print("teste")}, actionTwo: {print("2")}, colorOne: Color.black, colorTwo: Color.black)
     }

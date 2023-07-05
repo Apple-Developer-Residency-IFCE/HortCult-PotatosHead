@@ -26,8 +26,15 @@
 		3D54AA732A3D2AC000526BB5 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54AA722A3D2AC000526BB5 /* AddButton.swift */; };
 		3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */; };
 		3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */; };
-		4EA760D22A54D1F5000A9C26 /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA760D12A54D1F5000A9C26 /* MainAPI.swift */; };
-		4EA760D42A54D8C5000A9C26 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA760D32A54D8C5000A9C26 /* WeatherAPI.swift */; };
+		4EA55DBC2A56331B000C35AA /* WeatherManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DBB2A56331B000C35AA /* WeatherManeger.swift */; };
+		4EA55DBE2A563356000C35AA /* LocationManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DBD2A563356000C35AA /* LocationManeger.swift */; };
+		4EA55DC32A56345C000C35AA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DC22A56345C000C35AA /* WelcomeView.swift */; };
+		4EA55DC52A563484000C35AA /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DC42A563484000C35AA /* WeatherView.swift */; };
+		4EA55DC72A5634AE000C35AA /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DC62A5634AE000C35AA /* WeatherRow.swift */; };
+		4EA55DC92A5634E9000C35AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DC82A5634E9000C35AA /* ContentView.swift */; };
+		4EA55DCB2A563504000C35AA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DCA2A563504000C35AA /* LoadingView.swift */; };
+		4EA55DCD2A56353D000C35AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DCC2A56353D000C35AA /* Extensions.swift */; };
+		4EA55DCF2A56359B000C35AA /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA55DCE2A56359B000C35AA /* ModelData.swift */; };
 		5423670F2A4A620D00261828 /* Notification+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367092A4A620D00261828 /* Notification+CoreDataClass.swift */; };
 		542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */; };
 		542367112A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */; };
@@ -101,8 +108,15 @@
 		3D54AA722A3D2AC000526BB5 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
 		3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDropDown.swift; sourceTree = "<group>"; };
-		4EA760D12A54D1F5000A9C26 /* MainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
-		4EA760D32A54D8C5000A9C26 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		4EA55DBB2A56331B000C35AA /* WeatherManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManeger.swift; sourceTree = "<group>"; };
+		4EA55DBD2A563356000C35AA /* LocationManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManeger.swift; sourceTree = "<group>"; };
+		4EA55DC22A56345C000C35AA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		4EA55DC42A563484000C35AA /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		4EA55DC62A5634AE000C35AA /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
+		4EA55DC82A5634E9000C35AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4EA55DCA2A563504000C35AA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4EA55DCC2A56353D000C35AA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4EA55DCE2A56359B000C35AA /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		542367092A4A620D00261828 /* Notification+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -244,11 +258,24 @@
 			path = Pickers;
 			sourceTree = "<group>";
 		};
+		4EA55DBF2A563391000C35AA /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				4EA55DC22A56345C000C35AA /* WelcomeView.swift */,
+				4EA55DC42A563484000C35AA /* WeatherView.swift */,
+				4EA55DC62A5634AE000C35AA /* WeatherRow.swift */,
+				4EA55DC82A5634E9000C35AA /* ContentView.swift */,
+				4EA55DCA2A563504000C35AA /* LoadingView.swift */,
+				4EA55DCC2A56353D000C35AA /* Extensions.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		4EA760D02A54D1C6000A9C26 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4EA760D12A54D1F5000A9C26 /* MainAPI.swift */,
-				4EA760D32A54D8C5000A9C26 /* WeatherAPI.swift */,
+				4EA55DBB2A56331B000C35AA /* WeatherManeger.swift */,
+				4EA55DBD2A563356000C35AA /* LocationManeger.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +283,7 @@
 		542367172A4B871800261828 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				4EA55DBF2A563391000C35AA /* Weather */,
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
 				1385EADF2A216870006E3487 /* HortaInformationScreen */,
 				64C476572A26A80A006D499A /* MainFlow */,
@@ -440,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */,
+				4EA55DCE2A56359B000C35AA /* ModelData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -601,8 +630,10 @@
 				5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */,
+				4EA55DC92A5634E9000C35AA /* ContentView.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */,
+				4EA55DCD2A56353D000C35AA /* Extensions.swift in Sources */,
 				3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */,
 				54673DDB2A3157D300348020 /* Defaults.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
@@ -612,19 +643,20 @@
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
 				EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
+				4EA55DBC2A56331B000C35AA /* WeatherManeger.swift in Sources */,
 				542367162A4A627100261828 /* ImagesViewModel.swift in Sources */,
-				4EA760D22A54D1F5000A9C26 /* MainAPI.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
+				4EA55DC72A5634AE000C35AA /* WeatherRow.swift in Sources */,
 				9B0663612A2EB2A2001DC0B8 /* HomeViewScreen.swift in Sources */,
 				EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */,
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
-				4EA760D42A54D8C5000A9C26 /* WeatherAPI.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				9B5426A72A3BDB86006E7FC2 /* CustomNavBar.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */,
 				641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */,
+				4EA55DC52A563484000C35AA /* WeatherView.swift in Sources */,
 				3D5455A92A425DC800EBFE7A /* EditInfoView.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
 				64BC668C2A294D3900A75C63 /* NotificationManager.swift in Sources */,
@@ -634,12 +666,16 @@
 				3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
 				3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */,
+				4EA55DCF2A56359B000C35AA /* ModelData.swift in Sources */,
 				54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */,
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
+				4EA55DCB2A563504000C35AA /* LoadingView.swift in Sources */,
+				4EA55DC32A56345C000C35AA /* WelcomeView.swift in Sources */,
 				54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */,
 				542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */,
+				4EA55DBE2A563356000C35AA /* LocationManeger.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */,
