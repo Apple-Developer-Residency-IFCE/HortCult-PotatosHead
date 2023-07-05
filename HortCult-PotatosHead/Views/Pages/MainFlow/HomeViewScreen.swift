@@ -27,8 +27,8 @@ struct HomeView: View {
                     Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
                 }
                 Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
+                .padding(.bottom, 20)
                 
-                    .padding(.bottom, 20)
                 CardListView(cards: $cardModels)
             }
             .onAppear() {
@@ -39,10 +39,10 @@ struct HomeView: View {
                     let currentDate = Date()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd/MM/yyyy"
-                    var dateString = "" 
+                    var dateString = ""
                     let daily = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
                     dateString = dateFormatter.string(from: daily ?? Date())
-                  //  let dateString = dateFormatter.string(from: currentDate)
+                    //  let dateString = dateFormatter.string(from: currentDate)
                     
                     return (!Notification.is_resolve && Notification.next_time_to_alert == dateString)
                 }
@@ -95,7 +95,6 @@ struct NotificationAdapter {
         self.type_to_alert = notification.type_to_alert
         self.notification_plant = PlantAdapter(category: notification.notification_plant?.category,id: notification.notification_plant?.id,name: notification.notification_plant?.name)
     }
-    
 }
 
 struct PlantAdapter {
