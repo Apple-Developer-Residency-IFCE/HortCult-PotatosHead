@@ -1,14 +1,10 @@
 import SwiftUI
 
 struct EditInfoView: View {
-    //    @State var nameText: String = "Tomatinho"
-    //    @State var descriptionText: String = "O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças cardiovasculares, como infarto e aterosclerose."
-    //    @State var category: Category
-    //    @State var frequency: Frequency
-    //    @State var isDisabled: Bool = false
-    @ObservedObject var plantViewModel = PlantViewModel() // Use @StateObject instead of @ObservedObject in a non-View struct
+    @ObservedObject var plantViewModel = PlantViewModel()
     var plant:Plant
     var listImageData: [Data] = []
+    @State var state: [CardViewModel] = []
     init(plantViewModel: PlantViewModel = PlantViewModel(), plant: Plant) {
         self.plantViewModel = plantViewModel
         self.plant = plant
@@ -21,14 +17,7 @@ struct EditInfoView: View {
                           category: Category.init(rawValue: plant.category!),
                           frequency: Frequency.init(rawValue: plant.watering_frequency!) ,
                           isDisabled: false,
-                          selectedPhotosData: listImageData, plant: plant, plantViewModel: plantViewModel, isEdit: true )
+                          selectedPhotosData: listImageData, noticationList: $state, plant: plant, plantViewModel: plantViewModel, isEdit: true )
         }
     }
-    
-    //struct AddInfoScreenMock_Previews: PreviewProvider {
-    //    static var previews: some View {
-    //        EditInfoView(category: .legumes, frequency: .daily)
-    //    }
-    //}
-    
 }

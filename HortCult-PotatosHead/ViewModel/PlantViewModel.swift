@@ -46,7 +46,6 @@ class PlantViewModel: ObservableObject {
     }
     
     func deletePlant(plant: Plant) {
-        plant.plant_notification = nil
         viewContext.delete(plant)
         do {
             try viewContext.save()
