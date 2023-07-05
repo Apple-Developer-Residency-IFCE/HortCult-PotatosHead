@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct CardProximaRega: View {
-    let title: String
+    let title: String = "Próxima rega:"
     let content: String
-    let icon: String
-    let cardColor: String
-    let backgroudCardColor: String
-    let textColor: String
-    let titleFont: String
-    let contentFont: String
+    let icon: String = "Water-Blue"
+    let cardColor: String = "BlueAlertCard"
+    let backgroudCardColor: String = "BlueAlertCard"
+    let textColor: String = "TextColor"
+    let titleFont: String = "Satoshi-Regular"
+    let contentFont: String = "Satoshi-Bold"
     var action: () -> Void
     
     
@@ -46,7 +46,7 @@ struct CardProximaRega: View {
 
 struct CardProximaRega_Previews: PreviewProvider {
     static var previews: some View {
-        CardProximaRega(title: "Próxima rega:", content: "12/05", icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold"){}
+        CardProximaRega(content: "12/05"){}
     }
 }
 

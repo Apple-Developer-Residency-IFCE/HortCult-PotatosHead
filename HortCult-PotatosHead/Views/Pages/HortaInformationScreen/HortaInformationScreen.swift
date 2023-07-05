@@ -50,7 +50,7 @@ struct HortaInformationScreen: View {
                         Text(plant.information ?? "NAO TEM INFO")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .padding(.bottom,24)
-                        CardProximaRega(title: "Próxima rega:", content: plantViewModel.getNextWatering(plant: plant), icon: "Water-Blue", cardColor: "blueReminderIcon", backgroudCardColor: "BlueAlertCard", textColor: "TextColor", titleFont: "Satoshi-Regular", contentFont: "Satoshi-Bold"){
+                        CardProximaRega(content: plantViewModel.getNextWatering(plant: plant)){
                             notificationViewModel.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
                             
                            guard let newNotification = notificationViewModel.createNotification(next_time_to_alert: notificationViewModel.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}

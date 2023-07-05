@@ -64,14 +64,14 @@ struct CardListView: View {
 
 struct CardViewModel: Identifiable {
     let id: UUID
-    let title: String
+    let title: String 
     let content: String
     let icon: String
     let cardColor: String
     let backgroudCardColor: String
     let textColor: String
-    let titleFont: String
-    let contentFont: String
+    let titleFont: String = "Satoshi-Bold"
+    let contentFont: String = "Satoshi-Regular"
 }
 
 struct CardLembrete: View {

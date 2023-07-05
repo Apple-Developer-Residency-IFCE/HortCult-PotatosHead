@@ -84,9 +84,7 @@ struct AddInfoScreen: View {
                                         icon: notificationDisplayed.icon,
                                         cardColor: notificationDisplayed.cardColor,
                                         backgroudCardColor: notificationDisplayed.backgroudCardColor,
-                                        textColor: notificationDisplayed.textColor,
-                                        titleFont: notificationDisplayed.titleFont,
-                                        contentFont: notificationDisplayed.contentFont))
+                                        textColor: notificationDisplayed.textColor))
                                 }
                                 
                             }

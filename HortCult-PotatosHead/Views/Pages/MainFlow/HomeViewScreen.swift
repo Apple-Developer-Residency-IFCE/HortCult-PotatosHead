@@ -30,10 +30,6 @@ struct HomeView: View {
                 
                     .padding(.bottom, 20)
                 CardListView(cards: $cardModels)
-                    
-                
-                
-                
             }
             .onAppear() {
                 cardModels = []
@@ -61,9 +57,7 @@ struct HomeView: View {
                         icon: notificationDisplayed.icon,
                         cardColor: notificationDisplayed.cardColor,
                         backgroudCardColor: notificationDisplayed.backgroudCardColor,
-                        textColor: notificationDisplayed.textColor,
-                        titleFont: notificationDisplayed.titleFont,
-                        contentFont: notificationDisplayed.contentFont
+                        textColor: notificationDisplayed.textColor
                     )
                     cardModels.append(cardModel)
                 }
