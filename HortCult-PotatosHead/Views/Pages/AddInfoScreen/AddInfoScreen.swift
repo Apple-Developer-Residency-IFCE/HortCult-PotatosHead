@@ -77,14 +77,16 @@ struct AddInfoScreen: View {
                                     plantViewModel.addNotificationToPlant(plant: neewPlant, notification: newNotification)
                                     self.presentationMode.wrappedValue.dismiss()
                                     let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: newNotification)
-                                    noticationList.append(CardViewModel(
-                                        id: notificationDisplayed.id,
-                                        title: notificationDisplayed.title,
-                                        content: notificationDisplayed.description,
-                                        icon: notificationDisplayed.icon,
-                                        cardColor: notificationDisplayed.cardColor,
-                                        backgroudCardColor: notificationDisplayed.backgroudCardColor,
-                                        textColor: notificationDisplayed.textColor))
+                                    if(AddInfoScreenViewModel.VerifyNotificationToday(date: newNotification.next_time_to_alert ?? "")){
+                                        noticationList.append(CardViewModel(
+                                            id: notificationDisplayed.id,
+                                            title: notificationDisplayed.title,
+                                            content: notificationDisplayed.description,
+                                            icon: notificationDisplayed.icon,
+                                            cardColor: notificationDisplayed.cardColor,
+                                            backgroudCardColor: notificationDisplayed.backgroudCardColor,
+                                            textColor: notificationDisplayed.textColor))
+                                    }
                                 }
                                 
                             }
