@@ -14,10 +14,18 @@ struct ScrollProfilePhoto: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             ForEach(0..<(plant.plant_hortcult_images?.count ?? 0)) { index in
-                plantViewModel.getPlantImages(plant: plant)[index]
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .tag(index)
+                if(plant.plant_hortcult_images != nil){
+                    plantViewModel.getPlantImages(plant: plant)[index]
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .tag(index)
+
+                }else {
+                    Image("Tomate")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .tag(index)
+                }
             }
         }
         .tabViewStyle(PageTabViewStyle())
