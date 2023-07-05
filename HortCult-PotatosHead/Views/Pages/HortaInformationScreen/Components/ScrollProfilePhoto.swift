@@ -4,34 +4,25 @@
 //
 //  Created by Joao Guilherme Araujo Canuto on 26/05/23.
 //
-
 import SwiftUI
 
 struct ScrollProfilePhoto: View {
-    
+    var plant: Plant
+    @EnvironmentObject var plantViewModel: PlantViewModel
+    @State private var selectedTab = 0
     
     var body: some View {
-                    ScrollView(.horizontal) { // <1>
-                        
-                        HStack(spacing: 0) { // <2>
-                            
-                            ForEach(0..<3) { index in
-                                ZStack{
-                                   
-                                    Image("Tomate")
-                                        .frame(maxWidth: .infinity)
-                                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center)
-                                        .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
-                                }
-                            }
-                        }
-                    }
-                    .edgesIgnoringSafeArea(.all)
+        TabView(selection: $selectedTab) {
+            ForEach(0..<(plant.plant_hortcult_images?.count ?? 0)) { index in
+                plantViewModel.getPlantImages(plant: plant)[index]
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .tag(index)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        .ignoresSafeArea()
     }
 }
 
-struct ScrollProfilePhoto_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollProfilePhoto()
-    }
-}
