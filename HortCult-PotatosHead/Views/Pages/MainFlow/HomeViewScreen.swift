@@ -22,7 +22,6 @@ struct HomeView: View {
             VStack {
                 CustomNavBar(hiddenDismissButton: true)
                 Spacer()
-                
                 ScrollView {
                     HeaderMenu(plantViewModel: plantViewModel, noticationList: $cardModels )
                     Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
