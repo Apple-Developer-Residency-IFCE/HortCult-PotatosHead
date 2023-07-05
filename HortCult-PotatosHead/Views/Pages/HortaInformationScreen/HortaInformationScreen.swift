@@ -32,7 +32,7 @@ struct HortaInformationScreen: View {
     
     var body: some View {
             ScrollView(.vertical){
-                ScrollProfilePhoto()
+                ScrollProfilePhoto(plant: plant)
                     .frame(minWidth: 390, minHeight: 390)
 
                 VStack(alignment: .leading){
