@@ -47,7 +47,7 @@
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
 		641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */; };
 		641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */; };
-		641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */; };
+		641C95402A27FA7F00B20BA3 /* BotaoCardLembrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953F2A27FA7F00B20BA3 /* BotaoCardLembrete.swift */; };
 		641D71C52A26A8B30040CBCC /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */; };
 		641D71C72A26A9700040CBCC /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C62A26A9700040CBCC /* Satoshi-Black.otf */; };
 		641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */; };
@@ -121,7 +121,7 @@
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
 		641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProximaRega.swift; sourceTree = "<group>"; };
 		641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoMarcarRegado.swift; sourceTree = "<group>"; };
-		641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoFeito.swift; sourceTree = "<group>"; };
+		641C953F2A27FA7F00B20BA3 /* BotaoCardLembrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoCardLembrete.swift; sourceTree = "<group>"; };
 		641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
 		641D71C62A26A9700040CBCC /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Black.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Black.dataset/Satoshi-Black.otf"; sourceTree = SOURCE_ROOT; };
 		641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BlackItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-BlackItalic.dataset/Satoshi-BlackItalic.otf"; sourceTree = SOURCE_ROOT; };
@@ -368,7 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */,
-				641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */,
+				641C953F2A27FA7F00B20BA3 /* BotaoCardLembrete.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -612,7 +612,7 @@
 				9B5426A72A3BDB86006E7FC2 /* CustomNavBar.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */,
-				641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */,
+				641C95402A27FA7F00B20BA3 /* BotaoCardLembrete.swift in Sources */,
 				3D5455A92A425DC800EBFE7A /* EditInfoView.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
 				64BC668C2A294D3900A75C63 /* NotificationManager.swift in Sources */,

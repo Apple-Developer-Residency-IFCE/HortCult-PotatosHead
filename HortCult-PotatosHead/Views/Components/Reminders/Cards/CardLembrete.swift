@@ -23,7 +23,7 @@ struct CardView: View {
                     .font(.custom(card.contentFont, size: 16))
                 
                 Button(action: {}) {
-                    BotaoFeito(action: action)
+                    ReminderCardButton(action: action)
                 }
                 .padding(.bottom, 22)
             }

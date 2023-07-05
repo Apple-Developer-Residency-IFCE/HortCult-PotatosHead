@@ -27,7 +27,7 @@ struct Card: View {
                 Spacer().frame(height: 2)
                 Text(content)
                     .font(.custom(contentFont, size: 16))
-                BotaoFeito(){}
+                ReminderCardButton(){}
                 .padding(.bottom, 22)
             }
             .foregroundColor(Color(textColor))

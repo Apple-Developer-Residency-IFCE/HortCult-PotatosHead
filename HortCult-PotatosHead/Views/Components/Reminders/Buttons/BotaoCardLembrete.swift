@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BotaoFeito: View {
+struct ReminderCardButton: View {
     @State private var isPressed = false
     var action: () -> Void
     var body: some View {
@@ -42,9 +42,9 @@ struct BotaoFeito: View {
     }
 }
 
-struct BotaoTeste_Previews: PreviewProvider {
+struct reminderCardButton_Previews: PreviewProvider {
     static var previews: some View {
-        BotaoFeito(){}
+        ReminderCardButton(){}
     }
 }
 
