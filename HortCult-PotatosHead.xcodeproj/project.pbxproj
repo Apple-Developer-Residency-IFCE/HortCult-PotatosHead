@@ -258,6 +258,14 @@
 			path = Climate;
 			sourceTree = "<group>";
 		};
+		3D6175E42A5787E7004847B7 /* CustomNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */,
+			);
+			path = CustomNavigation;
+			sourceTree = "<group>";
+		};
 		542367172A4B871800261828 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,12 +315,12 @@
 		5423671C2A4B883400261828 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3D6175E42A5787E7004847B7 /* CustomNavigation */,
 				3D6175DF2A577448004847B7 /* Climate */,
 				641C953C2A27F78200B20BA3 /* Reminders */,
 				EF82B6D22A3A913F0012B048 /* ImagePicker */,
 				3D49C34E2A3926910026D305 /* Textfield */,
 				3D57EDA52A3A8FC800720931 /* Pickers */,
-				9B5426A62A3BDB86006E7FC2 /* CustomNavBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
