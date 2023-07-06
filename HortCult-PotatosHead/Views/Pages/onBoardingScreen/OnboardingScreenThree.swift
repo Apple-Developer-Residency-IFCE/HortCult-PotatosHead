@@ -29,9 +29,12 @@ struct OnboardingScreenThree: View {
             HortCult_PotatosHeadApp.isFirstLogin = false
         })
         .background(
-            NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()})
+            NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()}
+                .navigationBarBackButtonHidden(true)
+        )
         .background(
             NavigationLink(destination: MainView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
+                .navigationBarBackButtonHidden(true)
         )
     }
 }
