@@ -10,7 +10,6 @@ import SwiftUI
 struct HortaComponent: View {
     var nameHorta : String
     var plant: Plant
-    @EnvironmentObject var plantViewModel: PlantViewModel
     var image: Image
     
     var body: some View {
@@ -37,6 +36,6 @@ struct HortaComponent: View {
 
 struct HortaComponent_Previews: PreviewProvider {
     static var previews: some View {
-        HortaComponent( nameHorta:"Tomate", plant: Plant(),image: Image(systemName: "eye")).environmentObject(PlantViewModel())
+        HortaComponent( nameHorta:"Tomate", plant: Plant(),image: Image(systemName: "eye"))
     }
 }

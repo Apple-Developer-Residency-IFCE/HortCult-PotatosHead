@@ -11,9 +11,9 @@ import CoreData
 class NotificationViewModel: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     @Published var notifications: [Notification] = []
+    static var instance: NotificationViewModel = NotificationViewModel()
     
-    
-    init() {
+    private init() {
         fetch()
     }
     

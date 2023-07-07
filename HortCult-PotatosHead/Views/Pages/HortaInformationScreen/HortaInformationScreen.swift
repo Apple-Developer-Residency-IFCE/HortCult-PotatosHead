@@ -9,8 +9,6 @@ import SwiftUI
 
 struct HortaInformationScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var plantViewModel: PlantViewModel
-    @EnvironmentObject var notificationViewModel: NotificationViewModel
     @State var activeNotification: Notification = Notification()
     var plant: Plant
     
@@ -50,15 +48,15 @@ struct HortaInformationScreen: View {
                         Text(plant.information ?? "NAO TEM INFO")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .padding(.bottom,24)
-                        CardProximaRega(content: plantViewModel.getNextWatering(plant: plant)){
-                            notificationViewModel.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
+                        CardProximaRega(content: PlantViewModel.instance.getNextWatering(plant: plant)){
+                            NotificationViewModel.instance.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
                             
-                           guard let newNotification = notificationViewModel.createNotification(next_time_to_alert: notificationViewModel.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
-                            plantViewModel.addNotificationToPlant(plant: plant, notification: newNotification)
+                            guard let newNotification = NotificationViewModel.instance.createNotification(next_time_to_alert: NotificationViewModel.instance.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
+                            PlantViewModel.instance.addNotificationToPlant(plant: plant, notification: newNotification)
                         }
                             .padding(.bottom,24)
                         if let freq = plant.watering_frequency {
-                            FrequenciaRega(plantViewModel: plantViewModel, frequencia: freq)
+                            FrequenciaRega(frequencia: freq)
                                 .padding(.horizontal)
                         } else {
                             
@@ -70,7 +68,7 @@ struct HortaInformationScreen: View {
                 VStack(alignment: .center){
                     
                     NavigationLink(destination:
-                        EditInfoView(plantViewModel: plantViewModel, plant: plant)
+                        EditInfoView(plant: plant)
                     ,label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 40)
@@ -91,7 +89,7 @@ struct HortaInformationScreen: View {
                     Button {
                         
                         self.presentationMode.wrappedValue.dismiss()
-                        plantViewModel.deletePlant(plant: plant)
+                        PlantViewModel.instance.deletePlant(plant: plant)
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 40)
@@ -117,7 +115,7 @@ struct HortaInformationScreen: View {
         .navigationBarItems(leading: header)
         .toolbarBackground(.hidden, for: .navigationBar)
         .task {
-            guard let getActiveNotification = plantViewModel.getActiveAlert(plant: plant, notificationType: .watering) else {return}
+            guard let getActiveNotification = PlantViewModel.instance.getActiveAlert(plant: plant, notificationType: .watering) else {return}
             activeNotification = getActiveNotification
         }
     }

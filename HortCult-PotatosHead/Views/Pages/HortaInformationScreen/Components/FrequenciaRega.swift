@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct FrequenciaRega: View {
-    @ObservedObject var plantViewModel: PlantViewModel
     var frequencia:String
     var body: some View {
         VStack(alignment: .leading){
@@ -25,6 +24,6 @@ struct FrequenciaRega: View {
 
 struct FrequenciaRega_Previews: PreviewProvider {
     static var previews: some View {
-        FrequenciaRega(plantViewModel: PlantViewModel(), frequencia: "teste")
+        FrequenciaRega(frequencia: "teste")
     }
 }

@@ -15,18 +15,18 @@ struct HomeViewModel {
         return notificationDisplayed
     }
     
-    static func checkCardNotification(notificationID: UUID, notificationViewModel: NotificationViewModel, cards: [CardViewModel], plantViewModel: PlantViewModel) -> [CardViewModel] {
-        guard let notificationSelected = notificationViewModel.notifications.filter({ Notification in
+    static func checkCardNotification(notificationID: UUID, cards: [CardViewModel]) -> [CardViewModel] {
+        guard let notificationSelected = NotificationViewModel.instance.notifications.filter({ Notification in
             return Notification.id == notificationID
         }).first else {return []}
         
         guard let plant = notificationSelected.notification_plant else {return []}
         
-        notificationViewModel.updateNotification(notification: notificationSelected, next_time_to_alert: notificationSelected.next_time_to_alert ?? "", time_to_alert: notificationSelected.time_to_alert ?? "", type_to_alert: notificationSelected.type_to_alert ?? "", is_resolve: true)
+        NotificationViewModel.instance.updateNotification(notification: notificationSelected, next_time_to_alert: notificationSelected.next_time_to_alert ?? "", time_to_alert: notificationSelected.time_to_alert ?? "", type_to_alert: notificationSelected.type_to_alert ?? "", is_resolve: true)
         
-        guard let newNotification = notificationViewModel.createNotification(next_time_to_alert: notificationViewModel.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return []}
+        guard let newNotification = NotificationViewModel.instance.createNotification(next_time_to_alert: NotificationViewModel.instance.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return []}
      
-        plantViewModel.addNotificationToPlant(plant: plant, notification: newNotification)
+        PlantViewModel.instance.addNotificationToPlant(plant: plant, notification: newNotification)
         
         return cards.filter { CardViewModel in
             return CardViewModel.id != notificationID

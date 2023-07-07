@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct HeaderMenu: View {
-    @ObservedObject var plantViewModel: PlantViewModel
     @Binding var noticationList: [CardViewModel]
-    @EnvironmentObject var imageViewModel: ImageViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         
@@ -21,7 +19,7 @@ struct HeaderMenu: View {
                     .foregroundColor(Color("MainColor"))
                 Spacer()
                 
-                NavigationLink(destination: AddInfoScreen(noticationList: $noticationList, plantViewModel: plantViewModel ),
+                NavigationLink(destination: AddInfoScreen(noticationList: $noticationList),
                                label: {
                     HStack{
                         Image(systemName: "plus")
@@ -35,7 +33,7 @@ struct HeaderMenu: View {
                 
                 
             }
-            ListHorta(plantViewModel: plantViewModel)
+            ListHorta()
         }
         .padding()
     }
@@ -43,6 +41,6 @@ struct HeaderMenu: View {
 
 struct HeaderMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderMenu(plantViewModel: PlantViewModel(), noticationList: .constant([]))
+        HeaderMenu(noticationList: .constant([]))
     }
 }
