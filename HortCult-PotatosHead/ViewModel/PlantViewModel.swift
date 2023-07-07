@@ -12,8 +12,9 @@ import SwiftUI
 
 class PlantViewModel: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
-    @Published var plants: [Plant] = []
+    static var instance = PlantViewModel()
     
+    @Published var plants: [Plant] = []
     func fetch() {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         guard let fetchedPlants = try? viewContext.fetch(fetchRequest) else {
@@ -22,7 +23,7 @@ class PlantViewModel: ObservableObject {
         plants = fetchedPlants
     }
     
-    init() {
+    private init() {
         fetch()
     }
     

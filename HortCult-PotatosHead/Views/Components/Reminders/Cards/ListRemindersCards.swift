@@ -40,8 +40,6 @@ struct CardView: View {
 
 struct CardListView: View {
     @Binding var cards: [CardViewModel]
-    @EnvironmentObject var notificationViewModel: NotificationViewModel
-    @EnvironmentObject var plantViewModel: PlantViewModel
     var body: some View {
         VStack(alignment: .leading){
             Text("Lembretes")
@@ -52,7 +50,7 @@ struct CardListView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(cards) { card in
                         CardView(card: card){
-                            cards = HomeViewModel.checkCardNotification(notificationID: card.id, notificationViewModel: notificationViewModel, cards: cards, plantViewModel: plantViewModel)
+                            cards = HomeViewModel.checkCardNotification(notificationID: card.id, cards: cards)
                             
                         }
                     }

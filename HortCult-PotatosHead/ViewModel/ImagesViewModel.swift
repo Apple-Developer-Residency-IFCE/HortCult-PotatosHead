@@ -12,7 +12,9 @@ class ImageViewModel: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     @Published var hortcult_images: [Hortcult_Images] = []
     
-    init() {
+    static var instance = ImageViewModel()
+    
+    private init() {
         fetch()
     }
     

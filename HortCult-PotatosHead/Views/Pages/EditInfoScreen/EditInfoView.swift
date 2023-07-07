@@ -1,14 +1,12 @@
 import SwiftUI
 
 struct EditInfoView: View {
-    @ObservedObject var plantViewModel = PlantViewModel()
     var plant:Plant
     var listImageData: [Data] = []
     @State var state: [CardViewModel] = []
-    init(plantViewModel: PlantViewModel = PlantViewModel(), plant: Plant) {
-        self.plantViewModel = plantViewModel
+    init( plant: Plant) {
         self.plant = plant
-        listImageData = plantViewModel.getPlantImagesData(plant: plant)
+        listImageData = PlantViewModel.instance.getPlantImagesData(plant: plant)
     }
     var body: some View {
         VStack{
@@ -17,7 +15,7 @@ struct EditInfoView: View {
                           category: Category.init(rawValue: plant.category!),
                           frequency: Frequency.init(rawValue: plant.watering_frequency!) ,
                           isDisabled: false,
-                          selectedPhotosData: listImageData, noticationList: $state, plant: plant, plantViewModel: plantViewModel, isEdit: true )
+                          selectedPhotosData: listImageData, noticationList: $state, plant: plant, isEdit: true )
         }
     }
 }

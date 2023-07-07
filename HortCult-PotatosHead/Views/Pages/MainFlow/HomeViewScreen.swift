@@ -11,9 +11,6 @@ import SwiftUI
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var defaults: Defaults
-    @ObservedObject var plantViewModel: PlantViewModel
-    @EnvironmentObject var imageViewModel: ImageViewModel
-    @EnvironmentObject var notificationViewModel: NotificationViewModel
     @State var goToAddPlantScreen: Bool = false
     @State var mokeRemainderList: [Notification] = []
     @State var cardModels: [CardViewModel] = []
@@ -23,17 +20,17 @@ struct HomeView: View {
                 CustomNavBar(hiddenDismissButton: true)
                 Spacer()
                 ScrollView {
-                    HeaderMenu(plantViewModel: plantViewModel, noticationList: $cardModels )
-                    Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
+                    HeaderMenu(noticationList: $cardModels )
+                    Spacer().frame(height: PlantViewModel.instance.plants.isEmpty ? 120 : 0)
                 }
-                Spacer().frame(height: plantViewModel.plants.isEmpty ? 120 : 0)
+                Spacer().frame(height: PlantViewModel.instance.plants.isEmpty ? 120 : 0)
                 .padding(.bottom, 20)
                 
                 CardListView(cards: $cardModels)
             }
             .onAppear() {
                 cardModels = []
-                let remindersList = notificationViewModel.notifications.compactMap({ Notification in
+                let remindersList = NotificationViewModel.instance.notifications.compactMap({ Notification in
                     Notification
                 }).filter { Notification in
                     let currentDate = Date()
@@ -60,7 +57,7 @@ struct HomeView: View {
                 }
             }
         }
-        .background(NavigationLink(destination: AddInfoScreen(noticationList: $cardModels, plantViewModel: plantViewModel), isActive: $goToAddPlantScreen, label: {EmptyView()}))
+        .background(NavigationLink(destination: AddInfoScreen(noticationList: $cardModels), isActive: $goToAddPlantScreen, label: {EmptyView()}))
         .navigationBarBackButtonHidden(true)
     }
     
@@ -68,7 +65,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(plantViewModel: PlantViewModel())
+        HomeView()
             .environmentObject(Defaults())
     }
 }

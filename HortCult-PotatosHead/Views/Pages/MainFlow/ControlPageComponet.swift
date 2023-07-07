@@ -13,12 +13,10 @@ struct MainView: View {
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
     @EnvironmentObject var defaults: Defaults
-    @ObservedObject var plantViewModel: PlantViewModel
-    @EnvironmentObject var imageViewModel: ImageViewModel
     var body: some View {
         ZStack {
             if isSelectedTab == 0 {
-                HomeView(plantViewModel: plantViewModel)
+                HomeView()
             } else {
                 AdjustmentView()
                 Spacer()
@@ -35,7 +33,7 @@ struct MainView: View {
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
-            MainView(plantViewModel: PlantViewModel())
+            MainView()
                 .environmentObject(Defaults())
         }
     }
