@@ -39,7 +39,7 @@ struct HomeView: View {
                     let currentDate = Date()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd/MM/yyyy"
-                    var dateString = dateFormatter.string(from: currentDate)
+                    let dateString = dateFormatter.string(from: currentDate)
                     
                     return (!Notification.is_resolve && Notification.next_time_to_alert == dateString && Notification.notification_plant != nil)
                 }
