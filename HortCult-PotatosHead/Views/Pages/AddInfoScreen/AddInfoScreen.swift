@@ -20,25 +20,10 @@ struct AddInfoScreen: View {
     @ObservedObject var plantViewModel: PlantViewModel
     @State var isEdit: Bool = false
     
-    var header: some View {
-        ZStack{
-            Image(defaults.theme ==  "Escuro" ? "Topbardark" : "Topbar")
-            HStack{
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                } ) {
-                    Image("leftArrow")
-                }
-                .padding(.leading, 12)
-                Spacer()
-            }
-        }
-    }
     var body: some View {
         VStack{
             CustomNavBar(hiddenDismissButton: false)
                 ZStack{
-                    
                     ScrollView{
                         
                         HStack {
@@ -128,16 +113,5 @@ struct AddInfoScreen: View {
                 }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
-        
-            
-     
     }
 }
-
-//struct AddInfoScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddInfoScreen(noticationList: [], plantViewModel: PlantViewModel(), isEdit: false)
-//            .environmentObject(Defaults())
-//    }
-//}
-
