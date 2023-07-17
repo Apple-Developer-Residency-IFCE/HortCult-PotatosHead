@@ -21,16 +21,16 @@ struct HomeView: View {
                 Spacer()
                 ScrollView {
                     HeaderMenu(noticationList: $cardModels )
-                    Spacer().frame(height: PlantViewModel.instance.plants.isEmpty ? 120 : 0)
+                    Spacer().frame(height: Service.plant.plants.isEmpty ? 120 : 0)
                 }
-                Spacer().frame(height: PlantViewModel.instance.plants.isEmpty ? 120 : 0)
+                Spacer().frame(height: Service.plant.plants.isEmpty ? 120 : 0)
                 .padding(.bottom, 20)
                 
                 CardListView(cards: $cardModels)
             }
             .onAppear() {
                 cardModels = []
-                let remindersList = NotificationViewModel.instance.notifications.compactMap({ Notification in
+                let remindersList = Service.notification.notifications.compactMap({ Notification in
                     Notification
                 }).filter { Notification in
                     let currentDate = Date()
