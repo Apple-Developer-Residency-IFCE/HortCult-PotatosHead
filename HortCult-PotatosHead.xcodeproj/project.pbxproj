@@ -29,6 +29,13 @@
 		3D6711B02A53864B000B8AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */; };
 		3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */; };
 		3D709CD12A56342000508800 /* AddInfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */; };
+		4E9BA39E2A6607DB00211E61 /* LocationManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA39D2A6607DB00211E61 /* LocationManeger.swift */; };
+		4E9BA3A02A66080800211E61 /* WeatherManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA39F2A66080800211E61 /* WeatherManeger.swift */; };
+		4E9BA3A32A6609A700211E61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA3A22A6609A700211E61 /* ContentView.swift */; };
+		4E9BA3A52A6609D900211E61 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA3A42A6609D900211E61 /* Extensions.swift */; };
+		4E9BA3A72A660AA700211E61 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA3A62A660AA700211E61 /* LoadingView.swift */; };
+		4E9BA3A92A660AC100211E61 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA3A82A660AC100211E61 /* WeatherView.swift */; };
+		4E9BA3AB2A660AE000211E61 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA3AA2A660AE000211E61 /* WelcomeView.swift */; };
 		5423670F2A4A620D00261828 /* Notification+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367092A4A620D00261828 /* Notification+CoreDataClass.swift */; };
 		542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */; };
 		542367112A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */; };
@@ -104,6 +111,13 @@
 		3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDisplayed.swift; sourceTree = "<group>"; };
 		3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoScreenViewModel.swift; sourceTree = "<group>"; };
+		4E9BA39D2A6607DB00211E61 /* LocationManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManeger.swift; sourceTree = "<group>"; };
+		4E9BA39F2A66080800211E61 /* WeatherManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManeger.swift; sourceTree = "<group>"; };
+		4E9BA3A22A6609A700211E61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4E9BA3A42A6609D900211E61 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4E9BA3A62A660AA700211E61 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4E9BA3A82A660AC100211E61 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		4E9BA3AA2A660AE000211E61 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		542367092A4A620D00261828 /* Notification+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -245,9 +259,31 @@
 			path = Pickers;
 			sourceTree = "<group>";
 		};
+		4E9BA39C2A66077A00211E61 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4E9BA39D2A6607DB00211E61 /* LocationManeger.swift */,
+				4E9BA39F2A66080800211E61 /* WeatherManeger.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4E9BA3A12A66084900211E61 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				4E9BA3A22A6609A700211E61 /* ContentView.swift */,
+				4E9BA3A42A6609D900211E61 /* Extensions.swift */,
+				4E9BA3A62A660AA700211E61 /* LoadingView.swift */,
+				4E9BA3A82A660AC100211E61 /* WeatherView.swift */,
+				4E9BA3AA2A660AE000211E61 /* WelcomeView.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		542367172A4B871800261828 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				4E9BA3A12A66084900211E61 /* Weather */,
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
 				1385EADF2A216870006E3487 /* HortaInformationScreen */,
 				64C476572A26A80A006D499A /* MainFlow */,
@@ -337,6 +373,7 @@
 		5488893D2A41119A002009AF /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4E9BA39C2A66077A00211E61 /* Services */,
 				542367092A4A620D00261828 /* Notification+CoreDataClass.swift */,
 				5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */,
 				5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */,
@@ -592,8 +629,11 @@
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
+				4E9BA3A92A660AC100211E61 /* WeatherView.swift in Sources */,
 				5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				4E9BA3AB2A660AE000211E61 /* WelcomeView.swift in Sources */,
+				4E9BA3A32A6609A700211E61 /* ContentView.swift in Sources */,
 				3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */,
@@ -629,12 +669,16 @@
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */,
 				542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */,
+				4E9BA3A72A660AA700211E61 /* LoadingView.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */,
+				4E9BA3A52A6609D900211E61 /* Extensions.swift in Sources */,
+				4E9BA3A02A66080800211E61 /* WeatherManeger.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */,
 				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
+				4E9BA39E2A6607DB00211E61 /* LocationManeger.swift in Sources */,
 				542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */,
