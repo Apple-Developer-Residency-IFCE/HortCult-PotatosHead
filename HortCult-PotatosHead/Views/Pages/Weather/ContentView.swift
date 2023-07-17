@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    // Replace YOUR_API_KEY in WeatherManager with your own API key for the app to work
+    
     @StateObject var locationManager = LocationManager()
-    var weatherManager = WeatherManager()
+    @StateObject var weatherManager = WeatherManager()
     @State var weather: ResponseBody?
     
     var body: some View {
@@ -37,8 +37,8 @@ struct ContentView: View {
                 }
             }
         }
-        .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
-        .preferredColorScheme(.dark)
+        .environmentObject(locationManager)
+        .environmentObject(weatherManager) 
     }
 }
 

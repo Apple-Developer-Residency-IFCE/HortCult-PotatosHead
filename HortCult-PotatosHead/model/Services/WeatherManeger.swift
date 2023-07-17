@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class WeatherManager {
+class WeatherManager: ObservableObject {
     // HTTP request to get the current weather depending on the coordinates we got from LocationManager
     func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> ResponseBody {
         // Replace YOUR_API_KEY in the link below with your own
@@ -33,7 +33,9 @@ struct ResponseBody: Decodable {
     var weather: [WeatherResponse]
     var main: MainResponse
     var name: String
+    //var state: String
     var wind: WindResponse
+    
 
     struct CoordinatesResponse: Decodable {
         var lon: Double
