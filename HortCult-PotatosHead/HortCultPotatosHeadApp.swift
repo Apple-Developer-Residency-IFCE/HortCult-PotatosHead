@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct HortCultPotatosHeadApp: App {
+struct HortCult_PotatosHeadApp: App {
+    
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    //    var defaultShared = Defaults.defaultsShared
+    
     @StateObject var defaults = Defaults()
+    
     var color: ColorScheme? {
         if defaults.theme == "Padrão do Sistema" {
            return nil
@@ -21,13 +25,15 @@ struct HortCultPotatosHeadApp: App {
            return .dark
        }
    }
+    
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                if HortCultPotatosHeadApp.isFirstLogin == true {
+            NavigationView{
+                if HortCult_PotatosHeadApp.isFirstLogin == true {
                     OnBoardingScreen(defaults: defaults)
                         .preferredColorScheme(.light)
                         .environmentObject(defaults)
+                        
                 } else {
                     MainView()
                         .preferredColorScheme(color)

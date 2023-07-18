@@ -38,7 +38,7 @@ struct HomeView: View {
                     dateFormatter.dateFormat = "dd/MM/yyyy"
                     var dateString = dateFormatter.string(from: currentDate)
                     
-                    return (!notification.is_resolve && notification.next_time_to_alert == dateString && notification.notification_plant != nil)
+                    return (!notification.isResolve && notification.nextTimeToAlert == dateString && notification.notificationPlant != nil)
                 }
                 
                 remindersList.forEach { notification in
@@ -83,11 +83,11 @@ struct NotificationAdapter {
     
     init(notification: Notification) {
         self.id = notification.id
-        self.isResolve = notification.is_resolve
-        self.nextTimeToAlert = notification.next_time_to_alert
-        self.timeToAlert = notification.time_to_alert
-        self.typeToAlert = notification.type_to_alert
-        self.notificationPlant = PlantAdapter(category: notification.notification_plant?.category,id: notification.notification_plant?.id,name: notification.notification_plant?.name)
+        self.isResolve = notification.isResolve
+        self.nextTimeToAlert = notification.nextTimeToAlert
+        self.timeToAlert = notification.timeToAlert
+        self.typeToAlert = notification.typeToAlert
+        self.notificationPlant = PlantAdapter(category: notification.notificationPlant?.category,id: notification.notificationPlant?.id,name: notification.notificationPlant?.name)
     }
 }
 

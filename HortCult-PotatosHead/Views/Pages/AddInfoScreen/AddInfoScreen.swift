@@ -70,12 +70,12 @@ struct AddInfoScreen: View {
                                         Service.plant.addImageToPlant(plant: neewPlant, plantImage: newImage)
                                     }
                                     
-                                    guard let newNotification = Service.notification.createNotification(next_time_to_alert: Service.notification.calculateNextWatering(wateringFrequency: frequency!),
-                                                                                                        time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
+                                    guard let newNotification = Service.notification.createNotification(nextTimeToAlert: Service.notification.calculateNextWatering(wateringFrequency: frequency!),
+                                                                                                        timeToAlert: "", typeToAlert: NotificationType.watering.rawValue) else {return}
                                     Service.plant.addNotificationToPlant(plant: neewPlant, notification: newNotification)
                                     self.presentationMode.wrappedValue.dismiss()
                                     let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: newNotification)
-                                    if(AddInfoScreenViewModel.verifyNotificationToday(date: newNotification.next_time_to_alert ?? "")){
+                                    if(AddInfoScreenViewModel.verifyNotificationToday(date: newNotification.nextTimeToAlert ?? "")){
                                         noticationList.append(CardViewModel(
                                             id: notificationDisplayed.id,
                                             title: notificationDisplayed.title,

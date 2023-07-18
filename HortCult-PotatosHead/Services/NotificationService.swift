@@ -25,14 +25,14 @@ class NotificationService: ObservableObject {
         notifications = fetchedNotifications
     }
     
-    func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) -> Notification? {
+    func createNotification(nextTimeToAlert: String, timeToAlert: String,  typeToAlert: String) -> Notification? {
         
         let newNotification = Notification(context: viewContext)
         newNotification.id = UUID()
-        newNotification.is_resolve = false
-        newNotification.next_time_to_alert = next_time_to_alert
-        newNotification.time_to_alert = time_to_alert
-        newNotification.type_to_alert = type_to_alert
+        newNotification.isResolve = false
+        newNotification.nextTimeToAlert = nextTimeToAlert
+        newNotification.timeToAlert = timeToAlert
+        newNotification.typeToAlert = typeToAlert
         
         do {
             try viewContext.save()
@@ -54,12 +54,12 @@ class NotificationService: ObservableObject {
         }
     }
     
-    func updateNotification(notification:Notification,next_time_to_alert: String, time_to_alert: String, type_to_alert: String, is_resolve: Bool){
+    func updateNotification(notification:Notification, nextTimeToAlert: String, timeToAlert: String, typeToAlert: String, isResolve: Bool){
         
-        notification.is_resolve = is_resolve
-        notification.next_time_to_alert = next_time_to_alert
-        notification.time_to_alert = time_to_alert
-        notification.type_to_alert = type_to_alert
+        notification.isResolve = isResolve
+        notification.nextTimeToAlert = nextTimeToAlert
+        notification.timeToAlert = timeToAlert
+        notification.typeToAlert = typeToAlert
         
         do {
             try viewContext.save()
@@ -72,7 +72,7 @@ class NotificationService: ObservableObject {
     
     func getUnresolvedsNotifications() -> [Notification]{
         return notifications.filter { element in
-            return element.is_resolve == false
+            return element.isResolve == false
         }
     }
     

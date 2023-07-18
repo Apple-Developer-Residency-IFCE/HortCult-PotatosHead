@@ -64,7 +64,7 @@
 		641D71D72A26A9D50040CBCC /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D62A26A9D50040CBCC /* Satoshi-Regular.otf */; };
 		641D71D92A26B8680040CBCC /* ListRemindersCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D71D82A26B8680040CBCC /* ListRemindersCards.swift */; };
 		642014092A1EB86E001DCE6B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642014082A1EB86E001DCE6B /* Navigation.swift */; };
-		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
+		64B207922A1D7DFE00F440EF /* HortCultPotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCultPotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
 		64B207992A1D7DFF00F440EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */; };
@@ -142,7 +142,7 @@
 		641D71D82A26B8680040CBCC /* ListRemindersCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemindersCards.swift; sourceTree = "<group>"; };
 		642014082A1EB86E001DCE6B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
+		64B207912A1D7DFE00F440EF /* HortCultPotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCultPotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		64B207952A1D7DFF00F440EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64B207982A1D7DFF00F440EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -431,7 +431,7 @@
 				64E15AF82A1D82AF0043A96E /* Views */,
 				641D71C22A26A7BA0040CBCC /* Fonts */,
 				64E15AF72A1D80750043A96E /* Info.plist */,
-				64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */,
+				64B207912A1D7DFE00F440EF /* HortCultPotatosHeadApp.swift */,
 				64B207952A1D7DFF00F440EF /* Assets.xcassets */,
 				64B2079A2A1D7DFF00F440EF /* Persistence.swift */,
 				64B2079C2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld */,
@@ -639,7 +639,7 @@
 				54673DDB2A3157D300348020 /* Defaults.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
-				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
+				64B207922A1D7DFE00F440EF /* HortCultPotatosHeadApp.swift in Sources */,
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
 				EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
@@ -668,7 +668,7 @@
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
-				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
+				64B207922A1D7DFE00F440EF /* HortCultPotatosHeadApp.swift in Sources */,
 				3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */,
 				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
 				542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */,

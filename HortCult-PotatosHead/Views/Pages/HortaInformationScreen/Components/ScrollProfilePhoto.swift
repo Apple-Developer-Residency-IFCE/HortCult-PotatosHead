@@ -19,7 +19,9 @@ struct ScrollProfilePhoto: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .tag(index)
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
+                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]),
+                                       startPoint: .top, endPoint: .center)
+                                       .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
                     }
                 }else {
                     ZStack{
@@ -27,7 +29,10 @@ struct ScrollProfilePhoto: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .tag(index)
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
+                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]),
+                                       startPoint: .top,
+                                       endPoint: .center)
+                                       .edgesIgnoringSafeArea(.all).allowsHitTesting(false)
                     }
                 }
             }
