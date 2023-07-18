@@ -15,7 +15,7 @@ struct ScrollProfilePhoto: View {
             ForEach(0..<(plant.plant_hortcult_images?.count ?? 0)) { index in
                 if(plant.plant_hortcult_images != nil){
                     ZStack {
-                        PlantViewModel.instance.getPlantImages(plant: plant)[index]
+                        Service.plant.getPlantImages(plant: plant)[index]
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .tag(index)
