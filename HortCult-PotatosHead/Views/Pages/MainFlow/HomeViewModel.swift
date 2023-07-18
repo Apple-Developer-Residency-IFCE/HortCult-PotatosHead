@@ -16,17 +16,17 @@ struct HomeViewModel {
     }
     
     static func checkCardNotification(notificationID: UUID, cards: [CardViewModel]) -> [CardViewModel] {
-        guard let notificationSelected = NotificationViewModel.instance.notifications.filter({ Notification in
+        guard let notificationSelected = Service.notification.notifications.filter({ Notification in
             return Notification.id == notificationID
         }).first else {return []}
         
         guard let plant = notificationSelected.notification_plant else {return []}
         
-        NotificationViewModel.instance.updateNotification(notification: notificationSelected, next_time_to_alert: notificationSelected.next_time_to_alert ?? "", time_to_alert: notificationSelected.time_to_alert ?? "", type_to_alert: notificationSelected.type_to_alert ?? "", is_resolve: true)
+        Service.notification.updateNotification(notification: notificationSelected, next_time_to_alert: notificationSelected.next_time_to_alert ?? "", time_to_alert: notificationSelected.time_to_alert ?? "", type_to_alert: notificationSelected.type_to_alert ?? "", is_resolve: true)
         
-        guard let newNotification = NotificationViewModel.instance.createNotification(next_time_to_alert: NotificationViewModel.instance.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return []}
+        guard let newNotification = Service.notification.createNotification(next_time_to_alert: Service.notification.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return []}
      
-        PlantViewModel.instance.addNotificationToPlant(plant: plant, notification: newNotification)
+        Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
         
         return cards.filter { CardViewModel in
             return CardViewModel.id != notificationID

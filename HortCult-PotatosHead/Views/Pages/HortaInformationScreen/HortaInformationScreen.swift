@@ -48,11 +48,11 @@ struct HortaInformationScreen: View {
                         Text(plant.information ?? "NAO TEM INFO")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .padding(.bottom,24)
-                        CardProximaRega(content: PlantViewModel.instance.getNextWatering(plant: plant)){
-                            NotificationViewModel.instance.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
+                        CardProximaRega(content: Service.plant.getNextWatering(plant: plant)){
+                            Service.notification.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
                             
-                            guard let newNotification = NotificationViewModel.instance.createNotification(next_time_to_alert: NotificationViewModel.instance.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
-                            PlantViewModel.instance.addNotificationToPlant(plant: plant, notification: newNotification)
+                            guard let newNotification = Service.notification.createNotification(next_time_to_alert: Service.notification.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
+                            Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
                         }
                             .padding(.bottom,24)
                         if let freq = plant.watering_frequency {
@@ -89,7 +89,7 @@ struct HortaInformationScreen: View {
                     Button {
                         
                         self.presentationMode.wrappedValue.dismiss()
-                        PlantViewModel.instance.deletePlant(plant: plant)
+                        Service.plant.deletePlant(plant: plant)
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 40)
@@ -115,7 +115,7 @@ struct HortaInformationScreen: View {
         .navigationBarItems(leading: header)
         .toolbarBackground(.hidden, for: .navigationBar)
         .task {
-            guard let getActiveNotification = PlantViewModel.instance.getActiveAlert(plant: plant, notificationType: .watering) else {return}
+            guard let getActiveNotification = Service.plant.getActiveAlert(plant: plant, notificationType: .watering) else {return}
             activeNotification = getActiveNotification
         }
     }
