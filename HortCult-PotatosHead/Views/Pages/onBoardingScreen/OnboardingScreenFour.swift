@@ -11,7 +11,7 @@ struct OnboardingScreenFour: View {
     
     @State var isNextScreenActive = false
     @ObservedObject var defaults: Defaults
-    var hortCultMain: HortCultPotatosHeadApp?
+    var hortCultMain: HortCult_PotatosHeadApp?
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct OnboardingScreenFour: View {
                          secondaryText: "Receba lembretes para regar e adubar suas plantas na frequência certa.",
                          actionMainButton: {
             isNextScreenActive = true
-            HortCultPotatosHeadApp.isFirstLogin = false
+            HortCult_PotatosHeadApp.isFirstLogin = false
         },
                          mainButtonType: .three,
                          hidenSecondaryButton: true)

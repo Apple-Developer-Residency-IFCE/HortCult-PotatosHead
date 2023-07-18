@@ -113,7 +113,7 @@ class PlantService: ObservableObject {
     func getPlantImages(plant:Plant) -> [Image] {
         let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
             let imageData = image as! HortCultImages
-            return imageData.plantImage
+            return imageData.plant_image
         }))!
         
         let uiImageArray = arrayImages.compactMap { image in
@@ -130,7 +130,7 @@ class PlantService: ObservableObject {
     func getPlantImagesData(plant:Plant) -> [Data] {
         guard let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
             let imageData = image as! HortCultImages
-            return imageData.plantImage
+            return imageData.plant_image
         })) else {return []}
         
         return arrayImages

@@ -12,7 +12,7 @@ struct OnboardingScreenThree: View {
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
     @EnvironmentObject var defaults: Defaults
-    var hortCultMain: HortCultPotatosHeadApp?
+    var hortCultMain: HortCult_PotatosHeadApp?
     
     var body: some View {
         
@@ -25,7 +25,7 @@ struct OnboardingScreenThree: View {
                          hidenSecondaryButton: false,
                          actionSecondaryButton: {
             jumpToInitalScreen = true
-            HortCultPotatosHeadApp.isFirstLogin = false
+            HortCult_PotatosHeadApp.isFirstLogin = false
         })
         .background(
             NavigationLink(destination: OnboardingScreenFour(defaults: defaults), isActive: $isNextScreenActive) {EmptyView()})
