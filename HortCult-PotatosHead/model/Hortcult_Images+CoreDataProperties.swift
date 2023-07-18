@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension HortCultImages {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<HortCultImages> {
@@ -17,11 +16,11 @@ extension HortCultImages {
     }
 
     @NSManaged public var id: UUID?
-    @NSManaged public var plant_image: Data?
-    @NSManaged public var hotcult_images_plants: Plant?
+    @NSManaged public var plantImage: Data?
+    @NSManaged public var hotcultImagePlants: Plant?
 
 }
 
-extension HortCultImages : Identifiable {
+extension HortCultImages: Identifiable {
 
 }

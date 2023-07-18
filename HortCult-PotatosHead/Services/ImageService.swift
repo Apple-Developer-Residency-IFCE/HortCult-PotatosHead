@@ -10,7 +10,7 @@ import CoreData
 
 class ImageService: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
-    @Published var hortcult_images: [HortCultImages] = []
+    @Published var hortcultImages: [HortCultImages] = []
     
     static var instance = ImageService()
     
@@ -34,7 +34,7 @@ class ImageService: ObservableObject {
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
             return
         }
-        hortcult_images = fetchedNotifications
+        hortcultImages = fetchedNotifications
     }
     
     
@@ -42,7 +42,7 @@ class ImageService: ObservableObject {
             
         let newImage = HortCultImages(context: viewContext)
         newImage.id = UUID()
-        newImage.plant_image = plantImage
+        newImage.plantImage = plantImage
         
         do {
             try viewContext.save()
@@ -66,7 +66,7 @@ class ImageService: ObservableObject {
     
     func updateImage(plantImage: HortCultImages, updatedImage: Data){
         
-        plantImage.plant_image = updatedImage
+        plantImage.plantImage = updatedImage
         
         do {
             try viewContext.save()
@@ -75,5 +75,4 @@ class ImageService: ObservableObject {
             print("could not save \(error) \(error.userInfo)")
         }
     }
-    
 }
