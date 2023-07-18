@@ -108,7 +108,7 @@ struct AddInfoScreen: View {
                                         Service.plant.updatePlant(plant: plant, name: nameText, category: categoria , information: descriptionText, watering_frequency: frequencia)
                                         
                                         plant.plant_hortcult_images?.allObjects.forEach({ image in
-                                            guard let imagePlant = image as? Hortcult_Images else {return}
+                                            guard let imagePlant = image as? HortCultImages else {return}
                                             Service.plant.removeImageToPlant(plant: plant, plantImage: imagePlant)
                                         })
                                         

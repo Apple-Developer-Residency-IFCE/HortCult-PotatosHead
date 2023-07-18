@@ -48,10 +48,10 @@ extension Plant {
 extension Plant {
 
     @objc(addPlant_hortcult_imagesObject:)
-    @NSManaged public func addToPlant_hortcult_images(_ value: Hortcult_Images)
+    @NSManaged public func addToPlant_hortcult_images(_ value: HortCultImages)
 
     @objc(removePlant_hortcult_imagesObject:)
-    @NSManaged public func removeFromPlant_hortcult_images(_ value: Hortcult_Images)
+    @NSManaged public func removeFromPlant_hortcult_images(_ value: HortCultImages)
 
     @objc(addPlant_hortcult_images:)
     @NSManaged public func addToPlant_hortcult_images(_ values: NSSet)

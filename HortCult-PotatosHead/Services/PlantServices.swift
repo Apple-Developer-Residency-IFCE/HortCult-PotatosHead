@@ -91,7 +91,7 @@ class PlantService: ObservableObject {
         }
     }
     
-    func addImageToPlant(plant: Plant, plantImage: Hortcult_Images){
+    func addImageToPlant(plant: Plant, plantImage: HortCultImages){
         plant.addToPlant_hortcult_images(plantImage)
         do {
             try viewContext.save()
@@ -100,7 +100,7 @@ class PlantService: ObservableObject {
             print("could not save \(error) \(error.userInfo)")
         }
     }
-    func removeImageToPlant(plant:Plant, plantImage: Hortcult_Images){
+    func removeImageToPlant(plant:Plant, plantImage: HortCultImages){
         plant.removeFromPlant_hortcult_images(plantImage)
         do {
             try viewContext.save()
@@ -112,7 +112,7 @@ class PlantService: ObservableObject {
     
     func getPlantImages(plant:Plant) -> [Image] {
         let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
-            let imageData = image as! Hortcult_Images
+            let imageData = image as! HortCultImages
             return imageData.plant_image
         }))!
         
@@ -129,7 +129,7 @@ class PlantService: ObservableObject {
     
     func getPlantImagesData(plant:Plant) -> [Data] {
         guard let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
-            let imageData = image as! Hortcult_Images
+            let imageData = image as! HortCultImages
             return imageData.plant_image
         })) else {return []}
         

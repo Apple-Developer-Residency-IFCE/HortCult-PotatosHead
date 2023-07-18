@@ -42,7 +42,7 @@ struct ReminderCardButton: View {
     }
 }
 
-struct reminderCardButton_Previews: PreviewProvider {
+struct ReminderCardButton_Previews: PreviewProvider {
     static var previews: some View {
         ReminderCardButton(){}
     }

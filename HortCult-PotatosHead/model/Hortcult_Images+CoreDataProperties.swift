@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Hortcult_Images {
+extension HortCultImages {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Hortcult_Images> {
-        return NSFetchRequest<Hortcult_Images>(entityName: "Hortcult_Images")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<HortCultImages> {
+        return NSFetchRequest<HortCultImages>(entityName: "Hortcult_Images")
     }
 
     @NSManaged public var id: UUID?
@@ -22,6 +22,6 @@ extension Hortcult_Images {
 
 }
 
-extension Hortcult_Images : Identifiable {
+extension HortCultImages : Identifiable {
 
 }
