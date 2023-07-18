@@ -75,7 +75,7 @@ struct AddInfoScreen: View {
                                     Service.plant.addNotificationToPlant(plant: neewPlant, notification: newNotification)
                                     self.presentationMode.wrappedValue.dismiss()
                                     let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(notification: newNotification)
-                                    if(AddInfoScreenViewModel.VerifyNotificationToday(date: newNotification.next_time_to_alert ?? "")){
+                                    if(AddInfoScreenViewModel.verifyNotificationToday(date: newNotification.next_time_to_alert ?? "")){
                                         noticationList.append(CardViewModel(
                                             id: notificationDisplayed.id,
                                             title: notificationDisplayed.title,
