@@ -10,7 +10,7 @@ import CoreData
 
 class ImageService: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
-    @Published var hortcult_images: [Hortcult_Images] = []
+    @Published var hortcultImages: [HortCultImages] = []
     
     static var instance = ImageService()
     
@@ -19,7 +19,7 @@ class ImageService: ObservableObject {
     }
     
     func fetch() {
-        let fetchRequest: NSFetchRequest<Hortcult_Images> = Hortcult_Images.fetchRequest()
+        let fetchRequest: NSFetchRequest<HortCultImages> = HortCultImages.fetchRequest()
         let myEntititesRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Hortcult_Images")
         let plants =   NSFetchRequest<NSFetchRequestResult>(entityName: "Plant")
         do {
@@ -34,13 +34,13 @@ class ImageService: ObservableObject {
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
             return
         }
-        hortcult_images = fetchedNotifications
+        hortcultImages = fetchedNotifications
     }
     
     
-    func createImage(plantImage: Data) -> Hortcult_Images? {
+    func createImage(plantImage: Data) -> HortCultImages? {
             
-        let newImage = Hortcult_Images(context: viewContext)
+        let newImage = HortCultImages(context: viewContext)
         newImage.id = UUID()
         newImage.plant_image = plantImage
         
@@ -54,7 +54,7 @@ class ImageService: ObservableObject {
         }
     }
     
-    func deleteImage(plantImage: Hortcult_Images) {
+    func deleteImage(plantImage: HortCultImages) {
         viewContext.delete(plantImage)
         do {
             try viewContext.save()
@@ -64,7 +64,7 @@ class ImageService: ObservableObject {
         }
     }
     
-    func updateImage(plantImage:Hortcult_Images, updatedImage: Data){
+    func updateImage(plantImage: HortCultImages, updatedImage: Data){
         
         plantImage.plant_image = updatedImage
         

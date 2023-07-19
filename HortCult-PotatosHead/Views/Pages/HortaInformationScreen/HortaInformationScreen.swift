@@ -6,23 +6,22 @@
 
 import SwiftUI
 
-
 struct HortaInformationScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var activeNotification: Notification = Notification()
     var plant: Plant
-    
     var header: some View {
         ZStack {
-            VStack{
+            VStack {
                 HStack {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
-                    }) {
+                    })
+                    {
                         Image("Arrow-Left-White")
                         Text("Voltar").foregroundColor(Color(.white)).font(.custom("Satoshi-Regular", size: 16))
                     }
-                    .padding(.leading,12).padding(.trailing,-8)
+                    .padding(.leading, 12).padding(.trailing, -8)
                 }
             }
         }
@@ -44,29 +43,32 @@ struct HortaInformationScreen: View {
                             Spacer()
                             HortaType(type: plant.category ?? "NAO TEM CATEGORIA")
                         }
-                        .padding(.bottom,24)
+                        .padding(.bottom, 24)
                         Text(plant.information ?? "NAO TEM INFO")
                             .font(.custom("Satoshi-Regular", size: 16))
-                            .padding(.bottom,24)
+                            .padding(.bottom, 24)
                         CardProximaRega(content: Service.plant.getNextWatering(plant: plant)){
-                            Service.notification.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
+                            Service.notification.updateNotification(notification: activeNotification, nextTimeToAlert: activeNotification.next_time_to_alert!,
+                                                                    timeToAlert: activeNotification.time_to_alert!, typeToAlert: activeNotification.type_to_alert!, isResolve: true)
                             
-                            guard let newNotification = Service.notification.createNotification(next_time_to_alert: Service.notification.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
+                            guard let newNotification = Service.notification.createNotification(nextTimeToAlert:
+                                                                                                    Service.notification.calculateNextWatering(wateringFrequency:
+                                                                                                                                                Frequency(rawValue: plant.watering_frequency!)!),
+                                                                                                timeToAlert: "", typeToAlert: NotificationType.watering.rawValue) else {return}
                             Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
                         }
-                            .padding(.bottom,24)
+                            .padding(.bottom, 24)
                         if let freq = plant.watering_frequency {
                             FrequenciaRega(frequencia: freq)
                                 .padding(.horizontal)
                         } else {
-                            
+
                         }
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 16)
                 }
-                VStack(alignment: .center){
-                    
+                VStack(alignment: .center) {
                     NavigationLink(destination:
                         EditInfoView(plant: plant)
                     ,label: {
@@ -74,7 +76,6 @@ struct HortaInformationScreen: View {
                             RoundedRectangle(cornerRadius: 40)
                                 .stroke(Color("MainColor"), lineWidth: 2)
                                 .frame(width: 277, height: 42)
-                            
                             HStack {
                                 Image("Edit")
                                     .renderingMode(.template)
@@ -82,12 +83,10 @@ struct HortaInformationScreen: View {
                                 Text("Editar informações")
                                     .font(.custom("Satoshi-Bold", size: 16))
                                     .foregroundColor(Color("MainColor"))
-                                
                             }
                         }
                     })
                     Button {
-                        
                         self.presentationMode.wrappedValue.dismiss()
                         Service.plant.deletePlant(plant: plant)
                     } label: {
@@ -105,7 +104,6 @@ struct HortaInformationScreen: View {
                                     .foregroundColor(Color("backgroundColor"))
                             }
                     }
-                    
                     }
                 }
                 Spacer(minLength: 100)
@@ -120,4 +118,3 @@ struct HortaInformationScreen: View {
         }
     }
 }
-

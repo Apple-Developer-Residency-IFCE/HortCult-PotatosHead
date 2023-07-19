@@ -15,11 +15,12 @@ struct ScrollProfilePhoto: View {
             ForEach(0..<(plant.plant_hortcult_images?.count ?? 0)) { index in
                 if(plant.plant_hortcult_images != nil){
                     ZStack {
-                        PlantViewModel.instance.getPlantImages(plant: plant)[index]
+                        Service.plant.getPlantImages(plant: plant)[index]
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .tag(index)
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
+                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5),
+                                                                   Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
                     }
                 }else {
                     ZStack{
@@ -27,7 +28,8 @@ struct ScrollProfilePhoto: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .tag(index)
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
+                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5),
+                                                                   Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
                     }
                 }
             }

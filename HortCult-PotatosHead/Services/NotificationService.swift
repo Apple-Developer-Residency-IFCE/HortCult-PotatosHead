@@ -25,14 +25,14 @@ class NotificationService: ObservableObject {
         notifications = fetchedNotifications
     }
     
-    func createNotification(next_time_to_alert: String, time_to_alert: String,  type_to_alert: String) -> Notification? {
+    func createNotification(nextTimeToAlert: String, timeToAlert: String,  typeToAlert: String) -> Notification? {
         
         let newNotification = Notification(context: viewContext)
         newNotification.id = UUID()
         newNotification.is_resolve = false
-        newNotification.next_time_to_alert = next_time_to_alert
-        newNotification.time_to_alert = time_to_alert
-        newNotification.type_to_alert = type_to_alert
+        newNotification.next_time_to_alert = nextTimeToAlert
+        newNotification.time_to_alert = timeToAlert
+        newNotification.type_to_alert = typeToAlert
         
         do {
             try viewContext.save()
@@ -54,12 +54,12 @@ class NotificationService: ObservableObject {
         }
     }
     
-    func updateNotification(notification:Notification,next_time_to_alert: String, time_to_alert: String, type_to_alert: String, is_resolve: Bool){
+    func updateNotification(notification:Notification, nextTimeToAlert: String, timeToAlert: String, typeToAlert: String, isResolve: Bool){
         
-        notification.is_resolve = is_resolve
-        notification.next_time_to_alert = next_time_to_alert
-        notification.time_to_alert = time_to_alert
-        notification.type_to_alert = type_to_alert
+        notification.is_resolve = isResolve
+        notification.next_time_to_alert = nextTimeToAlert
+        notification.time_to_alert = timeToAlert
+        notification.type_to_alert = typeToAlert
         
         do {
             try viewContext.save()
