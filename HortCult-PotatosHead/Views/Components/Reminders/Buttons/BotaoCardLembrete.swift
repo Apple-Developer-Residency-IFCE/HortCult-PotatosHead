@@ -1,14 +1,15 @@
 import SwiftUI
 
-struct BotaoFeito: View {
+struct ReminderCardButton: View {
     @State private var isPressed = false
-    
+    var action: () -> Void
     var body: some View {
         ZStack {
             Color.clear
                 .frame(width: 26, height: 16)
             
             Button(action: {
+                action()
                 withAnimation {
                     isPressed.toggle()
                 }
@@ -41,9 +42,9 @@ struct BotaoFeito: View {
     }
 }
 
-struct BotaoTeste_Previews: PreviewProvider {
+struct ReminderCardButton_Previews: PreviewProvider {
     static var previews: some View {
-        BotaoFeito()
+        ReminderCardButton(){}
     }
 }
 

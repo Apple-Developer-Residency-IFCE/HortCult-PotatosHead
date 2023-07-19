@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct HortaComponent: View {
-    var imagePath : String
     var nameHorta : String
+    var plant: Plant
+    var image: Image
     
     var body: some View {
         VStack(alignment: .center)
         {
-            Image(imagePath)
+            image
                 .resizable()
                 .frame(width: 140, height: 110)
                 .aspectRatio(contentMode: .fill)
@@ -35,6 +36,6 @@ struct HortaComponent: View {
 
 struct HortaComponent_Previews: PreviewProvider {
     static var previews: some View {
-        HortaComponent(imagePath: "Tomate", nameHorta:"Tomate")
+        HortaComponent( nameHorta:"Tomate", plant: Plant(),image: Image(systemName: "eye"))
     }
 }

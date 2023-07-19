@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum buttonHortaCases: CaseIterable {
+enum ButtonHortaCases: CaseIterable {
     
     case one
     case two
@@ -15,9 +15,8 @@ enum buttonHortaCases: CaseIterable {
 }
 
 struct ButtonHorta: View {
-    var buttonTipe: buttonHortaCases
+    var buttonTipe: ButtonHortaCases
     var action: (() -> Void)
-    @ObservedObject var plantViewModel: PlantViewModel
     var plant: Plant
     
     var body: some View {
@@ -29,7 +28,7 @@ struct ButtonHorta: View {
                 
             case .one:
                 NavigationLink {
-                    EditInfoView(plantViewModel: plantViewModel, plant: plant)
+                    EditInfoView(plant: plant)
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 40)

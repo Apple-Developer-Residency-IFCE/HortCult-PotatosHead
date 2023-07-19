@@ -13,22 +13,15 @@ struct MainView: View {
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
     @EnvironmentObject var defaults: Defaults
-    @ObservedObject var plantViewModel: PlantViewModel
     var body: some View {
-        //IMPLEMENTAR A NAVIGATION LINK (Back Button)
         ZStack {
             if isSelectedTab == 0 {
-                
-                HomeView(plantViewModel: plantViewModel)
-                    .padding(.top)
-                    .ignoresSafeArea()
+                HomeView()
             } else {
                 AdjustmentView()
-                //                        .environmentObject(defaults)
                 Spacer()
                 
             }
-            //   .navigationBarHidden(true)
             CustomTabBar(action: { isSelectedTab = 0
                 isNextScreenActive = false
             },
@@ -40,7 +33,7 @@ struct MainView: View {
     
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
-            MainView(plantViewModel: PlantViewModel())
+            MainView()
                 .environmentObject(Defaults())
         }
     }

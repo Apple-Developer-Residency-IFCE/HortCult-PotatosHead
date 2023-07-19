@@ -9,7 +9,7 @@ struct NameTextfield: View {
             Text("Nome")
                 .font(.custom("Satoshi-Regular", size: 12))
                 .foregroundColor(Color("buttonCardColor"))
-                .padding(.horizontal, 8)
+                .padding(.horizontal, 1)
             
             ZStack(alignment: .leading) {
                 if text.isEmpty {

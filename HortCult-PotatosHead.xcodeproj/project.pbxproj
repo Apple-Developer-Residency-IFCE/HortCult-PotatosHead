@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FB1BDB42A54AB6C002091D6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */; };
 		130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB5452A2942D4003B3006 /* HortaTipo.swift */; };
 		130AB54A2A29456E003B3006 /* HortaInformationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB5492A29456E003B3006 /* HortaInformationScreen.swift */; };
 		130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB54B2A2947D8003B3006 /* FrequenciaRega.swift */; };
@@ -17,6 +18,7 @@
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
 		3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */; };
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
+		3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */; };
 		3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */; };
 		3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */; };
 		3D5455A92A425DC800EBFE7A /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5455A82A425DC800EBFE7A /* EditInfoView.swift */; };
@@ -25,27 +27,31 @@
 		3D54AA732A3D2AC000526BB5 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54AA722A3D2AC000526BB5 /* AddButton.swift */; };
 		3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */; };
 		3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */; };
+		3D6711B02A53864B000B8AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */; };
+		3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */; };
+		3D709CD12A56342000508800 /* AddInfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */; };
 		5423670F2A4A620D00261828 /* Notification+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367092A4A620D00261828 /* Notification+CoreDataClass.swift */; };
 		542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */; };
 		542367112A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */; };
 		542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */; };
 		542367132A4A620D00261828 /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */; };
 		542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */; };
-		542367162A4A627100261828 /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367152A4A627100261828 /* ImagesViewModel.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentViewScreen.swift */; };
 		54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD42A2EA52700348020 /* ThemeSelectView.swift */; };
 		54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD62A312F0600348020 /* NavigationIconView.swift */; };
 		54673DDB2A3157D300348020 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DDA2A3157D300348020 /* Defaults.swift */; };
-		5488893B2A411184002009AF /* PlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548889392A411184002009AF /* PlantViewModel.swift */; };
-		5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488893A2A411184002009AF /* NotificationViewModel.swift */; };
+		5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF0E2A65F58400FC711E /* PlantServices.swift */; };
+		5484EF112A65F68000FC711E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF102A65F68000FC711E /* Services.swift */; };
+		5484EF132A65F94400FC711E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF122A65F94400FC711E /* NotificationService.swift */; };
+		5484EF152A65FA4600FC711E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF142A65FA4600FC711E /* ImageService.swift */; };
 		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F22A218076000D11EB /* OnboardingScreenThree.swift */; };
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
 		641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */; };
 		641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */; };
-		641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */; };
+		641C95402A27FA7F00B20BA3 /* BotaoCardLembrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C953F2A27FA7F00B20BA3 /* BotaoCardLembrete.swift */; };
 		641D71C52A26A8B30040CBCC /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */; };
 		641D71C72A26A9700040CBCC /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C62A26A9700040CBCC /* Satoshi-Black.otf */; };
 		641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */; };
@@ -56,9 +62,8 @@
 		641D71D32A26A9BC0040CBCC /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D22A26A9BC0040CBCC /* Satoshi-LightItalic.otf */; };
 		641D71D52A26A9C90040CBCC /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D42A26A9C90040CBCC /* Satoshi-MediumItalic.otf */; };
 		641D71D72A26A9D50040CBCC /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 641D71D62A26A9D50040CBCC /* Satoshi-Regular.otf */; };
-		641D71D92A26B8680040CBCC /* CardLembrete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D71D82A26B8680040CBCC /* CardLembrete.swift */; };
+		641D71D92A26B8680040CBCC /* ListRemindersCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D71D82A26B8680040CBCC /* ListRemindersCards.swift */; };
 		642014092A1EB86E001DCE6B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642014082A1EB86E001DCE6B /* Navigation.swift */; };
-		646CDFED2A255E4F008E74F1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CDFEC2A255E4F008E74F1 /* Card.swift */; };
 		64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */; };
 		64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */; };
 		64B207962A1D7DFF00F440EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B207952A1D7DFF00F440EF /* Assets.xcassets */; };
@@ -79,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		130AB5452A2942D4003B3006 /* HortaTipo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaTipo.swift; sourceTree = "<group>"; };
 		130AB5492A29456E003B3006 /* HortaInformationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaInformationScreen.swift; sourceTree = "<group>"; };
 		130AB54B2A2947D8003B3006 /* FrequenciaRega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequenciaRega.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
 		3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPageComponet.swift; sourceTree = "<group>"; };
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
+		3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypes.swift; sourceTree = "<group>"; };
 		3D5276032A3A7A4B001D2A79 /* NameTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextfield.swift; sourceTree = "<group>"; };
 		3D5276052A3A7A92001D2A79 /* DescriptionTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextfield.swift; sourceTree = "<group>"; };
 		3D5455A82A425DC800EBFE7A /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
@@ -97,27 +104,31 @@
 		3D54AA722A3D2AC000526BB5 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
 		3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDropDown.swift; sourceTree = "<group>"; };
+		3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDisplayed.swift; sourceTree = "<group>"; };
+		3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoScreenViewModel.swift; sourceTree = "<group>"; };
 		542367092A4A620D00261828 /* Notification+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		542367152A4A627100261828 /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentViewScreen.swift; sourceTree = "<group>"; };
 		54673DD42A2EA52700348020 /* ThemeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectView.swift; sourceTree = "<group>"; };
 		54673DD62A312F0600348020 /* NavigationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIconView.swift; sourceTree = "<group>"; };
 		54673DDA2A3157D300348020 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		548889392A411184002009AF /* PlantViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantViewModel.swift; sourceTree = "<group>"; };
-		5488893A2A411184002009AF /* NotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		5484EF0E2A65F58400FC711E /* PlantServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantServices.swift; sourceTree = "<group>"; };
+		5484EF102A65F68000FC711E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		5484EF122A65F94400FC711E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5484EF142A65FA4600FC711E /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		641207F22A218076000D11EB /* OnboardingScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenThree.swift; sourceTree = "<group>"; };
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
 		641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProximaRega.swift; sourceTree = "<group>"; };
 		641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoMarcarRegado.swift; sourceTree = "<group>"; };
-		641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoFeito.swift; sourceTree = "<group>"; };
+		641C953F2A27FA7F00B20BA3 /* BotaoCardLembrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoCardLembrete.swift; sourceTree = "<group>"; };
 		641D71C42A26A8B30040CBCC /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
 		641D71C62A26A9700040CBCC /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Black.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Black.dataset/Satoshi-Black.otf"; sourceTree = SOURCE_ROOT; };
 		641D71C82A26A9810040CBCC /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-BlackItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-BlackItalic.dataset/Satoshi-BlackItalic.otf"; sourceTree = SOURCE_ROOT; };
@@ -128,9 +139,8 @@
 		641D71D22A26A9BC0040CBCC /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-LightItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-LightItalic.dataset/Satoshi-LightItalic.otf"; sourceTree = SOURCE_ROOT; };
 		641D71D42A26A9C90040CBCC /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-MediumItalic.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-MediumItalic.dataset/Satoshi-MediumItalic.otf"; sourceTree = SOURCE_ROOT; };
 		641D71D62A26A9D50040CBCC /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Satoshi-Regular.otf"; path = "HortCult-PotatosHead/Assets.xcassets/Satoshi-Regular.dataset/Satoshi-Regular.otf"; sourceTree = SOURCE_ROOT; };
-		641D71D82A26B8680040CBCC /* CardLembrete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLembrete.swift; sourceTree = "<group>"; };
+		641D71D82A26B8680040CBCC /* ListRemindersCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemindersCards.swift; sourceTree = "<group>"; };
 		642014082A1EB86E001DCE6B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
-		646CDFEC2A255E4F008E74F1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HortCult-PotatosHead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B207912A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadApp.swift; sourceTree = "<group>"; };
 		64B207932A1D7DFE00F440EF /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
@@ -225,6 +235,7 @@
 			children = (
 				5423671A2A4B879500261828 /* Components */,
 				3D54AA6E2A3D1A6100526BB5 /* AddInfoScreen.swift */,
+				3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */,
 			);
 			path = AddInfoScreen;
 			sourceTree = "<group>";
@@ -317,12 +328,20 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5484EF0D2A65F52700FC711E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5484EF0E2A65F58400FC711E /* PlantServices.swift */,
+				5484EF102A65F68000FC711E /* Services.swift */,
+				5484EF122A65F94400FC711E /* NotificationService.swift */,
+				5484EF142A65FA4600FC711E /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		548889382A411184002009AF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				548889392A411184002009AF /* PlantViewModel.swift */,
-				5488893A2A411184002009AF /* NotificationViewModel.swift */,
-				542367152A4A627100261828 /* ImagesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,9 +352,11 @@
 				542367092A4A620D00261828 /* Notification+CoreDataClass.swift */,
 				5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */,
 				5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */,
+				3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */,
 				5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */,
 				5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */,
 				5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */,
+				3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -353,8 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				641C95382A27EF1E00B20BA3 /* CardProximaRega.swift */,
-				641D71D82A26B8680040CBCC /* CardLembrete.swift */,
-				646CDFEC2A255E4F008E74F1 /* Card.swift */,
+				641D71D82A26B8680040CBCC /* ListRemindersCards.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -363,7 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				641C953A2A27EFF400B20BA3 /* BotaoMarcarRegado.swift */,
-				641C953F2A27FA7F00B20BA3 /* BotaoFeito.swift */,
+				641C953F2A27FA7F00B20BA3 /* BotaoCardLembrete.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -388,6 +408,7 @@
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
+				0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */,
 				64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */,
 				64B2078F2A1D7DFE00F440EF /* Products */,
 			);
@@ -404,6 +425,7 @@
 		64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXGroup;
 			children = (
+				5484EF0D2A65F52700FC711E /* Services */,
 				5488893D2A41119A002009AF /* model */,
 				548889382A411184002009AF /* ViewModel */,
 				64E15AF82A1D82AF0043A96E /* Views */,
@@ -434,6 +456,7 @@
 				5423671B2A4B881200261828 /* Components */,
 				3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */,
 				9B0663602A2EB2A2001DC0B8 /* HomeViewScreen.swift */,
+				3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -498,6 +521,7 @@
 				64B2078A2A1D7DFE00F440EF /* Sources */,
 				64B2078B2A1D7DFE00F440EF /* Frameworks */,
 				64B2078C2A1D7DFE00F440EF /* Resources */,
+				0FB1BDB22A54AB20002091D6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -546,6 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB1BDB42A54AB6C002091D6 /* .swiftlint.yml in Resources */,
 				641D71CB2A26A98B0040CBCC /* Satoshi-Bold.otf in Resources */,
 				641D71CD2A26A9940040CBCC /* Satoshi-BoldItalic.otf in Resources */,
 				641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */,
@@ -563,6 +588,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FB1BDB22A54AB20002091D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64B2078A2A1D7DFE00F440EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -574,16 +619,20 @@
 				542367112A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift in Sources */,
 				3D54AA732A3D2AC000526BB5 /* AddButton.swift in Sources */,
 				3D54AA6F2A3D1A6100526BB5 /* AddInfoScreen.swift in Sources */,
+				3D709CD12A56342000508800 /* AddInfoScreenViewModel.swift in Sources */,
 				5423670F2A4A620D00261828 /* Notification+CoreDataClass.swift in Sources */,
 				EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */,
+				3D6711B02A53864B000B8AEC /* HomeViewModel.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
+				5484EF152A65FA4600FC711E /* ImageService.swift in Sources */,
 				130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
-				5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				5484EF112A65F68000FC711E /* Services.swift in Sources */,
 				3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */,
+				5484EF132A65F94400FC711E /* NotificationService.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */,
 				3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */,
@@ -591,11 +640,9 @@
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
-				5488893B2A411184002009AF /* PlantViewModel.swift in Sources */,
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
 				EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
-				542367162A4A627100261828 /* ImagesViewModel.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				9B0663612A2EB2A2001DC0B8 /* HomeViewScreen.swift in Sources */,
 				EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */,
@@ -605,15 +652,15 @@
 				9B5426A72A3BDB86006E7FC2 /* CustomNavBar.swift in Sources */,
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */,
-				641C95402A27FA7F00B20BA3 /* BotaoFeito.swift in Sources */,
+				641C95402A27FA7F00B20BA3 /* BotaoCardLembrete.swift in Sources */,
 				3D5455A92A425DC800EBFE7A /* EditInfoView.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
 				64BC668C2A294D3900A75C63 /* NotificationManager.swift in Sources */,
-				646CDFED2A255E4F008E74F1 /* Card.swift in Sources */,
 				130AB54A2A29456E003B3006 /* HortaInformationScreen.swift in Sources */,
 				3D5455AB2A427ADC00EBFE7A /* ButtonHorta.swift in Sources */,
 				3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */,
 				13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */,
+				3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */,
 				54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */,
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */,
@@ -626,9 +673,11 @@
 				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
 				542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
+				5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */,
+				3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */,
 				133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
-				641D71D92A26B8680040CBCC /* CardLembrete.swift in Sources */,
+				641D71D92A26B8680040CBCC /* ListRemindersCards.swift in Sources */,
 				542367132A4A620D00261828 /* Plant+CoreDataClass.swift in Sources */,
 				3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */,
 			);

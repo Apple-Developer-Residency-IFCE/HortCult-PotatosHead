@@ -14,9 +14,11 @@ struct NotificationManager: View {
     private let notificationDelegate = NotificationDelegate()
     @State private var notificationIdentifier: String?
     let identifier = "Notification"
+    @State private var shouldUpdateNotification = false
+
+
     
     var body: some View {
-        
         VStack {
             Button(action: {
                 isTimePickerVisible = true
@@ -42,24 +44,51 @@ struct NotificationManager: View {
                     }
                 }
                 .frame(width: 350, height: 35)
-                
             }
             .sheet(isPresented: $isTimePickerVisible) {
                 TimePickerView(notificationTime: $notificationTime)
+                    .onDisappear {
+                        updateNotificationTime()
+                    }
             }
-            
-            //            Text("Horário selecionado:")
-            // Text(dateFormatter.string(from: notificationTime))
         }
         .onAppear {
+            loadNotificationTime()
             requestNotificationAuthorization()
             UNUserNotificationCenter.current().delegate = notificationDelegate
-            
+
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("updateNotification"), object: nil, queue: nil) { _ in
+                updateNotification()
+            }
         }
     }
     
-     func requestNotificationAuthorization() {
+    func loadNotificationTime() {
+        if let savedTime = UserDefaults.standard.object(forKey: "NotificationTime") as? Date {
+            notificationTime = savedTime
+        }
         
+    }
+    
+    func updateNotificationTime() {
+        UserDefaults.standard.set(notificationTime, forKey: "NotificationTime")
+        print("Horário de notificação atualizado:", dateFormatter.string(from: notificationTime))
+        
+        shouldUpdateNotification = true
+    }
+    
+    func updateNotification() {
+        guard shouldUpdateNotification else {
+            return
+        }
+        
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+        scheduleNotification()
+        
+        shouldUpdateNotification = false
+    }
+    
+    func requestNotificationAuthorization() {
         if Defaults.enableNotificationStorage == false {
             print("Notificações desabilitadas")
             
@@ -68,31 +97,29 @@ struct NotificationManager: View {
             
             return
         }
-        
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 scheduleNotification()
-                
+                Defaults.enableNotificationStorage = true
+
             } else {
                 print("Permissão de notificação negada")
             }
         }
     }
+
     
     private func scheduleNotification() {
-        
-        
         let content = UNMutableNotificationContent()
         content.title = "HortCult"
         content.body = "Está na hora de regar a sua plantinha!"
         content.sound = UNNotificationSound.default
         
         let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: notificationTime)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -103,8 +130,8 @@ struct NotificationManager: View {
             }
         }
     }
-}
 
+}
 
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -127,7 +154,9 @@ struct TimePickerView: View {
                     .environment(\.locale, Locale(identifier: "pt_BR"))
                 
                 Button(action: {
+                    Defaults.enableNotificationStorage = true
                     presentationMode.wrappedValue.dismiss()
+                    NotificationCenter.default.post(name: NSNotification.Name("updateNotification"), object: nil)
                 }) {
                     Text("Concluir")
                         .font(.custom("Satoshi-Bold", size: 20))
@@ -158,5 +187,3 @@ struct NotificationManager_Previews: PreviewProvider {
         NotificationManager()
     }
 }
-
-

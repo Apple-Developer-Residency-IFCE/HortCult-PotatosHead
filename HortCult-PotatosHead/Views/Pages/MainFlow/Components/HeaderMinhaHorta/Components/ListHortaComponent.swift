@@ -13,16 +13,18 @@ struct Horta {
 }
 
 struct ListHorta: View {
-    @ObservedObject var plantViewModel: PlantViewModel
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
             ScrollView(.horizontal){
                 HStack(spacing: 12){
-                    ForEach(plantViewModel.plants){ plant in
+                    ForEach(Service.plant.plants){ plant in
                         NavigationLink {
-                            HortaInformationScreen( plantViewModel: plantViewModel, plant: plant )
+                            HortaInformationScreen(plant: plant )
                         } label: {
-                            HortaComponent(imagePath: "Tomate", nameHorta: plant.name!)
+                            if let image = Service.plant.getPlantImages(plant: plant).first {
+                                HortaComponent( nameHorta: plant.name!, plant: plant, image: image)
+                            }
+                            
                         }
                     }
                     .foregroundColor(Color("title"))
@@ -34,6 +36,6 @@ struct ListHorta: View {
 
 struct ListHorta_Previews: PreviewProvider {
     static var previews: some View {
-        ListHorta(plantViewModel: PlantViewModel())
+        ListHorta()
     }
 }

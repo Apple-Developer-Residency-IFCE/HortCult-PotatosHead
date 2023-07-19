@@ -38,8 +38,9 @@ struct ImagePickerComponent: View {
                             }
                         }
                     }
+                // swiftlint:disable identifier_name line_length 
                 ForEach(0..<3, id: \.self) { i in
-                    if selectedPhotosData.count > i{
+                    if selectedPhotosData.count > i {
                         let photoData = selectedPhotosData[i]
                         if let image = UIImage(data: photoData) {
                             ImageSpace(image: image)
@@ -69,4 +70,6 @@ struct ImagePickerComponentView: View {
         }
     }
 }
+
+
 
