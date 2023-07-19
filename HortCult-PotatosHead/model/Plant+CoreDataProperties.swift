@@ -15,7 +15,7 @@ extension Plant {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Plant> {
         return NSFetchRequest<Plant>(entityName: "Plant")
     }
-
+    // swiftlint:disable all
     @NSManaged public var category: String?
     @NSManaged public var id: UUID?
     @NSManaged public var images: Date?

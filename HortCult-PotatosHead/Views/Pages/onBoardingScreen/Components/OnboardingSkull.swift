@@ -101,6 +101,8 @@ struct OnboardingScreen: View {
 
 struct OnboardingSkull_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreen(header: "hortFruitLight",centerImage: "amico 2", primaryText: "Boas Vindas!", secondaryText: "Com o HortCult, voce pode acompanhar a sua horta domestica de forma simples e facil.",actionMainButton: {print("ola")}, mainButtonType: .one, hidenSecondaryButton: true, actionSecondaryButton: {print("Segundo botao")})
+        OnboardingScreen(header: "hortFruitLight",centerImage: "amico 2",
+                         primaryText: "Boas Vindas!", secondaryText: "Com o HortCult, voce pode acompanhar a sua horta domestica de forma simples e facil.",
+                         actionMainButton: {print("ola")}, mainButtonType: .one, hidenSecondaryButton: true, actionSecondaryButton: {print("Segundo botao")})
     }
 }

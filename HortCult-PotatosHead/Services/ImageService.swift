@@ -10,7 +10,7 @@ import CoreData
 
 class ImageService: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
-    @Published var hortcult_images: [HortCultImages] = []
+    @Published var hortcultImages: [HortCultImages] = []
     
     static var instance = ImageService()
     
@@ -34,7 +34,7 @@ class ImageService: ObservableObject {
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
             return
         }
-        hortcult_images = fetchedNotifications
+        hortcultImages = fetchedNotifications
     }
     
     

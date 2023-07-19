@@ -23,12 +23,12 @@ struct HomeViewModel {
         }).first else {return []}
         guard let plant = notificationSelected.notification_plant else {return []}
         
-        Service.notification.updateNotification(notification: notificationSelected, next_time_to_alert: notificationSelected.next_time_to_alert ?? "",
-                                                time_to_alert: notificationSelected.time_to_alert ?? "", type_to_alert: notificationSelected.type_to_alert ?? "", is_resolve: true)
+        Service.notification.updateNotification(notification: notificationSelected, nextTimeToAlert: notificationSelected.next_time_to_alert ?? "",
+                                                timeToAlert: notificationSelected.time_to_alert ?? "", typeToAlert: notificationSelected.type_to_alert ?? "", isResolve: true)
         
-        guard let newNotification = Service.notification.createNotification(next_time_to_alert: Service.notification.calculateNextWatering(wateringFrequency:
-                                                                            Frequency(rawValue: plant.watering_frequency!)!),
-                                                                            time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return []}
+        guard let newNotification = Service.notification.createNotification(nextTimeToAlert: Service.notification.calculateNextWatering(wateringFrequency:
+                                                                                                                                            Frequency(rawValue: plant.watering_frequency!)!),
+                                                                            timeToAlert: "", typeToAlert: NotificationType.watering.rawValue) else {return []}
      
         Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
         return cards.filter { cardViewModel in

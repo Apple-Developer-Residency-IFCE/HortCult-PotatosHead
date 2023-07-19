@@ -17,6 +17,7 @@ extension HortCultImages {
     }
 
     @NSManaged public var id: UUID?
+// swiftlint:disable identifier_name line_length 2
     @NSManaged public var plant_image: Data?
     @NSManaged public var hotcult_images_plants: Plant?
 

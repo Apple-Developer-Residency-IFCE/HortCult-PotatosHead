@@ -28,14 +28,14 @@ class PlantService: ObservableObject {
         fetch()
     }
     
-    func createPlant(name: String, category: String, information: String, watering_frequency: String) -> Plant? {
+    func createPlant(name: String, category: String, information: String, wateringFrequency: String) -> Plant? {
         
         let newPlant = Plant(context: viewContext)
         newPlant.id = UUID()
         newPlant.category = category
         newPlant.information = information
         newPlant.name = name
-        newPlant.watering_frequency = watering_frequency
+        newPlant.watering_frequency = wateringFrequency
         
         do {
             try viewContext.save()
@@ -57,12 +57,12 @@ class PlantService: ObservableObject {
         }
     }
     
-    func updatePlant(plant:Plant,name: String, category: String, information: String, watering_frequency: String){
+    func updatePlant(plant:Plant,name: String, category: String, information: String, wateringFrequency: String){
         
         plant.category = category
         plant.information = information
         plant.name = name
-        plant.watering_frequency = watering_frequency
+        plant.watering_frequency = wateringFrequency
         
         do {
             try viewContext.save()
@@ -112,7 +112,8 @@ class PlantService: ObservableObject {
     
     func getPlantImages(plant:Plant) -> [Image] {
         let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
-            let imageData = image as! HortCultImages
+            guard let img = image as? HortCultImages else {return nil}
+            let imageData = img
             return imageData.plant_image
         }))!
         
@@ -129,7 +130,8 @@ class PlantService: ObservableObject {
     
     func getPlantImagesData(plant:Plant) -> [Data] {
         guard let arrayImages: [Data] = (plant.plant_hortcult_images?.allObjects.compactMap({ image in
-            let imageData = image as! HortCultImages
+            guard let img = image as? HortCultImages else {return nil}
+            let imageData = img
             return imageData.plant_image
         })) else {return []}
         
@@ -138,17 +140,18 @@ class PlantService: ObservableObject {
     
     func getNextWatering(plant: Plant) -> String {
         guard let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
-            return (notification as! Notification)
+            guard let notif = notification as? Notification else {return nil}
+            return notif
         })) else {return ""}
         
-      let unresolvedAlert = plantAlert.filter({ Notification in
-            return Notification.is_resolve == false
+      let unresolvedAlert = plantAlert.filter({ notification in
+            return notification.is_resolve == false
         })
         
         var nextWatering = ""
-        unresolvedAlert.forEach { Notification in
-            if Notification.type_to_alert == NotificationType.watering.rawValue {
-                guard let notificationWatering = Notification.next_time_to_alert else {return}
+        unresolvedAlert.forEach { notification in
+            if notification.type_to_alert == NotificationType.watering.rawValue {
+                guard let notificationWatering = notification.next_time_to_alert else {return}
                 nextWatering = notificationWatering
             }
         }
@@ -159,18 +162,19 @@ class PlantService: ObservableObject {
     
     func getActiveAlert(plant: Plant, notificationType: NotificationType) -> Notification? {
         let plantAlert: [Notification] = (plant.plant_notification?.allObjects.compactMap({ notification in
-            return (notification as! Notification)
+            guard let notif = notification as? Notification else {return nil}
+            return notif
         }))!
         
-      let unresolvedAlert = plantAlert.filter({ Notification in
-            return Notification.is_resolve == false
+      let unresolvedAlert = plantAlert.filter({ notification in
+            return notification.is_resolve == false
         })
         
         var notification: Notification = Notification()
         
-        unresolvedAlert.forEach { Notification in
-            if Notification.type_to_alert == notificationType.rawValue {
-               notification = Notification
+        unresolvedAlert.forEach { notificationItem in
+            if notificationItem.type_to_alert == notificationType.rawValue {
+               notification = notificationItem
             }
         }
         return notification
