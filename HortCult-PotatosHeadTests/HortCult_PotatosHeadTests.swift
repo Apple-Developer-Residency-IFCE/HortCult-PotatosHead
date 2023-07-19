@@ -6,30 +6,102 @@
 //
 
 import XCTest
+@testable import HortCult_PotatosHead
 
-final class HortCult_PotatosHeadTests: XCTestCase {
-
+class NotificationServiceTests: XCTestCase {
+    var notificationService: NotificationService!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        notificationService = NotificationService.instance
     }
-
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        notificationService = nil
+        try super.tearDownWithError()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    // Teste para verificar se a função createNotification cria uma notificação corretamente
+    func testCreateNotification() throws {
+        let nextTimeToAlert = "15/07/2023"
+        let timeToAlert = "08:00"
+        let typeToAlert = "Watering"
+        let notification = notificationService.createNotification(nextTimeToAlert: nextTimeToAlert,
+                                                                  timeToAlert: timeToAlert,
+                                                                  typeToAlert: typeToAlert)
+        XCTAssertNotNil(notification, "A notificação não deveria ser nula")
+        XCTAssertEqual(notification?.next_time_to_alert,
+                       nextTimeToAlert,
+                       "O próximo horário de alerta deve ser igual a 15/07/2023")
+        XCTAssertEqual(notification?.time_to_alert, timeToAlert, "O horário do alerta deve ser igual a 08:00")
+        XCTAssertEqual(notification?.type_to_alert, typeToAlert, "O tipo de alerta deve ser igual a Watering")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    // Teste para verificar se a função deleteNotification remove uma notificação corretamente
+    func testDeleteNotification() throws {
+        let notification = notificationService.createNotification(
+            nextTimeToAlert: "15/07/2023",
+            timeToAlert: "08:00",
+            typeToAlert: "Watering")
+        XCTAssertNotNil(notification, "A notificação não deveria ser nula")
+        notificationService.deleteNotification(notification: notification!)
+        while !notificationService.notifications.isEmpty {
+            notificationService.viewContext.delete(notificationService.notifications.remove(at: 0))
         }
+        do {
+            try notificationService.viewContext.save()
+        } catch {
+            print(error)
+        }
+        XCTAssertTrue(notificationService.notifications.isEmpty,
+          "A lista de notificações deveria estar vazia após a remoção")
     }
-
+    // Teste para verificar se a função updateNotification atualiza corretamente os valores de uma notificação
+    func testUpdateNotification() throws {
+        let notification = notificationService.createNotification(nextTimeToAlert: "15/07/2023",
+                                                                  timeToAlert: "08:00",
+                                                                  typeToAlert: "Watering")
+        XCTAssertNotNil(notification, "A notificação não deveria ser nula")
+        let newNextTimeToAlert = "20/07/2023"
+        let newTimeToAlert = "12:00"
+        let newTypeToAlert = "Fertilizing"
+        let newIsResolved = true
+        notificationService.updateNotification(notification: notification!,
+                                               nextTimeToAlert: newNextTimeToAlert,
+                                               timeToAlert: newTimeToAlert, typeToAlert: newTypeToAlert,
+                                               isResolve: newIsResolved)
+        XCTAssertEqual(notification?.next_time_to_alert,
+                       newNextTimeToAlert,
+                       "O próximo horário de alerta deve ser igual a 20/07/2023 após a atualização")
+        XCTAssertEqual(notification?.time_to_alert,
+                       newTimeToAlert,
+                       "O horário do alerta deve ser igual a 12:00 após a atualização")
+        XCTAssertEqual(notification?.type_to_alert,
+                       newTypeToAlert,
+                       "O tipo de alerta deve ser igual a Fertilizing após a atualização")
+        XCTAssertEqual(notification?.is_resolve,
+                       newIsResolved,
+                       "O status de resolução deve ser true após a atualização")
+    }
+    // Teste para verificar se a função calculateNextWatering calcula corretamente o próximo horário de rega
+    func testCalculateNextWatering() throws {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dailyNextWatering = notificationService.calculateNextWatering(wateringFrequency: .daily)
+        let everyTwoDaysNextWatering = notificationService.calculateNextWatering(wateringFrequency: .everyTwoDays)
+        let everyFourDaysNextWatering = notificationService.calculateNextWatering(wateringFrequency: .everyFourDays)
+        let weeklyNextWatering = notificationService.calculateNextWatering(wateringFrequency: .weekly)
+        let expectedDailyNextWatering = dateFormatter.string(
+            from: Calendar.current.date(byAdding: .day, value: 1, to: Date())!)
+        let expectedEveryTwoDaysNextWatering = dateFormatter.string(
+            from: Calendar.current.date(byAdding: .day, value: 2, to: Date())!)
+        let expectedEveryFourDaysNextWatering = dateFormatter.string(
+            from: Calendar.current.date(byAdding: .day, value: 4, to: Date())!)
+        let expectedWeeklyNextWatering = dateFormatter.string(
+            from: Calendar.current.date(byAdding: .day, value: 7, to: Date())!)
+        XCTAssertEqual(dailyNextWatering, expectedDailyNextWatering,
+                       "O próximo horário de rega diário deve ser 1 dia após a data atual")
+        XCTAssertEqual(everyTwoDaysNextWatering, expectedEveryTwoDaysNextWatering,
+                       "O próximo horário de rega a cada 2 dias deve ser 2 dias após a data atual")
+        XCTAssertEqual(everyFourDaysNextWatering, expectedEveryFourDaysNextWatering,
+                       "O próximo horário de rega a cada 4 dias deve ser 4 dias após a data atual")
+        XCTAssertEqual(weeklyNextWatering, expectedWeeklyNextWatering,
+                       "O próximo horário de rega semanal deve ser 7 dias após a data atual")
+    }
 }
