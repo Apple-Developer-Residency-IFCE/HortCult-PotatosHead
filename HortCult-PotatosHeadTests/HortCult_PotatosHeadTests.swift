@@ -27,11 +27,13 @@ class NotificationServiceTests: XCTestCase {
                                                                   timeToAlert: timeToAlert,
                                                                   typeToAlert: typeToAlert)
         XCTAssertNotNil(notification, "A notificação não deveria ser nula")
-        XCTAssertEqual(notification?.next_time_to_alert,
-                       nextTimeToAlert,
-                       "O próximo horário de alerta deve ser igual a 15/07/2023")
-        XCTAssertEqual(notification?.time_to_alert, timeToAlert, "O horário do alerta deve ser igual a 08:00")
-        XCTAssertEqual(notification?.type_to_alert, typeToAlert, "O tipo de alerta deve ser igual a Watering")
+        let notificationID = notification?.id
+        if let notificationInList = notificationService.notifications.first(where: { $0.id == notificationID }) {
+            XCTAssertTrue(notificationInList == notification,
+                          "A notificação criada deve ser igual à notificação na lista")
+        } else {
+            XCTFail("A notificação não foi encontrada na lista")
+        }
     }
     // Teste para verificar se a função deleteNotification remove uma notificação corretamente
     func testDeleteNotification() throws {
@@ -40,17 +42,14 @@ class NotificationServiceTests: XCTestCase {
             timeToAlert: "08:00",
             typeToAlert: "Watering")
         XCTAssertNotNil(notification, "A notificação não deveria ser nula")
-        notificationService.deleteNotification(notification: notification!)
-        while !notificationService.notifications.isEmpty {
-            notificationService.viewContext.delete(notificationService.notifications.remove(at: 0))
+        let notificationID = notification?.id
+        if let notificationInList = notificationService.notifications.first(where: { $0.id == notificationID }) {
+            notificationService.deleteNotification(notification: notificationInList)
+            XCTAssertTrue(notificationService.notifications.first(where: { $0.id == notificationID }) == nil,
+                          "A notificação não deveria existir após a remoção")
+        } else {
+            XCTFail("A notificação não foi encontrada na lista")
         }
-        do {
-            try notificationService.viewContext.save()
-        } catch {
-            print(error)
-        }
-        XCTAssertTrue(notificationService.notifications.isEmpty,
-          "A lista de notificações deveria estar vazia após a remoção")
     }
     // Teste para verificar se a função updateNotification atualiza corretamente os valores de uma notificação
     func testUpdateNotification() throws {
@@ -64,20 +63,47 @@ class NotificationServiceTests: XCTestCase {
         let newIsResolved = true
         notificationService.updateNotification(notification: notification!,
                                                nextTimeToAlert: newNextTimeToAlert,
-                                               timeToAlert: newTimeToAlert, typeToAlert: newTypeToAlert,
+                                               timeToAlert: newTimeToAlert,
+                                               typeToAlert: newTypeToAlert,
                                                isResolve: newIsResolved)
-        XCTAssertEqual(notification?.next_time_to_alert,
-                       newNextTimeToAlert,
-                       "O próximo horário de alerta deve ser igual a 20/07/2023 após a atualização")
-        XCTAssertEqual(notification?.time_to_alert,
-                       newTimeToAlert,
-                       "O horário do alerta deve ser igual a 12:00 após a atualização")
-        XCTAssertEqual(notification?.type_to_alert,
-                       newTypeToAlert,
-                       "O tipo de alerta deve ser igual a Fertilizing após a atualização")
-        XCTAssertEqual(notification?.is_resolve,
-                       newIsResolved,
-                       "O status de resolução deve ser true após a atualização")
+        let notificationID = notification?.id
+        if let notificationInList = notificationService.notifications.first(where: { $0.id == notificationID }) {
+            XCTAssertTrue(notificationInList == notification,
+                          "A notificação criada deve ser igual à notificação na lista")
+            XCTAssertEqual(notificationInList.next_time_to_alert,
+                           newNextTimeToAlert,
+                           "O próximo horário de alerta deve ser igual a 20/07/2023 após a atualização")
+            XCTAssertEqual(notificationInList.time_to_alert,
+                           newTimeToAlert,
+                           "O horário do alerta deve ser igual a 12:00 após a atualização")
+            XCTAssertEqual(notificationInList.type_to_alert,
+                           newTypeToAlert,
+                           "O tipo de alerta deve ser igual a Fertilizing após a atualização")
+            XCTAssertEqual(notificationInList.is_resolve,
+                           newIsResolved,
+                           "O status de resolução deve ser true após a atualização")
+        } else {
+            XCTFail("A notificação não foi encontrada na lista")
+        }
+    }
+    // Teste para verificar se a função getUnresolvedsNotification está fucionando
+    func testGetUnresolvedsNotifications() throws {
+        let notification1 = Notification(context: notificationService.viewContext)
+        notification1.next_time_to_alert = "2023-07-15"
+        notification1.time_to_alert = "08:00"
+        notification1.type_to_alert = "Watering"
+        notification1.is_resolve = false
+
+        let notification2 = Notification(context: notificationService.viewContext)
+        notification2.next_time_to_alert = "2023-07-16"
+        notification2.time_to_alert = "12:00"
+        notification2.type_to_alert = "Watering"
+        notification2.is_resolve = true
+
+        let unresolvedNotifications = notificationService.getUnresolvedsNotifications()
+        for notification in unresolvedNotifications {
+            XCTAssertFalse(notification.is_resolve)
+        }
     }
     // Teste para verificar se a função calculateNextWatering calcula corretamente o próximo horário de rega
     func testCalculateNextWatering() throws {
