@@ -16,7 +16,7 @@
 		136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136606922A1EE6710001757A /* ListHortaComponent.swift */; };
 		1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */; };
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
-		3D37981F2A688E900068EC9B /* HortCult_PotatosHeadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D37981E2A688E900068EC9B /* HortCult_PotatosHeadTests.swift */; };
+		3D37981F2A688E900068EC9B /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */; };
 		3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */; };
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
 		3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */; };
@@ -105,7 +105,7 @@
 		1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProfilePhoto.swift; sourceTree = "<group>"; };
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
 		3D37981C2A688E900068EC9B /* HortCult-PotatosHeadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HortCult-PotatosHeadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D37981E2A688E900068EC9B /* HortCult_PotatosHeadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortCult_PotatosHeadTests.swift; sourceTree = "<group>"; };
+		3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
 		3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPageComponet.swift; sourceTree = "<group>"; };
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypes.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		3D37981D2A688E900068EC9B /* HortCult-PotatosHeadTests */ = {
 			isa = PBXGroup;
 			children = (
-				3D37981E2A688E900068EC9B /* HortCult_PotatosHeadTests.swift */,
+				3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */,
 			);
 			path = "HortCult-PotatosHeadTests";
 			sourceTree = "<group>";
@@ -673,7 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D37981F2A688E900068EC9B /* HortCult_PotatosHeadTests.swift in Sources */,
+				3D37981F2A688E900068EC9B /* NotificationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
