@@ -11,13 +11,10 @@ import CoreData
 class ImageService: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     @Published var hortcultImages: [HortCultImages] = []
-    
     static var instance = ImageService()
-    
     private init() {
         fetch()
     }
-    
     func fetch() {
         let fetchRequest: NSFetchRequest<HortCultImages> = HortCultImages.fetchRequest()
         let myEntititesRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Hortcult_Images")
@@ -27,23 +24,17 @@ class ImageService: ObservableObject {
             let plants = try viewContext.fetch(plants)
             print(entities)
             print(plants)
-            
         } catch {
-            
         }
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
             return
         }
         hortcultImages = fetchedNotifications
     }
-    
-    
     func createImage(plantImage: Data) -> HortCultImages? {
-            
         let newImage = HortCultImages(context: viewContext)
         newImage.id = UUID()
         newImage.plant_image = plantImage
-        
         do {
             try viewContext.save()
             fetch()
@@ -53,7 +44,6 @@ class ImageService: ObservableObject {
             return nil
         }
     }
-    
     func deleteImage(plantImage: HortCultImages) {
         viewContext.delete(plantImage)
         do {
@@ -63,11 +53,8 @@ class ImageService: ObservableObject {
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
-    
-    func updateImage(plantImage: HortCultImages, updatedImage: Data){
-        
+    func updateImage(plantImage: HortCultImages, updatedImage: Data) {
         plantImage.plant_image = updatedImage
-        
         do {
             try viewContext.save()
             fetch()
@@ -75,5 +62,4 @@ class ImageService: ObservableObject {
             print("could not save \(error) \(error.userInfo)")
         }
     }
-    
 }
