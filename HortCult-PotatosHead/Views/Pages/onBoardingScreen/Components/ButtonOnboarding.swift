@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum buttonCases: CaseIterable {
+enum ButtonCases: CaseIterable {
     
     case one
     case two
@@ -18,7 +18,7 @@ enum buttonCases: CaseIterable {
 }
 
 struct ReusableButton: View {
-    var buttonTipe: buttonCases
+    var buttonTipe: ButtonCases
     var action: (() -> Void)    
     var body: some View {
         
@@ -52,7 +52,6 @@ struct ReusableButton: View {
                             .foregroundColor(Color("MainColor"))
                     }
                 }
-                
             case .three:
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)

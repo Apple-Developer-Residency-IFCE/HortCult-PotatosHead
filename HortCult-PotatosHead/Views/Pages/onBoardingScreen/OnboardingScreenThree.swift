@@ -13,7 +13,6 @@ struct OnboardingScreenThree: View {
     @State private var jumpToInitalScreen = false
     @EnvironmentObject var defaults: Defaults
     var hortCultMain: HortCult_PotatosHeadApp?
-    @ObservedObject var plantViewModel: PlantViewModel
     
     var body: some View {
         
@@ -29,12 +28,9 @@ struct OnboardingScreenThree: View {
             HortCult_PotatosHeadApp.isFirstLogin = false
         })
         .background(
-            NavigationLink(destination: OnboardingScreenFour(defaults: defaults, plantViewModel: plantViewModel), isActive: $isNextScreenActive) {EmptyView()}
-                .navigationBarBackButtonHidden(true)
-        )
+            NavigationLink(destination: OnboardingScreenFour(defaults: defaults), isActive: $isNextScreenActive) {EmptyView()})
         .background(
-            NavigationLink(destination: MainView(defaults: _defaults, plantViewModel: plantViewModel), isActive: $jumpToInitalScreen) { EmptyView()}
-                .navigationBarBackButtonHidden(true)
+            NavigationLink(destination: MainView(defaults: _defaults), isActive: $jumpToInitalScreen) { EmptyView()}
         )
     }
 }
@@ -42,7 +38,7 @@ struct OnboardingScreenThree: View {
 struct OnboardingScreenThree_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            OnboardingScreenThree(plantViewModel: PlantViewModel())
+            OnboardingScreenThree()
                 .environmentObject(Defaults())
         }
     }

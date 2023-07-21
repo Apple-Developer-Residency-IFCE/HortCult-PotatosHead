@@ -8,13 +8,11 @@
 import SwiftUI
 
 @main
+// swiftlint:disable all
 struct HortCult_PotatosHeadApp: App {
     
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @ObservedObject var plantViewModel: PlantViewModel = PlantViewModel()
-    @ObservedObject var imageViewModel: ImageViewModel = ImageViewModel()
-    @ObservedObject var notificationViewModel: NotificationViewModel = NotificationViewModel()
     //    var defaultShared = Defaults.defaultsShared
     
     @StateObject var defaults = Defaults()
@@ -33,19 +31,16 @@ struct HortCult_PotatosHeadApp: App {
         WindowGroup {
             NavigationView{
                 if HortCult_PotatosHeadApp.isFirstLogin == true {
-                    OnBoardingScreen(defaults: defaults, plantViewModel: plantViewModel)
+                    OnBoardingScreen(defaults: defaults)
                         .preferredColorScheme(.light)
                         .environmentObject(defaults)
                         
                 } else {
-                    MainView(plantViewModel: plantViewModel)
+                    MainView()
                         .preferredColorScheme(color)
                         .environmentObject(defaults)
                 }
             }
-            .environmentObject(imageViewModel)
-            .environmentObject(plantViewModel)
-            .environmentObject(notificationViewModel)
             .environmentObject(defaults)
         }
     }

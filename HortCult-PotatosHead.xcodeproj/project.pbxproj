@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FB1BDB42A54AB6C002091D6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */; };
 		130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB5452A2942D4003B3006 /* HortaTipo.swift */; };
 		130AB54A2A29456E003B3006 /* HortaInformationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB5492A29456E003B3006 /* HortaInformationScreen.swift */; };
 		130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB54B2A2947D8003B3006 /* FrequenciaRega.swift */; };
@@ -15,6 +16,7 @@
 		136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136606922A1EE6710001757A /* ListHortaComponent.swift */; };
 		1385EAE22A216899006E3487 /* ScrollProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */; };
 		13A3F0EE2A1ED08900119336 /* HortaComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3F0ED2A1ED08900119336 /* HortaComponent.swift */; };
+		3D37981F2A688E900068EC9B /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */; };
 		3D49C34D2A3921C40026D305 /* ControlPageComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */; };
 		3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49C34F2A39270A0026D305 /* TextScreen.swift */; };
 		3D4CD9242A4E592D00B5FD45 /* NotificationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */; };
@@ -38,15 +40,16 @@
 		542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */; };
 		542367132A4A620D00261828 /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */; };
 		542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */; };
-		542367162A4A627100261828 /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367152A4A627100261828 /* ImagesViewModel.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentViewScreen.swift */; };
 		54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD42A2EA52700348020 /* ThemeSelectView.swift */; };
 		54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD62A312F0600348020 /* NavigationIconView.swift */; };
 		54673DDB2A3157D300348020 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DDA2A3157D300348020 /* Defaults.swift */; };
-		5488893B2A411184002009AF /* PlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548889392A411184002009AF /* PlantViewModel.swift */; };
-		5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488893A2A411184002009AF /* NotificationViewModel.swift */; };
+		5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF0E2A65F58400FC711E /* PlantServices.swift */; };
+		5484EF112A65F68000FC711E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF102A65F68000FC711E /* Services.swift */; };
+		5484EF132A65F94400FC711E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF122A65F94400FC711E /* NotificationService.swift */; };
+		5484EF152A65FA4600FC711E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF142A65FA4600FC711E /* ImageService.swift */; };
 		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F22A218076000D11EB /* OnboardingScreenThree.swift */; };
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
@@ -84,7 +87,18 @@
 		EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82B6D32A3A91590012B048 /* ImagePickerComponent.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3D3798202A688E900068EC9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64B207862A1D7DFE00F440EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64B2078D2A1D7DFE00F440EF;
+			remoteInfo = "HortCult-PotatosHead";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		130AB5452A2942D4003B3006 /* HortaTipo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaTipo.swift; sourceTree = "<group>"; };
 		130AB5492A29456E003B3006 /* HortaInformationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaInformationScreen.swift; sourceTree = "<group>"; };
 		130AB54B2A2947D8003B3006 /* FrequenciaRega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequenciaRega.swift; sourceTree = "<group>"; };
@@ -93,6 +107,8 @@
 		136606922A1EE6710001757A /* ListHortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHortaComponent.swift; sourceTree = "<group>"; };
 		1385EAE12A216899006E3487 /* ScrollProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProfilePhoto.swift; sourceTree = "<group>"; };
 		13A3F0ED2A1ED08900119336 /* HortaComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaComponent.swift; sourceTree = "<group>"; };
+		3D37981C2A688E900068EC9B /* HortCult-PotatosHeadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HortCult-PotatosHeadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
 		3D49C34C2A3921C40026D305 /* ControlPageComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPageComponet.swift; sourceTree = "<group>"; };
 		3D49C34F2A39270A0026D305 /* TextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScreen.swift; sourceTree = "<group>"; };
 		3D4CD9232A4E592D00B5FD45 /* NotificationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypes.swift; sourceTree = "<group>"; };
@@ -116,15 +132,16 @@
 		5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		542367152A4A627100261828 /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentViewScreen.swift; sourceTree = "<group>"; };
 		54673DD42A2EA52700348020 /* ThemeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectView.swift; sourceTree = "<group>"; };
 		54673DD62A312F0600348020 /* NavigationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIconView.swift; sourceTree = "<group>"; };
 		54673DDA2A3157D300348020 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		548889392A411184002009AF /* PlantViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantViewModel.swift; sourceTree = "<group>"; };
-		5488893A2A411184002009AF /* NotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		5484EF0E2A65F58400FC711E /* PlantServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantServices.swift; sourceTree = "<group>"; };
+		5484EF102A65F68000FC711E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		5484EF122A65F94400FC711E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5484EF142A65FA4600FC711E /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		641207F22A218076000D11EB /* OnboardingScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenThree.swift; sourceTree = "<group>"; };
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
@@ -165,6 +182,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3D3798192A688E900068EC9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64B2078B2A1D7DFE00F440EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +244,14 @@
 				3D5455AA2A427ADC00EBFE7A /* ButtonHorta.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		3D37981D2A688E900068EC9B /* HortCult-PotatosHeadTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */,
+			);
+			path = "HortCult-PotatosHeadTests";
 			sourceTree = "<group>";
 		};
 		3D49C34E2A3926910026D305 /* Textfield */ = {
@@ -357,12 +389,20 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5484EF0D2A65F52700FC711E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5484EF0E2A65F58400FC711E /* PlantServices.swift */,
+				5484EF102A65F68000FC711E /* Services.swift */,
+				5484EF122A65F94400FC711E /* NotificationService.swift */,
+				5484EF142A65FA4600FC711E /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		548889382A411184002009AF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				548889392A411184002009AF /* PlantViewModel.swift */,
-				5488893A2A411184002009AF /* NotificationViewModel.swift */,
-				542367152A4A627100261828 /* ImagesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -429,7 +469,9 @@
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
+				0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */,
 				64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */,
+				3D37981D2A688E900068EC9B /* HortCult-PotatosHeadTests */,
 				64B2078F2A1D7DFE00F440EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -438,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				64B2078E2A1D7DFE00F440EF /* HortCult-PotatosHead.app */,
+				3D37981C2A688E900068EC9B /* HortCult-PotatosHeadTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -445,6 +488,7 @@
 		64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXGroup;
 			children = (
+				5484EF0D2A65F52700FC711E /* Services */,
 				5488893D2A41119A002009AF /* model */,
 				548889382A411184002009AF /* ViewModel */,
 				64E15AF82A1D82AF0043A96E /* Views */,
@@ -533,6 +577,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3D37981B2A688E900068EC9B /* HortCult-PotatosHeadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D3798242A688E900068EC9B /* Build configuration list for PBXNativeTarget "HortCult-PotatosHeadTests" */;
+			buildPhases = (
+				3D3798182A688E900068EC9B /* Sources */,
+				3D3798192A688E900068EC9B /* Frameworks */,
+				3D37981A2A688E900068EC9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D3798212A688E900068EC9B /* PBXTargetDependency */,
+			);
+			name = "HortCult-PotatosHeadTests";
+			productName = "HortCult-PotatosHeadTests";
+			productReference = 3D37981C2A688E900068EC9B /* HortCult-PotatosHeadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		64B2078D2A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64B207A12A1D7DFF00F440EF /* Build configuration list for PBXNativeTarget "HortCult-PotatosHead" */;
@@ -540,6 +602,7 @@
 				64B2078A2A1D7DFE00F440EF /* Sources */,
 				64B2078B2A1D7DFE00F440EF /* Frameworks */,
 				64B2078C2A1D7DFE00F440EF /* Resources */,
+				0FB1BDB22A54AB20002091D6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -560,6 +623,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					3D37981B2A688E900068EC9B = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 64B2078D2A1D7DFE00F440EF;
+					};
 					64B2078D2A1D7DFE00F440EF = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -579,15 +646,24 @@
 			projectRoot = "";
 			targets = (
 				64B2078D2A1D7DFE00F440EF /* HortCult-PotatosHead */,
+				3D37981B2A688E900068EC9B /* HortCult-PotatosHeadTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3D37981A2A688E900068EC9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64B2078C2A1D7DFE00F440EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB1BDB42A54AB6C002091D6 /* .swiftlint.yml in Resources */,
 				641D71CB2A26A98B0040CBCC /* Satoshi-Bold.otf in Resources */,
 				641D71CD2A26A9940040CBCC /* Satoshi-BoldItalic.otf in Resources */,
 				641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */,
@@ -605,7 +681,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FB1BDB22A54AB20002091D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		3D3798182A688E900068EC9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D37981F2A688E900068EC9B /* NotificationServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64B2078A2A1D7DFE00F440EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,11 +727,13 @@
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
+				5484EF152A65FA4600FC711E /* ImageService.swift in Sources */,
 				130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
-				5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
+				5484EF112A65F68000FC711E /* Services.swift in Sources */,
 				3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */,
+				5484EF132A65F94400FC711E /* NotificationService.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */,
 				3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */,
@@ -635,7 +741,6 @@
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
-				5488893B2A411184002009AF /* PlantViewModel.swift in Sources */,
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
 				EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
@@ -673,6 +778,7 @@
 				542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */,
 				3D6175E32A577FD6004847B7 /* TemperatureCard.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
+				5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */,
 				3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */,
 				133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
@@ -684,7 +790,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3D3798212A688E900068EC9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64B2078D2A1D7DFE00F440EF /* HortCult-PotatosHead */;
+			targetProxy = 3D3798202A688E900068EC9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3D3798222A688E900068EC9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Academy.ifce.HortCult-PotatosHeadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HortCult-PotatosHead.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HortCult-PotatosHead";
+			};
+			name = Debug;
+		};
+		3D3798232A688E900068EC9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Academy.ifce.HortCult-PotatosHeadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HortCult-PotatosHead.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HortCult-PotatosHead";
+			};
+			name = Release;
+		};
 		64B2079F2A1D7DFF00F440EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -862,6 +1018,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D3798242A688E900068EC9B /* Build configuration list for PBXNativeTarget "HortCult-PotatosHeadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D3798222A688E900068EC9B /* Debug */,
+				3D3798232A688E900068EC9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		64B207892A1D7DFE00F440EF /* Build configuration list for PBXProject "HortCult-PotatosHead" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
