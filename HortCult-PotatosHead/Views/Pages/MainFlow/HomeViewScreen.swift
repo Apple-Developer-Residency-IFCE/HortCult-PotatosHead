@@ -59,6 +59,7 @@ struct HomeView: View {
         }
         .background(NavigationLink(destination: AddInfoScreen(noticationList: $cardModels), isActive: $goToAddPlantScreen, label: {EmptyView()}))
         .navigationBarBackButtonHidden(true)
+        .edgesIgnoringSafeArea(.all)
     }
     
 }
