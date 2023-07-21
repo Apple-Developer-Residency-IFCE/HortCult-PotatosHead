@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Hortcult_Images)
-public class HortCultImages: NSManagedObject {
+public class Hortcult_Images: NSManagedObject {
 
 }

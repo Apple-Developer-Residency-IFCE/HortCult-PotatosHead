@@ -15,7 +15,7 @@ extension Plant {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Plant> {
         return NSFetchRequest<Plant>(entityName: "Plant")
     }
-    // swiftlint:disable all
+
     @NSManaged public var category: String?
     @NSManaged public var id: UUID?
     @NSManaged public var images: Date?
@@ -48,10 +48,10 @@ extension Plant {
 extension Plant {
 
     @objc(addPlant_hortcult_imagesObject:)
-    @NSManaged public func addToPlant_hortcult_images(_ value: HortCultImages)
+    @NSManaged public func addToPlant_hortcult_images(_ value: Hortcult_Images)
 
     @objc(removePlant_hortcult_imagesObject:)
-    @NSManaged public func removeFromPlant_hortcult_images(_ value: HortCultImages)
+    @NSManaged public func removeFromPlant_hortcult_images(_ value: Hortcult_Images)
 
     @objc(addPlant_hortcult_images:)
     @NSManaged public func addToPlant_hortcult_images(_ values: NSSet)

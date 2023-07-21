@@ -8,7 +8,6 @@
 import SwiftUI
 
 @main
-// swiftlint:disable all
 struct HortCult_PotatosHeadApp: App {
     
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true

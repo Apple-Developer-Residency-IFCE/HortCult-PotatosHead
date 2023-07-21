@@ -8,7 +8,7 @@
 import Foundation
 
 struct AddInfoScreenViewModel {
-    static func verifyNotificationToday (date: String) -> Bool {
+    static func VerifyNotificationToday (date: String) -> Bool {
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"

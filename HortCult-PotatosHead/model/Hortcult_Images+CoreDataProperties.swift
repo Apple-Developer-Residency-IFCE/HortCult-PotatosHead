@@ -10,19 +10,18 @@ import Foundation
 import CoreData
 
 
-extension HortCultImages {
+extension Hortcult_Images {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<HortCultImages> {
-        return NSFetchRequest<HortCultImages>(entityName: "Hortcult_Images")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Hortcult_Images> {
+        return NSFetchRequest<Hortcult_Images>(entityName: "Hortcult_Images")
     }
 
     @NSManaged public var id: UUID?
-// swiftlint:disable identifier_name line_length 2
     @NSManaged public var plant_image: Data?
     @NSManaged public var hotcult_images_plants: Plant?
 
 }
 
-extension HortCultImages : Identifiable {
+extension Hortcult_Images : Identifiable {
 
 }

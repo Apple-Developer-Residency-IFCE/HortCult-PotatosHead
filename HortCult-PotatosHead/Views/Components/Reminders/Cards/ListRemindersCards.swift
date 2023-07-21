@@ -41,14 +41,12 @@ struct CardView: View {
 struct CardListView: View {
     @Binding var cards: [CardViewModel]
     var body: some View {
-        VStack(){
-            HStack {
-                Text("Lembretes")
-                    .font(.custom("Satoshi-Bold", size: 28))
-                    .foregroundColor(Color("MainColor"))
+        VStack(alignment: .leading){
+            Text("Lembretes")
+                .font(.custom("Satoshi-Bold", size: 28))
+                .foregroundColor(Color("MainColor"))
                 .padding(.leading, 22)
-                Spacer()
-            }
+            
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(cards) { card in
                         CardView(card: card){

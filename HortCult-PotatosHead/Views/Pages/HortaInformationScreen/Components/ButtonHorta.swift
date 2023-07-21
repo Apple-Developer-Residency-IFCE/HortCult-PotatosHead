@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ButtonHortaCases: CaseIterable {
+enum buttonHortaCases: CaseIterable {
     
     case one
     case two
@@ -15,7 +15,7 @@ enum ButtonHortaCases: CaseIterable {
 }
 
 struct ButtonHorta: View {
-    var buttonTipe: ButtonHortaCases
+    var buttonTipe: buttonHortaCases
     var action: (() -> Void)
     var plant: Plant
     
