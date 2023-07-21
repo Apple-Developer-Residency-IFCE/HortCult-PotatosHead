@@ -6,30 +6,48 @@
 //
 
 import XCTest
+@testable import HortCult_PotatosHead
 
 final class ImageServiceTests: XCTestCase {
-
+    var imageService: ImageService!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        imageService = ImageService.instance
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       imageService = nil
+        try super.tearDownWithError()
+    }
+    func testCreateImage() throws {
+        let image = ImageService.instance.createImage(plantImage: Data())
+        XCTAssertNotNil(image)
+        XCTAssertNotNil(image?.id)
+        XCTAssertNotNil(image?.plant_image)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testDeleteImage() throws {
+        let image = ImageService.instance.createImage(plantImage: Data())
+        ImageService.instance.deleteImage(plantImage: image!)
+        let fetchedImages = ImageService.instance.hortcultImages
+        XCTAssertFalse(fetchedImages.contains(image!))
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    func testUpdateImage() throws {
+        // Create an image.
+        let image = ImageService.instance.createImage(plantImage: Data())
 
+        // Get the image ID.
+        let imageID = image?.id
+
+        // Update the image.
+        let updatedImage = Data()
+        ImageService.instance.updateImage(plantImage: imageID, updatedImage: updatedImage)
+
+        // Fetch the updated image.
+        let fetchedImage = ImageService.instance.hortcultImages.first(where: { $0.id == imageID })
+
+        // Check that the updated image is correct.
+        XCTAssertEqual(fetchedImage?.plant_image, updatedImage)
+    }
 }
