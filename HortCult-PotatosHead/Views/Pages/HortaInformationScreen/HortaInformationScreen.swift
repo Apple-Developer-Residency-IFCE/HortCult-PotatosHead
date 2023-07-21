@@ -22,19 +22,19 @@ struct HortaInformationScreen: View {
             ZStack {
                 VStack {
                     HStack {
-//                        Button(action: {
-//                            self.presentationMode.wrappedValue.dismiss()
-//                        })
+                        //                        Button(action: {
+                        //                            self.presentationMode.wrappedValue.dismiss()
+                        //                        })
                         
-                            Image("Arrow-Left-White")
-                            Text("Voltar").foregroundColor(Color(.white)).font(.custom("Satoshi-Regular", size: 16))
-                      
+                        Image("Arrow-Left-White")
+                        Text("Voltar").foregroundColor(Color(.white)).font(.custom("Satoshi-Regular", size: 16))
+                        
                         
                     }.padding(.leading, 12).padding(.trailing, -8)
                 }
             }
         }).ignoresSafeArea(.all)
-        }
+    }
     
     var body: some View {
         ZStack {
@@ -61,9 +61,13 @@ struct HortaInformationScreen: View {
                                 .font(.custom("Satoshi-Regular", size: 16))
                                 .padding(.bottom,24)
                             CardProximaRega(content: Service.plant.getNextWatering(plant: plant)){
-                                Service.notification.updateNotification(notification: activeNotification, next_time_to_alert: activeNotification.next_time_to_alert!, time_to_alert: activeNotification.time_to_alert!, type_to_alert: activeNotification.type_to_alert!, is_resolve: true)
+                                Service.notification.updateNotification(notification: activeNotification, nextTimeToAlert: activeNotification.next_time_to_alert!,
+                                                                        timeToAlert: activeNotification.time_to_alert!, typeToAlert: activeNotification.type_to_alert!, isResolve: true)
                                 
-                                guard let newNotification = Service.notification.createNotification(next_time_to_alert: Service.notification.calculateNextWatering(wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!), time_to_alert: "", type_to_alert: NotificationType.watering.rawValue) else {return}
+                                guard let newNotification = Service.notification.createNotification(nextTimeToAlert:
+                                                                Service.notification.calculateNextWatering(wateringFrequency:
+                                                                Frequency(rawValue: plant.watering_frequency!)!),
+                                                                timeToAlert: "", typeToAlert: NotificationType.watering.rawValue) else {return}
                                 Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
                             }
                             .padding(.bottom,24)
@@ -203,4 +207,3 @@ struct HortaInformationScreen: View {
         }
     }
 }
-

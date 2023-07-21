@@ -10,16 +10,13 @@ import CoreData
 
 class ImageService: ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
-    @Published var hortcult_images: [Hortcult_Images] = []
-    
+    @Published var hortcultImages: [HortCultImages] = []
     static var instance = ImageService()
-    
     private init() {
         fetch()
     }
-    
     func fetch() {
-        let fetchRequest: NSFetchRequest<Hortcult_Images> = Hortcult_Images.fetchRequest()
+        let fetchRequest: NSFetchRequest<HortCultImages> = HortCultImages.fetchRequest()
         let myEntititesRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Hortcult_Images")
         let plants =   NSFetchRequest<NSFetchRequestResult>(entityName: "Plant")
         do {
@@ -27,23 +24,17 @@ class ImageService: ObservableObject {
             let plants = try viewContext.fetch(plants)
             print(entities)
             print(plants)
-            
         } catch {
-            
         }
         guard let fetchedNotifications = try? viewContext.fetch(fetchRequest) else {
             return
         }
-        hortcult_images = fetchedNotifications
+        hortcultImages = fetchedNotifications
     }
-    
-    
-    func createImage(plantImage: Data) -> Hortcult_Images? {
-            
-        let newImage = Hortcult_Images(context: viewContext)
+    func createImage(plantImage: Data) -> HortCultImages? {
+        let newImage = HortCultImages(context: viewContext)
         newImage.id = UUID()
         newImage.plant_image = plantImage
-        
         do {
             try viewContext.save()
             fetch()
@@ -53,8 +44,7 @@ class ImageService: ObservableObject {
             return nil
         }
     }
-    
-    func deleteImage(plantImage: Hortcult_Images) {
+    func deleteImage(plantImage: HortCultImages) {
         viewContext.delete(plantImage)
         do {
             try viewContext.save()
@@ -63,11 +53,8 @@ class ImageService: ObservableObject {
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
-    
-    func updateImage(plantImage:Hortcult_Images, updatedImage: Data){
-        
+    func updateImage(plantImage: HortCultImages, updatedImage: Data) {
         plantImage.plant_image = updatedImage
-        
         do {
             try viewContext.save()
             fetch()
@@ -75,5 +62,4 @@ class ImageService: ObservableObject {
             print("could not save \(error) \(error.userInfo)")
         }
     }
-    
 }
