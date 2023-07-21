@@ -7,7 +7,7 @@
 import SwiftUI
 
 
-enum alertas {
+enum Alertas {
     case add
     case delete
     case confirmDelete
@@ -16,7 +16,7 @@ enum alertas {
 
 
 struct AlertCustomView: View {
-    @State var alerta : alertas
+    @State var alerta : Alertas
     var plant: Plant
 
     
