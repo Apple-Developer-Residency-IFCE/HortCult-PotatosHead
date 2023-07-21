@@ -6,7 +6,7 @@ struct EditInfoView: View {
     @State var state: [CardViewModel] = []
     init( plant: Plant) {
         self.plant = plant
-        listImageData = PlantViewModel.instance.getPlantImagesData(plant: plant)
+        listImageData = Service.plant.getPlantImagesData(plant: plant)
     }
     var body: some View {
         VStack{
