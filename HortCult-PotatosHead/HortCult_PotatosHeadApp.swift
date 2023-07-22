@@ -14,34 +14,34 @@ struct HortCult_PotatosHeadApp: App {
     @AppStorage ("isFirstLogin") static var isFirstLogin: Bool = true
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     //    var defaultShared = Defaults.defaultsShared
+    @StateObject var instance = UserService.instance
     
     @StateObject var defaults = Defaults()
     
     var color: ColorScheme? {
         if defaults.theme == "Padrão do Sistema" {
-           return nil
-       } else if defaults.theme == "Claro" {
-           return .light
-       } else {
-           return .dark
-       }
-   }
+            return nil
+        } else if defaults.theme == "Claro" {
+            return .light
+        } else {
+            return .dark
+        }
+    }
     
     var body: some Scene {
         WindowGroup {
-            NavigationView{
-                if HortCult_PotatosHeadApp.isFirstLogin == true {
-                    OnBoardingScreen(defaults: defaults)
-                        .preferredColorScheme(.light)
-                        .environmentObject(defaults)
-                        
-                } else {
-                    MainView()
-                        .preferredColorScheme(color)
-                        .environmentObject(defaults)
+            VStack{
+                
+                ForEach(UserService.instance.listUsers) { element in
+                    Button(element.email, action: {})
                 }
+                
             }
             .environmentObject(defaults)
+            .task {
+                UserService.instance.getUsers()
+                UserService.instance.createUser()
+            }
         }
     }
 }

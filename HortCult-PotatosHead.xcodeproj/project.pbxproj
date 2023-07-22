@@ -46,6 +46,9 @@
 		5484EF112A65F68000FC711E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF102A65F68000FC711E /* Services.swift */; };
 		5484EF132A65F94400FC711E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF122A65F94400FC711E /* NotificationService.swift */; };
 		5484EF152A65FA4600FC711E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF142A65FA4600FC711E /* ImageService.swift */; };
+		5484EF172A68856800FC711E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF162A68856800FC711E /* UserService.swift */; };
+		5484EF1A2A6A05D200FC711E /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF192A6A05D200FC711E /* NetworkManeger.swift */; };
+		5484EF1C2A6A064700FC711E /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF1B2A6A064700FC711E /* RequestTypes.swift */; };
 		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
 		641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F22A218076000D11EB /* OnboardingScreenThree.swift */; };
 		641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */; };
@@ -123,6 +126,9 @@
 		5484EF102A65F68000FC711E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		5484EF122A65F94400FC711E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5484EF142A65FA4600FC711E /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		5484EF162A68856800FC711E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = ../../../../UserService.swift; sourceTree = "<group>"; };
+		5484EF192A6A05D200FC711E /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkManeger.swift; path = ../../../../NetworkManeger.swift; sourceTree = "<group>"; };
+		5484EF1B2A6A064700FC711E /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestTypes.swift; path = ../../../../RequestTypes.swift; sourceTree = "<group>"; };
 		64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTesteNav.swift; sourceTree = "<group>"; };
 		641207F22A218076000D11EB /* OnboardingScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenThree.swift; sourceTree = "<group>"; };
 		641207F42A2180F5000D11EB /* OnboardingScreenFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenFour.swift; sourceTree = "<group>"; };
@@ -335,8 +341,18 @@
 				5484EF102A65F68000FC711E /* Services.swift */,
 				5484EF122A65F94400FC711E /* NotificationService.swift */,
 				5484EF142A65FA4600FC711E /* ImageService.swift */,
+				5484EF162A68856800FC711E /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		5484EF182A6A05B100FC711E /* network */ = {
+			isa = PBXGroup;
+			children = (
+				5484EF192A6A05D200FC711E /* NetworkManeger.swift */,
+				5484EF1B2A6A064700FC711E /* RequestTypes.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 		548889382A411184002009AF /* ViewModel */ = {
@@ -425,6 +441,7 @@
 		64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */ = {
 			isa = PBXGroup;
 			children = (
+				5484EF182A6A05B100FC711E /* network */,
 				5484EF0D2A65F52700FC711E /* Services */,
 				5488893D2A41119A002009AF /* model */,
 				548889382A411184002009AF /* ViewModel */,
@@ -653,6 +670,7 @@
 				64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */,
 				130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */,
 				641C95402A27FA7F00B20BA3 /* BotaoCardLembrete.swift in Sources */,
+				5484EF172A68856800FC711E /* UserService.swift in Sources */,
 				3D5455A92A425DC800EBFE7A /* EditInfoView.swift in Sources */,
 				642014092A1EB86E001DCE6B /* Navigation.swift in Sources */,
 				64BC668C2A294D3900A75C63 /* NotificationManager.swift in Sources */,
@@ -665,6 +683,7 @@
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */,
 				542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */,
+				5484EF1C2A6A064700FC711E /* RequestTypes.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
@@ -680,6 +699,7 @@
 				641D71D92A26B8680040CBCC /* ListRemindersCards.swift in Sources */,
 				542367132A4A620D00261828 /* Plant+CoreDataClass.swift in Sources */,
 				3D5276042A3A7A4B001D2A79 /* NameTextfield.swift in Sources */,
+				5484EF1A2A6A05D200FC711E /* NetworkManeger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
