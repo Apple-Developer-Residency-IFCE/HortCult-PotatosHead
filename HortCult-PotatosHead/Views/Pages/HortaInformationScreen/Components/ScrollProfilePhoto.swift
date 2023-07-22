@@ -14,23 +14,16 @@ struct ScrollProfilePhoto: View {
         TabView(selection: $selectedTab) {
             ForEach(0..<(plant.plant_hortcult_images?.count ?? 0)) { index in
                 if(plant.plant_hortcult_images != nil){
-                    ZStack {
-                        Service.plant.getPlantImages(plant: plant)[index]
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .tag(index)
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5),
-                                                                   Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
-                    }
+                    PlantViewModel.instance.getPlantImages(plant: plant)[index]
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .tag(index)
+
                 }else {
-                    ZStack{
-                        Image("Tomate")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .tag(index)
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5),
-                                                                   Color.black.opacity(0)]), startPoint: .top, endPoint: .center).edgesIgnoringSafeArea(.all).allowsHitTesting(false)
-                    }
+                    Image("Tomate")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .tag(index)
                 }
             }
         }

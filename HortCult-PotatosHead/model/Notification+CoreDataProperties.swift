@@ -15,7 +15,7 @@ extension Notification {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Notification> {
         return NSFetchRequest<Notification>(entityName: "Notification")
     }
-// swiftlint:disable all
+
     @NSManaged public var id: UUID?
     @NSManaged public var is_resolve: Bool
     @NSManaged public var next_time_to_alert: String?
