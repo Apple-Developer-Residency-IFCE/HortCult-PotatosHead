@@ -30,6 +30,9 @@
 		3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */; };
 		3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */; };
 		3D6711B02A53864B000B8AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */; };
+		3D67341B2A6F3142005736D4 /* HumidityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67341A2A6F3142005736D4 /* HumidityCard.swift */; };
+		3D67341D2A6F319A005736D4 /* TemperatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67341C2A6F319A005736D4 /* TemperatureCard.swift */; };
+		3D67341F2A6F31B4005736D4 /* ClimateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67341E2A6F31B4005736D4 /* ClimateScreen.swift */; };
 		3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */; };
 		3D709CD12A56342000508800 /* AddInfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */; };
 		3D8190672A6A04CE002824FD /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8190662A6A04CE002824FD /* ImageServiceTests.swift */; };
@@ -121,6 +124,9 @@
 		3D5753E32A3BE0CE00AD2BC2 /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
 		3D5753E52A3BE11500AD2BC2 /* FrequencyDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDropDown.swift; sourceTree = "<group>"; };
 		3D6711AF2A53864B000B8AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3D67341A2A6F3142005736D4 /* HumidityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCard.swift; sourceTree = "<group>"; };
+		3D67341C2A6F319A005736D4 /* TemperatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCard.swift; sourceTree = "<group>"; };
+		3D67341E2A6F31B4005736D4 /* ClimateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateScreen.swift; sourceTree = "<group>"; };
 		3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDisplayed.swift; sourceTree = "<group>"; };
 		3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoScreenViewModel.swift; sourceTree = "<group>"; };
 		3D8190662A6A04CE002824FD /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
@@ -282,6 +288,24 @@
 			path = Pickers;
 			sourceTree = "<group>";
 		};
+		3D6734182A6F30F5005736D4 /* ClimateScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3D6734192A6F30FE005736D4 /* Components */,
+				3D67341E2A6F31B4005736D4 /* ClimateScreen.swift */,
+			);
+			path = ClimateScreen;
+			sourceTree = "<group>";
+		};
+		3D6734192A6F30FE005736D4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3D67341A2A6F3142005736D4 /* HumidityCard.swift */,
+				3D67341C2A6F319A005736D4 /* TemperatureCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		4E9BA39C2A66077A00211E61 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +323,7 @@
 		542367172A4B871800261828 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				3D6734182A6F30F5005736D4 /* ClimateScreen */,
 				4E9BA3A12A66084900211E61 /* Weather */,
 				64D659B72A1ECABB004F96F9 /* onBoardingScreen */,
 				1385EADF2A216870006E3487 /* HortaInformationScreen */,
@@ -715,6 +740,7 @@
 				EF3922382A3BC761004A5FC2 /* ImageSpace.swift in Sources */,
 				3D6711B02A53864B000B8AEC /* HomeViewModel.swift in Sources */,
 				64B2079B2A1D7DFF00F440EF /* Persistence.swift in Sources */,
+				3D67341F2A6F31B4005736D4 /* ClimateScreen.swift in Sources */,
 				641207F52A2180F5000D11EB /* OnboardingScreenFour.swift in Sources */,
 				64B207942A1D7DFE00F440EF /* OnBoardingScreen.swift in Sources */,
 				5484EF152A65FA4600FC711E /* ImageService.swift in Sources */,
@@ -726,6 +752,7 @@
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */,
 				3D5753E42A3BE0CE00AD2BC2 /* CategoryDropDown.swift in Sources */,
+				3D67341D2A6F319A005736D4 /* TemperatureCard.swift in Sources */,
 				54673DDB2A3157D300348020 /* Defaults.swift in Sources */,
 				64D659B92A1ECADD004F96F9 /* OnboardingSkull.swift in Sources */,
 				54673DD52A2EA52700348020 /* ThemeSelectView.swift in Sources */,
@@ -764,6 +791,7 @@
 				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
 				542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
+				3D67341B2A6F3142005736D4 /* HumidityCard.swift in Sources */,
 				5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */,
 				542445152A6F2648001E5702 /* Services.swift in Sources */,
 				3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */,
