@@ -37,6 +37,8 @@
 		542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */; };
 		542367132A4A620D00261828 /* Plant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */; };
 		542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */; };
+		542445152A6F2648001E5702 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF102A65F68000FC711E /* Services.swift */; };
+		542445172A6F27BC001E5702 /* AlertCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542445162A6F27BC001E5702 /* AlertCustomView.swift */; };
 		54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DCE2A2E9A8200348020 /* adjustmentItem.swift */; };
 		54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD02A2E9D3300348020 /* RadioButton.swift */; };
 		54673DD32A2E9D9F00348020 /* AdjustmentViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD22A2E9D9F00348020 /* AdjustmentViewScreen.swift */; };
@@ -44,7 +46,6 @@
 		54673DD72A312F0600348020 /* NavigationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DD62A312F0600348020 /* NavigationIconView.swift */; };
 		54673DDB2A3157D300348020 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54673DDA2A3157D300348020 /* Defaults.swift */; };
 		5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF0E2A65F58400FC711E /* PlantServices.swift */; };
-		5484EF112A65F68000FC711E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF102A65F68000FC711E /* Services.swift */; };
 		5484EF132A65F94400FC711E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF122A65F94400FC711E /* NotificationService.swift */; };
 		5484EF152A65FA4600FC711E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484EF142A65FA4600FC711E /* ImageService.swift */; };
 		64119F782A2020C8007DC0B7 /* ViewTesteNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64119F772A2020C8007DC0B7 /* ViewTesteNav.swift */; };
@@ -126,6 +127,7 @@
 		5423670C2A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670D2A4A620D00261828 /* Plant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670E2A4A620D00261828 /* Plant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		542445162A6F27BC001E5702 /* AlertCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertCustomView.swift; path = ../../../../../../../../Downloads/AlertCustomView.swift; sourceTree = "<group>"; };
 		54673DCE2A2E9A8200348020 /* adjustmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adjustmentItem.swift; sourceTree = "<group>"; };
 		54673DD02A2E9D3300348020 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		54673DD22A2E9D9F00348020 /* AdjustmentViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentViewScreen.swift; sourceTree = "<group>"; };
@@ -280,8 +282,6 @@
 		4E9BA39C2A66077A00211E61 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4E9BA39D2A6607DB00211E61 /* LocationManeger.swift */,
-				4E9BA39F2A66080800211E61 /* WeatherManeger.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -289,11 +289,6 @@
 		4E9BA3A12A66084900211E61 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				4E9BA3A22A6609A700211E61 /* ContentView.swift */,
-				4E9BA3A42A6609D900211E61 /* Extensions.swift */,
-				4E9BA3A62A660AA700211E61 /* LoadingView.swift */,
-				4E9BA3A82A660AC100211E61 /* WeatherView.swift */,
-				4E9BA3AA2A660AE000211E61 /* WelcomeView.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -331,8 +326,8 @@
 		5423671A2A4B879500261828 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				542445162A6F27BC001E5702 /* AlertCustomView.swift */,
 				3D54AA722A3D2AC000526BB5 /* AddButton.swift */,
-				4776DCA72A688D2E0097830D /* AlertCustomView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -721,7 +716,6 @@
 				5484EF152A65FA4600FC711E /* ImageService.swift in Sources */,
 				130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */,
 				64C4765B2A26B1DB006D499A /* CustomTabBar.swift in Sources */,
-				5488893C2A411184002009AF /* NotificationViewModel.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D5753E62A3BE11500AD2BC2 /* FrequencyDropDown.swift in Sources */,
 				5484EF132A65F94400FC711E /* NotificationService.swift in Sources */,
@@ -735,8 +729,8 @@
 				54673DCF2A2E9A8200348020 /* adjustmentItem.swift in Sources */,
 				EF3922412A43A292004A5FC2 /* EditButton.swift in Sources */,
 				641C95392A27EF1E00B20BA3 /* CardProximaRega.swift in Sources */,
-				4776DCA82A688D2E0097830D /* AlertCustomView.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
+				542445172A6F27BC001E5702 /* AlertCustomView.swift in Sources */,
 				9B0663612A2EB2A2001DC0B8 /* HomeViewScreen.swift in Sources */,
 				EF82B6D42A3A91590012B048 /* ImagePickerComponent.swift in Sources */,
 				641207F32A218076000D11EB /* OnboardingScreenThree.swift in Sources */,
@@ -758,19 +752,16 @@
 				133E2E242A200F88007BF16F /* DescriptionHorta.swift in Sources */,
 				54673DD12A2E9D3300348020 /* RadioButton.swift in Sources */,
 				542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */,
-				4E9BA3A72A660AA700211E61 /* LoadingView.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */,
-				4E9BA3A52A6609D900211E61 /* Extensions.swift in Sources */,
-				4E9BA3A02A66080800211E61 /* WeatherManeger.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */,
 				641C953B2A27EFF400B20BA3 /* BotaoMarcarRegado.swift in Sources */,
-				4E9BA39E2A6607DB00211E61 /* LocationManeger.swift in Sources */,
 				542367142A4A620D00261828 /* Plant+CoreDataProperties.swift in Sources */,
 				64E15AFA2A1D82E00043A96E /* OnboardingScreenTwo.swift in Sources */,
 				5484EF0F2A65F58400FC711E /* PlantServices.swift in Sources */,
+				542445152A6F2648001E5702 /* Services.swift in Sources */,
 				3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */,
 				133E2E222A200EB9007BF16F /* HeaderMenu.swift in Sources */,
 				64B2079E2A1D7DFF00F440EF /* HortCult_PotatosHead.xcdatamodeld in Sources */,
