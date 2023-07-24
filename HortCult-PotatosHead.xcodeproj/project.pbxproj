@@ -32,6 +32,7 @@
 		3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */; };
 		3D709CD12A56342000508800 /* AddInfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */; };
 		4776DCA82A688D2E0097830D /* AlertCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4776DCA72A688D2E0097830D /* AlertCustomView.swift */; };
+		4784B3A82A6B345D00BAAB0B /* PlantServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4784B3A72A6B345D00BAAB0B /* PlantServiceTests.swift */; };
 		5423670F2A4A620D00261828 /* Notification+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542367092A4A620D00261828 /* Notification+CoreDataClass.swift */; };
 		542367102A4A620D00261828 /* Notification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */; };
 		542367112A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */; };
@@ -122,6 +123,7 @@
 		3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDisplayed.swift; sourceTree = "<group>"; };
 		3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoScreenViewModel.swift; sourceTree = "<group>"; };
 		4776DCA72A688D2E0097830D /* AlertCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCustomView.swift; sourceTree = "<group>"; };
+		4784B3A72A6B345D00BAAB0B /* PlantServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantServiceTests.swift; sourceTree = "<group>"; };
 		542367092A4A620D00261828 /* Notification+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5423670A2A4A620D00261828 /* Notification+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5423670B2A4A620D00261828 /* Hortcult_Images+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hortcult_Images+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		3D37981D2A688E900068EC9B /* HortCult-PotatosHeadTests */ = {
 			isa = PBXGroup;
 			children = (
+				4784B3A72A6B345D00BAAB0B /* PlantServiceTests.swift */,
 				3D37981E2A688E900068EC9B /* NotificationServiceTests.swift */,
 			);
 			path = "HortCult-PotatosHeadTests";
@@ -677,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D37981F2A688E900068EC9B /* NotificationServiceTests.swift in Sources */,
+				4784B3A82A6B345D00BAAB0B /* PlantServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
