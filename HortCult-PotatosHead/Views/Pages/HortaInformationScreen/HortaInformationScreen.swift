@@ -1,9 +1,3 @@
-//
-//  HortaInformation.swift
-//  HortCult-PotatosHead
-//
-//
-
 import SwiftUI
 
 
@@ -35,7 +29,7 @@ struct HortaInformationScreen: View {
             }
         }).ignoresSafeArea(.all)
     }
-    
+
     var body: some View {
         ZStack {
             VStack (spacing: 0) {
@@ -202,7 +196,8 @@ struct HortaInformationScreen: View {
         .navigationBarItems(leading: header)
         .toolbarBackground(.hidden, for: .navigationBar)
         .task {
-            guard let getActiveNotification = Service.plant.getActiveAlert(plant: plant, notificationType: .watering) else {return}
+            guard let getActiveNotification = Service.plant.getActiveAlert(plant: plant,
+                                                                           notificationType: .watering) else { return }
             activeNotification = getActiveNotification
         }
     }

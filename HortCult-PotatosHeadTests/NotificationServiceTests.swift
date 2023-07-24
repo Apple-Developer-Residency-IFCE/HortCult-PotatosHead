@@ -15,8 +15,8 @@ class NotificationServiceTests: XCTestCase {
         notificationService = NotificationService.instance
     }
     override func tearDownWithError() throws {
-        notificationService = nil
         try super.tearDownWithError()
+        notificationService = nil
     }
     // Teste para verificar se a função createNotification cria uma notificação corretamente
     func testCreateNotification() throws {

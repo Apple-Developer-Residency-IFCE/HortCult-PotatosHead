@@ -4,6 +4,8 @@
 //
 //  Created by João Vitor Alves Holanda on 05/07/23.
 //
+//
+// swiftlint:disable all
 
 import Foundation
 import CoreLocation
