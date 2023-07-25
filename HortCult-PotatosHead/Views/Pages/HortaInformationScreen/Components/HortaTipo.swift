@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HortaType: View {
-    var type:String
+    var type: String
     var body: some View {
         ZStack {
             Color.clear
