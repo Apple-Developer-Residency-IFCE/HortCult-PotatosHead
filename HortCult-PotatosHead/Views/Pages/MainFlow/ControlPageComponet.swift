@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    
     @State private var isSelectedTab = 0
     @State private var isNextScreenActive = false
     @State private var jumpToInitalScreen = false
@@ -20,7 +19,6 @@ struct MainView: View {
             } else {
                 AdjustmentView()
                 Spacer()
-                
             }
             CustomTabBar(action: { isSelectedTab = 0
                 isNextScreenActive = false
@@ -30,7 +28,6 @@ struct MainView: View {
                          colorTwo: isSelectedTab == 1 ? Color("tabBarSelectedItem") : Color("navBarColor"))
         }.ignoresSafeArea()
     }
-    
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
             MainView()
@@ -38,4 +35,3 @@ struct MainView: View {
         }
     }
 }
-
