@@ -6,20 +6,15 @@
 //
 import SwiftUI
 
-
 enum Alertas {
     case add
     case delete
     case confirmDelete
     case deleteAdd
 }
-
-
 struct AlertCustomView: View {
-    @State var alerta : Alertas
+    @State var alerta: Alertas
     var plant: Plant
-
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         ZStack {
@@ -28,8 +23,8 @@ struct AlertCustomView: View {
                 .frame(width: 260, height: 147)
                 .foregroundColor(Color("BackgroundComponent"))
 
-            VStack(spacing: 0){
-                VStack{
+            VStack(spacing: 0) {
+                VStack {
                     Text("Planta cadastrada!")
                         .font(.custom("Satoshi-Regular", size: 16))
                         .foregroundColor(Color("MainColor"))
@@ -48,7 +43,7 @@ struct AlertCustomView: View {
                     Divider().frame(width: 260)
                 }
 
-                HStack{
+                HStack {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
@@ -60,35 +55,25 @@ struct AlertCustomView: View {
                     Divider().frame(height: 44)
                     //                        .padding(.bottom, 6)
                     NavigationLink(destination: HortaInformationScreen(plant: plant), label: {
-                        VStack{
+                        VStack {
                             Text("Ver planta")
                                 .font(.custom("Satoshi-Regular", size: 16))
                                 .foregroundColor(Color("tabBarSelectedItem"))
                                 .bold()
                         }.frame(minWidth: 130, minHeight: 22)
                     })
-//                    Button(action: {
-//                        self.presentationMode.wrappedValue.dismiss()
-//                        HortaInformationScreen(plant: plant)
-//                    }, label: {
-//                        Text("Ver planta")
-//                            .font(.custom("Satoshi-Regular", size: 16))
-//                            .foregroundColor(Color("tabBarSelectedItem"))
-//                            .bold()
-//                    }).frame(minWidth: 130, minHeight: 22)
-
                 }.frame(width: 260, height: 45)
             }
         }
 
-            if alerta == .confirmDelete{
+            if alerta == .confirmDelete {
 
                 RoundedRectangle(cornerRadius: 12)
                     .frame(width: 260, height: 147)
                     .foregroundColor(Color("BackgroundComponent"))
 
-                VStack(spacing: 0){
-                    VStack{
+                VStack(spacing: 0) {
+                    VStack {
                         Text("Deseja excluir essa planta? ")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(Color("MainColor"))
@@ -104,7 +89,7 @@ struct AlertCustomView: View {
                         Divider().frame(width: 260)
                     }
 
-                    HStack(alignment: .center){
+                    HStack(alignment: .center) {
                         Button(action: {
                             // code
                         }, label: {
@@ -126,7 +111,6 @@ struct AlertCustomView: View {
 
                     }.frame(width: 260, height: 45)
                 }
-                
             }
 
             if alerta == .delete {
@@ -135,17 +119,14 @@ struct AlertCustomView: View {
                     .frame(width: 260, height: 110)
                     .foregroundColor(Color("BackgroundComponent"))
 
-                VStack(spacing: 0){
-                    
+                VStack(spacing: 0) {
                         Text("Planta excluída!")
                             .font(.custom("Satoshi-Regular", size: 16))
                             .foregroundColor(Color("MainColor"))
                             .bold()
                             .padding(.vertical, 21)
                         Divider().frame(width: 260)
-                    
-
-                    HStack(){
+                    HStack {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
@@ -153,9 +134,6 @@ struct AlertCustomView: View {
                                 .font(.custom("Satoshi-Regular", size: 16))
                                 .foregroundColor(Color("TextColor"))
                         })
-
-
-
                     }.frame(width: 260, height: 45)
                 }
 
@@ -167,8 +145,8 @@ struct AlertCustomView: View {
                     .frame(width: 260, height: 147)
                     .foregroundColor(Color("BackgroundComponent"))
 
-                VStack(spacing: 0){
-                    VStack{
+                VStack(spacing: 0) {
+                    VStack {
                         Text("""
                              Deseja descartar a criação
                                     da sua planta?
@@ -211,10 +189,7 @@ struct AlertCustomView: View {
                 }
 
             }
-            
         }
-
-
     }
 }
 
