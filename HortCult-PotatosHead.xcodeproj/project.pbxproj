@@ -33,6 +33,7 @@
 		3D67341B2A6F3142005736D4 /* HumidityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67341A2A6F3142005736D4 /* HumidityCard.swift */; };
 		3D67341D2A6F319A005736D4 /* TemperatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67341C2A6F319A005736D4 /* TemperatureCard.swift */; };
 		3D67341F2A6F31B4005736D4 /* ClimateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67341E2A6F31B4005736D4 /* ClimateScreen.swift */; };
+		3D6734212A6F4382005736D4 /* HortaInformationScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6734202A6F4382005736D4 /* HortaInformationScreenViewModel.swift */; };
 		3D709CCF2A561F6F00508800 /* NotificationDisplayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */; };
 		3D709CD12A56342000508800 /* AddInfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */; };
 		3D8190672A6A04CE002824FD /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8190662A6A04CE002824FD /* ImageServiceTests.swift */; };
@@ -127,6 +128,7 @@
 		3D67341A2A6F3142005736D4 /* HumidityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCard.swift; sourceTree = "<group>"; };
 		3D67341C2A6F319A005736D4 /* TemperatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCard.swift; sourceTree = "<group>"; };
 		3D67341E2A6F31B4005736D4 /* ClimateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateScreen.swift; sourceTree = "<group>"; };
+		3D6734202A6F4382005736D4 /* HortaInformationScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaInformationScreenViewModel.swift; sourceTree = "<group>"; };
 		3D709CCE2A561F6F00508800 /* NotificationDisplayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDisplayed.swift; sourceTree = "<group>"; };
 		3D709CD02A56342000508800 /* AddInfoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoScreenViewModel.swift; sourceTree = "<group>"; };
 		3D8190662A6A04CE002824FD /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				1385EAE02A21687B006E3487 /* Components */,
 				130AB5492A29456E003B3006 /* HortaInformationScreen.swift */,
+				3D6734202A6F4382005736D4 /* HortaInformationScreenViewModel.swift */,
 			);
 			path = HortaInformationScreen;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				542367122A4A620D00261828 /* Hortcult_Images+CoreDataProperties.swift in Sources */,
 				64E15AFD2A1D830E0043A96E /* FirstLogin.swift in Sources */,
 				3D49C3502A39270A0026D305 /* TextScreen.swift in Sources */,
+				3D6734212A6F4382005736D4 /* HortaInformationScreenViewModel.swift in Sources */,
 				136606932A1EE6710001757A /* ListHortaComponent.swift in Sources */,
 				64B207922A1D7DFE00F440EF /* HortCult_PotatosHeadApp.swift in Sources */,
 				3D5276062A3A7A92001D2A79 /* DescriptionTextfield.swift in Sources */,
