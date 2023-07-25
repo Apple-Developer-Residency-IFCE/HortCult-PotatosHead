@@ -35,35 +35,23 @@ struct HortaInformationScreen: View {
                                     .foregroundColor(Color("MainColor"))
                                     .bold()
                                 Spacer()
-                                HortaType(type: plant.category ?? "NAO TEM CATEGORIA")
+                                HortaType(type: HortaInformationScreenViewModel.getHortaType(plant: plant))
                             }
                             .padding(.bottom, 24)
-                            Text(plant.information ?? "NAO TEM INFO")
+                            Text(HortaInformationScreenViewModel.getPlantInformation(plant: plant))
                                 .font(.custom("Satoshi-Regular", size: 16))
                                 .padding(.bottom, 24)
                             CardProximaRega(content: Service.plant.getNextWatering(plant: plant)) {
-                                HortaInformationScreenViewModel.updateNotification(activeNotification: activeNotification)
+                                HortaInformationScreenViewModel.updateNotification(
+                                    activeNotification: activeNotification
+                                )
                                 HortaInformationScreenViewModel.createNewNotification(plant: plant)
-//                                Service.notification.updateNotification(
-//                                    notification: activeNotification,
-//                                    nextTimeToAlert: activeNotification.next_time_to_alert!,
-//                                    timeToAlert: activeNotification.time_to_alert!,
-//                                    typeToAlert: activeNotification.type_to_alert!,
-//                                    isResolve: true)
-//                                guard let newNotification = Service.notification.createNotification(
-//                                    nextTimeToAlert:
-//                                        Service.notification.calculateNextWatering(
-//                                            wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!),
-//                                            timeToAlert: "",
-//                                            typeToAlert: NotificationType.watering.rawValue) else {return}
-//                                Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
                             }
                             .padding(.bottom, 24)
-                            if let freq = plant.watering_frequency {
-                                FrequenciaRega(frequencia: freq)
-                                    .padding(.horizontal)
-                            } else {
-                            }
+                            FrequenciaRega(
+                                frequencia: HortaInformationScreenViewModel.getPlantWateringFrequency(plant: plant)
+                            )
+                            .padding(.horizontal)
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 16)
@@ -129,7 +117,6 @@ struct HortaInformationScreen: View {
                                 .foregroundColor(Color("TextColor"))
                                 .padding(.top, 1.5)
                                 .padding(.bottom, 14)
-                            
                             Divider().frame(width: 260)
                         }
                         HStack(alignment: .center) {
@@ -142,7 +129,6 @@ struct HortaInformationScreen: View {
                                     .foregroundColor(Color("TextColor"))
                             }).frame(minWidth: 130, minHeight: 22)
                             Divider().frame(height: 44)
-                            //                        .padding(.bottom, 6)
                             Button(action: {
                                 confirmAlert = true
                                 presentAlert = false

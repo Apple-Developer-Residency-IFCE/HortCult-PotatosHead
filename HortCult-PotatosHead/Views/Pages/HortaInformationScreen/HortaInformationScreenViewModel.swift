@@ -25,12 +25,18 @@ class HortaInformationScreenViewModel {
             nextTimeToAlert:
                 Service.notification.calculateNextWatering(
                     wateringFrequency: Frequency(rawValue: plant.watering_frequency!)!),
-                    timeToAlert: "",
-                    typeToAlert: NotificationType.watering.rawValue) else {return}
+            timeToAlert: "",
+            typeToAlert: NotificationType.watering.rawValue) else {return}
         Service.plant.addNotificationToPlant(plant: plant, notification: newNotification)
     }
-//    static func watering( plant: Plant ) {
-//        let newNotification = HortaInformationScreenViewModel.createNewNotification(plant: plant)
-//        HortaInformationScreenViewModel.updateNotification(activeNotification: newNotification)
-//    }
+    static func getHortaType(plant: Plant) -> String {
+        return plant.category ?? "NAO TEM CATEGORIA"
+    }
+    static func getPlantInformation(plant: Plant) -> String {
+        return plant.information ?? "NAO TEM INFO"
+    }
+    static func getPlantWateringFrequency(plant: Plant) -> String {
+        guard let freq = plant.watering_frequency else {return ""}
+         return freq
+    }
 }
