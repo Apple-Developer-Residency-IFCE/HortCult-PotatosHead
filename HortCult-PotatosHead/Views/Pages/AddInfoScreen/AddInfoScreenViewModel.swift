@@ -12,7 +12,7 @@ struct AddInfoScreenViewModel {
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        var dateString = dateFormatter.string(from: currentDate)
+        let dateString = dateFormatter.string(from: currentDate)
         return dateString == date
     }
 }
