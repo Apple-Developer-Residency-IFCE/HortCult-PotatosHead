@@ -1,12 +1,9 @@
-
-
 import SwiftUI
 
 struct NavigationIconView: View {
     var label: String
-    
     var body: some View {
-        HStack{
+        HStack {
             Text(label)
                 .foregroundColor(Color("ButtonThemeColor"))
                 .font(.custom("Satoshi-Bold", size: 16))
