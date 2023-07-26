@@ -9,14 +9,10 @@ struct AdjustmentView: View {
     @State var time: Date = Date()
     @State var openConfia: Bool = true
     @State private var showNextScreen: Bool = false
-    
-    
-    
     var body: some View {
         NavigationView {
-            VStack{
-                
-                Group{
+            VStack {
+                Group {
                     HStack {
                         Text("Ajustes")
                             .font(.custom("Satoshi-Bold", size: 28))
@@ -28,13 +24,11 @@ struct AdjustmentView: View {
                     NavigationLink {
                         ThemeSelect(selectedOption: Defaults.themeStorage)
                             .environmentObject(defaults)
-                        
                     } label: {
                         AdjustmentItem(label: "Tema") {
                             NavigationIconView(label: Defaults.themeStorage)
                         }
                     }
-                    
                     Divider()
                     AdjustmentItem(label: "Notificações Push") {
                         Toggle("", isOn: $switcherOn).onChange(of: switcherOn, perform: { newValue in
@@ -42,39 +36,31 @@ struct AdjustmentView: View {
                             NotificationManager().requestNotificationAuthorization()
                         })
                     }
-                    
                     Divider()
-                    
-                    if (switcherOn){
+                    if switcherOn {
                         VStack {
-                            HStack{
+                            HStack {
                                 Text("Notificaçoes")
                                 Spacer()
                             }
-                            VStack{
-                                HStack{
+                            VStack {
+                                HStack {
                                     Text("Horários")
                                         .font(.custom("Satoshi-Regular", size: 12))
                                         .foregroundColor(Color("title"))
                                         .padding(.bottom, 6)
                                     Spacer()
                                 }
-
                                 NotificationManager()
                             }.padding(.top, 24)
-
-
                         }
                     }
-                    
                     Spacer()
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
-                
             }
         }.navigationBarBackButtonHidden(true)
-        
     }
 }
 

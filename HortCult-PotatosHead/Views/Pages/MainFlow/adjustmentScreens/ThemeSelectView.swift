@@ -1,12 +1,4 @@
-
-
-
-
-
-
 import SwiftUI
-
-
 
 struct ThemeSelect: View {
     @EnvironmentObject var defaults: Defaults
@@ -14,11 +6,9 @@ struct ThemeSelect: View {
     @Environment(\.presentationMode) var presentationMode
 
     var header: some View {
-        ZStack{
-            HStack{
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                } ) {
+        ZStack {
+            HStack {
+                Button(action: {self.presentationMode.wrappedValue.dismiss()} ) {
                     Image("leftArrow")
                 }
                 .padding(.leading, 12).padding(.trailing, -8)
@@ -27,29 +17,24 @@ struct ThemeSelect: View {
             }
         }
     }
-    
         var body: some View {
             NavigationView {
                 VStack {
-                    HStack{
+                    HStack {
                         Text("Tema")
                             .font(.custom("Satoshi-Bold", size: 28))
                             .foregroundColor(Color("MainColor"))
                             .padding(.top, 20)
                         Spacer()
                     }.padding(.bottom, 40).padding(.top, 40)
-                    
-                    
                     RadioButton(selectedOption: $selectedOption, action: {
                         defaults.theme = "Claro"
                         Defaults.themeStorage = "Claro"
                     }, title: "Claro").padding(.bottom, 16)
-                    
                     RadioButton(selectedOption: $selectedOption, action: {
                         defaults.theme = "Escuro"
                         Defaults.themeStorage = "Escuro"
                     }, title: "Escuro").padding(.bottom, 16)
-                    
                     RadioButton(selectedOption: $selectedOption, action: {
                         defaults.theme = "Padrão do Sistema"
                         Defaults.themeStorage = "Padrão do Sistema"
@@ -57,13 +42,11 @@ struct ThemeSelect: View {
 
                     Spacer()
                 }.padding(.leading, 24)
-                
             }
             .navigationBarBackButtonHidden(true)
             .navigationTitle("")
             .navigationBarItems(leading: header)
             }
-            
 }
 
 struct ThemeSelect_Previews: PreviewProvider {
