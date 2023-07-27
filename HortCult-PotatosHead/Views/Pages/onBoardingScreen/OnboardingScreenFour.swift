@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct OnboardingScreenFour: View {
-    
     @State var isNextScreenActive = false
     @ObservedObject var defaults: Defaults
     var hortCultMain: HortCult_PotatosHeadApp?
-    
     var body: some View {
-        
         OnboardingScreen(header: "hortFruitLight",
                          centerImage: "onboardingfourlight",
                          primaryText: "Hora de Cuidar",
@@ -25,7 +22,8 @@ struct OnboardingScreenFour: View {
         },
                          mainButtonType: .three,
                          hidenSecondaryButton: true)
-        .background(NavigationLink(destination: MainView(), isActive: $isNextScreenActive, label: {EmptyView()}))
+        .background(NavigationLink(destination: MainView(),
+                                   isActive: $isNextScreenActive, label: {EmptyView()}))
         .navigationBarHidden(true)
     }
 }

@@ -1,4 +1,3 @@
-
 import SwiftUI
 import CoreData
 
@@ -7,16 +6,13 @@ struct OnBoardingScreen: View {
     @State private var isNextScreenActive = false
     @ObservedObject var defaults: Defaults
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    
     func firstLogin() {
         UserDefaults.standard.set(true, forKey: "isFirstLogin")
         self.isFirstLogin = true
     }
-    
     var body: some View {
-        if !self.isFirstLogin  {
-            
-            OnboardingScreen(header:"hortFruitLight",
+        if !self.isFirstLogin {
+            OnboardingScreen(header: "hortFruitLight",
                              primaryText: "Boas vindas!",
                              secondaryText: "Com o HortCult, você pode acompanhar a sua horta doméstica de forma simples e fácil",
                              actionMainButton: {isNextScreenActive = true},
@@ -24,7 +20,6 @@ struct OnBoardingScreen: View {
                              hidenSecondaryButton: true)
             .background(NavigationLink(destination: OnboardingScreenTwo(), isActive: $isNextScreenActive) { EmptyView()})
             .navigationBarHidden(true)
-            
         } else {
             Button("Concluir Primeiro") {
                 print("Cebolinhas")
