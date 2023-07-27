@@ -14,7 +14,7 @@ struct AddInfoScreen: View {
     @State private var presentAlert = false
     @State private var addAlert = false
     @EnvironmentObject var defaults: Defaults
-    var plant: Plant?
+    @State var plant: Plant?
     @State var isEdit: Bool = false
     var body: some View {
         ZStack {
@@ -41,28 +41,24 @@ struct AddInfoScreen: View {
             VStack {
                 Spacer()
                 if !isEdit {
-                    if !((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty) {
+                    if AddInfoScreenViewModel.fieldsVerification(frequency: frequency,
+                                                                 category: category,
+                                                                 nameText: nameText,
+                                                                 descriptionText: descriptionText) {
                         AddButton(isDisabled: true) {}
                     } else {
                         AddButton(isDisabled: false) {
-                            guard let frequencia = frequency?.rawValue else {return}
-                            guard let categoria = category?.rawValue else {return}
-                            guard let neewPlant  = Service.plant.createPlant(name: nameText,
-                                                                             category: categoria,
-                                                                             information: descriptionText,
-                                                                             wateringFrequency: frequencia)
-                            else {return}
+                            guard let neewPlant = AddInfoScreenViewModel.createPlant(
+                                name: nameText,
+                                categoria: category,
+                                information: descriptionText,
+                                frequencia: frequency) else {return}
                             selectedPhotosData.forEach { data in
-                                guard let newImage = Service.image.createImage(plantImage: data) else {return}
-                                Service.plant.addImageToPlant(plant: neewPlant, plantImage: newImage)
+                                AddInfoScreenViewModel.setPlantImage(data: data, newPlant: neewPlant)
                             }
                             addAlert = true
-                            guard let newNotification = Service.notification.createNotification(
-                                nextTimeToAlert: Service.notification.calculateNextWatering(
-                                    wateringFrequency: frequency!),
-                                timeToAlert: "",
-                                typeToAlert: NotificationType.watering.rawValue) else {return}
-                            Service.plant.addNotificationToPlant(plant: neewPlant, notification: newNotification)
+                            let newNotification = AddInfoScreenViewModel.setNewNotification(newPlant: neewPlant,
+                                                                                            frequency: frequency!)
                             let notificationDisplayed = HomeViewModel.notificationsTextsToDisplay(
                                 notification: newNotification
                             )
@@ -80,37 +76,31 @@ struct AddInfoScreen: View {
                         }
                     }
                 } else {
-                    if !((frequency != nil) && (category != nil) && !nameText.isEmpty && !descriptionText.isEmpty) {
+                    if AddInfoScreenViewModel.fieldsVerification(frequency: frequency,
+                                                                 category: category,
+                                                                 nameText: nameText,
+                                                                 descriptionText: descriptionText) {
                         EditButton(isDisabled: true) {}
                     } else {
                         EditButton(isDisabled: false) {
                             if !isEdit {
-                                guard let frequencia = frequency?.rawValue else {return}
-                                guard let categoria = category?.rawValue else {return}
-                                guard Service.plant.createPlant(name: nameText,
-                                                                category: categoria,
-                                                                information: descriptionText,
-                                                                wateringFrequency: frequencia) != nil else {return}
+                                guard let plantEdit = AddInfoScreenViewModel.createPlant(
+                                    name: nameText,
+                                    categoria: category,
+                                    information: descriptionText,
+                                    frequencia: frequency) else {return}
                                 self.presentationMode.wrappedValue.dismiss()
                             } else {
-                                guard let frequencia = frequency?.rawValue else {return}
-                                guard let categoria = category?.rawValue else {return}
-                                guard let plant = plant else {return}
-                                Service.plant.updatePlant(plant: plant,
-                                                          name: nameText,
-                                                          category: categoria,
-                                                          information: descriptionText,
-                                                          wateringFrequency: frequencia)
-                                plant.plant_hortcult_images?.allObjects.forEach({ image in
-                                    guard let imagePlant =
-                                            image as? HortCultImages else {return}
-                                    Service.plant.removeImageToPlant(
-                                        plant: plant,
-                                        plantImage: imagePlant)
+                                AddInfoScreenViewModel.updatePlant(frequencia: frequency,
+                                                                   categoria: category,
+                                                                   name: nameText,
+                                                                   information: descriptionText,
+                                                                   plant: plant)
+                                plant!.plant_hortcult_images?.allObjects.forEach({ image in
+                                    AddInfoScreenViewModel.updatePlantImage(plant: plant, image: image)
                                 })
                                 selectedPhotosData.forEach { data in
-                                    guard let newImage = Service.image.createImage(plantImage: data) else {return}
-                                    Service.plant.addImageToPlant(plant: plant, plantImage: newImage)
+                                    AddInfoScreenViewModel.setPlantImage(data: data, newPlant: plant!)
                                 }
                                 self.presentationMode.wrappedValue.dismiss()
                             }
